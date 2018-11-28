@@ -37,8 +37,9 @@ function check(trashbin) {
 	function hasMovedRecently(sensor) {
 		/* objective:
 			come up with(good) algorithms, parameters that determine when sensor has moved
+			use event type and time in conjunction to eachother to reduce false positives
 		*/
-		if(database.sensor.lastEvent.time >= ( currentTime - oneMinute )) {
+		if(database.sensor.lastEvent.time >= ( currentTime - oneMinute ) && sensor.lastEvent.type == movementEvent) {
 			return true
 		} else {
 			return false
@@ -46,7 +47,7 @@ function check(trashbin) {
 	
 	]
 	
-	if(hasMoved(trashbin.upperSensor) && !hasMoved(trashbin.lowerSensor)) {
+	if(hasMovedRecently(trashbin.upperSensor) && !hasMovedRecently(trashbin.lowerSensor)) {
 		recordOpenEvent(database, trashbin);
 	}
 
