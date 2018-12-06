@@ -1,18 +1,13 @@
 # How to decode touchTag payload
 
-In order to decode the touchTag payload you need to install and use Google's Protocol Buffers which are basically a method of serializing structured data. Everynet provides a touchtag.proto text file, which contains the different message types of the sensors. 
+In order to decode the touchTag payload you need to install and use Google's Protocol Buffers which are basically a method of serializing structured data. Everynet provides a touchtag.proto text file, which contains the different message types of the sensors.
 The touchtag.proto file needs to be compiled and when it's compiled for example in Python, it generates a touchtag_pb2.py file. This file holds the access to the encrypted payload and it needs to be in the same folder as the Python script.
 We used an example Python script (decoder.py) to do all this. The script first base64-decoded the payload and then fetched the data from the touchtag_pb2.py file.
 
 Everynet has the step-by-step directions here:
 https://everynet.zendesk.com/hc/en-us/articles/360011410074-How-to-decode-TouchTag-payload
 
-This link also includes the required files and scripts (touchtag.proto). 
-However, the payload_unpacker.py script had some weird errors, so I altered it a bit. 
-The final working version can be found in the same Google Drive folder under name decoder.py.
-It also has one example payload with the following output:
-
-
+This link also includes the required files and scripts (touchtag.proto).
 
 Other useful links:
 https://developers.google.com/protocol-buffers/docs/pythontutorial
@@ -23,7 +18,7 @@ https://developers.google.com/protocol-buffers/docs/pythontutorial
 ### Protobuf compiler
 Installation instructions for Ubuntu.
 
-Prerequisites 
+Prerequisites
 `sudo apt-get install autoconf automake libtool curl make g++ unzip`
 
 Installation
