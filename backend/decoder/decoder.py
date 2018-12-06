@@ -1,8 +1,10 @@
+# Script to decode the encrypted payload, uses example payload
+
 import base64
 import logging
 import sys
 
-import touchtag_pb2 as tracker
+import touchtag_pb2 as tracker  # generated file
 
 schemes = {
     0x00: tracker.sample,   # 0000 0000 0000 0000
@@ -10,15 +12,19 @@ schemes = {
     0x81: tracker.get_debug_data    # 0000 0000 1000 0001
 }
 
+
+# Unpacks the payload, base64encoding & protocol buffers
 def unpack(payload):
+
     payload = bytes(base64.b64decode(payload))
-    # print(type(payload))  should be bytes
+
     if payload[0] != 0x01:
         msg = 'Invalid Serialization Format: {:02x}'.format(payload[0])
         logging.error(msg)
         raise Exception(msg)
-    # print(payload)
+
     scheme_id = payload[1]
+
     try:
         data = schemes[scheme_id].FromString(payload[2:])
     except Exception as e:
@@ -28,7 +34,9 @@ def unpack(payload):
 
     return data
 
+# Unpack the payload in to json format
 def unpack_to_json(payload):
+
     sample = unpack(payload)
 
     data = {}
@@ -43,11 +51,12 @@ def unpack_to_json(payload):
         'debug_var_1': sample.data.debug_var_1,
         'debug_var_2': sample.data.debug_var_2
     }
-    
+
     return data
 
 
 def main():
+    
     if (len(sys.argv) == 1):
         testidata = unpack_to_json("AQAIABA4GG4gCSgDMJ4BOABCBRABGIEe")
         print("Example data:\n", testidata)
