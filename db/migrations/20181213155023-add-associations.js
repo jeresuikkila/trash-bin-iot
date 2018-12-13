@@ -33,7 +33,7 @@ module.exports = {
       'sensorbins', // name of Source model
       'trashbin_id', // name of the key we're adding 
       {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         references: {
           model: 'trashbins', // name of Target model
           key: 'id', // key in Target model that we're referencing
@@ -46,7 +46,7 @@ module.exports = {
       'processedevents', // name of Source model
       'trashbin_id', // name of the key we're adding 
       {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         references: {
           model: 'trashbins', // name of Target model
           key: 'id', // key in Target model that we're referencing

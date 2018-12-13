@@ -3,9 +3,10 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('trashbins', {
       id: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
       bintype: {
         type: Sequelize.STRING,

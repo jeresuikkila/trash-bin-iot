@@ -2,9 +2,10 @@
 module.exports = (sequelize, DataTypes) => {
   const trashbin = sequelize.define('trashbin', {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     bintype: {
       type: DataTypes.STRING,
