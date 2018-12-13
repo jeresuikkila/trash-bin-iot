@@ -1,0 +1,43 @@
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const event = sequelize.define('event', {
+    packet_hash: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      primaryKey: true
+    },
+    payload: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    original_message: {
+      type: Sequelize.JSON,
+      allowNull: false
+    },
+    event_time: {
+      type: Sequelize.DATE,
+      allowNull: false
+    },
+    temperature: {
+      type: Sequelize.INTEGER,
+      defaultValue: null
+    },
+    trigger_code: {
+      type: Sequelize.STRING,
+      defaultValue: null
+    },
+    trigger_counter: Sequelize.INTEGER,
+    pitch: {
+      type: Sequelize.INTEGER,
+      defaultValue: null
+    },
+    roll: {
+      type: Sequelize.INTEGER,
+      defaultValue: null
+    }
+  }, {});
+  event.associate = models => {
+    event.belongsTo(models.touchtag)
+  };
+  return event;
+};

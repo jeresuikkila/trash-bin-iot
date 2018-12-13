@@ -54,7 +54,7 @@ const trashbin = sequelize.define('public.trashbin',{
     trashbin_id: { type: Sequelize.STRING, allowNull: false, primaryKey: true },
     bintype: { type: Sequelize.STRING, defaultValue: null },
     owner: { type: Sequelize.STRING, defaultValue: null },
-    address: { type: Sequelize.STRING, defaultValue: null },
+    address: { type: Sequelize.STRING, defaultValue: null }
 });
 
 const sensor_bin = sequelize.define('public.sensor_bin', {
