@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
+import TrashBinRow from './components/TrashBinRow'
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="container">
         <h1>Trash Bin IoT</h1>
         <h2>Trash bins</h2>
-        <table className="table table-dark">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Bin ID</th>
@@ -21,22 +21,27 @@ class App extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Aalto</td>
-              <td>Otakaari 5</td>
-              <td>Large bio waste</td>
-              <td>Opened yesterday</td>
-              <td className="text-success">OK</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Aalto</td>
-              <td>Otakaari 7</td>
-              <td>Small bio waste</td>
-              <td>Opened today</td>
-              <td className="text-danger">FULL</td>
-            </tr>
+            <TrashBinRow
+              id="1"
+              owner="Aalto"
+              address="Otakaari 5"
+              type="Large Bio Waste"
+              latestEvent="Opened yesterday"
+              status="OK" />
+            <TrashBinRow
+              id="2"
+              owner="Aalto"
+              address="Otakaari 7"
+              type="Small Bio Waste"
+              latestEvent="Opened today"
+              status="FULL" />
+            <TrashBinRow
+              id="3"
+              owner="Aalto"
+              address="Otakaari 5"
+              type="Small Bio Waste"
+              latestEvent="Opened yesterday"
+              status="OK" />
           </tbody>
         </table>
       </div>
