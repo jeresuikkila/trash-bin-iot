@@ -22,7 +22,7 @@ const sequelize = new Sequelize(
   host: process.env.DB_HOST,
   dialect: 'postgres'});
 
-app.use(bodyParser.json())
+app.use(bodyParser.json())  // middleware to handle json request
 app.use(bodyParser.urlencoded({ extended: true}))
 
 app.post('*', (req, res) => {
@@ -38,26 +38,33 @@ app.post('*', (req, res) => {
     message['decoded_payload'] = JSON.parse(response.data.body)
     console.log(message)
 
-    // Connect to DB and add an event to database using sequelize
-    sequelize.sync()
-      .then(() => models.event.create({
-        packet_hash: message.meta.packet_hash,
-        payload: message.params.payload,
-        original_message: message,
-        event_time:  moment.unix(message.meta.time),
-        temperature: message.decoded_payload.temperature,
-        trigger_code: message.decoded_payload.trigger_code,
-        trigger_counter: message.decoded_payload.trigger_counter,
-        Touchtag_dev_eui: message.meta.device
-
-      })).then(queryResponse => {
+  // Add an event to database with touchtag_id as foreign key
+    models.event.create({
+      packet_hash: message.meta.packet_hash,
+      payload: message.params.payload,
+      original_message: message,
+      event_time:  moment.unix(message.meta.time),
+      temperature: message.decoded_payload.temperature,
+      trigger_code: message.decoded_payload.trigger_code,
+      trigger_counter: message.decoded_payload.trigger_counter,
+      pitch: message.decoded_payload.pitch,
+      roll: message.decoded_payload.roll,
+      touchtagDevEui: message.meta.device
+    }).then(() => {
+      models.event.findOne({
+        where:{
+          packet_hash: message.meta.packet_hash
+        },
+        include:[
+          { model: models.touchtag, attributes:['dev_eui'] },
+        ],
+      }).then(queryResponse => {
           const response = {
             "isBase64Encoded": false,
             "statusCode": 200,
-            "body": JSON.stringify(queryResponse.rows)
+            "body": queryResponse.get()
           }
 
-          console.log(queryResponse)
           res.send(response)
 
         }).catch(error => {
@@ -65,7 +72,7 @@ app.post('*', (req, res) => {
           const response = {
             "isBase64Encoded": false,
             "statusCode": 500,
-            "body": JSON.stringify(queryResponse.rows)
+            "body": queryResponse.get()
           }
 
           res.send(response)
@@ -77,6 +84,8 @@ app.post('*', (req, res) => {
     console.log(error);
     res.sendStatus(500)
   });
+
+  })
 
 });
 
