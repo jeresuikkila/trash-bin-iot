@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   event.associate = models => {
-    event.belongsTo(models.touchtag)
+    event.touchtag = event.belongsTo(models.touchtag)
   };
   return event;
 };

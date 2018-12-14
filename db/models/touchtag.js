@@ -22,23 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     appskey: {
       type: DataTypes.STRING,
       defaultValue: null
-    }/*,
-    default_pitch: {
-      type: Sequelize.INTEGER,
-      defaultValue: null
-    },
-    default_roll: {
-      type: Sequelize.INTEGER,
-      defaultValue: null
-    },
-    //location: { type: Sequelize.GEOMETRY, defaultvalue: null }
-    location: {
-      type: Sequelize.STRING,
-      defaultvalue: null
-    }*/
+    }
   }, {});
   Touchtag.associate = function (models) {
-    // touchtag.belongsTo(models.trashbin)
+    
   };
   return Touchtag;
 };
