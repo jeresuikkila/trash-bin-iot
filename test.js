@@ -18,10 +18,12 @@ const sequelize = new Sequelize('trashbiniot', 'trashbiniot', 'futurice', {
 });
 
 sequelize.sync()
- .then(() => models.trashbin.create({
-    bintype: '123',
-    owner: '123',
-    address: '123'
+ .then(() => models.touchtag.create({
+  dev_eui: "70b3d54b1c0015f",
+  app_eui: "123",
+  dev_addr: "123",
+  nwkskey: "123",
+  appskey: "123"
  }))
  .then(trash => {
    console.log(trash.toJSON());
