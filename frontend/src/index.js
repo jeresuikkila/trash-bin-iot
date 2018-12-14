@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
+// Add these when wanting to use JS features of bootstrap
+//import $ from 'jquery';
+//import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import React from 'react';
