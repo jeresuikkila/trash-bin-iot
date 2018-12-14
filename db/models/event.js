@@ -2,37 +2,37 @@
 module.exports = (sequelize, DataTypes) => {
   const event = sequelize.define('event', {
     packet_hash: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true
     },
     payload: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     original_message: {
-      type: Sequelize.JSON,
+      type: DataTypes.JSON,
       allowNull: false
     },
     event_time: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
       allowNull: false
     },
     temperature: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       defaultValue: null
     },
     trigger_code: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       defaultValue: null
     },
-    trigger_counter: Sequelize.INTEGER,
+    trigger_counter: DataTypes.INTEGER,
     pitch: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       defaultValue: null
     },
     roll: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       defaultValue: null
     }
   }, {});

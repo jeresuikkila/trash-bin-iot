@@ -16,6 +16,19 @@ module.exports = {
       }
       
     )
+    /*queryInterface.addColumn(
+      'touchtags', // name of Source model
+      'trashbin_id', // name of the key we're adding 
+      {
+        type: Sequelize.STRING,
+        references: {
+          model: 'trashbins', // name of Target model
+          key: 'id', // key in Target model that we're referencing
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+      }
+    )*/
     queryInterface.addColumn(
       'sensorbins', // name of Source model
       'touchtag_dev_eui', // name of the key we're adding 
@@ -62,6 +75,10 @@ module.exports = {
       'events', // name of Source model
       'Touchtag_dev_eui' // key we want to remove
     )
+    /*queryInterface.removeColumn(
+      'touchtags', // name of Source model
+      'trashbin_id' // key we want to remove
+    )*/
     queryInterface.removeColumn(
       'sensorbins', // name of Source model
       'touchtag_dev_eui', // key we want to remove

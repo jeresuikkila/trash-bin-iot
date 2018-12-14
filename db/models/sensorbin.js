@@ -2,16 +2,16 @@
 module.exports = (sequelize, DataTypes) => {
   const sensorbin = sequelize.define('sensorbin', {
     default_pitch: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       defaultValue: null
     },
     default_roll: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       defaultValue: null
     },
     /*location: { type: Sequelize.GEOMETRY, defaultvalue: null }*/
     location: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       defaultvalue: null
     }
   }, {});

@@ -2,16 +2,16 @@
 module.exports = (sequelize, DataTypes) => {
   const processedevent = sequelize.define('processedevent', {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
     event_type: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     event_time: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
       allowNull: false
     }
   }, {});

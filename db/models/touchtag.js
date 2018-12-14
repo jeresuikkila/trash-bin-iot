@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     app_eui: {
-      type: DataTypes.STRING, 
+      type: DataTypes.STRING,
       defaultValue: null
     },
     dev_addr: {
@@ -22,10 +22,23 @@ module.exports = (sequelize, DataTypes) => {
     appskey: {
       type: DataTypes.STRING,
       defaultValue: null
-    }
+    }/*,
+    default_pitch: {
+      type: Sequelize.INTEGER,
+      defaultValue: null
+    },
+    default_roll: {
+      type: Sequelize.INTEGER,
+      defaultValue: null
+    },
+    //location: { type: Sequelize.GEOMETRY, defaultvalue: null }
+    location: {
+      type: Sequelize.STRING,
+      defaultvalue: null
+    }*/
   }, {});
   Touchtag.associate = function (models) {
-    // associations can be defined here
+    // touchtag.belongsTo(models.trashbin)
   };
   return Touchtag;
 };
