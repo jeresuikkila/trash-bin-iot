@@ -9,7 +9,7 @@ const TrashBinRow = (props) => {
         <td>{props.type}</td>
         <td>{props.latestEvent}</td>
         
-        {props.status == "OK" ? (
+        {props.status === "OK" ? (
         <td className="text-success">{props.status}</td> ) :
         (<td className="text-danger">{props.status}</td>)
         }

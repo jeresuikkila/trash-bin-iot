@@ -3,6 +3,7 @@ import './App.css';
 
 import TrashBinRow from './components/TrashBinRow';
 
+// eslint-disable-next-line
 import GetData from './api/getData';
 
 class App extends Component {
