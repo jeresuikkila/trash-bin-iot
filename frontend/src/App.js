@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import TrashBinRow from './components/TrashBinRow'
+import TrashBinRow from './components/TrashBinRow';
+
+import GetData from './api/getData';
 
 class App extends Component {
   render() {
