@@ -6,7 +6,7 @@ const TrashBinRow = (props) => {
         <td><a href={`/${props.id}`}>{props.id}</a></td>
         <td>{props.owner}</td>
         <td>{props.address}</td>
-        <td>{props.type}</td>
+        <td>{props.bintype}</td>
         <td>{props.latestEvent}</td>
         
         {props.status === "OK" ? (

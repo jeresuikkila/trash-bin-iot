@@ -1,17 +1,17 @@
 require('dotenv').config({ path: '../.env' });
 
 const express = require('express');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
-const epilogue = require('epilogue');
+const cors = require('cors');
 const port = 3001;
-const models = require('../db/models')
+const models = require('../db/models');
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.listen(port, () => console.log(`Listening on port ${port}`));
 const db = new Sequelize(
     process.env.DB_DATABASE,
     process.env.DB_USERNAME,
@@ -24,6 +24,22 @@ db.authenticate().then(() => {
     console.log('Connection has been established successfully.');
 }).catch(err => {
         console.error('Unable to connect to the database:', err);
+    });
+
+    models.trashbin.findAll({
+        attributes: ['id','bintype','owner','address']
+    }).then(bins => {
+        var arr=[];
+        bins.forEach(bin =>{
+            bin.dataValues.latestEvent = "test event",
+            bin.dataValues.status = "test status"
+            bin.dataValues.id = bin.dataValues.id.toString();
+            arr.push(bin.dataValues);
+        });
+        console.log(arr);
+        app.get('/trashbins', (req, res) => {
+            res.send({ express: arr});
+          });
     });
 
     
