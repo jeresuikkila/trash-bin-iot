@@ -1,4 +1,4 @@
-const GetData = async () => {
+const GetTrashbinData = async () => {
 
     // return [
     //     {
@@ -26,4 +26,4 @@ const GetData = async () => {
     return body.express;
   }
   
-  export default GetData;
+  export default GetTrashbinData;
