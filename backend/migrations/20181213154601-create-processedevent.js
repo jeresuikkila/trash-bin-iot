@@ -14,6 +14,14 @@ module.exports = {
       event_time: {
         type: Sequelize.DATE,
         allowNull: false
+      },
+      createdAt: {
+        defaultValue: null,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        defaultValue: null,
+        type: Sequelize.DATE
       }
     });
   },

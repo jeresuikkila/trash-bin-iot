@@ -14,6 +14,18 @@ module.exports = {
       location: {
         type: Sequelize.STRING,
         defaultvalue: null
+      },
+      taglocation: {
+        type: Sequelize.STRING,
+        defaultValue: null
+      },
+      createdAt: {
+        defaultValue: null,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        defaultValue: null,
+        type: Sequelize.DATE
       }
     });
   },

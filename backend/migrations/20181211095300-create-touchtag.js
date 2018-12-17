@@ -9,7 +9,7 @@ module.exports = {
         allowNull: false
       },
       app_eui: {
-        type: Sequelize.STRING, 
+        type: Sequelize.STRING,
         defaultValue: null
       },
       dev_addr: {
@@ -23,6 +23,14 @@ module.exports = {
       appskey: {
         type: Sequelize.STRING,
         defaultValue: null
+      },
+      createdAt: {
+        defaultValue: null,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        defaultValue: null,
+        type: Sequelize.DATE
       }
     });
   },

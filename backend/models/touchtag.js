@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     app_eui: {
-      type: DataTypes.STRING, 
+      type: DataTypes.STRING,
       defaultValue: null
     },
     dev_addr: {
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Touchtag.associate = function (models) {
-    // associations can be defined here
+    
   };
   return Touchtag;
 };

@@ -35,6 +35,14 @@ module.exports = {
       roll: {
         type: Sequelize.INTEGER,
         defaultValue: null
+      },
+      createdAt: {
+        defaultValue: null,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        defaultValue: null,
+        type: Sequelize.DATE
       }
     });
   },
