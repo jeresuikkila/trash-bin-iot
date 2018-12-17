@@ -3,15 +3,15 @@ import React from 'react';
 const TrashBinRow = (props) => {
     return (
       <tr>
-        <td><a href={`/${props.id}`}>{props.id}</a></td>
-        <td>{props.owner}</td>
-        <td>{props.address}</td>
-        <td>{props.type}</td>
-        <td>{props.latestEvent}</td>
+        <td><a href={`/trashbin/${props.bin.id}`}>{props.bin.id}</a></td>
+        <td>{props.bin.owner}</td>
+        <td>{props.bin.address}</td>
+        <td>{props.bin.bintype}</td>
+        <td>{props.bin.latestEvent}</td>
         
-        {props.status == "OK" ? (
-        <td className="text-success">{props.status}</td> ) :
-        (<td className="text-danger">{props.status}</td>)
+        {props.status === "OK" ? (
+        <td className="text-success">{props.bin.status}</td> ) :
+        (<td className="text-danger">{props.bin.status}</td>)
         }
       </tr>
     )

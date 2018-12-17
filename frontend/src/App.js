@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import TrashBinRow from './components/TrashBinRow'
+import TrashBinRow from './components/TrashBinRow';
+
+// eslint-disable-next-line
+import GetTrashbinData from './api/getTrashbinData';
+
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { trashbins: [] }
+  }
+  componentWillMount() {
+    GetTrashbinData().then(bins => {
+      this.setState({trashbins: bins});
+    });
+  }
   render() {
+    let trashbins = this.state.trashbins
+    console.log("trashbins: ", trashbins)
+    console.log("test: ", trashbins[0])
     return (
       <div className="container">
         <h1>Trash Bin IoT</h1>
@@ -21,30 +37,14 @@ class App extends Component {
             </tr>
           </thead>
           <tbody>
-            <TrashBinRow
-              id="1"
-              owner="Aalto"
-              address="Otakaari 5"
-              type="Large Bio Waste"
-              latestEvent="Opened yesterday"
-              status="OK" />
-            <TrashBinRow
-              id="2"
-              owner="Aalto"
-              address="Otakaari 7"
-              type="Small Bio Waste"
-              latestEvent="Opened today"
-              status="FULL" />
-            <TrashBinRow
-              id="3"
-              owner="Aalto"
-              address="Otakaari 5"
-              type="Small Bio Waste"
-              latestEvent="Opened yesterday"
-              status="OK" />
+            {trashbins.map(trashbin => 
+              <TrashBinRow key={trashbin.id}
+                bin={trashbin} />
+            )}
           </tbody>
         </table>
       </div>
+
     );
   }
 }

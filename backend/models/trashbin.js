@@ -1,0 +1,27 @@
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const trashbin = sequelize.define('trashbin', {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    bintype: {
+      type: DataTypes.STRING,
+      defaultValue: null
+    },
+    owner: {
+      type: DataTypes.STRING,
+      defaultValue: null
+    },
+    address: {
+      type: DataTypes.STRING,
+      defaultValue: null
+    }
+  }, {});
+  trashbin.associate = function (models) {
+    // associations can be defined here
+  };
+  return trashbin;
+};
