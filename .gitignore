@@ -3,4 +3,3 @@ node_modules/
 build/
 db/seeders/
 db/config/
-.package-lock.json
