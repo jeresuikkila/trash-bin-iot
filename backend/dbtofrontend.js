@@ -20,11 +20,6 @@ const db = new Sequelize(
         dialect: 'postgres'
     });
 
-db.authenticate().then(() => {
-    console.log('Connection has been established successfully.');
-}).catch(err => {
-        console.error('Unable to connect to the database:', err);
-    });
 
     models.trashbin.findAll({
         attributes: ['id','bintype','owner','address']
@@ -42,4 +37,3 @@ db.authenticate().then(() => {
           });
     });
 
-    
