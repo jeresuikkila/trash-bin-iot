@@ -6,12 +6,6 @@ import TrashBinRow from './components/TrashBinRow';
 // eslint-disable-next-line
 import GetTrashbinData from './api/getTrashbinData';
 
-const createTrashbinRows = ({trashbins}) => (
-  trashbins.map(trashbin => 
-    <TrashBinRow key={trashbin.id}
-      bin={trashbin} />
-  )
-)
 
 class App extends Component {
   constructor() {

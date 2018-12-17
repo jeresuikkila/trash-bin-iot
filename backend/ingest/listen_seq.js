@@ -1,6 +1,7 @@
 // Script to listen api requests
 // Run source. env to initialize enviromental variables
 
+require('dotenv').config({ path: '../../.env' });
 const express = require('express')  // server framework
 const bodyParser = require('body-parser') // parses req.body to e.g JSON
 const axios = require('axios')  // performs http requests
