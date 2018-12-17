@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const cors = require('cors');
 const port = 3001;
-const models = require('../db/models');
+const models = require('./models');
 
 const app = express();
 app.use(cors());

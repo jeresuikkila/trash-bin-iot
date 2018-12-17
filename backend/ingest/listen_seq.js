@@ -6,7 +6,7 @@ const express = require('express')  // server framework
 const bodyParser = require('body-parser') // parses req.body to e.g JSON
 const axios = require('axios')  // performs http requests
 const Sequelize = require('sequelize')  // ORM
-const models = require('../../db/models') // path to db models
+const models = require('../models') // path to db models
 const moment = require('moment')
 
 const app = express()
