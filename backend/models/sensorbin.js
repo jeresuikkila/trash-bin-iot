@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     location: {
       type: DataTypes.STRING,
       defaultvalue: null
+    },
+    taglocation: {
+      type: DataTypes.STRING,
+      defaultValue: null
     }
   }, {});
   sensorbin.associate = function(models) {

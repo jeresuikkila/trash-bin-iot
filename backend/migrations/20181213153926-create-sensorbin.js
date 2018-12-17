@@ -15,6 +15,10 @@ module.exports = {
         type: Sequelize.STRING,
         defaultvalue: null
       },
+      taglocation: {
+        type: DataTypes.STRING,
+        defaultValue: null
+      },
       createdAt: {
         defaultValue: null,
         type: Sequelize.DATE
