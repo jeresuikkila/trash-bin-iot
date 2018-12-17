@@ -16,7 +16,7 @@ module.exports = {
         defaultvalue: null
       },
       taglocation: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         defaultValue: null
       },
       createdAt: {
