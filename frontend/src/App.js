@@ -13,12 +13,12 @@ class App extends Component {
     this.setState({ selectedBin: bin })
 
   render() {
-    return this.state.selectedBin === null ? 
+    return this.state.selectedBin === null ?
       <MainPage setBinSelected={this.setBinSelected} /> :
       <TrashBinDetails
         trashbin={this.state.selectedBin}
         setBinSelected={this.setBinSelected}/>
-      
+
   }
 }
 

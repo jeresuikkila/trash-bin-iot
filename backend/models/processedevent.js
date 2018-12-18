@@ -1,9 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const processedevent = sequelize.define('processedevent', {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
+    packet_hash: {
+      type: DataTypes.STRING,
+      allowNull: false,
       primaryKey: true
     },
     event_type: {

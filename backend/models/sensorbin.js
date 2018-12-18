@@ -1,6 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const sensorbin = sequelize.define('sensorbin', {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
     default_pitch: {
       type: DataTypes.INTEGER,
       defaultValue: null
