@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import MainPage from './components/MainPage/MainPage';
-import TrashBinDetails from './components/TrashBinDetails/TrashBinDetails'
+import MainPage from './components/MainPage';
+import TrashBinDetails from './components/TrashBinDetails'
 
 class App extends Component {
   constructor(props) {

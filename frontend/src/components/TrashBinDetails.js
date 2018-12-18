@@ -1,6 +1,7 @@
 import React from 'react';
-import './TrashBinDetails.css';
+//import './TrashBinDetails.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import EventMenu from './EventMenu'
 
 class TrashBinDetails extends React.Component {
     render() {
@@ -16,6 +17,7 @@ class TrashBinDetails extends React.Component {
                 <Route exact path="/"></Route>
                 </div>
                 </Router>
+                <EventMenu />
             </div>
         )
     }

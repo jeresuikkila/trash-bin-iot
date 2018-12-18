@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './MainPage.css';
+//import './MainPage.css';
 
-import TrashBinRow from '../TrashBinRow';
+import TrashBinRow from './TrashBinRow';
 
 // eslint-disable-next-line
-import GetTrashbinData from '../../api/getTrashbinData';
+import GetTrashbinData from '../api/getTrashbinData';
 
 class MainPage extends Component {
   constructor(props) {
