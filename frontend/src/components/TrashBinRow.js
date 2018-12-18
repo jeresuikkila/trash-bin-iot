@@ -1,14 +1,13 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const TrashBinRow = (props) => {
     return (
       <tr>
         <td>
-          <button className="btn btn-link" onClick={
-            () => props.setBinSelected(props.bin)
-          }>
-            {props.bin.id}
-          </button>
+        <Router>
+        <Link to={props.bin.id} onClick={() => props.setBinSelected(props.bin)}>{props.bin.id} </Link>
+        </Router>
         </td>
         <td>{props.bin.owner}</td>
         <td>{props.bin.address}</td>
