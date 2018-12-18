@@ -7,16 +7,18 @@ class TrashBinDetails extends React.Component {
     render() {
         return (
             <div>
-                <h3>Trash bin details</h3>
-                <p>ID: {this.props.trashbin.id}</p>
-                <p>Address: {this.props.trashbin.address}</p>
-                <p>Type: {this.props.trashbin.bintype}</p>
+                <button>
                 <Router>
                 <div>
                 <Link to="/" onClick={() => this.props.setBinSelected(null)}>Back</Link>
                 <Route exact path="/"></Route>
                 </div>
                 </Router>
+                </button>
+                <h3>Trash bin details</h3>
+                <p>ID: {this.props.trashbin.id}</p>
+                <p>Address: {this.props.trashbin.address}</p>
+                <p>Type: {this.props.trashbin.bintype}</p>
                 <EventMenu />
             </div>
         )

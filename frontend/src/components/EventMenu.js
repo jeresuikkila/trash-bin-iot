@@ -7,11 +7,11 @@ const menuItemWords = ['All', 'Opened', 'Emptied'];
 class EventMenu extends React.Component {
     constructor(props){
         super(props)
-        this.state = {selected: ''};
+        this.state = {selected: '', buttonTitle: 'Select Event Type' };
     }
 
     handleSelection(value) {
-        this.setState({selected: value});
+        this.setState({selected: value, buttonTitle: value});
     }
 
     render() {
@@ -37,16 +37,12 @@ class EventMenu extends React.Component {
                 onSelection={this.handleSelection.bind(this)}
             >
                 <Button tag="button" className='AriaMenuButton-trigger'>
-                Select event type
+                {this.state.buttonTitle}
                 </Button>
                 <Menu>
                 <ul className="AriaMenuButton-menu"> {menuItems}</ul>
                 </Menu>
             </Wrapper>
-                <span style={{ marginLeft: '1em' }}>
-                    Your last selection was: <strong>{selected}</strong>
-                </span>
-            
         </div>
         );   
     }
