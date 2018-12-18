@@ -39,8 +39,7 @@ class App extends Component {
           <tbody>
             {trashbins.map(trashbin => 
               <TrashBinRow key={trashbin.id}
-                bin={trashbin} />
-            )}
+                bin={trashbin} />)}
           </tbody>
         </table>
       </div>
