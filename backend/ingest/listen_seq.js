@@ -31,7 +31,7 @@ app.post('*', (req, res) => {
   })
   .then(response => {
     message['decoded_payload'] = JSON.parse(response.data.body)
-    console.log(message).then(queryResponse => {
+    console.log("AAAAAAAAAAAAAAAAAAAA",message).then(queryResponse => {
       const response = {
         "isBase64Encoded": false,
         "statusCode": 200,
@@ -50,7 +50,7 @@ app.post('*', (req, res) => {
 
       res.send(response)
 
-    })
+    });
 
   // Add an event to database with touchtag_id as foreign key
     models.event.create({
@@ -74,10 +74,6 @@ app.post('*', (req, res) => {
         ],
       });
 
-  })
-  .catch(error => {
-    console.log(error);
-    res.sendStatus(500)
   });
 
   })
