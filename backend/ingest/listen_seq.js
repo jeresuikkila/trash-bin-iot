@@ -52,7 +52,7 @@ app.post('*', (req, res) => {
         include:[
           { model: models.touchtag, attributes:['dev_eui'] },
         ],
-      })}).then(queryResponse => {
+      }).then(queryResponse => {
           const response = {
             "isBase64Encoded": false,
             "statusCode": 200,
@@ -69,7 +69,7 @@ app.post('*', (req, res) => {
             "body": queryResponse.get()
           }
           res.send(response)
-        })})
+        })})})
   .catch(error => {
     console.log(error);
     res.sendStatus(500)
