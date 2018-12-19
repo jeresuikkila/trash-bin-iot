@@ -58,9 +58,7 @@ app.post('*', (req, res) => {
             "statusCode": 200,
             "body": queryResponse.get()
           }
-
           res.send(response)
-
         }).catch(error => {
           console.log("ERROR", error);
           const response = {

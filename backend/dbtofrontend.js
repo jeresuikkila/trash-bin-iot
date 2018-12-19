@@ -7,8 +7,11 @@ exports.sendData = function (models, app) {
         var arr = [];
         bins.forEach(bin => {
             bin.dataValues.latestEvent = "test event",
-                bin.dataValues.status = "test status"
+            bin.dataValues.status = "test status"
             bin.dataValues.id = bin.dataValues.id.toString();
+            app.get('/trashbins/'+trashbin.id, (req, res) => {
+                res.send({ express: bin});
+            });
             arr.push(bin.dataValues);
         });
         console.log(arr);
