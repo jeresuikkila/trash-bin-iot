@@ -12,16 +12,10 @@ const moment = require('moment')
 const app = express()
 const decoderUrl = process.env.DECODER_URL
 const port = 3000
+console.log(decoderUrl)
 
 // TO DO: sequalize...
 // new Sequelize('database', 'username', 'password', {
-
-const sequelize = new Sequelize(
-  process.env.DB_DATABASE,
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
-  dialect: 'postgres'});
 
 app.use(bodyParser.json())  // middleware to handle json request
 app.use(bodyParser.urlencoded({ extended: true}))
@@ -30,7 +24,7 @@ app.post('*', (req, res) => {
 
   const message = req.body // one event message from sensor
   console.log(message.params.payload);
-
+  res.sendStatus(200)
   // Send payload to decoder
   axios.post(decoderUrl, {
     "payload": message.params.payload
