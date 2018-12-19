@@ -1,15 +1,7 @@
 require('dotenv').config({ path: '../.env' });
 
-const Sequelize = require('sequelize');
 const models = require('./models')
 
-const db = new Sequelize(
-  process.env.DB_DATABASE,
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD, {
-      host: process.env.DB_HOST,
-      dialect: 'postgres'
-  });
 
 
 
@@ -46,6 +38,25 @@ models.sensorbin.create({
   models.sensorbin.findOne({
     where:{
       id: "2"
+    },
+    include:[
+      { model: models.trashbin, attributes:['id'] },
+      { model: models.touchtag, attributes:['dev_eui'] },
+      
+    ]
+})});
+
+models.sensorbin.create({
+  default_pitch: null,
+  default_roll: null,
+  location: "60.18015,24.82762",
+  taglocation: "lid",
+  trashbinId: 4,
+  touchtagDevEui: "70b3d54b1c0018b9"
+}).then(() => {
+  models.sensorbin.findOne({
+    where:{
+      id: "3"
     },
     include:[
       { model: models.trashbin, attributes:['id'] },
