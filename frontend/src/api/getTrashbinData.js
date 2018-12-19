@@ -1,7 +1,6 @@
 const GetTrashbinData = async () => {
 
     const response = await fetch('http://18.216.94.3:3001/trashbins');
-    console.log("aa",response)
     const body = await response.json();
     return body.express;
   }

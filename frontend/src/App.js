@@ -5,6 +5,8 @@ import TrashBinRow from './components/TrashBinRow';
 
 // eslint-disable-next-line
 import GetTrashbinData from './api/getTrashbinData';
+import GetSingleTrashbinData from './api/getSingleTrashbinData';
+
 
 
 class App extends Component {
@@ -16,11 +18,13 @@ class App extends Component {
     GetTrashbinData().then(bins => {
       this.setState({trashbins: bins});
     });
+    GetSingleTrashbinData(1).then(bin => {
+      console.log("singlebin: ",bin)
+    })
   }
   render() {
     let trashbins = this.state.trashbins
     console.log("trashbins: ", trashbins)
-    console.log("test: ", trashbins[0])
     return (
       <div className="container">
         <h1>Trash Bin IoT</h1>
