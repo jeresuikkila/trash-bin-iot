@@ -29,29 +29,26 @@ app.post('*', (req, res) => {
   axios.post(decoderUrl, {
     "payload": message.params.payload
   })
-  .then(queryResponse => {
+  .then(response => {
     message['decoded_payload'] = JSON.parse(response.data.body)
-    console.log(message)
+    console.log("AAAAAAAAAAAAAAAAAAAA",message)
       const response = {
         "isBase64Encoded": false,
         "statusCode": 200,
         "body": queryResponse.get()
       }
+      res.send(response)    
+  }).catch(error => {
+    console.log("ERROR", error);
+    const response = {
+      "isBase64Encoded": false,
+      "statusCode": 500,
+      "body": queryResponse.get()
+    }
 
-      res.send(response)
+    res.send(response)
 
-    }).catch(error => {
-      console.log("ERROR", error);
-      const response = {
-        "isBase64Encoded": false,
-        "statusCode": 500,
-        "body": queryResponse.get()
-      }
-
-      res.send(response)
-
-    });
-
+  });
   // Add an event to database with touchtag_id as foreign key
     models.event.create({
       packet_hash: message.meta.packet_hash,
@@ -73,10 +70,9 @@ app.post('*', (req, res) => {
           { model: models.touchtag, attributes:['dev_eui'] },
         ],
       });
-
   });
 
-  })
+  
 
 });
 
