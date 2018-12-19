@@ -29,22 +29,12 @@ app.post('*', (req, res) => {
   axios.post(decoderUrl, {
     "payload": message.params.payload
   })
-  .try(response => {
+  .then(response => {
     message['decoded_payload'] = JSON.parse(response.data.body)
     console.log(message).then(queryResponse => {
       const response = {
         "isBase64Encoded": false,
         "statusCode": 200,
-        "body": queryResponse.get()
-      }
-
-      res.send(response)
-
-    }).catch(error => {
-      console.log("ERROR", error);
-      const response = {
-        "isBase64Encoded": false,
-        "statusCode": 500,
         "body": queryResponse.get()
       }
 
