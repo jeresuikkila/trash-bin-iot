@@ -8,12 +8,12 @@ const TrashBinRow = (props) => {
         <td>
           <Router>
             <div>
-              <button className="btn btn-light">
               <Link 
                 to={'/trashbin/'+props.bin.id}>
+                <button className="btn btn-light">
                 {props.bin.id}
+                </button>
               </Link>
-              </button>
               <Route 
               exact path={'/trashbin/'+props.bin.id}
               component={TrashBinDetails}>
