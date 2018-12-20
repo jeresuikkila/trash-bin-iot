@@ -1,7 +1,7 @@
 exports.createProcessedEvent = function (message, models) {
 	console.log("creaeprocessedevent started");
 
-	const lastEventTime = Number( models.processedevent.max('event_time').then( max => {}) );
+	var lastEventTime = Number( models.processedevent.max('event_time').then( max => {}) );
 	lastEventTime = lastEventTime || 0; //returns 0 if lastEventTime == falsey
 	const cooldown = 60;		
 	// trigger code 4 stands for movement stop
