@@ -30,7 +30,6 @@ class MainPage extends Component {
               <th scope="col">Type</th>
               <th scope="col">Latest event</th>
               <th scope="col">Status</th>
-              <th scope="col">Details</th>
             </tr>
           </thead>
           <tbody>
@@ -38,6 +37,7 @@ class MainPage extends Component {
               <TrashBinRow
                 key={trashbin.id}
                 bin={trashbin}
+                setBinSelected={this.props.setBinSelected}
                 />
             )}
           </tbody>

@@ -5,7 +5,22 @@ import TrashBinDetails from "./TrashBinDetails"
 const TrashBinRow = (props) => {
     return (
       <tr>
-        <td>{props.bin.id}</td>
+        <td>
+          <Router>
+            <div>
+              <button className="btn btn-light">
+              <Link 
+                to={'/trashbin/'+props.bin.id}>
+                {props.bin.id}
+              </Link>
+              </button>
+              <Route 
+              exact path={'/trashbin/'+props.bin.id}
+              component={TrashBinDetails}>
+              </Route>
+            </div>
+          </Router>
+        </td>
         <td>{props.bin.owner}</td>
         <td>{props.bin.address}</td>
         <td>{props.bin.bintype}</td>
@@ -14,21 +29,6 @@ const TrashBinRow = (props) => {
         <td className="text-success">{props.bin.status}</td> ) :
         (<td className="text-danger">{props.bin.status}</td>)
         }
-        <td>
-        <Router>
-          <div>
-          <Link onClick={
-            () => props.setBinSelected(props.bin) }
-            to={'/trashbin/'+props.bin.id+'/'}>
-            More
-          </Link>
-          <Route 
-            exact path={'/trashbin/'+props.bin.id}
-            component={TrashBinDetails}>
-          </Route>
-          </div>
-        </Router>
-        </td>
       </tr>
     )
   }
