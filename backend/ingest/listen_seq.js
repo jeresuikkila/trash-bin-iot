@@ -50,7 +50,7 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
             const response = {
               "isBase64Encoded": false,
               "statusCode": 200,
-              "body": queryResponse.get()
+              "body": "queryResponse.get()"
             }
             res.send(response)
           }).catch(error => {
@@ -58,11 +58,11 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
             const response = {
               "isBase64Encoded": false,
               "statusCode": 500,
-              "body": queryResponse.get()
+              "body": "queryResponse.get()"
             }
             res.send(response)
           })})
-          processedevent.createProcessedEvent(message,models);
+          processedevent.createProcessedEvent(message,models,moment);
           //dbstuff.updateEvents(models,app2);
         })
     .catch(error => {

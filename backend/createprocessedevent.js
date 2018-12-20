@@ -1,4 +1,4 @@
-exports.createProcessedEvent = function (message, models) {
+exports.createProcessedEvent = function (message, models,moment) {
 	console.log("creaeprocessedevent started");
 
 	var lastEventTime = Number( models.processedevent.max('event_time').then( max => {}) );
