@@ -5,6 +5,7 @@ const axios = require('axios')  // performs http requests
 const moment = require('moment')
 
 const decoderUrl = process.env.DECODER_URL
+const processedevent = require('../createprocessedevent')
 console.log(decoderUrl)
 
 // TO DO: sequalize...
@@ -12,7 +13,7 @@ console.log(decoderUrl)
 
 
 
-exports.listenTouchtags = function (models, app) {
+exports.listenTouchtags = function (models, app,app2,dbstuff) {
   app.post('*', (req, res) => {
 
     const message = req.body // one event message from sensor
@@ -23,7 +24,7 @@ exports.listenTouchtags = function (models, app) {
     })
     .then(response => {
       message['decoded_payload'] = JSON.parse(response.data.body)
-      console.log(message)
+      //console.log(message)
 
     // Add an event to database with touchtag_id as foreign key
       models.event.create({
@@ -60,7 +61,10 @@ exports.listenTouchtags = function (models, app) {
               "body": queryResponse.get()
             }
             res.send(response)
-          })})})
+          })})
+          processedevent.createProcessedEvent(message,models);
+          //dbstuff.updateEvents(models,app2);
+        })
     .catch(error => {
       console.log(error);
       res.sendStatus(500)

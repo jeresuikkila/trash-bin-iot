@@ -20,7 +20,7 @@ listenerApp.use(bodyParser.urlencoded({ extended: true}))
 
 
 dbstuff.sendData(models,app);
-listener.listenTouchtags(models,listenerApp);
+listener.listenTouchtags(models,listenerApp,app,dbstuff);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 listenerApp.listen(listenerport, () => console.log(`Everynet event listener ready on port ${listenerport}!`))
