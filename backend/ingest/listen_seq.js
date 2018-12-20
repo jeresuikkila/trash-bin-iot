@@ -24,7 +24,7 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
     })
     .then(response => {
       message['decoded_payload'] = JSON.parse(response.data.body)
-      //console.log(message)
+      console.log("1")
 
     // Add an event to database with touchtag_id as foreign key
       models.event.create({
@@ -47,6 +47,7 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
             { model: models.touchtag, attributes:['dev_eui'] },
           ],
         }).then(queryResponse => {
+            console.log("2", queryResponse)
             const response = {
               "isBase64Encoded": false,
               "statusCode": 200,
@@ -66,7 +67,7 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
           //dbstuff.updateEvents(models,app2);
         })
     .catch(error => {
-      console.log(error);
+      console.log("3",error);
       res.sendStatus(500)
     });
   });
