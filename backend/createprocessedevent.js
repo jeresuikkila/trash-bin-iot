@@ -10,13 +10,13 @@ exports.createProcessedEvent = function (message, models,moment) {
 		moment.unix(message.meta.time) - cooldown >= lastEventTime 
 		){  
 		console.log("event triggercode = 4");
-		models.sensorbin.findAll({
+		models.sensorbin.findOne({
 			attributes: ['trashbinId'],
 			where: {
 				touchtagDevEui: message.meta.device
 			}
 		}).then(sensorbin => {
-			console.log(sensorbin.dataValues.trashbinId);
+			console.log("sensorbin datavalues: ",sensorbin.dataValues);
 			const trashbinid = sensorbin.dataValues.trashbinId;
 
 			models.processedevent.create({
