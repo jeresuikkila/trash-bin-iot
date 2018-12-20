@@ -6,7 +6,11 @@ const TrashBinRow = (props) => {
       <tr>
         <td>
         <Router>
-        <Link to={props.bin.id} onClick={() => props.setBinSelected(props.bin)}>{props.bin.id} </Link>
+        <Link to={props.bin.id} onClick={() => props.setBinSelected(props.bin)}>
+          <button className="btn btn-light">
+            {props.bin.id}
+          </button>
+        </Link>
         </Router>
         </td>
         <td>{props.bin.owner}</td>
