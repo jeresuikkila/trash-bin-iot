@@ -17,13 +17,14 @@ const TrashBinRow = (props) => {
         <td>
         <Router>
           <div>
-          <Link 
-          to={'/trashbin/'+props.bin.id+'/'}>
-          More
+          <Link onClick={
+            () => props.setBinSelected(props.bin) }
+            to={'/trashbin/'+props.bin.id+'/'}>
+            More
           </Link>
           <Route 
             exact path={'/trashbin/'+props.bin.id}
-            component={Details}>
+            component={TrashBinDetails}>
           </Route>
           </div>
         </Router>
@@ -32,10 +33,10 @@ const TrashBinRow = (props) => {
     )
   }
 
-const Details = () => {
+/*const Details = () => {
   return(
     <TrashBinDetails/>
   );
-}
+}*/
 
   export default TrashBinRow;

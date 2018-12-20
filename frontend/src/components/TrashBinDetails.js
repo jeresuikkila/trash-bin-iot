@@ -32,7 +32,11 @@ class TrashBinDetails extends React.Component {
                 <button>
                 <Router>
                 <div>
-                <Link to="/">Back</Link>
+                <Link 
+                    onClick={() => this.props.setBinSelected(null)} 
+                    to ="/">
+                    Back
+                </Link>
                 <Route exact path="/"></Route>
                 </div>
                 </Router>
