@@ -16,21 +16,25 @@ exports.createProcessedEvent = function (message, models,moment) {
 				touchtagDevEui: message.meta.device
 			}
 		}).then(sensorbin => {
-			console.log("sensorbin datavalues: ",sensorbin.dataValues);
-			const trashbinid = sensorbin.dataValues.trashbinId;
+			console.log("event time: ",message.meta.time);
 
-			models.processedevent.create({
+			models.processedevent.findOrCreate({
+				where: {
+					packet_hash: message.meta.packet_hash
+				},
+				default: {
 				packet_hash: message.meta.packet_hash,
 				event_type: "Bin opened",
-				even_time: moment.unix(message.meta.time),
-				trashbinId: trashbinid
+				event_time: moment.unix(message.meta.time),
+				trashbinId: sensorbin.dataValues.trashbinId
+				}
 			}).then(() => {
 				models.processedevent.findOne({
 					where:{
 						packet_hash: message.meta.packet_hash
 					},
 					include:[
-						{ model: models.trashbin, attributes:['trashbinid'] },
+						{ model: models.trashbin, attributes:['id'] },
 					],
 				})
 			})
