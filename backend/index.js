@@ -8,6 +8,7 @@ const listenerport = 3002;
 const models = require('./models');
 const dbstuff = require('./dbtofrontend')
 const listener = require('./ingest/listen_seq')
+const processedevent = require('./createprocessedevent')
 
 
 const app = express();
@@ -20,7 +21,7 @@ listenerApp.use(bodyParser.urlencoded({ extended: true}))
 
 
 dbstuff.sendData(models,app);
-listener.listenTouchtags(models,listenerApp,app,dbstuff);
+listener.listenTouchtags(models,listenerApp,app,processedevent);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 listenerApp.listen(listenerport, () => console.log(`Everynet event listener ready on port ${listenerport}!`))

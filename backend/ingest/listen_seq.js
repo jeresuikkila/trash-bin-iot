@@ -5,7 +5,7 @@ const axios = require('axios')  // performs http requests
 const moment = require('moment')
 
 const decoderUrl = process.env.DECODER_URL
-const processedevent = require('../createprocessedevent')
+
 console.log(decoderUrl)
 
 // TO DO: sequalize...
@@ -13,7 +13,7 @@ console.log(decoderUrl)
 
 
 
-exports.listenTouchtags = function (models, app,app2,dbstuff) {
+exports.listenTouchtags = function (models, app,app2,processedevent) {
   app.post('*', (req, res) => {
 
     const message = req.body // one event message from sensor
