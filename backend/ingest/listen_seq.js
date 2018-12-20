@@ -27,7 +27,7 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
       console.log("1")
 
     // Add an event to database with touchtag_id as foreign key
-      models.event.create({
+      models.event.findOrCreate({
         packet_hash: message.meta.packet_hash,
         payload: message.params.payload,
         original_message: message,
@@ -53,6 +53,7 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
               "statusCode": 200,
               "body": "queryResponse.get()"
             }
+            processedevent.createProcessedEvent(message,models,moment);
             res.send(response)
           }).catch(error => {
             console.log("ERROR", error);
@@ -63,7 +64,7 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
             }
             res.send(response)
           })})
-          processedevent.createProcessedEvent(message,models,moment);
+          
           //dbstuff.updateEvents(models,app2);
         })
     .catch(error => {
