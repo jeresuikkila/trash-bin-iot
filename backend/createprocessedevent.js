@@ -3,7 +3,7 @@ exports.createProcessedEvent = function (message, models,moment) {
 
 	var lastEventTime = Number( models.processedevent.max('event_time').then( max => {}) );
 	lastEventTime = lastEventTime || 0; //returns 0 if lastEventTime == falsey
-	const cooldown = 60;		
+	const cooldown = 60000;		
 	// trigger code 4 stands for movement stop
 	if (Number(message.decoded_payload.trigger_code) == 4 &&
 		//compare the time when the current event happened to latest saved event. if not enough time has passed, we will not process the event
