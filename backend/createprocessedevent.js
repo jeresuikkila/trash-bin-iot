@@ -21,6 +21,10 @@ exports.createProcessedEvent = function (message, models,moment) {
 			models.processedevent.findOrCreate({
 				where: {
 					packet_hash: message.meta.packet_hash
+					// trashbinId: sensorbin.dataValues.trashbinId,
+					// event_time: {
+					// 	"$between": ["2018-03-31T21:00:00.000Z","2018-05-30T05:23:59.007Z"]
+					// }
 				},
 				defaults: {
 				packet_hash: message.meta.packet_hash,
