@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+//import './MainPage.css';
+
 import TrashBinRow from './TrashBinRow';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
 // eslint-disable-next-line
 import GetTrashbinData from '../api/getTrashbinData';
 
 class MainPage extends Component {
-  state = {trashbins: [] }
+  constructor(props) {
+    super(props);
+    this.state = { trashbins: [] }
+  }
 
   componentWillMount() {
     GetTrashbinData().then(
@@ -13,15 +18,13 @@ class MainPage extends Component {
     );
   }
 
-
   render() {
     let trashbins = this.state.trashbins
-    console.log(trashbins)
     return (
       <div className="container">
         <h1>Trash Bin IoT</h1>
         <h2>Trash bins</h2>
-        <table className="table"> 
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Bin ID</th>
@@ -37,18 +40,14 @@ class MainPage extends Component {
               <TrashBinRow
                 key={trashbin.id}
                 bin={trashbin}
-                setBinSelected={this.props.setBinSelected}
-                />
+                setBinSelected={this.props.setBinSelected}/>
             )}
           </tbody>
         </table>
       </div>
-
 
     )
   }
 }
 
 export default MainPage;
-
-
