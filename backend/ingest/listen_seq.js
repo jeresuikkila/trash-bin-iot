@@ -29,16 +29,7 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
     // Add an event to database with touchtag_id as foreign key
       models.event.findOrCreate({
         where: {
-          packet_hash: message.meta.packet_hash,
-          payload: message.params.payload,
-        original_message: message,
-        event_time:  moment.unix(message.meta.time),
-        temperature: message.decoded_payload.temperature,
-        trigger_code: message.decoded_payload.trigger_code,
-        trigger_counter: message.decoded_payload.trigger_counter,
-        pitch: message.decoded_payload.pitch,
-        roll: message.decoded_payload.roll,
-        touchtagDevEui: message.meta.device
+          packet_hash: message.meta.packet_hash
         },
         defaults: {
           packet_hash: message.meta.packet_hash,

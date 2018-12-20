@@ -20,12 +20,9 @@ exports.createProcessedEvent = function (message, models,moment) {
 
 			models.processedevent.findOrCreate({
 				where: {
-					packet_hash: message.meta.packet_hash,
-					event_type: "Bin opened",
-				event_time: moment.unix(message.meta.time),
-				trashbinId: sensorbin.dataValues.trashbinId
+					packet_hash: message.meta.packet_hash
 				},
-				default: {
+				defaults: {
 				packet_hash: message.meta.packet_hash,
 				event_type: "Bin opened",
 				event_time: moment.unix(message.meta.time),
