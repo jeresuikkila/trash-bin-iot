@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MainPage from './components/MainPage';
 import TrashBinDetails from './components/TrashBinDetails';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 class App extends Component {
   
@@ -14,11 +15,24 @@ class App extends Component {
   this.setState({ selectedBin: bin })
 
   render() {
-    return this.state.selectedBin === null ? 
-      <MainPage setBinSelected={this.setBinSelected} /> :
-      <TrashBinDetails
+    return (
+        <BrowserRouter>
+        <div>
+          <Route exact path='/' render={() => (
+            <div className="App">
+              <MainPage setBinSelected={this.setBinSelected} />
+            </div>
+          )}/>
+          <Route path='/:id' render={() => (
+            <div className="App">
+               <TrashBinDetails
         trashbin={this.state.selectedBin}
         setBinSelected={this.setBinSelected}/>
+            </div>
+          )}/>
+        </div>
+      </BrowserRouter>
+    );
   }
 
 }
