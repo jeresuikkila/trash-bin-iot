@@ -1,26 +1,16 @@
 require('dotenv').config({ path: '../.env' });
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const port = 3001;
-const listenerport = 3002;
+const port = process.env.APIPORT | 3001;
+const listenerport = process.env.LISTENERPORT | 3002;
 const models = require('./models');
-const dbstuff = require('./dbtofrontend')
 const listener = require('./ingest/listen_seq')
 const processedevent = require('./createprocessedevent')
 
 
-const app = express();
-const listenerApp = express();
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-listenerApp.use(bodyParser.json())  // middleware to handle json request
-listenerApp.use(bodyParser.urlencoded({ extended: true}))
+const app = require('./app');
+const listenerApp = require('./listenerapp');
 
 
-dbstuff.sendData(models,app);
 listener.listenTouchtags(models,listenerApp,app,processedevent);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

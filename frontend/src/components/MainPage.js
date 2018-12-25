@@ -6,6 +6,7 @@ import TrashBinRow from './TrashBinRow';
 // eslint-disable-next-line
 import GetTrashbinData from '../api/getTrashbinData';
 
+
 class MainPage extends Component {
   constructor(props) {
     super(props);

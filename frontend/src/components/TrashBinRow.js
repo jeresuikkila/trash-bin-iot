@@ -1,22 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import './CSS/TrashBinRow.css'
 
 const TrashBinRow = (props) => {
     return (
       
       <tr>
-        
-        <td>
-        <a href={props.bin.id}>
-          {props.bin.id}</a>
-        {/* <Router>
-        <Link to={props.bin.id} onClick={() => props.setBinSelected(props.bin)}>
-          <button className="btn btn-light">
-            {props.bin.id}
-          </button>
-        </Link>
-        </Router> */}
-        </td>
+        <td><a href={props.bin.id}>{props.bin.id}</a></td>
         <td><a href={props.bin.id}>{props.bin.owner}</a></td>
         <td><a href={props.bin.id}>{props.bin.address}</a></td>
         <td><a href={props.bin.id}>{props.bin.bintype}</a></td>

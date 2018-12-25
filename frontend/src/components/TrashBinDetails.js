@@ -55,18 +55,6 @@ class TrashBinDetails extends React.Component {
         else {
             return (
                 <div>
-                    <Router>
-                        <div>
-                            <Link to="/" onClick={() => this.props.setBinSelected(null)}>
-                                <button className="btn btn-light">
-                                    Back
-                                </button>
-                            </Link>
-                            <Route exact path="/"></Route>
-                        </div>
-                    </Router>
-
-
                     <h3>Trash bin details</h3>
                     <p>ID: {this.trashbin.id}</p>
                     <p>Address: {this.trashbin.address}</p>
