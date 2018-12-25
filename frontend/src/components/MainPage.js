@@ -15,7 +15,10 @@ class MainPage extends Component {
 
   componentWillMount() {
     GetTrashbinData().then(
-        bins => this.setState({trashbins: bins})
+        bins => {
+          console.log("AOEU",bins) 
+          this.setState({trashbins: bins})
+        }
     );
   }
 
