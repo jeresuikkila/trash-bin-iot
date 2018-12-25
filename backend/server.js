@@ -11,7 +11,7 @@ const app = require('./app');
 const listenerApp = require('./listenerapp');
 
 
-listener.listenTouchtags(models,listenerApp,app,processedevent);
+listener.listenTouchtags(models,listenerApp,processedevent);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 listenerApp.listen(listenerport, () => console.log(`Everynet event listener ready on port ${listenerport}!`))

@@ -8,12 +8,9 @@ const decoderUrl = process.env.DECODER_URL
 
 console.log(decoderUrl)
 
-// TO DO: sequalize...
-// new Sequelize('database', 'username', 'password', {
 
 
-
-exports.listenTouchtags = function (models, app,app2,processedevent) {
+exports.listenTouchtags = function (models, app,processedevent) {
   app.post('*', (req, res) => {
 
     const message = req.body // one event message from sensor
@@ -52,11 +49,11 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
             { model: models.touchtag, attributes:['dev_eui'] },
           ],
         }).then(queryResponse => {
-            console.log("2", queryResponse)
+            console.log("2")
             const response = {
               "isBase64Encoded": false,
               "statusCode": 200,
-              "body": "queryResponse.get()"
+              "body": queryResponse.get()
             }
             processedevent.createProcessedEvent(message,models,moment);
             res.send(response)
@@ -68,13 +65,9 @@ exports.listenTouchtags = function (models, app,app2,processedevent) {
               "body": "queryResponse.get()"
             }
             res.send(response)
-          })})
-          
-          //dbstuff.updateEvents(models,app2);
-        })
-    .catch(error => {
-      console.log("3",error);
-      res.sendStatus(500)
+          })})}).catch(error => {
+                  console.log("3",error);
+                  res.sendStatus(500)
     });
   });
 }
