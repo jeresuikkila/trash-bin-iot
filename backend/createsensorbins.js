@@ -2,11 +2,6 @@ require('dotenv').config({ path: '../.env' });
 
 const models = require('./models')
 
-
-
-
-
-
 //real
 models.sensorbin.findOrCreate({
   where: {
@@ -39,6 +34,7 @@ models.sensorbin.findOrCreate({
     id: 2
   },
   defaults: {
+    id: 2,
     default_pitch: null,
     default_roll: null,
     location: "60.18015,24.82762",
@@ -64,6 +60,7 @@ models.sensorbin.findOrCreate({
     id: 3
   },
   defaults: {
+    id: 3,
     default_pitch: null,
     default_roll: null,
     location: "60.18015,24.82762",
