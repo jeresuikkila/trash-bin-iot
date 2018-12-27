@@ -53,6 +53,9 @@ router.get('/:id/events', async (req, res) => {
             });
             allevents = [...allevents, ...events];
         }
+        allevents.sort(function(a,b) {
+            return a.event_time - b.event_time;
+        });
         res.status(200).send(allevents);
     } catch (e) {
         res.status(500).send(e);
