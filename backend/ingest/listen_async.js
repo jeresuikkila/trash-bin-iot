@@ -7,6 +7,7 @@ console.log(decoderUrl)
 
 exports.listenTouchtags = (models, app, processedevent) => {
     app.post('*', async (req, res) => {
+        res.sendStatus(200);
         try {
             //console.log(req);
             const message = req.body; // one event message from sensor
@@ -45,15 +46,15 @@ exports.listenTouchtags = (models, app, processedevent) => {
                         { model: models.touchtag, attributes: ['dev_eui'] },
                     ],
                 });
-                res.status(200).send("added to database.");
+                //res.status(200).send("added to database.");
                 processedevent.createProcessedEvent(message,models,moment);
             }
             else {
-                res.status(200).send("already in database.");
+                //res.status(200).send("already in database.");
             }
         } catch (e) {
             console.log(e);
-            res.status(500).send(e);
+            //res.status(500).send(e);
         }
     });
 }
