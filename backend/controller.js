@@ -42,7 +42,7 @@ router.get('/:id/events', async (req, res) => {
                 trashbinId: req.params.id
             }
         });
-        console.log("touchtageui",sensorbins[0].touchtagDevEui);
+        console.log("touchtageui", sensorbins[0].touchtagDevEui);
         let allevents = [];
         for (let i = 0; i < sensorbins.length; i++) {
             const events = await models.event.findAll({
@@ -53,10 +53,24 @@ router.get('/:id/events', async (req, res) => {
             });
             allevents = [...allevents, ...events];
         }
-        allevents.sort(function(a,b) {
+        allevents.sort(function (a, b) {
             return a.event_time - b.event_time;
         });
         res.status(200).send(allevents);
+    } catch (e) {
+        res.status(500).send(e);
+    }
+});
+
+router.get('/:id/pevents', async (req, res) => {
+    try {
+        const pevents = await models.processedevent.findAll({
+            attributes: ['event_time','event_type'],
+            where: {
+                trashbinId: req.params.id
+            }
+        });
+        res.status(200).send(pevents);
     } catch (e) {
         res.status(500).send(e);
     }
