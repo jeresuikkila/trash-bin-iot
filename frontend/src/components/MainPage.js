@@ -13,13 +13,8 @@ class MainPage extends Component {
     this.state = { trashbins: [] }
   }
 
-  componentWillMount() {
-    GetTrashbinData().then(
-        bins => {
-          console.log("AOEU",bins) 
-          this.setState({trashbins: bins})
-        }
-    );
+  async componentDidMount() {
+    this.setState({trashbins: await GetTrashbinData()})
   }
 
   render() {
