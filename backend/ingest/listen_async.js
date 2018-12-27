@@ -8,6 +8,7 @@ console.log(decoderUrl)
 exports.listenTouchtags = (models, app, processedevent) => {
     app.post('*', async (req, res) => {
         try {
+            console.log(req);
             const message = req.body; // one event message from sensor
             console.log("payload: ",message.params.payload);
             // Send payload to decoder
