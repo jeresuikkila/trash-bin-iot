@@ -9,20 +9,9 @@ class TrashBinDetails extends React.Component {
 
     state = {
         loading: true,
-        events: {},
+        events: [],
         trashbin: {}
     }
-
-    // componentWillMount() {
-    //     var id = window.location.pathname.replace('/','') 
-    //     console.log("id", id)
-    //     getSingleTrashbinData(id).then(trashbin => {
-    //         console.log(trashbin)
-    //         this.trashbin = trashbin
-    //     });
-    //     console.log("trashbin", this.trashbin)
-    //     getEventsByTrashbin(id).then(events => this.setState({ events: events, loading: false }))
-    // }
 
     async componentDidMount() {
         var id = window.location.pathname.replace('/', '');
