@@ -31,7 +31,6 @@ class TrashBinDetails extends React.Component {
             trashbin: await getSingleTrashbinData(id),
             loading: false
         });
-        console.log(this.trashbin);
     }
     renderSwitch(param) {
         switch (param) {
@@ -80,7 +79,9 @@ class TrashBinDetails extends React.Component {
                         </thead>
                         <tbody>
                             {events.map(event =>
-                                <EventRow event={event} key={event.packet_hash}/>
+                                <EventRow event_time={event.event_time}
+                                event={this.renderSwitch(event.trigger_code)}
+                                key={event.packet_hash}/>
                             )}
                         </tbody>
                     </table>
@@ -93,8 +94,8 @@ class TrashBinDetails extends React.Component {
 const EventRow = (props) => {
     return (
         <tr>
-            <td>{props.event.event_time}</td>
-            <td> {this.renderSwitch(props.event.trigger_code)}</td>
+            <td>{props.event_time}</td>
+            <td> {props.event}</td>
         </tr>
     )
 };
