@@ -9,7 +9,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
     app.post('*', async (req, res) => {
         try {
             const message = req.body; // one event message from sensor
-            console.log(message.params.payload);
+            console.log("payload: ",message.params.payload);
             // Send payload to decoder
             const response = await axios.post(decoderUrl, {
                 "payload": message.params.payload
@@ -48,7 +48,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 processedevent.createProcessedEvent(message,models,moment);
             }
             else {
-                res.status(500).send("already in database.");
+                res.status(200).send("already in database.");
             }
         } catch (e) {
             console.log(e);
