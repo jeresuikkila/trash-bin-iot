@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import './MainPage.css';
 
 import TrashBinRow from './TrashBinRow';
+import './CSS/TrashBinRow.css'
 
 // eslint-disable-next-line
 import GetTrashbinData from '../api/getTrashbinData';
@@ -34,9 +35,9 @@ class MainPage extends Component {
     let trashbins = this.state.trashbins
     return (
       <div className="container">
-        <h1>Trash Bin IoT</h1>
-        <h2>Trash bins</h2>
-        <table className="table">
+        <h1 style={{'font-size': '50px'}}>Trash Bin IoT</h1>
+        <h2 style={{'font-size': '40px'}}>Trash bins</h2>
+        <table className="trashbins" >
           <thead>
             <tr>
               <th scope="col">Bin ID</th>

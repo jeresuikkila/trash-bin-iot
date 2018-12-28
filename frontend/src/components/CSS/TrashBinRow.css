@@ -1,29 +1,34 @@
-tr:hover td {
+table.trashbins {
+    width: 100%;
+}
+
+table.trashbins tr:hover td {
     background-color: rgba(85, 50, 50,0.2);
     cursor: pointer;
 }
   
-  td, table.greenTable th {
+table.trashbins  td, table.trashbins th {
     border: 1px solid #24943A;
     padding: 3px 2px;
+    height: 70px;
   }
-   tbody td {
-    font-size: 13px;
+  table.trashbins tbody td {
+    font-size: 25px;
   }
-   thead {
+  table.trashbins thead {
     background: #24943A;
     background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
     background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
     background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-    border-bottom: 0px solid #444444;
+    border-bottom: 1px solid #444444;
   }
-  thead th {
-    font-size: 19px;
+ table.trashbins thead th {
+    font-size: 30px;
     font-weight: bold;
     color: #F0F0F0;
     text-align: left;
     border-left: 2px solid #24943A;
   }
-   thead th:first-child {
+  table.trashbins thead th:first-child {
     border-left: none;
   }
