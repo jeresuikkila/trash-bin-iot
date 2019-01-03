@@ -29,16 +29,13 @@
   border-style: solid;
 }
 
-.AriaMenuButton-trigger:hover,
-.AriaMenuButton-trigger:focus,
-.AriaMenuButton-trigger.is-open {
+.AriaMenuButton-trigger:hover, .AriaMenuButton-trigger:focus, .AriaMenuButton-trigger.is-open {
   background-color: #DDD;
   background-image: linear-gradient(#EEE, #DDD);
   border-color: #CCC;
 }
 
-.AriaMenuButton-trigger:active,
-.AriaMenuButton-trigger.is-open {
+.AriaMenuButton-trigger:active, .AriaMenuButton-trigger.is-open {
   background-color: #DCDCDC;
   background-image: none;
   border-color: #B5B5B5;
@@ -80,8 +77,7 @@
   border-bottom-left-radius: 3px;
 }
 
-.AriaMenuButton-menuItem:hover,
-.AriaMenuButton-menuItem:focus {
+.AriaMenuButton-menuItem:hover, .AriaMenuButton-menuItem:focus {
   background-color: #4183C4;
   color: #fff;
 }

@@ -46,7 +46,7 @@ router.get('/:id/events', async (req, res) => {
         let allevents = [];
         for (let i = 0; i < sensorbins.length; i++) {
             const events = await models.event.findAll({
-                attributes: ['event_time', 'trigger_code','packet_hash'],
+                attributes: ['event_time', 'trigger_code', 'packet_hash'],
                 where: {
                     touchtagDevEui: sensorbins[i].touchtagDevEui
                 }
@@ -65,7 +65,7 @@ router.get('/:id/events', async (req, res) => {
 router.get('/:id/pevents', async (req, res) => {
     try {
         const pevents = await models.processedevent.findAll({
-            attributes: ['event_time','event_type'],
+            attributes: ['event_time', 'event_type'],
             where: {
                 trashbinId: req.params.id
             }

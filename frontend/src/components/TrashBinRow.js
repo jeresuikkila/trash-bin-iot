@@ -1,9 +1,5 @@
 import React from 'react';
 
-
-
- 
-
 const TrashBinRow = (props) => {
     return (
       <tr onClick={ () => props.clickhandler(props.bin.id)}>
@@ -20,7 +16,5 @@ const TrashBinRow = (props) => {
       </tr>
     )
   }
-
-  
 
   export default TrashBinRow;

@@ -22,6 +22,7 @@ class MainPage extends Component {
   async componentDidMount() {
     this.setState({trashbins: await GetTrashbinData()})
   }
+  
   handleClick = (id) => {
     console.log("lul: ",id);
     this.history.push('/'+id);

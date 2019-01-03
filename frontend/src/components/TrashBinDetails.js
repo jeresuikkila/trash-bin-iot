@@ -6,13 +6,11 @@ import getSingleTrashbinData from '../api/getSingleTrashbinData'
 
 
 class TrashBinDetails extends React.Component {
-
     state = {
         loading: true,
         events: [],
         trashbin: {}
     }
-
     async componentDidMount() {
         var id = window.location.pathname.replace('/', '');
         this.setState({
