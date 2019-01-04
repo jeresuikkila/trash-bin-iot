@@ -8,36 +8,36 @@ import './CSS/TrashBinRow.css'
 import GetTrashbinData from '../api/getTrashbinData';
 
 import { createBrowserHistory } from 'history';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class MainPage extends Component {
   history = createBrowserHistory();
   constructor(props) {
     super(props);
-    this.state = { trashbins: [],binid: 0 }
+    this.state = { trashbins: [], binid: 0 }
     this.handleClick = this.handleClick.bind(this);
-    
+
   }
-   
+
   async componentDidMount() {
-    this.setState({trashbins: await GetTrashbinData()})
+    this.setState({ trashbins: await GetTrashbinData() })
   }
-  
+
   handleClick = (id) => {
-    console.log("lul: ",id);
-    this.history.push('/'+id);
-    this.setState({binid: id})
+    console.log("lul: ", id);
+    this.history.push('/' + id);
+    this.setState({ binid: id })
   }
 
   render() {
-    if(this.state.binid !== 0) {
-      return <Redirect to={'/'+this.state.binid} />
+    if (this.state.binid !== 0) {
+      return <Redirect to={'/' + this.state.binid} />
     }
     let trashbins = this.state.trashbins
     return (
       <div className="container">
-        <h1 style={{'font-size': '50px'}}>Trash Bin IoT</h1>
-        <h2 style={{'font-size': '40px'}}>Trash bins</h2>
+        <h1 style={{ 'font-size': '50px' }}>Trash Bin IoT</h1>
+        <h2 style={{ 'font-size': '40px' }}>Trash bins</h2>
         <table className="trashbins" >
           <thead>
             <tr>
@@ -50,12 +50,12 @@ class MainPage extends Component {
             </tr>
           </thead>
           <tbody>
-            {trashbins.map(trashbin => 
+            {trashbins.map(trashbin =>
               <TrashBinRow
                 key={trashbin.id}
                 clickhandler={this.handleClick}
                 bin={trashbin}
-                setBinSelected={this.props.setBinSelected}/>
+                setBinSelected={this.props.setBinSelected} />
             )}
           </tbody>
         </table>
