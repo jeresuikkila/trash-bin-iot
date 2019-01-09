@@ -34,6 +34,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+
 router.get('/:id/events', async (req, res) => {
     try {
         const sensorbins = await models.sensorbin.findAll({
