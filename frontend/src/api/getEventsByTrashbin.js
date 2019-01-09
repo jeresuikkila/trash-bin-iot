@@ -1,7 +1,7 @@
-const GetTrashbinData = async () => {
+const GetEventsByTrashbin = async (id) => {
 
   try {
-    const response = await fetch('http://18.216.94.3:3001/trashbins');
+    const response = await fetch('http://18.216.94.3:3001/trashbins/' + id + '/events');
     if (!response.ok) {
       throw Error(response.status);
     }
@@ -13,4 +13,4 @@ const GetTrashbinData = async () => {
   }
 }
 
-export default GetTrashbinData;
+export default GetEventsByTrashbin;

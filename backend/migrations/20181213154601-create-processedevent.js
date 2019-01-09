@@ -2,9 +2,9 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('processedevents', {
-      id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
+      packet_hash: {
+        type: Sequelize.STRING,
+        allowNull: false,
         primaryKey: true
       },
       event_type: {
