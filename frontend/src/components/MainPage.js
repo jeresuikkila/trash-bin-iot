@@ -36,8 +36,8 @@ class MainPage extends Component {
     let trashbins = this.state.trashbins
     return (
       <div className="container">
-        <h1 style={{ 'font-size': '50px' }}>Trash Bin IoT</h1>
-        <h2 style={{ 'font-size': '40px' }}>Trash bins</h2>
+        <h1>Trash Bin IoT</h1>
+        <h2>Trash bins</h2>
         <table className="table table-hover" >
           <thead>
             <tr>
