@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import './MainPage.css';
 
 import TrashBinRow from './TrashBinRow';
-import './CSS/TrashBinRow.css'
+//import './CSS/TrashBinRow.css'
 
 // eslint-disable-next-line
 import GetTrashbinData from '../api/getTrashbinData';
@@ -38,7 +38,7 @@ class MainPage extends Component {
       <div className="container">
         <h1 style={{ 'font-size': '50px' }}>Trash Bin IoT</h1>
         <h2 style={{ 'font-size': '40px' }}>Trash bins</h2>
-        <table className="trashbins" >
+        <table className="table table-hover" >
           <thead>
             <tr>
               <th scope="col">Bin ID</th>
