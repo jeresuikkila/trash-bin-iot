@@ -1,23 +1,23 @@
+// Decodes the new message from everynet and adds it to the event table
+// Calls processedevent module to process the event and add it to the processedevent table
+
 const axios = require('axios')  // performs http requests
 const moment = require('moment')
 
 const decoderUrl = process.env.DECODER_URL
 
-console.log(decoderUrl)
-
 exports.listenTouchtags = (models, app, processedevent) => {
     app.post('*', async (req, res) => {
         res.sendStatus(200);
         try {
-            //console.log(req);
             const message = req.body; // one event message from sensor
-            console.log("payload: ",message.params.payload);
-            // Send payload to decoder
+            console.log("payload: ", message.params.payload);
+            // Send payload to decoder in AWS
             const response = await axios.post(decoderUrl, {
                 "payload": message.params.payload
             });
             message['decoded_payload'] = JSON.parse(response.data.body)
-            //creates new event in database or finds one if it already exists
+            // Creates new event in database or finds one if it already exists
             const resp = await models.event.findOrCreate({
                 where: {
                     packet_hash: message.meta.packet_hash
@@ -36,7 +36,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 }
             });
             console.log('Is new event? ', resp[0]._options.isNewRecord);
-            //adds foreign key if new event
+            // Adds foreign key if new event
             if (resp[0]._options.isNewRecord) {
                 await models.event.findOne({
                     where: {
@@ -46,15 +46,14 @@ exports.listenTouchtags = (models, app, processedevent) => {
                         { model: models.touchtag, attributes: ['dev_eui'] },
                     ],
                 });
-                //res.status(200).send("added to database.");
+                // Creates a new processed event
                 processedevent.createProcessedEvent(message,models,moment);
             }
             else {
-                //res.status(200).send("already in database.");
+                console.log('Event is already in database!')
             }
         } catch (e) {
             console.log(e);
-            //res.status(500).send(e);
         }
     });
 }
