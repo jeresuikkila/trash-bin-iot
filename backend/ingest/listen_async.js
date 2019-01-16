@@ -17,6 +17,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 "payload": message.params.payload
             });
             message['decoded_payload'] = JSON.parse(response.data.body)
+            console.log(message.decoded_payload)
             //creates new event in database or finds one if it already exists
             const resp = await models.event.findOrCreate({
                 where: {
@@ -48,6 +49,14 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 });
                 //res.status(200).send("added to database.");
                 processedevent.createProcessedEvent(message,models,moment);
+                if(message.decoded_payload.trigger_code==0) {
+                    const sensbin = await models.sensorbin.findOne({
+                        where: {
+                            touchtagDevEui: message.meta.device
+                        }
+                    });
+                    console.log("aoe: ",sensbin);
+                }
             }
             else {
                 //res.status(200).send("already in database.");
