@@ -55,14 +55,14 @@ handleDownlinkRequest = (message, res) => {
 handleDownlink = async (message, models) => {
     try {
         console.log("downlink: ", message);
-        console.log("hardware: ",message.radio.hardware);
+        console.log("hardware: ",message.params.radio.hardware);
         const sensbin = await models.sensorbin.findOne({
             where: {
                 touchtagDevEui: message.meta.device
             }
         });
         sensbin.update({
-            battery: message.radio.hardware.power
+            battery: message.params.radio.hardware.power
         });
     } catch (e) {
         console.log(e);
