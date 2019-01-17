@@ -9,6 +9,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
     app.post('*', async (req, res) => {
         //console.log(req);
         const message = req.body; // one event message from sensor
+        console.log("MESSAGE TYPE: ",message.type)
         switch (message.type) {
             case "uplink":
                 handleUplink(message, models, processedevent);
