@@ -22,7 +22,7 @@ class TrashBinDetails extends React.Component {
     renderSwitch(param) {
         switch (param) {
             case '2':
-                return 'singleclick';
+                return 'single click';
             case '3':
                 return 'movement start';
             case '4':
@@ -30,7 +30,7 @@ class TrashBinDetails extends React.Component {
             case '5':
                 return 'freefall';
             case '8':
-                return 'doubleclick';
+                return 'double click';
             case '0':
                 return 'restart';
             case '9':
@@ -39,10 +39,24 @@ class TrashBinDetails extends React.Component {
                 return 'temp max/min';
             case '6':
                 return 'activation';
+			case '7':
+                return 'deactivation';
             default:
                 return param;
         }
     }
+	
+	timeClean(input) {
+		if(input.includes("T")) {
+			var res = input.split("T");
+			var res2 = res[1].split(".");
+			var ret = res[0] + " " + res2[0];
+			return ret;
+		} else {
+			return input;
+		}
+	}
+	
     render() {
         if (this.state.loading) {
             return (<p>Loading...</p>)
@@ -66,7 +80,8 @@ class TrashBinDetails extends React.Component {
                         </thead>
                         <tbody>
                             {events.map(event =>
-                                <EventRow event_time={event.event_time}
+                                <EventRow 
+								event_time={this.timeClean(event.event_time)}
                                 event={this.renderSwitch(event.trigger_code)}
                                 key={event.packet_hash}/>
                             )}
