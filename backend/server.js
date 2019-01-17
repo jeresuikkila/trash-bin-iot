@@ -6,7 +6,7 @@ const port = process.env.APIPORT | 3001;
 const listenerport = process.env.LISTENERPORT | 3002;
 const models = require('./models');
 const listener = require('./ingest/listen_async')
-const processedevent = require('./createprocessedevent')
+const processedevent = require('./ingest/createprocessedevent')
 
 const app = require('./app');
 const listenerApp = require('./listenerapp');
