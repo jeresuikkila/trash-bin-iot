@@ -1,9 +1,10 @@
+// Decodes the new message from everynet and adds it to the event table
+// Calls processedevent module to process the event and add it to the processedevent table
+
 const axios = require('axios')  // performs http requests
 const moment = require('moment')
 
 const decoderUrl = process.env.DECODER_URL
-
-console.log(decoderUrl)
 
 exports.listenTouchtags = (models, app, processedevent) => {
     app.post('*', async (req, res) => {
