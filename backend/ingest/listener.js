@@ -4,6 +4,7 @@
 const axios = require('axios')  // performs http requests
 const moment = require('moment')
 
+const NSUrl = process.env.NS_URL
 const decoderUrl = process.env.DECODER_URL
 
 exports.listenTouchtags = (models, app, processedevent) => {
@@ -27,12 +28,32 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 handleLocation(models,message);
                 res.sendStatus(200);
                 break;
+            case "status":
+                handleStatus(models,message);
+                res.sendStatus(200);
+                break;
             default:
                 console.log("DEFAULT SWITCH");
                 res.sendStatus(200);
                 break;
         }
     });
+}
+
+handleStatus = async (models,message) => {
+    try {
+        const sensbin = await models.sensorbin.findOne({
+            where: {
+                touchtagDevEui: message.meta.device
+            }
+        });
+        console.log("BATTERYTEST: ",message.params.battery);
+        sensbin.update({
+            battery: message.params.battery
+        });
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 handleLocation = async (models,message) => {
@@ -45,7 +66,7 @@ handleLocation = async (models,message) => {
         console.log("TEST: ",message.params.solutions[0])
         sensbin.update({
             location: message.params.solutions[0].lat + ","+message.params.solutions[0].lng
-        })
+        });
     } catch (e) {
         console.log(e);
     }
@@ -93,6 +114,16 @@ handleUplink = async (message, models, processedevent) => {
         //creates new event in database or finds one if it already exists
         switch (message.decoded_payload.trigger_code) {
             case 2:
+                axios.post(NSUrl, {
+                    headers: {
+                        'Authorization': '123'
+                    }, 
+                    "meta":{
+                        "network": message.meta.network,
+                        "device": message.meta.device
+                    },
+                    "type": "status"
+                });
                 console.log("SINGLECLICK");
                 break;
             case 3:
