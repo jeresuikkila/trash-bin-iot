@@ -22,7 +22,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
 
 handleDownlink = async (message, models) => {
     try {
-        //console.log("downlink: ",message);
+        console.log("downlink: ",message);
         const sensbin = await models.sensorbin.findOne({
             where: {
                 touchtagDevEui: message.meta.device
