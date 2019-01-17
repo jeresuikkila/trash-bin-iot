@@ -11,12 +11,15 @@ exports.listenTouchtags = (models, app, processedevent) => {
         const message = req.body; // one event message from sensor
         console.log("MESSAGE TYPE: ",message.type)
         switch (message.type) {
-            case 'uplink':
+            case "uplink":
                 handleUplink(message, models, processedevent);
-            case 'downlink':
+                break;
+            case "downlink":
                 handleDownlink(message, models);
+                break;
             default:
-                console.log("DEFAULT SWITCH")
+                console.log("DEFAULT SWITCH");
+                break;
         }
         res.sendStatus(200);
 
@@ -52,24 +55,34 @@ handleUplink = async (message, models, processedevent) => {
         switch (message.decoded_payload.trigger_code) {
             case 2:
                 console.log("SINGLECLICK");
+                break;
             case 3:
                 console.log("MOVEMENT START");
+                break;
             case 4:
                 console.log("MOVEMENT STOP");
+                break;
             case 5:
                 console.log("FREEFALL");
+                break;
             case 8:
-                console.log("DOUBLE CLICK")
+                console.log("DOUBLE CLICK");
+                break;
             case 0:
-                console.log("RESTART")
+                console.log("RESTART");
+                break;
             case 9:
-                console.log("LONG CLICK")
+                console.log("LONG CLICK");
+                break;
             case 11:
-                console.log("TEMP MAX/MIN")
+                console.log("TEMP MAX/MIN");
+                break;
             case 6:
-                console.log("ACTIVATION")
+                console.log("ACTIVATION");
+                break;
             default:
-                console.log("TRIGGER_CODE: ",message.decoded_payload.trigger_code)
+                console.log("TRIGGER_CODE: ",message.decoded_payload.trigger_code);
+                break;
         }
         const resp = await models.event.findOrCreate({
             where: {
