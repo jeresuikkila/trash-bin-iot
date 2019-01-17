@@ -1,27 +1,33 @@
+// Creates a new processed event and adds it to the database
+// Currently only trigger code 4 (movement stop event/Bin opened) is implemented
+
 exports.createProcessedEvent = async (message, models, moment) => {
-	console.log("creaeprocessedevent started");
 
 	const cooldown = 60;
-	// trigger code 4 stands for movement stop
+	// Trigger code 4 stands for movement stop
 	if (Number(message.decoded_payload.trigger_code) == 4) {
 		try {
-			console.log("event triggercode = 4");
+			console.log("Event triggercode = 4");
 			var time = moment.unix(message.meta.time + cooldown).format();
 			var time2 = moment.unix(message.meta.time - cooldown).format();
 			console.log("time between ", time2, "  and  ", time)
+			// Finds the sensorbin with deviceId
 			const sensorbin = await models.sensorbin.findOne({
 				attributes: ['trashbinId'],
 				where: {
 					touchtagDevEui: message.meta.device
 				}
 			});
-			console.log("sensorbin: ", sensorbin.dataValues);
 
+			console.log("Sensorbin: ", sensorbin.dataValues);
+
+			// Creates a new processedevent if it doesn't exist already
+			// If another event exists between eventtime +/- cooldown finds it instead of creating a new one
 			const event = await models.processedevent.findOrCreate({
 				where: {
 					trashbinId: sensorbin.dataValues.trashbinId,
 					event_time: {
-						"$between": [time2, time]  //if another event between eventtime+cooldown and eventtime-cooldown finds it instead creating new one
+						"$between": [time2, time]
 					}
 				},
 				defaults: {
@@ -31,6 +37,8 @@ exports.createProcessedEvent = async (message, models, moment) => {
 					trashbinId: sensorbin.dataValues.trashbinId
 				}
 			});
+
+			// If event was not found it is now created
 			if (event[0]._options.isNewRecord) {
 				models.processedevent.findOne({
 					where: {
@@ -42,13 +50,13 @@ exports.createProcessedEvent = async (message, models, moment) => {
 				});
 			}
 			else {
-				console.log("didn't create event because cooldown not done.")
+				console.log("Didn't create event because cooldown not done.")
 			}
 		} catch (e) {
-			console.log("error creating processed event: ", e)
+			console.log("Error creating processed event: ", e)
 		}
 	}
 	else {
-		console.log("nothing interesting happens")
+		console.log("Nothing interesting happens")
 	}
 }
