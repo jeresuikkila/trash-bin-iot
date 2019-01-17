@@ -15,6 +15,13 @@ exports.listenTouchtags = (models, app, processedevent) => {
         switch (message.type) {
             case "uplink":
                 handleUplink(message, models, processedevent);
+                res.send({
+                    "meta": {
+                        "network": message.meta.network,
+                        "device": message.meta.device
+                    },
+                    "type": "status"
+                });
                 res.sendStatus(200);
                 break;
             case "downlink":
@@ -114,16 +121,6 @@ handleUplink = async (message, models, processedevent) => {
         //creates new event in database or finds one if it already exists
         switch (message.decoded_payload.trigger_code) {
             case 2:
-                axios.post(NSUrl, {
-                    headers: {
-                        'Authorization': '123'
-                    }, 
-                    "meta":{
-                        "network": message.meta.network,
-                        "device": message.meta.device
-                    },
-                    "type": "status"
-                });
                 console.log("SINGLECLICK");
                 break;
             case 3:
