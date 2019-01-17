@@ -3,14 +3,24 @@ import React from 'react';
 import EventMenu from './EventMenu'
 import getEventsByTrashbin from '../api/getEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
+import {withRouter} from "react-router-dom";
 
 
 class TrashBinDetails extends React.Component {
-    state = {
-        loading: true,
-        events: [],
-        trashbin: {}
+
+    constructor(props){
+        super(props);
+        this.state = {
+            loading: true,
+            events: [],
+            trashbin: {}
+        }
     }
+
+    handleClick = () => {
+        this.props.history.push("/");
+    }
+
     async componentDidMount() {
         var id = window.location.pathname.replace('/', '');
         this.setState({
@@ -66,6 +76,7 @@ class TrashBinDetails extends React.Component {
             let events = this.state.events;
             return (
                 <div>
+                    <button onClick={this.handleClick} type="button" className="btn btn-sm">Main Page</button>
                     <h3>Trash bin details</h3>
                     <p>ID: {trashbin.id}</p>
                     <p>Address: {trashbin.address}</p>
@@ -102,4 +113,4 @@ const EventRow = (props) => {
     )
 };
 
-export default TrashBinDetails;
+export default withRouter(TrashBinDetails);
