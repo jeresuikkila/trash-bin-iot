@@ -66,7 +66,7 @@ models.sensorbin.findOrCreate({
     location: "60.18015,24.82762",
     taglocation: "lid",
     trashbinId: 4,
-    touchtagDevEui: "70b3d54b1c0018b9"
+    touchtagDevEui: "70b3d54b1c0014d9"
   }
 }).then(() => {
   models.sensorbin.findOne({
