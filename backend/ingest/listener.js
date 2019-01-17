@@ -12,20 +12,20 @@ exports.listenTouchtags = (models, app, processedevent) => {
         //console.log(req);
         const message = req.body; // one event message from sensor
         console.log("MESSAGE TYPE: ", message.type)
-        axios({
-            method: 'post',
-            url: NSUrl,
-            headers: {
-                'Authorization': '123'
-            },
-            data: {
-                "meta": {
-                    "network": message.meta.network,
-                    "device": message.meta.device
-                },
-                "type": "status"
-            }
-        });
+        // axios({
+        //     method: 'post',
+        //     url: NSUrl,
+        //     headers: {
+        //         'Authorization': '123'
+        //     },
+        //     data: {
+        //         "meta": {
+        //             "network": message.meta.network,
+        //             "device": message.meta.device
+        //         },
+        //         "type": "status"
+        //     }
+        // });
         switch (message.type) {
             case "uplink":
                 handleUplink(message, models, processedevent);
