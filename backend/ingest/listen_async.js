@@ -30,6 +30,18 @@ exports.listenTouchtags = (models, app, processedevent) => {
     });
 }
 
+handleLocation = async (models,message) => {
+    try {
+        const sensbin = await models.sensorbin.findOne({
+            where: {
+                touchtagDevEui: message.meta.device
+            }
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 handleDownlinkRequest = (message, res) => {
     res.status(200).send({
         "meta": {
@@ -54,16 +66,7 @@ handleDownlinkRequest = (message, res) => {
 
 handleDownlink = async (message, models) => {
     try {
-        console.log("downlink: ", message);
-        console.log("hardware: ",message.params.radio.hardware);
-        const sensbin = await models.sensorbin.findOne({
-            where: {
-                touchtagDevEui: message.meta.device
-            }
-        });
-        sensbin.update({
-            battery: message.params.radio.hardware.power
-        });
+        console.log("heiluttelee käsiä")
     } catch (e) {
         console.log(e);
     }
