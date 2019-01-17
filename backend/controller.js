@@ -1,6 +1,6 @@
+// Executes the the wanted database queries for frontend
 // Creates router as a module, loads middleware functions in it,
 // defines some routes, and mounts the router module on the paths
-// Executes the the wanted database queries
 
 var express = require('express');
 var router = express.Router();

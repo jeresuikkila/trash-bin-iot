@@ -1,3 +1,4 @@
+// Handles frontend 
 // Enables cors and controller script in '/trashbins' page
 
 const express = require('express');
