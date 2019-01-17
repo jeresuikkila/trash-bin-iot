@@ -11,10 +11,12 @@ exports.listenTouchtags = (models, app, processedevent) => {
         const message = req.body; // one event message from sensor
         console.log("MESSAGE TYPE: ",message.type)
         switch (message.type) {
-            case "uplink":
+            case 'uplink':
                 handleUplink(message, models, processedevent);
-            case "downlink":
+            case 'downlink':
                 handleDownlink(message, models);
+            default:
+                console.log("DEFAULT SWITCH")
         }
         res.sendStatus(200);
 
@@ -48,23 +50,23 @@ handleUplink = async (message, models, processedevent) => {
         //console.log(message.decoded_payload)
         //creates new event in database or finds one if it already exists
         switch (message.decoded_payload.trigger_code) {
-            case '2':
+            case 2:
                 console.log("SINGLECLICK");
-            case '3':
+            case 3:
                 console.log("MOVEMENT START");
-            case '4':
+            case 4:
                 console.log("MOVEMENT STOP");
-            case '5':
+            case 5:
                 console.log("FREEFALL");
-            case '8':
+            case 8:
                 console.log("DOUBLE CLICK")
-            case '0':
+            case 0:
                 console.log("RESTART")
-            case '9':
+            case 9:
                 console.log("LONG CLICK")
-            case '11':
+            case 11:
                 console.log("TEMP MAX/MIN")
-            case '6':
+            case 6:
                 console.log("ACTIVATION")
             default:
                 console.log("TRIGGER_CODE: ",message.decoded_payload.trigger_code)
