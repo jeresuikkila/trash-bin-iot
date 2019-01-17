@@ -1,7 +1,7 @@
 import React from 'react';
 //import './TrashBinDetails.css';
 import EventMenu from './EventMenu'
-import getEventsByTrashbin from '../api/getEventsByTrashbin'
+import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
 import {withRouter} from "react-router-dom";
 
@@ -24,36 +24,10 @@ class TrashBinDetails extends React.Component {
     async componentDidMount() {
         var id = window.location.pathname.replace('/', '');
         this.setState({
-            events: await getEventsByTrashbin(id),
+            events: await getPEventsByTrashbin(id),
             trashbin: await getSingleTrashbinData(id),
             loading: false
         });
-    }
-    renderSwitch(param) {
-        switch (param) {
-            case '2':
-                return 'single click';
-            case '3':
-                return 'movement start';
-            case '4':
-                return 'movement stop';
-            case '5':
-                return 'freefall';
-            case '8':
-                return 'double click';
-            case '0':
-                return 'restart';
-            case '9':
-                return 'long click';
-            case '11':
-                return 'temp max/min';
-            case '6':
-                return 'activation';
-			case '7':
-                return 'deactivation';
-            default:
-                return param;
-        }
     }
 	
 	timeClean(input) {
@@ -90,11 +64,11 @@ class TrashBinDetails extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {events.map(event =>
+                            {events.map((event, index) =>
                                 <EventRow 
 								event_time={this.timeClean(event.event_time)}
-                                event={this.renderSwitch(event.trigger_code)}
-                                key={event.packet_hash}/>
+                                event={event.event_type}
+                                key={index}/>
                             )}
                         </tbody>
                     </table>
