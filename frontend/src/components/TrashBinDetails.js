@@ -50,7 +50,12 @@ class TrashBinDetails extends React.Component {
             let events = this.state.events;
             return (
                 <div>
-                    <button onClick={this.handleClick} type="button" className="btn btn-sm">Main Page</button>
+                    <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Main Page</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{trashbin.id}</li>
+                    </ol>
+                    </nav>
                     <h3>Trash bin details</h3>
                     <p>ID: {trashbin.id}</p>
                     <p>Address: {trashbin.address}</p>
