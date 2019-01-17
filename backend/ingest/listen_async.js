@@ -13,7 +13,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
             case "uplink":
                 handleUplink(message, models, processedevent);
             case "downlink":
-                console.log(" ")
+                handleDownlink(message, models);
         }
         res.sendStatus(200);
 
@@ -22,7 +22,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
 
 handleDownlink = async (message, models) => {
     try {
-        console.log("downlink: ",message);
+        //console.log("downlink: ",message);
         const sensbin = await models.sensorbin.findOne({
             where: {
                 touchtagDevEui: message.meta.device
@@ -46,6 +46,28 @@ handleUplink = async (message, models, processedevent) => {
         message['decoded_payload'] = JSON.parse(response.data.body)
         //console.log(message.decoded_payload)
         //creates new event in database or finds one if it already exists
+        switch (message.decoded_payload.trigger_code) {
+            case '2':
+                console.log("SINGLECLICK");
+            case '3':
+                console.log("MOVEMENT START");
+            case '4':
+                console.log("MOVEMENT STOP");
+            case '5':
+                console.log("FREEFALL");
+            case '8':
+                console.log("DOUBLE CLICK")
+            case '0':
+                console.log("RESTART")
+            case '9':
+                console.log("LONG CLICK")
+            case '11':
+                console.log("TEMP MAX/MIN")
+            case '6':
+                console.log("ACTIVATION")
+            default:
+                console.log("TRIGGER_CODE: ",message.decoded_payload.trigger_code)
+        }
         const resp = await models.event.findOrCreate({
             where: {
                 packet_hash: message.meta.packet_hash
