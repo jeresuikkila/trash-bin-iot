@@ -37,6 +37,10 @@ handleLocation = async (models,message) => {
                 touchtagDevEui: message.meta.device
             }
         });
+        console.log("TEST: ",message.params.solutions[0])
+        sensbin.update({
+            location: message.params.solutions[0].lat + ","+message.params.solutions[0].lng
+        })
     } catch (e) {
         console.log(e);
     }
