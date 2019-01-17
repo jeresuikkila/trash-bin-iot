@@ -9,26 +9,52 @@ exports.listenTouchtags = (models, app, processedevent) => {
     app.post('*', async (req, res) => {
         //console.log(req);
         const message = req.body; // one event message from sensor
-        console.log("MESSAGE TYPE: ",message.type)
+        console.log("MESSAGE TYPE: ", message.type)
         switch (message.type) {
             case "uplink":
                 handleUplink(message, models, processedevent);
+                res.sendStatus(200);
                 break;
             case "downlink":
                 handleDownlink(message, models);
+                res.sendStatus(200);
+                break;
+            case "downlink_request":
+                handleDownlinkRequest(message,res);
                 break;
             default:
                 console.log("DEFAULT SWITCH");
+                res.sendStatus(200);
                 break;
         }
-        res.sendStatus(200);
+    });
+}
 
+handleDownlinkRequest = (message, res) => {
+    res.status(200).send({
+        "meta": {
+            "application": message.meta.application,
+            "device": message.meta.device,
+            "device_addr": message.meta.device_addr,
+            "gateway": message.meta.gateway,
+            "network": message.meta.network,
+            "packet_hash": message.meta.packet_hash,
+            "packet_id": message.meta.packet_id,
+            "time": message.meta.time
+        },
+        "params": {
+            "confirmed":false,
+            "counter_down": message.params.counter_down,
+            "payload": "a0f1hh",
+            "port": 80
+        },
+        "type": "downlink_response"
     });
 }
 
 handleDownlink = async (message, models) => {
     try {
-        console.log("downlink: ",message);
+        console.log("downlink: ", message);
         const sensbin = await models.sensorbin.findOne({
             where: {
                 touchtagDevEui: message.meta.device
@@ -37,7 +63,7 @@ handleDownlink = async (message, models) => {
         sensbin.update({
             battery: message.params.hardware.power
         });
-    } catch(e) {
+    } catch (e) {
         console.log(e);
     }
 }
@@ -81,7 +107,7 @@ handleUplink = async (message, models, processedevent) => {
                 console.log("ACTIVATION");
                 break;
             default:
-                console.log("TRIGGER_CODE: ",message.decoded_payload.trigger_code);
+                console.log("TRIGGER_CODE: ", message.decoded_payload.trigger_code);
                 break;
         }
         const resp = await models.event.findOrCreate({
