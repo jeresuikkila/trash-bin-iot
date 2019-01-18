@@ -12,20 +12,6 @@ exports.listenTouchtags = (models, app, processedevent) => {
         //console.log(req);
         const message = req.body; // one event message from sensor
         console.log("MESSAGE TYPE: ", message.type)
-        // axios({
-        //     method: 'post',
-        //     url: NSUrl,
-        //     headers: {
-        //         'Authorization': '123'
-        //     },
-        //     data: {
-        //         "meta": {
-        //             "network": message.meta.network,
-        //             "device": message.meta.device
-        //         },
-        //         "type": "status"
-        //     }
-        // });
         switch (message.type) {
             case "uplink":
                 handleUplink(message, models, processedevent);
@@ -46,12 +32,20 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 handleStatus(models,message);
                 res.sendStatus(200);
                 break;
+            case "error":
+                handleError(message);
+                res.sendStatus(200);
+                break;
             default:
                 console.log("DEFAULT SWITCH");
                 res.sendStatus(200);
                 break;
         }
     });
+}
+
+handleError = (message) => {
+    console.log("ERROR MESSAGE: ",message)
 }
 
 handleStatus = async (models,message) => {
@@ -110,7 +104,21 @@ handleDownlinkRequest = (message, res) => {
 
 handleDownlink = async (message, models) => {
     try {
-        console.log("heiluttelee käsiä")
+        axios({
+            method: 'post',
+            url: NSUrl,
+            headers: {
+                'Authorization': '123',
+                'Content-type': 'application/json'
+            },
+            data: {
+                "meta": {
+                    "network": message.meta.network,
+                    "device": message.meta.device
+                },
+                "type": "status"
+            }
+        });
     } catch (e) {
         console.log(e);
     }
