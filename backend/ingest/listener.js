@@ -28,7 +28,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 handleLocation(models,message);
                 res.sendStatus(200);
                 break;
-            case "status":
+            case "status_request":
                 handleStatus(models,message);
                 res.sendStatus(200);
                 break;
@@ -55,7 +55,7 @@ handleStatus = async (models,message) => {
                 touchtagDevEui: message.meta.device
             }
         });
-        console.log("BATTERYTEST: ",message.params.battery);
+        console.log("BATTERYTEST: ",message);
         sensbin.update({
             battery: message.params.battery
         });
