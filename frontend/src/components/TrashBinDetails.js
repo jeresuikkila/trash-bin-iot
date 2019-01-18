@@ -3,6 +3,8 @@ import React from 'react';
 import EventMenu from './EventMenu'
 import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
+import getSensorsByTrashbin from '../api/getSensorsByTrashbin';
+import SensorRow from './SensorRow'
 import {withRouter} from "react-router-dom";
 
 
@@ -13,7 +15,8 @@ class TrashBinDetails extends React.Component {
         this.state = {
             loading: true,
             events: [],
-            trashbin: {}
+            trashbin: {},
+            sensors: []
         }
     }
 
@@ -26,6 +29,7 @@ class TrashBinDetails extends React.Component {
         this.setState({
             events: await getPEventsByTrashbin(id),
             trashbin: await getSingleTrashbinData(id),
+            sensors: [{"id": 112, "position": "top", "battery": 87},{"id": 234, "position": "bottom", "battery": 44}],
             loading: false
         });
     }
@@ -48,6 +52,7 @@ class TrashBinDetails extends React.Component {
         else {
             let trashbin = this.state.trashbin;
             let events = this.state.events;
+            let sensors = this.state.sensors;
             return (
                 <div>
                     <nav aria-label="breadcrumb">
@@ -57,9 +62,27 @@ class TrashBinDetails extends React.Component {
                     </ol>
                     </nav>
                     <h3>Trash bin details</h3>
-                    <p>ID: {trashbin.id}</p>
                     <p>Address: {trashbin.address}</p>
                     <p>Type: {trashbin.bintype}</p>
+                    <p>Owner: {trashbin.owner}</p>
+                    <p></p>
+                    <h5>Sensor info</h5>
+                    <table className="table" >
+                        <thead>
+                        <tr>
+                            <th scope="col">Sensor ID</th>
+                            <th scrop="col">Position</th>
+                            <th scope="col">Battery</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {sensors.map(sensor =>
+                        <SensorRow
+                        key={sensor.id}
+                        sensor={sensor}/>
+                    )}
+                    </tbody>
+                    </table>
                     <EventMenu />
                     <table className="table">
                         <thead>
