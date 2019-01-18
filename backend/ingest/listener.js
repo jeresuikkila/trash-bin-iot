@@ -117,7 +117,7 @@ handleDownlink = async (message) => {
                     "network": message.meta.network
                     
                 },
-                "type": "status"
+                "type": "status_request"
             }
         });
     } catch (e) {

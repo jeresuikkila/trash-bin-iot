@@ -49,7 +49,6 @@ router.get('/:id/events', async (req, res) => {
                 trashbinId: req.params.id
             }
         });
-        console.log("Touchtageui", sensorbins[0].touchtagDevEui);
         let allevents = [];
         for (let i = 0; i < sensorbins.length; i++) {
             const events = await models.event.findAll({
