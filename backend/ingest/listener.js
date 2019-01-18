@@ -18,7 +18,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 res.sendStatus(200);
                 break;
             case "downlink":
-                handleDownlink(message, models);
+                handleDownlink(message);
                 res.sendStatus(200);
                 break;
             case "downlink_request":
@@ -71,7 +71,7 @@ handleLocation = async (models,message) => {
                 touchtagDevEui: message.meta.device
             }
         });
-        console.log("TEST: ",message.params.solutions[0])
+        //console.log("TEST: ",message.params.solutions[0])
         sensbin.update({
             location: message.params.solutions[0].lat + ","+message.params.solutions[0].lng
         });
@@ -102,13 +102,13 @@ handleDownlinkRequest = (message, res) => {
     });
 }
 
-handleDownlink = async (message, models) => {
+handleDownlink = async (message) => {
     try {
         axios({
             method: 'post',
             url: NSUrl,
             headers: {
-                'Authorization': '123',
+                'Authorization': '124',
                 'Content-type': 'application/json'
             },
             data: {
