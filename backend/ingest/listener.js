@@ -113,8 +113,9 @@ handleDownlink = async (message) => {
             },
             data: {
                 "meta": {
-                    "network": message.meta.network,
-                    "device": message.meta.device
+                    "device": message.meta.device,
+                    "network": message.meta.network
+                    
                 },
                 "type": "status"
             }
