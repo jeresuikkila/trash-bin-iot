@@ -33,19 +33,17 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 res.sendStatus(200);
                 break;
             case "error":
-                handleError(message);
+                console.log("ERROR MESSAGE: ",message);
                 res.sendStatus(200);
                 break;
+            case "info":
+                console.log("INFO: ",message.params.message);
             default:
                 console.log("DEFAULT SWITCH");
                 res.sendStatus(200);
                 break;
         }
     });
-}
-
-handleError = (message) => {
-    console.log("ERROR MESSAGE: ",message)
 }
 
 handleStatus = async (models,message) => {
