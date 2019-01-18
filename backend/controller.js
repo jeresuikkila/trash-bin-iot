@@ -1,3 +1,7 @@
+// Executes the the wanted database queries for frontend
+// Creates router as a module, loads middleware functions in it,
+// defines some routes, and mounts the router module on the paths
+
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
@@ -5,6 +9,7 @@ const models = require('./models');
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
+// Finds all the trashbins
 router.get('/', async (req, res) => {
     try {
         const bins = await models.trashbin.findAll({
@@ -12,7 +17,7 @@ router.get('/', async (req, res) => {
         });
         bins.forEach(bin => {
             bin.dataValues.latestEvent = "test event",
-                bin.dataValues.status = "test status"
+            bin.dataValues.status = "test status"
         });
         res.status(200).send(bins)
     } catch (e) {
@@ -20,6 +25,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Finds one trashbin with the wanted id
 router.get('/:id', async (req, res) => {
     try {
         const bin = await models.trashbin.findOne({
@@ -34,6 +40,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// Finds all events from one trashbin
 router.get('/:id/events', async (req, res) => {
     try {
         const sensorbins = await models.sensorbin.findAll({
@@ -42,7 +49,7 @@ router.get('/:id/events', async (req, res) => {
                 trashbinId: req.params.id
             }
         });
-        console.log("touchtageui", sensorbins[0].touchtagDevEui);
+        console.log("Touchtageui", sensorbins[0].touchtagDevEui);
         let allevents = [];
         for (let i = 0; i < sensorbins.length; i++) {
             const events = await models.event.findAll({
@@ -62,6 +69,7 @@ router.get('/:id/events', async (req, res) => {
     }
 });
 
+// Finds all processed events from one trashbin
 router.get('/:id/pevents', async (req, res) => {
     try {
         const pevents = await models.processedevent.findAll({
