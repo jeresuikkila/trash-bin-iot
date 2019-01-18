@@ -28,7 +28,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 handleLocation(models,message);
                 res.sendStatus(200);
                 break;
-            case "status_request":
+            case "status_response":
                 handleStatus(models,message);
                 res.sendStatus(200);
                 break;
