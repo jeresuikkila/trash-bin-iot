@@ -104,11 +104,11 @@ handleDownlinkRequest = (message, res) => {
 
 handleDownlink = async (message) => {
     try {
-        axios({
+        await axios({
             method: 'post',
             url: NSUrl,
             headers: {
-                'Authorization': '124',
+                'Authorization': '123',
                 'Content-type': 'application/json'
             },
             data: {
