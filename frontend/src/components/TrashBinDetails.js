@@ -29,7 +29,7 @@ class TrashBinDetails extends React.Component {
         this.setState({
             events: await getPEventsByTrashbin(id),
             trashbin: await getSingleTrashbinData(id),
-            sensors: [{"id": 112, "position": "top", "battery": 87},{"id": 234, "position": "bottom", "battery": 44}],
+            sensors: await getSensorsByTrashbin(id),
             loading: false
         });
     }
@@ -44,7 +44,7 @@ class TrashBinDetails extends React.Component {
 			return input;
 		}
 	}
-	
+
     render() {
         if (this.state.loading) {
             return (<p>Loading...</p>)
@@ -56,9 +56,9 @@ class TrashBinDetails extends React.Component {
             return (
                 <div>
                     <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Main Page</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{trashbin.id}</li>
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><a href="/">Main Page</a></li>
+                        <li className="breadcrumb-item active" aria-current="page">{trashbin.id}</li>
                     </ol>
                     </nav>
                     <h3>Trash bin details</h3>
@@ -71,8 +71,7 @@ class TrashBinDetails extends React.Component {
                         <thead>
                         <tr>
                             <th scope="col">Sensor ID</th>
-                            <th scrop="col">Position</th>
-                            <th scope="col">Battery</th>
+                            <th scope="col">Position in trashbin</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -93,11 +92,11 @@ class TrashBinDetails extends React.Component {
                         </thead>
                         <tbody>
                             {events.map((event, index) =>
-                                <EventRow 
+                                <EventRow
 								event_time={this.timeClean(event.event_time)}
                                 event={event.event_type}
                                 key={index}/>
-                            )}
+                            ).reverse()}
                         </tbody>
                     </table>
                 </div>
