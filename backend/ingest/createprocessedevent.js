@@ -1,14 +1,15 @@
-// Creates a new processed event and adds it to the database
-// Currently only trigger code 4 (movement stop event/Bin opened) is implemented
-
+// Sleeps/waits execution for a certain time
 function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Creates a new processed event (bin emptied/bin opened) and adds it to the database
+// Priorities trash bin emptied - event over trash bin opened - event
 exports.createProcessedEvent = async (message, models, moment) => {
 
-	const cooldown = 60;
 	// Trigger code 4 stands for movement stop
+	// Finds the bin where the touchtag is located
+	const cooldown = 60;
 	if (Number(message.decoded_payload.trigger_code) == 4) {
 		try {
 			console.log("Event triggercode = 4");
@@ -18,8 +19,10 @@ exports.createProcessedEvent = async (message, models, moment) => {
 					touchtagDevEui: message.meta.device
 				}
 			});
+
+			// If touchtag is located at the lid
+			// wait 60 sec to give "priority" to bin emptied - event
 			if (sensorbin.dataValues.location == 'lid') {
-				//wait 60sec to give "priority" to bin emptied
 				await sleep(6000);
 				var time = moment.unix(message.meta.time + cooldown).format();
 				var time2 = moment.unix(message.meta.time - cooldown).format();
@@ -53,8 +56,9 @@ exports.createProcessedEvent = async (message, models, moment) => {
 					console.log("Didn't create event because cooldown not done.")
 				}
 			}
+			// If touchtag is located in the body we create a bin emptied - event
+			// Cant be emptied 5 mins before/after event
 			else if (sensorbin.dataValues.location == 'body') {
-				//cant be emptied 5mins before/after
 				var time = moment.unix(message.meta.time + 300).format();
 				var time2 = moment.unix(message.meta.time - 300).format();
 				const event = await models.processedevent.findOrCreate({
@@ -87,18 +91,7 @@ exports.createProcessedEvent = async (message, models, moment) => {
 				}
 			}
 
-
-
-
-			// Finds the sensorbin with deviceId
-
-
 			console.log("Sensorbin: ", sensorbin.dataValues);
-
-			// Creates a new processedevent if it doesn't exist already
-			// If another event exists between eventtime +/- cooldown finds it instead of creating a new one
-
-
 
 		} catch (e) {
 			console.log("Error creating processed event: ", e)
