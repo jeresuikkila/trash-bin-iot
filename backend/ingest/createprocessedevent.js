@@ -18,7 +18,9 @@ exports.createProcessedEvent = async (message, models, moment) => {
 					touchtagDevEui: message.meta.device
 				}
 			});
-			console.log("sensorbin[0]: ", sensorbin[0])
+			console.log("sensorbin: ",sensorbin);
+			console.log("sensorbin[0]: ", sensorbin[0]);
+			console.log("sensorbin.dataValues: ",sensorbin.dataValues);
 			console.log("TAGLOCATION: ",sensorbin.dataValues.taglocation);
 			if (sensorbin.dataValues.taglocation == "lid") {
 				//wait 60sec to give "priority" to bin emptied
