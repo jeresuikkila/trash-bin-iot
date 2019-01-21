@@ -200,7 +200,6 @@ handleUplink = async (message, models, processedevent) => {
                         touchtagDevEui: message.meta.device
                     }
                 });
-                console.log("aoe: ", sensbin);
                 sensbin.update({
                     default_pitch: message.decoded_payload.pitch,
                     default_roll: message.decoded_payload.roll
