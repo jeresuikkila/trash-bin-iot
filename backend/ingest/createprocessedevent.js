@@ -6,11 +6,11 @@ function sleep(ms) {
 }
 
 exports.createProcessedEvent = async (message, models, moment) => {
-	const cooldown = 60;
+	const cooldown = 30;
 	// Trigger code 4 stands for movement stop
-	if (Number(message.decoded_payload.trigger_code) == 4) {
+	if (Number(message.decoded_payload.trigger_code) == 4 || Number(message.decoded_payload.trigger_code) == 3) {
 		try {
-			console.log("Event triggercode = 4");
+			console.log("Event triggercode = 4||3");
 			// Finds the sensorbin with deviceId
 			const sensorbin = await models.sensorbin.findOne({
 				attributes: ['trashbinId'],
