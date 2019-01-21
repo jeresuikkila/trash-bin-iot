@@ -29,41 +29,11 @@ class TrashBinDetails extends React.Component {
         this.setState({
             events: await getPEventsByTrashbin(id),
             trashbin: await getSingleTrashbinData(id),
-            sensors: [{"id": 112, "position": "top", "battery": 87},{"id": 234, "position": "bottom", "battery": 44}],
+            sensors: await getSensorsByTrashbin(id),
             loading: false
         });
     }
-<<<<<<< HEAD
-    renderSwitch(param) {
-        switch (param) {
-            case '2':
-                return 'single click';
-            case '3':
-                return 'movement start';
-            case '4':
-                return 'movement stop';
-            case '5':
-                return 'freefall';
-            case '8':
-                return 'double click';
-            case '0':
-                return 'restart';
-            case '9':
-                return 'long click';
-            case '11':
-                return 'temp max/min';
-            case '6':
-                return 'activation';
-			case '7':
-                return 'deactivation';
-            default:
-                return param;
-        }
-    }
 
-=======
-	
->>>>>>> 3ab663a9f788031dc62651f0901a7b35df16fa13
 	timeClean(input) {
 		if(input.includes("T")) {
 			var res = input.split("T");
@@ -86,9 +56,9 @@ class TrashBinDetails extends React.Component {
             return (
                 <div>
                     <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Main Page</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{trashbin.id}</li>
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><a href="/">Main Page</a></li>
+                        <li className="breadcrumb-item active" aria-current="page">{trashbin.id}</li>
                     </ol>
                     </nav>
                     <h3>Trash bin details</h3>
@@ -101,8 +71,7 @@ class TrashBinDetails extends React.Component {
                         <thead>
                         <tr>
                             <th scope="col">Sensor ID</th>
-                            <th scrop="col">Position</th>
-                            <th scope="col">Battery</th>
+                            <th scope="col">Position in trashbin</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -123,6 +92,7 @@ class TrashBinDetails extends React.Component {
                         </thead>
                         <tbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             {events.map(event =>
                                 <EventRow
 								event_time={this.timeClean(event.event_time)}
@@ -130,13 +100,19 @@ class TrashBinDetails extends React.Component {
                                 key={event.packet_hash}/>
                             ).reverse()}
 =======
+=======
+>>>>>>> 57f2e449e66dc84a36d6b73e991750f15238fd7a
                             {events.map((event, index) =>
-                                <EventRow 
+                                <EventRow
 								event_time={this.timeClean(event.event_time)}
                                 event={event.event_type}
                                 key={index}/>
+<<<<<<< HEAD
                             )}
 >>>>>>> 3ab663a9f788031dc62651f0901a7b35df16fa13
+=======
+                            ).reverse()}
+>>>>>>> 57f2e449e66dc84a36d6b73e991750f15238fd7a
                         </tbody>
                     </table>
                 </div>
