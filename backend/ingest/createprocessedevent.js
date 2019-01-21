@@ -6,12 +6,12 @@ function sleep(ms) {
 }
 
 exports.createProcessedEvent = async (message, models, moment) => {
-
 	const cooldown = 60;
 	// Trigger code 4 stands for movement stop
 	if (Number(message.decoded_payload.trigger_code) == 4) {
 		try {
 			console.log("Event triggercode = 4");
+			// Finds the sensorbin with deviceId
 			const sensorbin = await models.sensorbin.findOne({
 				attributes: ['trashbinId'],
 				where: {
@@ -24,6 +24,8 @@ exports.createProcessedEvent = async (message, models, moment) => {
 				var time = moment.unix(message.meta.time + cooldown).format();
 				var time2 = moment.unix(message.meta.time - cooldown).format();
 				console.log("time between ", time2, "  and  ", time);
+				// Creates a new processedevent if it doesn't exist already
+				// If another event exists between eventtime +/- cooldown finds it instead of creating a new one
 				const event = await models.processedevent.findOrCreate({
 					where: {
 						trashbinId: sensorbin.dataValues.trashbinId,
@@ -86,20 +88,6 @@ exports.createProcessedEvent = async (message, models, moment) => {
 					console.log("Didn't create event because cooldown not done.");
 				}
 			}
-
-
-
-
-			// Finds the sensorbin with deviceId
-
-
-			console.log("Sensorbin: ", sensorbin.dataValues);
-
-			// Creates a new processedevent if it doesn't exist already
-			// If another event exists between eventtime +/- cooldown finds it instead of creating a new one
-
-
-
 		} catch (e) {
 			console.log("Error creating processed event: ", e)
 		}
