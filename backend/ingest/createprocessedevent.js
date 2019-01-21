@@ -18,7 +18,7 @@ exports.createProcessedEvent = async (message, models, moment) => {
 					touchtagDevEui: message.meta.device
 				}
 			});
-			if (sensorbin.dataValues.location == 'lid') {
+			if (sensorbin.dataValues.taglocation == 'lid') {
 				//wait 60sec to give "priority" to bin emptied
 				await sleep(6000);
 				var time = moment.unix(message.meta.time + cooldown).format();
@@ -55,7 +55,7 @@ exports.createProcessedEvent = async (message, models, moment) => {
 					console.log("Didn't create event because cooldown not done.")
 				}
 			}
-			else if (sensorbin.dataValues.location == 'body') {
+			else if (sensorbin.dataValues.taglocation == 'body') {
 				//cant be emptied 5mins before/after
 				var time = moment.unix(message.meta.time + 300).format();
 				var time2 = moment.unix(message.meta.time - 300).format();
