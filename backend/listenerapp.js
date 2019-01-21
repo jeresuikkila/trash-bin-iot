@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 app.options("*", function(req, res, next){
-    console.log("options?")
+    //console.log("options?")
     res.sendStatus(200);
   });
 
