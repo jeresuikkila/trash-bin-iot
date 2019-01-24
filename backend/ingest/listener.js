@@ -104,26 +104,7 @@ handleDownlinkRequest = (message, res) => {
 }
 
 handleDownlink = async (message) => {
-    try {
-        await axios({
-            method: 'post',
-            url: NSUrl,
-            headers: {
-                'Authorization': '123',
-                'Content-type': 'application/json'
-            },
-            data: {
-                "meta": {
-                    "device": message.meta.device,
-                    "network": message.meta.network
-                    
-                },
-                "type": "status_request"
-            }
-        });
-    } catch (e) {
-        console.log(e);
-    }
+    //nothing atm
 }
 
 handleUplink = async (message, models, processedevent) => {
@@ -210,6 +191,26 @@ handleUplink = async (message, models, processedevent) => {
                 });
             }
         }
+    } catch (e) {
+        console.log(e);
+    }
+    try {
+        await axios({
+            method: 'post',
+            url: NSUrl,
+            headers: {
+                'Authorization': '123',
+                'Content-type': 'application/json'
+            },
+            data: {
+                "meta": {
+                    "device": message.meta.device,
+                    "network": message.meta.network
+                    
+                },
+                "type": "status_request"
+            }
+        });
     } catch (e) {
         console.log(e);
     }
