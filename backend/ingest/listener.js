@@ -18,7 +18,8 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 res.sendStatus(200);
                 break;
             case "downlink":
-                handleDownlink(message);
+                console.log("ignoring downlink");
+                //handleDownlink(message);
                 res.sendStatus(200);
                 break;
             case "downlink_request":
