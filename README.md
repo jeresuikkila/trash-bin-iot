@@ -89,5 +89,7 @@ models.sensorbin.findOrCreate({
   })
 });
 */
-and run the file with "node createsensorbins.js"
-finally add touchtag to right filter in ns.eu.everynet.io so NS sends data from that tag AS.
+and run the file with "node createsensorbins.js".
+add touchtag to right filter in ns.eu.everynet.io so NS sends data from that tag AS.
+install sensor on trashbin.
+after sensor is installed to trashbin, double click to set default_pitch/roll and start logging bin opened/emptied events.
