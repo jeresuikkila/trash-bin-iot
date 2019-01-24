@@ -22,8 +22,8 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 res.sendStatus(200);
                 break;
             case "downlink_request":
-                console.log("not sending downlink request");
-                //handleDownlinkRequest(message,res);
+                //console.log("not sending downlink request");
+                handleDownlinkRequest(message,res);
                 break;
             case "location":
                 handleLocation(models,message);
@@ -104,7 +104,13 @@ handleDownlinkRequest = (message, res) => {
 }
 
 handleDownlink = async (message) => {
-    //nothing atm
+    console.log("payload: ", message.params.payload);
+        // Send payload to decoder
+        const response = await axios.post(decoderUrl, {
+            "payload": message.params.payload
+        });
+        message['decoded_payload'] = JSON.parse(response.data.body);
+        console.log("DOWNLINK DPAYLOAD: ",message.decoded_payload);
 }
 
 handleUplink = async (message, models, processedevent) => {
@@ -114,7 +120,7 @@ handleUplink = async (message, models, processedevent) => {
         const response = await axios.post(decoderUrl, {
             "payload": message.params.payload
         });
-        message['decoded_payload'] = JSON.parse(response.data.body)
+        message['decoded_payload'] = JSON.parse(response.data.body);
         //console.log(message.decoded_payload)
         //creates new event in database or finds one if it already exists
         switch (message.decoded_payload.trigger_code) {
