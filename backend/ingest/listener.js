@@ -1,7 +1,7 @@
 // Decodes the new message from everynet and adds it to the event table
 // Calls processedevent module to process the event and add it to the processedevent table
 
-const axios = require('axios')  // performs http requests
+const axios = require('axios')
 const moment = require('moment')
 
 const NSUrl = process.env.NS_URL
@@ -9,37 +9,35 @@ const decoderUrl = process.env.DECODER_URL
 
 exports.listenTouchtags = (models, app, processedevent) => {
     app.post('*', async (req, res) => {
-        //console.log(req);
-        const message = req.body; // one event message from sensor
+
+        const message = req.body; // One event message from sensor
         console.log("MESSAGE TYPE: ", message.type)
-        switch (message.type) {
+        switch (message.type) { // Different message types
             case "uplink":
                 handleUplink(message, models, processedevent);
                 res.sendStatus(200);
                 break;
             case "downlink":
-                //console.log("ignoring downlink");
-                handleDownlink(message);
+                sendStatusRequest(message);
                 res.sendStatus(200);
                 break;
             case "downlink_request":
-                //console.log("not sending downlink response");
-                handleDownlinkRequest(message,res);
+                handleDownlinkRequest(message, res);
                 break;
             case "location":
-                handleLocation(models,message);
+                handleLocation(models, message);
                 res.sendStatus(200);
                 break;
             case "status_response":
-                handleStatus(models,message);
+                handleStatus(models, message);
                 res.sendStatus(200);
                 break;
             case "error":
-                console.log("ERROR MESSAGE: ",message);
+                console.log("ERROR MESSAGE: ", message);
                 res.sendStatus(200);
                 break;
             case "info":
-                console.log("INFO: ",message.params.message);
+                console.log("INFO: ", message.params.message);
                 res.sendStatus(200);
                 break;
             default:
@@ -50,7 +48,9 @@ exports.listenTouchtags = (models, app, processedevent) => {
     });
 }
 
-handleStatus = async (models,message) => {
+// Status response message
+// Finds the wanted sensorbin with touchtagDevEui and edits the battery parameter
+handleStatus = async (models, message) => {
     try {
         const sensbin = await models.sensorbin.findOne({
             where: {
@@ -66,22 +66,25 @@ handleStatus = async (models,message) => {
     }
 }
 
-handleLocation = async (models,message) => {
+// Location message
+// Finds the wanted sensorbin with touchtagDevEui and edits the location parameter
+handleLocation = async (models, message) => {
     try {
         const sensbin = await models.sensorbin.findOne({
             where: {
                 touchtagDevEui: message.meta.device
             }
         });
-        //console.log("TEST: ",message.params.solutions[0])
         sensbin.update({
-            location: message.params.solutions[0].lat + ","+message.params.solutions[0].lng
+            location: message.params.solutions[0].lat + "," + message.params.solutions[0].lng
         });
     } catch (e) {
         console.log(e);
     }
 }
 
+// Downlink response
+// Sends HTTP 200-status message to NS
 handleDownlinkRequest = (message, res) => {
     res.status(200).send({
         "meta": {
@@ -104,7 +107,9 @@ handleDownlinkRequest = (message, res) => {
     });
 }
 
-handleDownlink = async (message) => {
+// Status request message from AS to NS
+// Status request is needed to get the battery level from device
+sendStatusRequest = async (message) => {
     try {
         await axios({
             method: 'post',
@@ -117,26 +122,28 @@ handleDownlink = async (message) => {
                 "meta": {
                     "device": message.meta.device,
                     "network": message.meta.network
-                    
+
                 },
                 "type": "status_request"
             }
         });
     } catch (e) {
-        console.log("STATUS_REQUEST ERROR: ",e);
+        console.log("STATUS_REQUEST ERROR: ", e);
     }
 }
 
+// Uplink messages
+// Come from NS, contain the main information
 handleUplink = async (message, models, processedevent) => {
     try {
         console.log("payload: ", message.params.payload);
-        // Send payload to decoder
+        // Send payload to decoder (AWS)
         const response = await axios.post(decoderUrl, {
             "payload": message.params.payload
         });
         message['decoded_payload'] = JSON.parse(response.data.body);
-        //console.log(message.decoded_payload)
-        //creates new event in database or finds one if it already exists
+
+        // Creates new event in database or finds one if it already exists
         switch (message.decoded_payload.trigger_code) {
             case 2:
                 console.log("SINGLECLICK");
@@ -169,6 +176,7 @@ handleUplink = async (message, models, processedevent) => {
                 console.log("TRIGGER_CODE: ", message.decoded_payload.trigger_code);
                 break;
         }
+        // Creates new event in database or finds one if it already exists
         const resp = await models.event.findOrCreate({
             where: {
                 packet_hash: message.meta.packet_hash
@@ -187,7 +195,7 @@ handleUplink = async (message, models, processedevent) => {
             }
         });
         console.log('Is new event? ', resp[0]._options.isNewRecord);
-        //adds foreign key+stuff if new event
+        // Adds foreign key + stuff if new event
         if (resp[0]._options.isNewRecord) {
             await models.event.findOne({
                 where: {
@@ -198,8 +206,10 @@ handleUplink = async (message, models, processedevent) => {
                 ],
             });
             processedevent.createProcessedEvent(message, models, moment);
+            // Trigger code 8 stands for double click
+            // Is used to updating default pitch and roll for touchtag in sensorbin
             if (message.decoded_payload.trigger_code == 8) {
-                console.log("updating defaultpitch/roll")
+                console.log("updating default pitch/roll")
                 const sensbin = await models.sensorbin.findOne({
                     where: {
                         touchtagDevEui: message.meta.device
