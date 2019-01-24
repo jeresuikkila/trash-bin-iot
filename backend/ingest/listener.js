@@ -110,7 +110,7 @@ handleDownlink = async (message) => {
         const response = await axios.post(decoderUrl, {
             "payload": message.params.payload
         });
-        console.log("response.data.body: ",response.data.body);
+        console.log("response: ",response);
         message['decoded_payload'] = JSON.parse(response.data.body);
         console.log("DOWNLINK DPAYLOAD: ",message.decoded_payload);
     } catch (e) {
