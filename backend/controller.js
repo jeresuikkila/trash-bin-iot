@@ -16,8 +16,16 @@ router.get('/', async (req, res) => {
             attributes: ['id', 'bintype', 'owner', 'address']
         });
         bins.forEach(bin => {
-            bin.dataValues.latestEvent = "test event",
-            bin.dataValues.status = "test status"
+            const sensbin = await models.sensorbin.findOne({
+                attributes: ['location'],
+                where: {
+                    trashbinId = bin.dataValues.id,
+                    taglocation: 'lid'
+                }
+            });
+            bin.dataValues.location=sensbin.dataValues.location;
+            bin.dataValues.latestEvent = "test event";
+            bin.dataValues.status = "test status";
         });
         res.status(200).send(bins)
     } catch (e) {
