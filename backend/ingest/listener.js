@@ -15,6 +15,26 @@ exports.listenTouchtags = (models, app, processedevent) => {
         switch (message.type) {
             case "uplink":
                 handleUplink(message, models, processedevent);
+                try {
+                    await axios({
+                        method: 'post',
+                        url: NSUrl,
+                        headers: {
+                            'Authorization': '123',
+                            'Content-type': 'application/json'
+                        },
+                        data: {
+                            "meta": {
+                                "device": message.meta.device,
+                                "network": message.meta.network
+                                
+                            },
+                            "type": "status_request"
+                        }
+                    });
+                } catch (e) {
+                    console.log(e);
+                }
                 res.sendStatus(200);
                 break;
             case "downlink":
@@ -204,26 +224,6 @@ handleUplink = async (message, models, processedevent) => {
                 });
             }
         }
-    } catch (e) {
-        console.log(e);
-    }
-    try {
-        await axios({
-            method: 'post',
-            url: NSUrl,
-            headers: {
-                'Authorization': '123',
-                'Content-type': 'application/json'
-            },
-            data: {
-                "meta": {
-                    "device": message.meta.device,
-                    "network": message.meta.network
-                    
-                },
-                "type": "status_request"
-            }
-        });
     } catch (e) {
         console.log(e);
     }
