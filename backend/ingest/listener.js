@@ -22,8 +22,8 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 res.sendStatus(200);
                 break;
             case "downlink_request":
-                //console.log("not sending downlink request");
-                handleDownlinkRequest(message,res);
+                console.log("not sending downlink response");
+                //handleDownlinkRequest(message,res);
                 break;
             case "location":
                 handleLocation(models,message);
@@ -104,6 +104,7 @@ handleDownlinkRequest = (message, res) => {
 }
 
 handleDownlink = async (message) => {
+    //this not work
     try{
     console.log("downlink payload: ", message.params.payload);
         // Send payload to decoder
