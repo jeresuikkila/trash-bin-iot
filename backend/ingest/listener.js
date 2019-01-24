@@ -197,7 +197,8 @@ handleUplink = async (message, models, processedevent) => {
                 ],
             });
             processedevent.createProcessedEvent(message, models, moment);
-            if (message.decoded_payload.trigger_code == 2) {
+            if (message.decoded_payload.trigger_code == 8) {
+                console.log("updating defaultpitch/roll")
                 const sensbin = await models.sensorbin.findOne({
                     where: {
                         touchtagDevEui: message.meta.device
