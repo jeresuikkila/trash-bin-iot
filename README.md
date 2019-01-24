@@ -50,7 +50,7 @@ tempseeder.js example for trashbins
 module.exports = {
   up: (queryInterface, Sequelize) => {
       return queryInterface.bulkInsert('trashbins', [{
-        id: 999,
+        id: 999, 
         bintype: 'test',
         owner: 'test',
         address: 'test'
@@ -63,3 +63,31 @@ module.exports = {
 };
 */
 run the seeder with "sequelize db:seed --seed=<path to>/tempseeder.js"
+
+ADDING SENSORBIN
+add to file createsensorbins.js lines:
+/*
+models.sensorbin.findOrCreate({
+  where: {
+    id: 4   //must be unique
+  },
+  defaults: {
+    id: 4,    //same as previous
+    taglocation: "lid",
+    trashbinId: 3,    //id of the trashbin
+    touchtagDevEui: "70b3d54b1c001738"   //deveui of the tag
+  }
+}).then(() => {
+  models.sensorbin.findOne({
+    where: {
+      id: "4"   //same as previous
+    },
+    include: [
+      { model: models.trashbin, attributes: ['id'] },
+      { model: models.touchtag, attributes: ['dev_eui'] },
+    ]
+  })
+});
+*/
+and run the file with "node createsensorbins.js"
+finally add touchtag to right filter in ns.eu.everynet.io so NS sends data from that tag AS.
