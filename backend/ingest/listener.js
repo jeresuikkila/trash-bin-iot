@@ -15,36 +15,16 @@ exports.listenTouchtags = (models, app, processedevent) => {
         switch (message.type) {
             case "uplink":
                 handleUplink(message, models, processedevent);
-                try {
-                    await axios({
-                        method: 'post',
-                        url: NSUrl,
-                        headers: {
-                            'Authorization': '123',
-                            'Content-type': 'application/json'
-                        },
-                        data: {
-                            "meta": {
-                                "device": message.meta.device,
-                                "network": message.meta.network
-                                
-                            },
-                            "type": "status_request"
-                        }
-                    });
-                } catch (e) {
-                    console.log("STATUS_REQUEST ERROR: ",e);
-                }
                 res.sendStatus(200);
                 break;
             case "downlink":
-                console.log("ignoring downlink");
-                //handleDownlink(message);
+                //console.log("ignoring downlink");
+                handleDownlink(message);
                 res.sendStatus(200);
                 break;
             case "downlink_request":
-                console.log("not sending downlink response");
-                //handleDownlinkRequest(message,res);
+                //console.log("not sending downlink response");
+                handleDownlinkRequest(message,res);
                 break;
             case "location":
                 handleLocation(models,message);
@@ -125,18 +105,25 @@ handleDownlinkRequest = (message, res) => {
 }
 
 handleDownlink = async (message) => {
-    //this not work
-    try{
-    console.log("downlink payload: ", message.params.payload);
-        // Send payload to decoder
-        const response = await axios.post(decoderUrl, {
-            "payload": message.params.payload
+    try {
+        await axios({
+            method: 'post',
+            url: NSUrl,
+            headers: {
+                'Authorization': '123',
+                'Content-type': 'application/json'
+            },
+            data: {
+                "meta": {
+                    "device": message.meta.device,
+                    "network": message.meta.network
+                    
+                },
+                "type": "status_request"
+            }
         });
-        console.log("response: ",response);
-        message['decoded_payload'] = JSON.parse(response.data.body);
-        console.log("DOWNLINK DPAYLOAD: ",message.decoded_payload);
     } catch (e) {
-        console.log("error downlink: ",e)
+        console.log("STATUS_REQUEST ERROR: ",e);
     }
 }
 
