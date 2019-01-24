@@ -18,12 +18,13 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 res.sendStatus(200);
                 break;
             case "downlink":
+                //console.log("ignoring downlink");
                 handleDownlink(message);
                 res.sendStatus(200);
                 break;
             case "downlink_request":
-                console.log("not sending downlink request");
-                //handleDownlinkRequest(message,res);
+                //console.log("not sending downlink response");
+                handleDownlinkRequest(message,res);
                 break;
             case "location":
                 handleLocation(models,message);
@@ -104,7 +105,26 @@ handleDownlinkRequest = (message, res) => {
 }
 
 handleDownlink = async (message) => {
-    //nothing atm
+    try {
+        await axios({
+            method: 'post',
+            url: NSUrl,
+            headers: {
+                'Authorization': '123',
+                'Content-type': 'application/json'
+            },
+            data: {
+                "meta": {
+                    "device": message.meta.device,
+                    "network": message.meta.network
+                    
+                },
+                "type": "status_request"
+            }
+        });
+    } catch (e) {
+        console.log("STATUS_REQUEST ERROR: ",e);
+    }
 }
 
 handleUplink = async (message, models, processedevent) => {
@@ -114,7 +134,7 @@ handleUplink = async (message, models, processedevent) => {
         const response = await axios.post(decoderUrl, {
             "payload": message.params.payload
         });
-        message['decoded_payload'] = JSON.parse(response.data.body)
+        message['decoded_payload'] = JSON.parse(response.data.body);
         //console.log(message.decoded_payload)
         //creates new event in database or finds one if it already exists
         switch (message.decoded_payload.trigger_code) {
@@ -191,26 +211,6 @@ handleUplink = async (message, models, processedevent) => {
                 });
             }
         }
-    } catch (e) {
-        console.log(e);
-    }
-    try {
-        await axios({
-            method: 'post',
-            url: NSUrl,
-            headers: {
-                'Authorization': '123',
-                'Content-type': 'application/json'
-            },
-            data: {
-                "meta": {
-                    "device": message.meta.device,
-                    "network": message.meta.network
-                    
-                },
-                "type": "status_request"
-            }
-        });
     } catch (e) {
         console.log(e);
     }
