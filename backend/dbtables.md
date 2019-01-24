@@ -47,4 +47,3 @@ processedevents
     event_time: date
     trashbinId: int //foreign key trashbins
 }
-
