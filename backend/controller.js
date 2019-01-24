@@ -16,10 +16,10 @@ router.get('/', async (req, res) => {
             attributes: ['id', 'bintype', 'owner', 'address']
         });
         for(let i=0;i<bins.length;i++){
-            const sensbin = await models.sensorbin.findOne({
+            let sensbin = await models.sensorbin.findOne({
                 attributes: ['location'],
                 where: {
-                    trashbinId = bin.dataValues.id,
+                    trashbinId = bins[i].dataValues.id,
                     taglocation: 'lid'
                 }
             });
