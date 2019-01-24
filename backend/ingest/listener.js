@@ -22,7 +22,8 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 res.sendStatus(200);
                 break;
             case "downlink_request":
-                handleDownlinkRequest(message,res);
+                console.log("not sending downlink request");
+                //handleDownlinkRequest(message,res);
                 break;
             case "location":
                 handleLocation(models,message);
@@ -38,6 +39,8 @@ exports.listenTouchtags = (models, app, processedevent) => {
                 break;
             case "info":
                 console.log("INFO: ",message.params.message);
+                res.sendStatus(200);
+                break;
             default:
                 console.log("DEFAULT SWITCH");
                 res.sendStatus(200);
