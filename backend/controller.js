@@ -77,6 +77,9 @@ router.get('/:id/pevents', async (req, res) => {
                 trashbinId: req.params.id
             }
         });
+        pevents.sort(function (a, b) {
+            return a.event_time - b.event_time;
+        });
         res.status(200).send(pevents);
     } catch (e) {
         res.status(500).send(e);
