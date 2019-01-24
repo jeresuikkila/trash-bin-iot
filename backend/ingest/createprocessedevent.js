@@ -13,16 +13,16 @@ exports.createProcessedEvent = async (message, models, moment) => {
 			console.log("Event triggercode = 4||3");
 			// Finds the sensorbin with deviceId
 			const sensorbin = await models.sensorbin.findOne({
-				attributes: ['trashbinId','taglocation'],
+				attributes: ['trashbinId','taglocation','default_pitch','default_roll'],
 				where: {
 					touchtagDevEui: message.meta.device
 				}
 			});
-			if (sensorbin.dataValues.taglocation == "lid") {
+			if (sensorbin.dataValues.taglocation == "lid" && default_pitch != null) {
 				//wait 60sec to give "priority" to bin emptied
-				console.log("WAITING 60S");
-				await sleep(6000);
-				console.log("60S DONE");
+				console.log("WAITING 10S");
+				await sleep(10000);
+				console.log("10S DONE");
 				var time = moment.unix(message.meta.time + cooldown).format();
 				var time2 = moment.unix(message.meta.time - cooldown).format();
 				console.log("time between ", time2, "  and  ", time);
@@ -57,7 +57,7 @@ exports.createProcessedEvent = async (message, models, moment) => {
 					console.log("Didn't create event because cooldown not done.")
 				}
 			}
-			else if (sensorbin.dataValues.taglocation == "bottom") {
+			else if (sensorbin.dataValues.taglocation == "bottom" && default_pitch != null) {
 				//cant be emptied 5mins before/after
 				var time = moment.unix(message.meta.time + 300).format();
 				var time2 = moment.unix(message.meta.time - 300).format();
