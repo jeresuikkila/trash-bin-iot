@@ -85,7 +85,7 @@ handleLocation = async (models, message) => {
 
 // Downlink response
 // Sends HTTP 200-status message to NS
-handleDownlinkRequest = (message, res) => {
+handleDownlinkRequest = async (message, res) => {
     res.status(200).send({
         "meta": {
             "application": message.meta.application,
