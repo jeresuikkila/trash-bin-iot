@@ -33,7 +33,7 @@ exports.listenTouchtags = (models, app, processedevent) => {
                         }
                     });
                 } catch (e) {
-                    console.log(e);
+                    console.log("STATUS_REQUEST ERROR: ",e);
                 }
                 res.sendStatus(200);
                 break;
