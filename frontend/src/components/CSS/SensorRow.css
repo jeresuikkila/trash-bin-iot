@@ -1,0 +1,5 @@
+.sensor-row {
+    display: flex;
+    flex-direction: row;
+    padding: 15;
+}
