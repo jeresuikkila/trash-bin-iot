@@ -16,8 +16,8 @@ router.get('/', async (req, res) => {
             attributes: ['id', 'bintype', 'owner', 'address']
         });
         bins.forEach(bin => {
-            bin.dataValues.latestEvent = "test event",
-            bin.dataValues.status = "test status"
+            bin.dataValues.latestEvent = "test event";
+            bin.dataValues.status = "test status";
         });
         res.status(200).send(bins)
     } catch (e) {
@@ -49,7 +49,6 @@ router.get('/:id/events', async (req, res) => {
                 trashbinId: req.params.id
             }
         });
-        console.log("Touchtageui", sensorbins[0].touchtagDevEui);
         let allevents = [];
         for (let i = 0; i < sensorbins.length; i++) {
             const events = await models.event.findAll({
@@ -77,6 +76,9 @@ router.get('/:id/pevents', async (req, res) => {
             where: {
                 trashbinId: req.params.id
             }
+        });
+        pevents.sort(function (a, b) {
+            return a.event_time - b.event_time;
         });
         res.status(200).send(pevents);
     } catch (e) {

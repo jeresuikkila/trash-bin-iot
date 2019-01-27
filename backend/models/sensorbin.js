@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     taglocation: {
       type: DataTypes.STRING,
       defaultValue: null
+    },
+    battery: {
+      type: DataTypes.FLOAT,
+      defaultValue: null
     }
   }, {});
   sensorbin.associate = function(models) {

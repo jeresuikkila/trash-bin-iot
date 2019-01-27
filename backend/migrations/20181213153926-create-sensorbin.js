@@ -25,6 +25,10 @@ module.exports = {
         type: Sequelize.STRING,
         defaultValue: null
       },
+      battery: {
+        type: Sequelize.FLOAT,
+        defaultValue: null
+      },
       createdAt: {
         defaultValue: null,
         type: Sequelize.DATE
