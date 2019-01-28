@@ -13,7 +13,10 @@ router.use(bodyParser.json());
 router.get('/', async (req, res) => {
     try {
         const bins = await models.trashbin.findAll({
-            attributes: ['id', 'bintype', 'owner', 'address']
+            attributes: ['id', 'bintype', 'owner', 'address'],
+            order: [
+                ['id', 'DESC'],
+            ]
         });
         bins.forEach(bin => {
             bin.dataValues.latestEvent = "test event";
