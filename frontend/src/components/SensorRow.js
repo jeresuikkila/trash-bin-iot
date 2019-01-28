@@ -35,11 +35,13 @@ class SensorRow extends React.Component {
     let lastevent = this.state.lastevent;
     return (
       <div className="sensor-row">
-        <div style={{ flex: 1 }}>
-          {tagloc}
-        </div>
-        <div style={{ flex: 1 }}>
-          id: {this.props.sensor.id}
+        <div className="row1">
+          <div className="boldtext" style={{ flex: 1 }}>
+            {tagloc}
+          </div>
+          <div style={{ flex: 3 }}>
+            id: {this.props.sensor.id}
+          </div>
         </div>
         <div style={{ flex: 1 }}>
           Last event: {lastevent}

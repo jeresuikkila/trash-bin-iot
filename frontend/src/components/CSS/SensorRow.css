@@ -1,5 +1,14 @@
 .sensor-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 15;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.boldtext {
+    font-weight: bold;
 }
