@@ -34,17 +34,6 @@ class TrashBinDetails extends React.Component {
             loading: false
         });
     }
-	
-	timeClean(input) {
-		if(input.includes("T")) {
-			var res = input.split("T");
-			var res2 = res[1].split(".");
-			var ret = res[0] + " " + res2[0];
-			return ret;
-		} else {
-			return input;
-		}
-	}
 
     render() {
         if (this.state.loading) {
@@ -75,7 +64,8 @@ class TrashBinDetails extends React.Component {
                             { sensors.map(sensor =>
                                 <SensorRow
                                     key={sensor.id}
-                                    sensor={sensor} />
+                                    sensor={sensor}
+                                    events={events}/>
                             )}
                         </div>
                     </div>
@@ -90,7 +80,7 @@ class TrashBinDetails extends React.Component {
                         <tbody>
                             {events.map((event, index) =>
                                 <EventRow
-								event_time={this.timeClean(event.event_time)}
+								event_time={timeClean(event.event_time)}
                                 event={event.event_type}
                                 key={index}/>
                             ).reverse()}
@@ -110,5 +100,16 @@ const EventRow = (props) => {
         </tr>
     )
 };
+
+export const timeClean = (input) => {
+    if(input.includes("T")) {
+        var res = input.split("T");
+        var res2 = res[1].split(".");
+        var ret = res[0] + " " + res2[0];
+        return ret;
+    } else {
+        return input;
+    }
+}
 
 export default withRouter(TrashBinDetails);
