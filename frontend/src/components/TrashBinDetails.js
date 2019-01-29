@@ -1,11 +1,12 @@
 import React from 'react';
-//import './TrashBinDetails.css';
+import './CSS/TrashBinDetails.css';
 import EventMenu from './EventMenu'
 import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
 import getSensorsByTrashbin from '../api/getSensorsByTrashbin';
 import SensorRow from './SensorRow'
 import {withRouter} from "react-router-dom";
+import trashbinimage from '../trashbinimage.jpg';
 
 
 class TrashBinDetails extends React.Component {
@@ -33,17 +34,6 @@ class TrashBinDetails extends React.Component {
             loading: false
         });
     }
-	
-	timeClean(input) {
-		if(input.includes("T")) {
-			var res = input.split("T");
-			var res2 = res[1].split(".");
-			var ret = res[0] + " " + res2[0];
-			return ret;
-		} else {
-			return input;
-		}
-	}
 
     render() {
         if (this.state.loading) {
@@ -56,32 +46,29 @@ class TrashBinDetails extends React.Component {
             return (
                 <div>
                     <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/">Main Page</a></li>
-                        <li className="breadcrumb-item active" aria-current="page">{trashbin.id}</li>
-                    </ol>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><a href="/">Main Page</a></li>
+                            <li className="breadcrumb-item active" aria-current="page">{trashbin.id}</li>
+                        </ol>
                     </nav>
                     <h3>Trash bin details</h3>
                     <p>Address: {trashbin.address}</p>
                     <p>Type: {trashbin.bintype}</p>
                     <p>Owner: {trashbin.owner}</p>
                     <p></p>
-                    <h5>Sensor info</h5>
-                    <table className="table" >
-                        <thead>
-                        <tr>
-                            <th scope="col">Sensor ID</th>
-                            <th scope="col">Position in trashbin</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {sensors.map(sensor =>
-                        <SensorRow
-                        key={sensor.id}
-                        sensor={sensor}/>
-                    )}
-                    </tbody>
-                    </table>
+                    <div className="logo">
+                        <div id="trashin-pic">
+                            <img src={trashbinimage} alt="Trashbin" width="125" height="125" />
+                        </div>
+                        <div className="table sensor" >
+                            { sensors.map(sensor =>
+                                <SensorRow
+                                    key={sensor.id}
+                                    sensor={sensor}
+                                    events={events}/>
+                            )}
+                        </div>
+                    </div>
                     <EventMenu />
                     <table className="table">
                         <thead>
@@ -93,7 +80,7 @@ class TrashBinDetails extends React.Component {
                         <tbody>
                             {events.map((event, index) =>
                                 <EventRow
-								event_time={this.timeClean(event.event_time)}
+								event_time={timeClean(event.event_time)}
                                 event={event.event_type}
                                 key={index}/>
                             ).reverse()}
@@ -113,5 +100,16 @@ const EventRow = (props) => {
         </tr>
     )
 };
+
+export const timeClean = (input) => {
+    if(input.includes("T")) {
+        var res = input.split("T");
+        var res2 = res[1].split(".");
+        var ret = res[0] + " " + res2[0];
+        return ret;
+    } else {
+        return input;
+    }
+}
 
 export default withRouter(TrashBinDetails);
