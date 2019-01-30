@@ -217,20 +217,7 @@ class TrashBinDetails extends React.Component {
 					<p>Address: {trashbin.address}</p>
 					<p>Type: {trashbin.bintype}</p>
 					<p>Owner: {trashbin.owner}</p>
-					<p></p>
-                    <div className="logo">
-                        <div id="trashin-pic">
-                            <img src={trashbinimage} alt="Trashbin" width="125" height="125" />
-                        </div>
-                        <div className="table sensor" >
-                            { sensors.map(sensor =>
-                                <SensorRow
-                                    key={sensor.id}
-                                    sensor={sensor}
-                                    events={events}/>
-                            )}
-                        </div>
-                    </div>
+					
 					<table className="table" >
 						<thead>
 							<tr>
