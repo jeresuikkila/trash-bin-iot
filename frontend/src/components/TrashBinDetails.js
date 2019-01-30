@@ -93,6 +93,10 @@ class TrashBinDetails extends React.Component {
 			return "btn btn-success";
 		} else if(btn === 2 && input !== 2) {
 			return "btn btn-dark";
+		} if(btn === 3 && input === 3) {
+			return "btn btn-success";
+		} else if(btn === 3 && input !== 3) {
+			return "btn btn-dark";
 		} else {
 			return "btn btn-danger";
 		}
@@ -146,20 +150,21 @@ class TrashBinDetails extends React.Component {
 			depending on what is the active button we change what evets we render
 			0 		-> all events
 			1 		-> bin opened
-			2(else)	-> bin emptied
+			2		-> bin emptied
+			else(3)	-> unprocessed events
 			*/
 			if(this.state.activeEventBtnState === 0) {
-			viewSel = 
-				<tbody>
-					{
-					events.map((event, index) =>
-						<EventRow
-						event_time={this.timeClean(event.event_time)}
-						event={this.trigCodeToText(event.trigger_code)}
-						key={index}/>
-					).reverse()
-					}
-				</tbody>
+				viewSel = 
+					<tbody>
+						{
+						pevents.map((event, index) => {
+								return <EventRow
+								event_time={this.timeClean(event.event_time)}
+								event={event.event_type}
+								key={index}/>
+						}).reverse()
+						}
+					</tbody>
 			} else if(this.state.activeEventBtnState === 1){
 				viewSel = 
 					<tbody>
@@ -172,7 +177,7 @@ class TrashBinDetails extends React.Component {
 						}).reverse()
 						}
 					</tbody>
-			} else {
+			} else if(this.state.activeEventBtnState === 2){
 				viewSel =
 					<tbody>
 						{
@@ -182,6 +187,18 @@ class TrashBinDetails extends React.Component {
 								event={event.event_type}
 								key={index}/>
 						}).reverse()
+						}
+					</tbody>
+			} else {
+				viewSel = 
+					<tbody>
+						{
+						events.map((event, index) =>
+							<EventRow
+							event_time={this.timeClean(event.event_time)}
+							event={this.trigCodeToText(event.trigger_code)}
+							key={index}/>
+						).reverse()
 						}
 					</tbody>
 			}
@@ -228,6 +245,7 @@ class TrashBinDetails extends React.Component {
 							<button type="button" className={this.btnClr(0, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(0)}>All</button>
 							<button type="button" className={this.btnClr(1, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(1)}>Bin Opened</button>
 							<button type="button" className={this.btnClr(2, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(2)}>Bin Emptied</button>
+							<button type="button" className={this.btnClr(3, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(3)}>Unprocessed Events</button>
 						</div>
 						<table className="table">
 							<thead>
