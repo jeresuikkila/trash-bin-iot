@@ -146,7 +146,7 @@ class TrashBinDetails extends React.Component {
 						<EventRow
 						event_time={this.timeClean(event.event_time)}
 						event={this.renderSwitch(event.trigger_code)}
-					key={index}/>
+						key={index}/>
 					).reverse()
 					}
 				</tbody>
@@ -155,18 +155,29 @@ class TrashBinDetails extends React.Component {
 					<tbody>
 						{
 						pevents.map((event, index) =>
-							<EventRow
-							event_time={this.timeClean(event.event_time)}
-							event={event.event_type}
-							key={index}/>
-							).reverse()
+							{if(event.event_type == "Bin opened") {
+								return <EventRow
+								event_time={this.timeClean(event.event_time)}
+								event={event.event_type}
+								key={index}/>
+							}}
+						).reverse()
 						}
 					</tbody>
 			} else {
 				viewSel =
 				<tbody>
-				Emptied events not implemented yet.
-				</tbody>
+						{
+						pevents.map((event, index) =>
+							{if(event.event_type == "Bin emptied") {
+								return <EventRow
+								event_time={this.timeClean(event.event_time)}
+								event={event.event_type}
+								key={index}/>
+							}}
+						).reverse()
+						}
+					</tbody>
 			}
 
 			//content inside will be rendered in browser
