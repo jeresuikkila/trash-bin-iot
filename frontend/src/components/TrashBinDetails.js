@@ -1,6 +1,6 @@
 import React from 'react';
 import './CSS/TrashBinDetails.css';
-import EventMenu from './EventMenu'
+//import EventMenu from './EventMenu'
 import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
 import getEventsByTrashbin from '../api/getEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
