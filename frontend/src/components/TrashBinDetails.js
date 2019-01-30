@@ -1,12 +1,13 @@
 import React from 'react';
-//import './TrashBinDetails.css';
+import './CSS/TrashBinDetails.css';
 //import EventMenu from './EventMenu'
 import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
 import getEventsByTrashbin from '../api/getEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
-import getSensorsByTrashbin from '../api/getSensorsByTrashbin'
+import getSensorsByTrashbin from '../api/getSensorsByTrashbin';
 import SensorRow from './SensorRow'
 import {withRouter} from "react-router-dom";
+import trashbinimage from '../trashbinimage.jpg';
 
 
 class TrashBinDetails extends React.Component {
@@ -67,7 +68,7 @@ class TrashBinDetails extends React.Component {
 		}
 	}
 	
-	//cleans the event times that come from touchtags into prettier format.
+/*	//cleans the event times that come from touchtags into prettier format.
 	timeClean(input) {
 		if(input.includes("T")) {
 			var res = input.split("T");
@@ -78,7 +79,7 @@ class TrashBinDetails extends React.Component {
 			return input;
 		}
 	}
-	
+*/	
 	//button color, manages the changing colors of the compound button [All | Bin Opened | Bin Emptied]. 'btn' dictates which button we are manipulating at the moment, while 'input' gives which of the 3 is last clicked on website.
 	btnClr(btn, input) {
 		if(btn === 0 && input === 0) {
@@ -159,7 +160,7 @@ class TrashBinDetails extends React.Component {
 						{
 						pevents.map((event, index) => {
 								return <EventRow
-								event_time={this.timeClean(event.event_time)}
+								event_time={timeClean(event.event_time)}
 								event={event.event_type}
 								key={index}/>
 						}).reverse()
@@ -171,7 +172,7 @@ class TrashBinDetails extends React.Component {
 						{
 						pevents.filter(event => (event.event_type === "Bin opened")).map((event, index) => {
 								return <EventRow
-								event_time={this.timeClean(event.event_time)}
+								event_time={timeClean(event.event_time)}
 								event={event.event_type}
 								key={index}/>
 						}).reverse()
@@ -183,7 +184,7 @@ class TrashBinDetails extends React.Component {
 						{
 						pevents.filter(event => (event.event_type === "Bin emptied")).map((event, index) => {
 								return <EventRow
-								event_time={this.timeClean(event.event_time)}
+								event_time={timeClean(event.event_time)}
 								event={event.event_type}
 								key={index}/>
 						}).reverse()
@@ -195,7 +196,7 @@ class TrashBinDetails extends React.Component {
 						{
 						events.map((event, index) =>
 							<EventRow
-							event_time={this.timeClean(event.event_time)}
+							event_time={timeClean(event.event_time)}
 							event={this.trigCodeToText(event.trigger_code)}
 							key={index}/>
 						).reverse()
@@ -217,6 +218,21 @@ class TrashBinDetails extends React.Component {
 					<p>Address: {trashbin.address}</p>
 					<p>Type: {trashbin.bintype}</p>
 					<p>Owner: {trashbin.owner}</p>
+
+					<p></p>
+                    <div className="logo">
+                        <div id="trashin-pic">
+                            <img src={trashbinimage} alt="Trashbin" width="125" height="125" />
+                        </div>
+                        <div className="table sensor" >
+                            { sensors.map(sensor =>
+                                <SensorRow
+                                    key={sensor.id}
+                                    sensor={sensor}
+                                    events={pevents}/>
+                            )}
+                        </div>
+                    </div>
 					
 					<table className="table" >
 						<thead>
@@ -263,12 +279,23 @@ class TrashBinDetails extends React.Component {
 }
 
 const EventRow = (props) => {
-	return (
-		<tr>
-			<td>{props.event_time}</td>
-			<td> {props.event}</td>
-		</tr>
-	)
+    return (
+        <tr>
+            <td>{props.event_time}</td>
+            <td> {props.event}</td>
+        </tr>
+    )
+};
+
+export const timeClean = (input) => {
+    if(input.includes("T")) {
+        var res = input.split("T");
+        var res2 = res[1].split(".");
+        var ret = res[0] + " " + res2[0];
+        return ret;
+    } else {
+        return input;
+    }
 }
 
 export default withRouter(TrashBinDetails);
