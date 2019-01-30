@@ -95,7 +95,7 @@ class TrashBinDetails extends React.Component {
 	}
 	
 	//this method is called when we want to change the active button.
-	actBtnState(input) {
+	changeActiveEventBtnState(input) {
 		this.setState({
 			activeEventBtnState: input
 		});
@@ -118,6 +118,14 @@ class TrashBinDetails extends React.Component {
 			return "btn btn-success";
 		} else { 
 			return "btn btn-dark"; 
+		}
+	}
+	
+	collapseBtnText() {
+		if(this.state.isCollapseBtnActive) {
+			return "Hide Events";
+		} else {
+			return "Show Events";
 		}
 	}
 	
@@ -208,14 +216,14 @@ class TrashBinDetails extends React.Component {
 							<SensorRow key={sensor.id} sensor={sensor}/>
 							)}
 						</tbody>
-						<button type="button" class={this.flipCollapseBtnColor()} onClick={() => this.flipCollapseBtnState()} data-toggle="collapse" data-target="#collapseEventList">Show Events</button>
+						<button type="button" class={this.flipCollapseBtnColor()} onClick={() => this.flipCollapseBtnState()} data-toggle="collapse" data-target="#collapseEventList">{this.collapseBtnText()}</button>
 					</table>
 					
 					<div class="collapse" id="collapseEventList">	
 						<div class="btn-group" role="group" >
-							<button type="button" class={this.btnClr(0, this.state.activeEventBtnState)} onClick={() => this.actBtnState(0)}>All</button>
-							<button type="button" class={this.btnClr(1, this.state.activeEventBtnState)} onClick={() => this.actBtnState(1)}>Bin Opened</button>
-							<button type="button" class={this.btnClr(2, this.state.activeEventBtnState)} onClick={() => this.actBtnState(2)}>Bin Emptied</button>
+							<button type="button" class={this.btnClr(0, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(0)}>All</button>
+							<button type="button" class={this.btnClr(1, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(1)}>Bin Opened</button>
+							<button type="button" class={this.btnClr(2, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(2)}>Bin Emptied</button>
 						</div>
 						<table className="table">
 							<thead>
