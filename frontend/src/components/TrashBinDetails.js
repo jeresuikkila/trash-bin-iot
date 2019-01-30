@@ -14,7 +14,8 @@ class TrashBinDetails extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			activeBtnState: 0,
+			activeEventBtnState: 0,
+			isCollapseBtnActive: false,
 			loading: true,
 			pevents: [],
 			events: [],
@@ -96,8 +97,28 @@ class TrashBinDetails extends React.Component {
 	//this method is called when we want to change the active button.
 	actBtnState(input) {
 		this.setState({
-			activeBtnState: input
+			activeEventBtnState: input
 		});
+	}
+	
+	flipCollapseBtnState() {
+		if(this.state.isCollapseBtnActive == false) {
+			this.setState({
+				isCollapseBtnActive: true
+			});
+		} else {
+			this.setState({
+				isCollapseBtnActive: false
+			});
+		}
+	}
+	
+	flipCollapseBtnColor() {
+		if(this.state.isCollapseBtnActive == true) {
+			return "btn btn-success";
+		} else { 
+			return "btn btn-dark"; 
+		}
 	}
 	
 	render() {
@@ -117,7 +138,7 @@ class TrashBinDetails extends React.Component {
 			1 		-> bin opened
 			2(else)	-> bin emptied
 			*/
-			if(this.state.activeBtnState === 0) {
+			if(this.state.activeEventBtnState === 0) {
 			viewSel = 
 				<tbody>
 					{
@@ -129,7 +150,7 @@ class TrashBinDetails extends React.Component {
 					).reverse()
 					}
 				</tbody>
-			} else if(this.state.activeBtnState === 1){
+			} else if(this.state.activeEventBtnState === 1){
 				viewSel = 
 					<tbody>
 						{
@@ -176,14 +197,14 @@ class TrashBinDetails extends React.Component {
 							<SensorRow key={sensor.id} sensor={sensor}/>
 							)}
 						</tbody>
-						<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseEventList">Show Events</button>
+						<button type="button" class={this.flipCollapseBtnColor()} onClick={() => this.flipCollapseBtnState()} data-toggle="collapse" data-target="#collapseEventList">Show Events</button>
 					</table>
 					
 					<div class="collapse" id="collapseEventList">	
 						<div class="btn-group" role="group" >
-							<button type="button" class={this.btnClr(0, this.state.activeBtnState)} onClick={() => this.actBtnState(0)}>All</button>
-							<button type="button" class={this.btnClr(1, this.state.activeBtnState)} onClick={() => this.actBtnState(1)}>Bin Opened</button>
-							<button type="button" class={this.btnClr(2, this.state.activeBtnState)} onClick={() => this.actBtnState(2)}>Bin Emptied</button>
+							<button type="button" class={this.btnClr(0, this.state.activeEventBtnState)} onClick={() => this.actBtnState(0)}>All</button>
+							<button type="button" class={this.btnClr(1, this.state.activeEventBtnState)} onClick={() => this.actBtnState(1)}>Bin Opened</button>
+							<button type="button" class={this.btnClr(2, this.state.activeEventBtnState)} onClick={() => this.actBtnState(2)}>Bin Emptied</button>
 						</div>
 						<table className="table">
 							<thead>
