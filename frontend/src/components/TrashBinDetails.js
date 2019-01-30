@@ -234,19 +234,7 @@ class TrashBinDetails extends React.Component {
                         </div>
                     </div>
 					
-					<table className="table" >
-						<thead>
-							<tr>
-								<th scope="col">Sensor ID</th>
-								<th scope="col">Position in trashbin</th>
-							</tr>
-						</thead>
-						<tbody>
-							{sensors.map(sensor =>
-							<SensorRow key={sensor.id} sensor={sensor}/>
-							)}
-						</tbody>
-					</table>
+					
 					<button type="button" 
 						className={this.collapseBtnColorAndText("color")} 
 						onClick={() => this.flipCollapseBtnState()} 
