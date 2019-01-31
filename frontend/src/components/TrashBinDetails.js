@@ -1,25 +1,23 @@
 import React from 'react';
 import './CSS/TrashBinDetails.css';
 import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
-import getEventsByTrashbin from '../api/getEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
 import getSensorsByTrashbin from '../api/getSensorsByTrashbin';
 import SensorRow from './SensorRow'
 import {withRouter} from "react-router-dom";
 import trashbinimage from '../trashbinimage.jpg';
 import {timeClean} from './FrontEndFunctions';
-import {trigCodeToText} from './FrontEndFunctions';
 
 class TrashBinDetails extends React.Component {
 
 	constructor(props){
 		super(props);
 		this.state = {
-			activeEventBtnState: 0,
-			isCollapseBtnActive: false,
+			openActive: true,
+			emptiedActive: true,
+			isLogActive: false,
 			loading: true,
 			pevents: [],
-			events: [],
 			trashbin: {},
 			sensors: []
 		}
@@ -29,69 +27,45 @@ class TrashBinDetails extends React.Component {
 		var id = window.location.pathname.replace('/', '');
 		this.setState({
 			pevents: await getPEventsByTrashbin(id),
-			events: await getEventsByTrashbin(id),
 			trashbin: await getSingleTrashbinData(id),
 			sensors: await getSensorsByTrashbin(id),
 			loading: false
 		});
 	}
 	
-	//button color, manages the changing colors of the compound button [All | Bin Opened | Bin Emptied | Unprocessed Events]. 
-	//'btn' dictates which button we are manipulating at the moment, while 'input' gives which of the 4 is last clicked on website.
-	btnClr(btn, input) {
-		if(btn === 0 && input === 0) {
-			return "btn btn-success";
-		} else if(btn === 0 && input !== 0) {
-			return "btn btn-dark";
-		} else if(btn === 1 && input === 1) {
-			return "btn btn-success";
-		} else if(btn === 1 && input !== 1) {
-			return "btn btn-dark";
-		}else if(btn === 2 && input === 2) {
-			return "btn btn-success";
-		} else if(btn === 2 && input !== 2) {
-			return "btn btn-dark";
-		} if(btn === 3 && input === 3) {
-			return "btn btn-success";
-		} else if(btn === 3 && input !== 3) {
-			return "btn btn-dark";
-		} else {
-			return "btn btn-danger";
-		}
-	}
-	
-	//this method is called when we want to change the active event button. (put to memory which button was last clicked in compound button [All | Bin Opened | Bin Emptied | Unprocessed Events])
-	changeActiveEventBtnState(input) {
-		this.setState({
-			activeEventBtnState: input
-		});
-	}
-	
 	//used to track the state of (Show Events/Hide Events) button.
-	flipCollapseBtnState() {
-		if(this.state.isCollapseBtnActive === false) {
+	flipBtnState(input) {
+		if(input === "open" && this.state.openActive === false) {
 			this.setState({
-				isCollapseBtnActive: true
+				openActive: true
 			});
-		} else {
+		} else if(input === "open" && this.state.openActive !== false) {
 			this.setState({
-				isCollapseBtnActive: false
+				openActive: false
+			});
+		} else if(input === "emptied" && this.state.emptiedActive === false) {
+			this.setState({
+				emptiedActive: true
+			});
+		} else if(input === "emptied" && this.state.emptiedActive !== false) {
+			this.setState({
+				emptiedActive: false
 			});
 		}
 	}
 	
-	//changes the color & text of (Show Events/Hide Events) button depending on wether it's active or not. input tells if we are changing "color" or "text"
-	collapseBtnColorAndText(input) {
-		if(input === "color" && this.state.isCollapseBtnActive === true) {
-			return ("btn btn-success");
-		} else if(input === "color" && this.state.isCollapseBtnActive === false){ 
-			return ("btn btn-dark"); 
-		} else if(input === "text" && this.state.isCollapseBtnActive === true) {
-			return ("Hide Events");
-		} else if(input === "text" && this.state.isCollapseBtnActive === false){ 
-			return ("Show Events"); 
+	showHide(input) {
+		if(input === "open" && this.state.openActive){
+			return "Hide ";
+		} else if(input === "open" && !this.state.openActive) {
+			return "Show ";
+		} else if(input === "emptied" && this.state.emptiedActive){
+			return "Hide ";
+		} else if(input === "emptied" && !this.state.emptiedActive) {
+			return "Show ";
 		}
 	}
+	
 	
 	render() {
 		if (this.state.loading) {
@@ -99,19 +73,11 @@ class TrashBinDetails extends React.Component {
 		}
 		else {
 			let trashbin = this.state.trashbin;
-			let events = this.state.events;
 			let pevents = this.state.pevents;
 			let sensors = this.state.sensors;
 			let viewSel;
 			
-			/*
-			depending on what is the active button we change what evets we render
-			0 		-> all events
-			1 		-> bin opened
-			2		-> bin emptied
-			else(3)	-> unprocessed events
-			*/
-			if(this.state.activeEventBtnState === 0) {
+			if(this.state.openActive && this.state.emptiedActive) {
 				viewSel = 
 					<tbody>
 						{
@@ -120,10 +86,10 @@ class TrashBinDetails extends React.Component {
 								event_time={timeClean(event.event_time)}
 								event={event.event_type}
 								key={index}/>
-						}).reverse()
+						})//.reverse()
 						}
 					</tbody>
-			} else if(this.state.activeEventBtnState === 1){
+			} else if(this.state.openActive && !this.state.emptiedActive){
 				viewSel = 
 					<tbody>
 						{
@@ -132,10 +98,10 @@ class TrashBinDetails extends React.Component {
 								event_time={timeClean(event.event_time)}
 								event={event.event_type}
 								key={index}/>
-						}).reverse()
+						})//.reverse()
 						}
 					</tbody>
-			} else if(this.state.activeEventBtnState === 2){
+			} else if(!this.state.openActive && this.state.emptiedActive){
 				viewSel =
 					<tbody>
 						{
@@ -144,20 +110,12 @@ class TrashBinDetails extends React.Component {
 								event_time={timeClean(event.event_time)}
 								event={event.event_type}
 								key={index}/>
-						}).reverse()
+						})//.reverse()
 						}
 					</tbody>
 			} else {
 				viewSel = 
 					<tbody>
-						{
-						events.map((event, index) =>
-							<EventRow
-							event_time={timeClean(event.event_time)}
-							event={trigCodeToText(event.trigger_code)}
-							key={index}/>
-						).reverse()
-						}
 					</tbody>
 			}
 
@@ -190,22 +148,10 @@ class TrashBinDetails extends React.Component {
                             )}
                         </div>
                     </div>
-					
-					
-					<button type="button" 
-						className={this.collapseBtnColorAndText("color")} 
-						onClick={() => this.flipCollapseBtnState()} 
-						data-toggle="collapse" 
-						data-target="#collapseEventList">
-							{this.collapseBtnColorAndText("text")}
-					</button>
 					<p></p>
-					<div className="collapse" id="collapseEventList">	
 						<div className="btn-group" role="group" >
-							<button type="button" className={this.btnClr(0, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(0)}>All</button>
-							<button type="button" className={this.btnClr(1, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(1)}>Bin Opened</button>
-							<button type="button" className={this.btnClr(2, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(2)}>Bin Emptied</button>
-							<button type="button" className={this.btnClr(3, this.state.activeEventBtnState)} onClick={() => this.changeActiveEventBtnState(3)}>Unprocessed Events</button>
+							<button type="button" className="btn btn-light" onClick={() => this.flipBtnState("open")}>{this.showHide("open")}opened</button>
+							<button type="button" className="btn btn-light" onClick={() => this.flipBtnState("emptied")}>{this.showHide("emptied")}emptied</button>
 						</div>
 						<table className="table">
 							<thead>
@@ -216,7 +162,6 @@ class TrashBinDetails extends React.Component {
 							</thead>
 							{viewSel}	 
 						</table>
-					</div>
 				</div>
 			)
 		}
