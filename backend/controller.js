@@ -113,6 +113,7 @@ router.get('/:id/pevents', async (req, res) => {
         pevents.sort(function (a, b) {
             return b.event_time - a.event_time;
         });
+        
         res.status(200).send(pevents);
     } catch (e) {
         res.status(500).send(e);
@@ -128,6 +129,13 @@ router.get('/:id/sensors', async(req, res) => {
             trashbinId: req.params.id
           }
         });
+        if(sensors.length===2){
+            if(sensors[0].taglocation === "bottom"){
+                const temp = sensors[0]
+                sensors[0] = sensors[1]
+                sensors[1] = temp;
+            }
+        }
         res.status(200).send(sensors);
     } catch (e) {
         res.status(500).send(e);
