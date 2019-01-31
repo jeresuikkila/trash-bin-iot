@@ -35,27 +35,6 @@ class TrashBinDetails extends React.Component {
 		});
 	}
 	
-	//used to track the state of (Show Events/Hide Events) button.
-	flipBtnState(input) {
-		if(input === "open" && this.state.openActive === false) {
-			this.setState({
-				openActive: true
-			});
-		} else if(input === "open" && this.state.openActive !== false) {
-			this.setState({
-				openActive: false
-			});
-		} else if(input === "emptied" && this.state.emptiedActive === false) {
-			this.setState({
-				emptiedActive: true
-			});
-		} else if(input === "emptied" && this.state.emptiedActive !== false) {
-			this.setState({
-				emptiedActive: false
-			});
-		}
-	}
-	
 	showHide(input) {
 		if(input === "open" && this.state.openActive){
 			return "Hide ";
