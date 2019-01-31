@@ -11,12 +11,11 @@ import { createBrowserHistory } from 'history';
 import { Redirect } from 'react-router-dom';
 
 class MainPage extends Component {
-  history = createBrowserHistory();
   constructor(props) {
     super(props);
     this.state = { trashbins: [], binid: 0 }
     this.handleClick = this.handleClick.bind(this);
-
+    this.history = createBrowserHistory();
   }
 
   async componentDidMount() {

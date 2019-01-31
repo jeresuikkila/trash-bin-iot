@@ -1,48 +1,40 @@
 import React from 'react';
-//import './TrashBinDetails.css';
+import './CSS/TrashBinDetails.css';
 import EventMenu from './EventMenu'
-import getEventsByTrashbin from '../api/getEventsByTrashbin'
+import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
+import getSensorsByTrashbin from '../api/getSensorsByTrashbin';
+import SensorRow from './SensorRow'
+import {withRouter} from "react-router-dom";
+import trashbinimage from '../trashbinimage.jpg';
 
 
 class TrashBinDetails extends React.Component {
-    state = {
-        loading: true,
-        events: [],
-        trashbin: {}
+
+    constructor(props){
+        super(props);
+        this.state = {
+            loading: true,
+            events: [],
+            trashbin: {},
+            sensors: []
+        }
     }
+
+    handleClick = () => {
+        this.props.history.push("/");
+    }
+
     async componentDidMount() {
         var id = window.location.pathname.replace('/', '');
         this.setState({
-            events: await getEventsByTrashbin(id),
+            events: await getPEventsByTrashbin(id),
             trashbin: await getSingleTrashbinData(id),
+            sensors: await getSensorsByTrashbin(id),
             loading: false
         });
     }
-    renderSwitch(param) {
-        switch (param) {
-            case '2':
-                return 'singleclick';
-            case '3':
-                return 'movement start';
-            case '4':
-                return 'movement stop';
-            case '5':
-                return 'freefall';
-            case '8':
-                return 'doubleclick';
-            case '0':
-                return 'restart';
-            case '9':
-                return 'long click';
-            case '11':
-                return 'temp max/min';
-            case '6':
-                return 'activation';
-            default:
-                return param;
-        }
-    }
+
     render() {
         if (this.state.loading) {
             return (<p>Loading...</p>)
@@ -50,12 +42,33 @@ class TrashBinDetails extends React.Component {
         else {
             let trashbin = this.state.trashbin;
             let events = this.state.events;
+            let sensors = this.state.sensors;
             return (
                 <div>
+                    <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><a href="/">Main Page</a></li>
+                            <li className="breadcrumb-item active" aria-current="page">{trashbin.id}</li>
+                        </ol>
+                    </nav>
                     <h3>Trash bin details</h3>
-                    <p>ID: {trashbin.id}</p>
                     <p>Address: {trashbin.address}</p>
                     <p>Type: {trashbin.bintype}</p>
+                    <p>Owner: {trashbin.owner}</p>
+                    <p></p>
+                    <div className="logo">
+                        <div id="trashin-pic">
+                            <img src={trashbinimage} alt="Trashbin" width="125" height="125" />
+                        </div>
+                        <div className="table sensor" >
+                            { sensors.map(sensor =>
+                                <SensorRow
+                                    key={sensor.id}
+                                    sensor={sensor}
+                                    events={events}/>
+                            )}
+                        </div>
+                    </div>
                     <EventMenu />
                     <table className="table">
                         <thead>
@@ -65,11 +78,12 @@ class TrashBinDetails extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {events.map(event =>
-                                <EventRow event_time={event.event_time}
-                                event={this.renderSwitch(event.trigger_code)}
-                                key={event.packet_hash}/>
-                            )}
+                            {events.map((event, index) =>
+                                <EventRow
+								event_time={timeClean(event.event_time)}
+                                event={event.event_type}
+                                key={index}/>
+                            ).reverse()}
                         </tbody>
                     </table>
                 </div>
@@ -87,4 +101,15 @@ const EventRow = (props) => {
     )
 };
 
-export default TrashBinDetails;
+export const timeClean = (input) => {
+    if(input.includes("T")) {
+        var res = input.split("T");
+        var res2 = res[1].split(".");
+        var ret = res[0] + " " + res2[0];
+        return ret;
+    } else {
+        return input;
+    }
+}
+
+export default withRouter(TrashBinDetails);
