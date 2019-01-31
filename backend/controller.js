@@ -9,18 +9,50 @@ const models = require('./models');
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
-// Finds all the trashbins
+// Finds all the trashbins and augments them with the latest event data
 router.get('/', async (req, res) => {
     try {
         const bins = await models.trashbin.findAll({
-            attributes: ['id', 'bintype', 'owner', 'address']
+            attributes: ['id', 'bintype', 'owner', 'address'],
+            raw: true
         });
+
+        const pevents = await models.processedevent.findAll({ raw: true });
+
         bins.forEach(bin => {
-            bin.dataValues.latestEvent = "test event",
-            bin.dataValues.status = "test status"
-        });
+            const myevents = pevents.filter( ev => ev.trashbinId == bin.id )
+
+            if (myevents !== undefined && myevents.length !== 0) {
+                function compare(a, b) { a.event_time - b.event_time }
+                myevents.sort(compare).reverse();
+                
+                bin.latestEvent = myevents[0].event_time
+                bin.eventType = myevents[0].event_type
+            } else {
+                bin.latestEvent = null
+                bin.eventType = null
+            }
+            bin.status = "test status";
+            
+        })
+
         res.status(200).send(bins)
     } catch (e) {
+        console.log(e)
+        res.status(500).send(e)
+    }
+});
+
+// Find all processed events 
+router.get('/pevents', async(req, res) => {
+    try {
+        const pevents = await models.processedevent.findAll({
+            //
+        });
+        console.log(pevents);
+        res.status(200).send(pevents)
+    } catch (e) {
+        console.log(e)
         res.status(500).send(e)
     }
 });
@@ -76,6 +108,9 @@ router.get('/:id/pevents', async (req, res) => {
             where: {
                 trashbinId: req.params.id
             }
+        });
+        pevents.sort(function (a, b) {
+            return a.event_time - b.event_time;
         });
         res.status(200).send(pevents);
     } catch (e) {

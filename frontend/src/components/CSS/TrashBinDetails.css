@@ -1,0 +1,12 @@
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+
+#trashin-pic {
+    flex: 1;
+}
+
+.sensor {
+    flex: 5;
+}
