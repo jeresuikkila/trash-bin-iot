@@ -1,23 +1,25 @@
 import React from 'react';
 import './CSS/TrashBinDetails.css';
-import EventMenu from './EventMenu'
+import { DropdownMultiple } from 'reactjs-dropdown-component';
 import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
 import getSensorsByTrashbin from '../api/getSensorsByTrashbin';
 import SensorRow from './SensorRow'
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import trashbinimage from '../trashbinimage.jpg';
 
 
 class TrashBinDetails extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             loading: true,
             events: [],
             trashbin: {},
-            sensors: []
+            sensors: [],
+            filter: [{ id: 0, title: 'Opened', selected: true, key: 'filter' }, { id: 1, title: 'Emptied', selected: true, key: 'filter' }],
+            selectedevents: []
         }
     }
 
@@ -33,6 +35,34 @@ class TrashBinDetails extends React.Component {
             sensors: await getSensorsByTrashbin(id),
             loading: false
         });
+        this.setState({
+            selectedevents: this.state.events
+        });
+    }
+
+    toggleSelected = (id, key) => {
+        let temp = JSON.parse(JSON.stringify(this.state[key]));
+        temp[id].selected = !temp[id].selected;
+        this.setState({
+            [key]: temp,
+            selectedevents: this.state.events.filter(function(event) {
+                console.log(event.event_type);
+                if(temp[0].selected & temp[1].selected){
+                    return event;
+                }
+                if(temp[0].selected & !temp[1].selected){
+                    if(event.event_type === "Bin opened"){
+                        return event;
+                    }
+                }
+                if(!temp[0].selected & temp[1].selected){
+                    if(event.event_type === "Bin emptied"){
+                        return event;
+                    }
+                }
+                return null;
+            })
+        });
     }
 
     render() {
@@ -41,7 +71,7 @@ class TrashBinDetails extends React.Component {
         }
         else {
             let trashbin = this.state.trashbin;
-            let events = this.state.events;
+            let events = this.state.selectedevents;
             let sensors = this.state.sensors;
             return (
                 <div>
@@ -61,15 +91,19 @@ class TrashBinDetails extends React.Component {
                             <img src={trashbinimage} alt="Trashbin" width="125" height="125" />
                         </div>
                         <div className="table sensor" >
-                            { sensors.map(sensor =>
+                            {sensors.map(sensor =>
                                 <SensorRow
                                     key={sensor.id}
                                     sensor={sensor}
-                                    events={events}/>
+                                    events={events} />
                             )}
                         </div>
                     </div>
-                    <EventMenu />
+                    <DropdownMultiple titleHelper="filter"
+                        title="Select filters"
+                        list={this.state.filter}
+                        toggleItem={this.toggleSelected}
+                    />
                     <table className="table">
                         <thead>
                             <tr>
@@ -80,9 +114,9 @@ class TrashBinDetails extends React.Component {
                         <tbody>
                             {events.map((event, index) =>
                                 <EventRow
-								event_time={timeClean(event.event_time)}
-                                event={event.event_type}
-                                key={index}/>
+                                    event_time={timeClean(event.event_time)}
+                                    event={event.event_type}
+                                    key={index} />
                             ).reverse()}
                         </tbody>
                     </table>
@@ -102,7 +136,7 @@ const EventRow = (props) => {
 };
 
 export const timeClean = (input) => {
-    if(input.includes("T")) {
+    if (input.includes("T")) {
         var res = input.split("T");
         var res2 = res[1].split(".");
         var ret = res[0] + " " + res2[0];
