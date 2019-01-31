@@ -15,9 +15,10 @@ class TrashBinDetails extends React.Component {
 		this.state = {
 			openActive: true,
 			emptiedActive: true,
-			isLogActive: false,
+			filter: [{id: 0, state: true},{id: 1, state: true}],
 			loading: true,
 			pevents: [],
+			filteredEvents: [],
 			trashbin: {},
 			sensors: []
 		}
@@ -30,6 +31,9 @@ class TrashBinDetails extends React.Component {
 			trashbin: await getSingleTrashbinData(id),
 			sensors: await getSensorsByTrashbin(id),
 			loading: false
+		});
+		this.setState({
+			filteredEvents: this.state.pevents
 		});
 	}
 	
@@ -66,6 +70,31 @@ class TrashBinDetails extends React.Component {
 		}
 	}
 	
+    filterEvents = (id, key) => {
+        let temp = JSON.parse(JSON.stringify(this.state.filter));
+        temp[id].selected = !temp[id].selected;
+        this.setState({
+            filter: temp,
+            filteredEvents: this.state.pevents.filter(function(event) {
+                console.log(event.event_type);
+                if(temp[0].selected & temp[1].selected){
+                    return event;
+                }
+                if(temp[0].selected & !temp[1].selected){
+                    if(event.event_type === "Bin opened"){
+                        return event;
+                    }
+                }
+                if(!temp[0].selected & temp[1].selected){
+                    if(event.event_type === "Bin emptied"){
+                        return event;
+                    }
+                }
+                return null;
+            })
+        });
+    }
+	
 	
 	render() {
 		if (this.state.loading) {
@@ -73,51 +102,8 @@ class TrashBinDetails extends React.Component {
 		}
 		else {
 			let trashbin = this.state.trashbin;
-			let pevents = this.state.pevents;
+			let events = this.state.filteredEvents;
 			let sensors = this.state.sensors;
-			let viewSel;
-			
-			if(this.state.openActive && this.state.emptiedActive) {
-				viewSel = 
-					<tbody>
-						{
-						pevents.map((event, index) => {
-								return <EventRow
-								event_time={timeClean(event.event_time)}
-								event={event.event_type}
-								key={index}/>
-						})//.reverse()
-						}
-					</tbody>
-			} else if(this.state.openActive && !this.state.emptiedActive){
-				viewSel = 
-					<tbody>
-						{
-						pevents.filter(event => (event.event_type === "Bin opened")).map((event, index) => {
-								return <EventRow
-								event_time={timeClean(event.event_time)}
-								event={event.event_type}
-								key={index}/>
-						})//.reverse()
-						}
-					</tbody>
-			} else if(!this.state.openActive && this.state.emptiedActive){
-				viewSel =
-					<tbody>
-						{
-						pevents.filter(event => (event.event_type === "Bin emptied")).map((event, index) => {
-								return <EventRow
-								event_time={timeClean(event.event_time)}
-								event={event.event_type}
-								key={index}/>
-						})//.reverse()
-						}
-					</tbody>
-			} else {
-				viewSel = 
-					<tbody>
-					</tbody>
-			}
 
 			//content inside will be rendered in browser
 			return (
@@ -144,14 +130,14 @@ class TrashBinDetails extends React.Component {
                                 <SensorRow
                                     key={sensor.id}
                                     sensor={sensor}
-                                    events={pevents}/>
+                                    events={events}/>
                             )}
                         </div>
                     </div>
 					<p></p>
 						<div className="btn-group" role="group" >
-							<button type="button" className="btn btn-light" onClick={() => this.flipBtnState("open")}>{this.showHide("open")}opened</button>
-							<button type="button" className="btn btn-light" onClick={() => this.flipBtnState("emptied")}>{this.showHide("emptied")}emptied</button>
+							<button type="button" className="btn btn-light" onClick={() => {this.filterEvents(0, this.state.openActive)}}>{this.showHide("open")}opened</button>
+							<button type="button" className="btn btn-light" onClick={() => {this.filterEvents(1, this.state.emptiedActive)}}>{this.showHide("emptied")}emptied</button>
 						</div>
 						<table className="table">
 							<thead>
@@ -160,7 +146,16 @@ class TrashBinDetails extends React.Component {
 									<th scope="col">Event</th>
 								</tr>
 							</thead>
-							{viewSel}	 
+							<tbody>
+								{
+									events.map((event, index) => {
+										return <EventRow
+										event_time={timeClean(event.event_time)}
+										event={event.event_type}
+										key={index}/>
+									})
+								}
+							</tbody>	 
 						</table>
 				</div>
 			)
