@@ -34,20 +34,6 @@ class TrashBinDetails extends React.Component {
             loading: false
         });
     }
-<<<<<<< HEAD
-
-	timeClean(input) {
-		if(input.includes("T")) {
-			var res = input.split("T");
-			var res2 = res[1].split(".");
-			var ret = res[0] + " " + res2[0];
-			return ret;
-		} else {
-			return input;
-		}
-	}
-=======
->>>>>>> 45d223081c9b71af8d9136506e3a457e89225e81
 
     render() {
         if (this.state.loading) {
@@ -92,28 +78,12 @@ class TrashBinDetails extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            {events.map(event =>
-                                <EventRow
-								event_time={this.timeClean(event.event_time)}
-                                event={this.renderSwitch(event.trigger_code)}
-                                key={event.packet_hash}/>
-                            ).reverse()}
-=======
-=======
->>>>>>> 57f2e449e66dc84a36d6b73e991750f15238fd7a
                             {events.map((event, index) =>
                                 <EventRow
 								event_time={timeClean(event.event_time)}
                                 event={event.event_type}
                                 key={index}/>
-<<<<<<< HEAD
-                            )}
->>>>>>> 3ab663a9f788031dc62651f0901a7b35df16fa13
-=======
                             ).reverse()}
->>>>>>> 57f2e449e66dc84a36d6b73e991750f15238fd7a
                         </tbody>
                     </table>
                 </div>
