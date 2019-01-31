@@ -13,8 +13,6 @@ class TrashBinDetails extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			openActive: true,
-			emptiedActive: true,
 			filter: [{id: 0, state: true},{id: 1, state: true}],
 			loading: true,
 			pevents: [],
