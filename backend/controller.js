@@ -119,18 +119,19 @@ router.get('/:id/pevents', async (req, res) => {
 });
 
 // Finds all sensors from one trashbin
-router.get(':id/sensors', async(req, res) => {
-  try {
-    const sensors = await models.sensorbin.findAll({
-        attributes: ['id', 'location', 'taglocation'],
-        where: {
-          trashbinId: req.params.id
-        }
-    });
-    res.status(200).send(sensors);
-  } catch (e) {
-    res.status(500).send(e);
-  }
+router.get('/:id/sensors', async(req, res) => {
+    try {
+        const sensors = await models.sensorbin.findAll({
+            attributes: ['id', 'location', 'taglocation'],
+            where: {
+            trashbinId: req.params.id
+          }
+        });
+        res.status(200).send(sensors);
+    } catch (e) {
+        res.status(500).send(e);
+    }
+});
 
 
 
