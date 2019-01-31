@@ -33,9 +33,10 @@ router.get('/', async (req, res) => {
                 bin.eventType = null
             }
             bin.status = "test status";
-            
-        })
-
+        });
+        bins.sort(function(a,b) {
+            return a.id-b.id;
+        });
         res.status(200).send(bins)
     } catch (e) {
         console.log(e)
