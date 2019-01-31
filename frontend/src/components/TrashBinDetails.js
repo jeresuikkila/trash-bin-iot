@@ -13,7 +13,7 @@ class TrashBinDetails extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			filter: [{id: 0, state: true,titlepart: "hide"},{id: 1, state: true,titlepart: "hide"}],
+			filter: [{id: 0, selected: true,titlepart: "hide"},{id: 1, selected: true,titlepart: "hide"}],
 			loading: true,
 			pevents: [],
 			filteredEvents: [],
@@ -34,26 +34,16 @@ class TrashBinDetails extends React.Component {
 			filteredEvents: this.state.pevents
 		});
 	}
+
 	
-	showHide(input) {
-		if(input === "open" && this.state.openActive){
-			return "Hide ";
-		} else if(input === "open" && !this.state.openActive) {
-			return "Show ";
-		} else if(input === "emptied" && this.state.emptiedActive){
-			return "Hide ";
-		} else if(input === "emptied" && !this.state.emptiedActive) {
-			return "Show ";
-		}
-	}
-	
-    filterEvents = (id, key) => {
-        let temp = JSON.parse(JSON.stringify(this.state.filter));
+    filterEvents = (id,key) => {
+        let temp = JSON.parse(JSON.stringify(this.state[key]));
+        console.log(temp)
         temp[id].selected = !temp[id].selected;
+        temp[id].titlepart = temp[id].titlepart === "hide" ? "show" : "hide";
         this.setState({
             filter: temp,
             filteredEvents: this.state.pevents.filter(function(event) {
-                console.log(event.event_type);
                 if(temp[0].selected & temp[1].selected){
                     return event;
                 }
@@ -113,8 +103,8 @@ class TrashBinDetails extends React.Component {
                     </div>
 					<p></p>
 						<div className="btn-group" role="group" >
-							<button type="button" className="btn btn-light" onClick={() => {this.filterEvents(0, this.state.openActive)}}>{this.showHide("open")}opened</button>
-							<button type="button" className="btn btn-light" onClick={() => {this.filterEvents(1, this.state.emptiedActive)}}>{this.showHide("emptied")}emptied</button>
+							<button type="button" className="btn btn-light" onClick={() => {this.filterEvents(0, "filter")}}>{this.state.filter[0].titlepart} opened</button>
+							<button type="button" className="btn btn-light" onClick={() => {this.filterEvents(1,"filter")}}>{this.state.filter[1].titlepart} emptied</button>
 						</div>
 						<table className="table">
 							<thead>
