@@ -111,7 +111,7 @@ router.get('/:id/pevents', async (req, res) => {
             }
         });
         pevents.sort(function (a, b) {
-            return a.event_time - b.event_time;
+            return b.event_time - a.event_time;
         });
         res.status(200).send(pevents);
     } catch (e) {
