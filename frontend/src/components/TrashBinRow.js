@@ -1,4 +1,5 @@
 import React from 'react';
+import {timeClean} from './FrontEndFunctions';
 
 const TrashBinRow = (props) => {
   return (
@@ -7,7 +8,7 @@ const TrashBinRow = (props) => {
       <td>{props.bin.owner}</td>
       <td>{props.bin.address}</td>
       <td>{props.bin.bintype}</td>
-      <td>{props.bin.latestEvent}</td>
+      <td>{timeClean(props.bin.latestEvent)}</td>
 
       {props.status === "OK" ? (
         <td className="text-success">{props.bin.status}</td>) :
@@ -16,5 +17,7 @@ const TrashBinRow = (props) => {
     </tr>
   )
 }
+
+
 
 export default TrashBinRow;
