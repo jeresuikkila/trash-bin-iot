@@ -1,4 +1,5 @@
 import React from 'react';
+import {timeClean} from './FrontEndFunctions';
 
 const TrashBinRow = (props) => {
   return (
@@ -17,19 +18,6 @@ const TrashBinRow = (props) => {
   )
 }
 
-export const timeClean = (input) => {
-    if(input !== null) {
-		if(input.includes("T")) {
-			var res = input.split("T");
-			var res2 = res[1].split(".");
-			var ret = res[0] + " " + res2[0];
-			return ret;
-		} else {
-			return input;
-		}
-	} else {
-		return "no event";
-	}
-}
+
 
 export default TrashBinRow;

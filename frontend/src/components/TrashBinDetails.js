@@ -1,6 +1,5 @@
 import React from 'react';
 import './CSS/TrashBinDetails.css';
-//import EventMenu from './EventMenu'
 import getPEventsByTrashbin from '../api/getPEventsByTrashbin'
 import getEventsByTrashbin from '../api/getEventsByTrashbin'
 import getSingleTrashbinData from '../api/getSingleTrashbinData'
@@ -8,7 +7,8 @@ import getSensorsByTrashbin from '../api/getSensorsByTrashbin';
 import SensorRow from './SensorRow'
 import {withRouter} from "react-router-dom";
 import trashbinimage from '../trashbinimage.jpg';
-
+import {timeClean} from './FrontEndFunctions';
+import {trigCodeToText} from './FrontEndFunctions';
 
 class TrashBinDetails extends React.Component {
 
@@ -34,38 +34,6 @@ class TrashBinDetails extends React.Component {
 			sensors: await getSensorsByTrashbin(id),
 			loading: false
 		});
-	}
-	
-	//triggercodes are saved to database as numbers from touchtags, this returns what the number represents as text.
-	trigCodeToText(param) {
-		switch (param) {
-			case '0':
-				return 'restart';
-			case '1':
-				return 'timer';
-			case '2':
-				return 'single click';
-			case '3':
-				return 'movement start';
-			case '4':
-				return 'movement stop';
-			case '5':
-				return 'freefall';
-			case '6':
-				return 'activation';
-			case '7':
-				return 'deactivation';
-			case '8':
-				return 'double click';
-			case '9':
-				return 'long click';
-			case '10':
-				return 'temp max treshold';
-			case '11':
-				return 'temp min treshold';
-			default:
-				return param;
-		}
 	}
 	
 	//button color, manages the changing colors of the compound button [All | Bin Opened | Bin Emptied | Unprocessed Events]. 
@@ -186,7 +154,7 @@ class TrashBinDetails extends React.Component {
 						events.map((event, index) =>
 							<EventRow
 							event_time={timeClean(event.event_time)}
-							event={this.trigCodeToText(event.trigger_code)}
+							event={trigCodeToText(event.trigger_code)}
 							key={index}/>
 						).reverse()
 						}
@@ -263,16 +231,5 @@ const EventRow = (props) => {
         </tr>
     )
 };
-
-export const timeClean = (input) => {
-    if(input.includes("T")) {
-        var res = input.split("T");
-        var res2 = res[1].split(".");
-        var ret = res[0] + " " + res2[0];
-        return ret;
-    } else {
-        return input;
-    }
-}
 
 export default withRouter(TrashBinDetails);
