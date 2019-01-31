@@ -68,19 +68,8 @@ class TrashBinDetails extends React.Component {
 		}
 	}
 	
-/*	//cleans the event times that come from touchtags into prettier format.
-	timeClean(input) {
-		if(input.includes("T")) {
-			var res = input.split("T");
-			var res2 = res[1].split(".");
-			var ret = res[0] + " " + res2[0];
-			return ret;
-		} else {
-			return input;
-		}
-	}
-*/	
-	//button color, manages the changing colors of the compound button [All | Bin Opened | Bin Emptied]. 'btn' dictates which button we are manipulating at the moment, while 'input' gives which of the 3 is last clicked on website.
+	//button color, manages the changing colors of the compound button [All | Bin Opened | Bin Emptied | Unprocessed Events]. 
+	//'btn' dictates which button we are manipulating at the moment, while 'input' gives which of the 4 is last clicked on website.
 	btnClr(btn, input) {
 		if(btn === 0 && input === 0) {
 			return "btn btn-success";
@@ -103,7 +92,7 @@ class TrashBinDetails extends React.Component {
 		}
 	}
 	
-	//this method is called when we want to change the active event button. (put to memory which button was last clicked in compound button [All | Bin Opened | Bin Emptied])
+	//this method is called when we want to change the active event button. (put to memory which button was last clicked in compound button [All | Bin Opened | Bin Emptied | Unprocessed Events])
 	changeActiveEventBtnState(input) {
 		this.setState({
 			activeEventBtnState: input
