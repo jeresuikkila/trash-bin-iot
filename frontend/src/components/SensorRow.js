@@ -7,26 +7,25 @@ class SensorRow extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      tagloc: 'Bottom sensor',
+      tagloc: 'No sensors',
       lastevent: '-',
     }
   }
 
   async componentDidMount() {
+    
     if (this.props.sensor.taglocation === 'lid') {
-      let reversedArray = this.props.events.reverse();
-      let event = reversedArray.find((each)=>{return each.event_type === 'Bin opened'})
+      let event = this.props.events.find((each)=>{return each.event_type === 'Bin opened'})
       this.setState({
         tagloc: 'Top sensor',
         lastevent: event ? timeClean(event.event_time) : "-",
       });
-    /*} else {
-      let reversedArray = events.reverse();
-      event = reversedArray.find((each)=>{return each.event_type === 'Bin emptied'})
+    } else if (this.props.sensor.taglocation === 'bottom') {
+      let event = this.props.events.find((each)=>{return each.event_type === 'Bin emptied'})
       this.setState({
         tagloc: 'Bottom sensor',
-        lastevent: event.event_time,
-      });*/
+        lastevent: event ? timeClean(event.event_time) : "-",
+      });
     }
   }
 
