@@ -124,7 +124,7 @@ router.get('/:id/pevents', async (req, res) => {
 router.get('/:id/sensors', async(req, res) => {
     try {
         const sensors = await models.sensorbin.findAll({
-            attributes: ['id', 'location', 'taglocation'],
+            attributes: ['id', 'location', 'taglocation','battery'],
             where: {
             trashbinId: req.params.id
           }
