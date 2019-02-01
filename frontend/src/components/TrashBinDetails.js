@@ -5,7 +5,7 @@ import getSingleTrashbinData from '../api/getSingleTrashbinData'
 import getSensorsByTrashbin from '../api/getSensorsByTrashbin';
 import SensorRow from './SensorRow'
 import {withRouter} from "react-router-dom";
-import trashbinimage from '../trashbinimage.jpg';
+import trashbinimg from '../trashbinimg.png';
 import {timeClean} from './FrontEndFunctions';
 
 class TrashBinDetails extends React.Component {
@@ -69,7 +69,8 @@ class TrashBinDetails extends React.Component {
 		}
 		else {
 			let trashbin = this.state.trashbin;
-			let events = this.state.filteredEvents;
+            let events = this.state.filteredEvents;
+            let pevents = this.state.pevents;
 			let sensors = this.state.sensors;
 
 			//content inside will be rendered in browser
@@ -90,14 +91,14 @@ class TrashBinDetails extends React.Component {
 					<p></p>
                     <div className="logo">
                         <div id="trashin-pic">
-                            <img src={trashbinimage} alt="Trashbin" width="125" height="125" />
+                            <img src={trashbinimg} alt="Trashbin" width="125" height="125" />
                         </div>
                         <div className="table sensor" >
                             { sensors.map(sensor =>
                                 <SensorRow
                                     key={sensor.id}
                                     sensor={sensor}
-                                    events={events}/>
+                                    events={pevents}/>
                             )}
                         </div>
                     </div>
