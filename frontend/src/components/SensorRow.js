@@ -1,6 +1,6 @@
 import React from 'react';
 import './CSS/SensorRow.css'
-import {timeClean} from './TrashBinDetails.js';
+import {timeClean} from './FrontEndFunctions.js';
 
 class SensorRow extends React.Component {
   
