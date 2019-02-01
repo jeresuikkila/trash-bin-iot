@@ -42,7 +42,7 @@ class SensorRow extends React.Component {
             {tagloc}
           </div>
           <div style={{ flex: 3 }}>
-            id: {this.props.sensor.id} battery: {this.state.battery}
+            id: {this.props.sensor.id} battery: {this.state.battery}%
           </div>
         </div>
         <div style={{ flex: 1 }}>
