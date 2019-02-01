@@ -9,6 +9,7 @@ class SensorRow extends React.Component {
     this.state = {
       tagloc: 'No sensors',
       lastevent: '-',
+      battery: 0
     }
   }
 
@@ -19,12 +20,14 @@ class SensorRow extends React.Component {
       this.setState({
         tagloc: 'Top sensor',
         lastevent: event ? timeClean(event.event_time) : "-",
+        battery: 100-(this.props.sensor.battery*100)/255
       });
     } else if (this.props.sensor.taglocation === 'bottom') {
       let event = this.props.events.find((each)=>{return each.event_type === 'Bin emptied'})
       this.setState({
         tagloc: 'Bottom sensor',
         lastevent: event ? timeClean(event.event_time) : "-",
+        battery: 100-(this.props.sensor.battery*100)/255
       });
     }
   }
