@@ -1,17 +1,20 @@
-// Server script to listen Everynet server and handle the database queries
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-require('dotenv').config({ path: '../.env' });
+const app = express();
+const router = express.Router();
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const port = process.env.APIPORT | 3001;
-const listenerport = process.env.LISTENERPORT | 3002;
-const models = require('./models');
-const listener = require('./ingest/listener')
-const processedevent = require('./ingest/createprocessedevent')
+const port = 3000;
 
-const app = require('./app');
-const listenerApp = require('./listenerapp');
+// Routes
+router.get('/', function(req, res) {
+    res.json({ message: 'Hello World!' });
+});
 
-listener.listenTouchtags(models, listenerApp, processedevent);
+app.use('/', router)
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
-listenerApp.listen(listenerport, () => console.log(`Everynet event listener ready on port ${listenerport}!`))
+app.listen(port, () => console.log(`Listening on port ${port}`))
