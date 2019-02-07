@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GoogleMaps from './GoogleMaps'
+
+const styles = {
+  width: '100%',
+  height: '536px'
+}
 
 class App extends Component {
   render() {
     return (
+      <div className="container">
+        <h1>Trash Bin IoT</h1>
+        <div style={styles}>
+        <GoogleMaps/>
+        </div>
+        /</div>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
