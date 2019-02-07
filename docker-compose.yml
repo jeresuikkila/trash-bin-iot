@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  backend:
+    build: backend
+    command: npm start
+    volumes:
+      - ./backend/:/usr/app/
+      - ./backend/node_modules:/usr/app/node_modules
+    ports:
+      - "3001:3000"
+  
+  frontend:
+    build: frontend
+    command: npm start
+    volumes:
+      - ./frontend:/usr/app
+      - ./frontend/node_modules:/usr/app/node_modules
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
