@@ -4,14 +4,13 @@ import GoogleMaps from './GoogleMaps'
 
 const styles = {
   width: '100%',
-  height: '536px'
+  height: '100vh'
 }
 
 class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Trash Bin IoT</h1>
         <div style={styles}>
         <GoogleMaps/>
         </div>
