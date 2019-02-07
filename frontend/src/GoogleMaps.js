@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 let trashbin = require('./trashcan.png');
 let yellow = require('./yellow.png');
 let blue = require('./blue.png');
+// placeholder list to markers, should be made into call from API to get list from database or smth.
 let markerList =[
   {id: 1, lat: 60.162059, lng: 24.945831, status: blue },
   {id: 2, lat: 60.182059, lng: 24.915831, status: yellow },
