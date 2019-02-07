@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 let trashbin = require('./trashcan.png');
 let yellow = require('./yellow.png');
 let blue = require('./blue.png');
