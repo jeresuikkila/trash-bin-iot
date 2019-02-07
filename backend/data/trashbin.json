@@ -2,8 +2,22 @@
     {
         "id": 1,
         "locationId": 1,
-        "wasteType": "biowaste",
+        "wasteType": "bio",
         "size": "160 litres",
-        "collectionInterval": "Tuesday 1600 once a week"
+        "collectionInterval": "1 times per week on Tuesday"
+    },
+    {
+        "id": 2,
+        "locationId": 1,
+        "wasteType": "mixed",
+        "size": "660 litres",
+        "collectionInterval": "1 times per week on Friday"
+    },
+    {
+        "id": 3,
+        "locationId": 2,
+        "wasteType": "mixed",
+        "size": "660 litres",
+        "collectionInterval": "1 times per week on Thursday"
     }
 ]
