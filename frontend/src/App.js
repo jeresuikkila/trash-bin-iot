@@ -1,40 +1,28 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import MainPage from './components/MainPage';
-import TrashBinDetails from './components/TrashBinDetails';
-import {BrowserRouter, Route} from 'react-router-dom';
 
 class App extends Component {
-  
-  constructor(props) {
-    super(props)
-    this.state = { selectedBin: null }
-  }
-  
-  setBinSelected = bin =>
-  this.setState({ selectedBin: bin })
-
   render() {
     return (
-        <BrowserRouter>
-        <div>
-          <Route exact path='/' render={() => (
-            <div className="App">
-              <MainPage setBinSelected={this.setBinSelected} />
-            </div>
-          )}/>
-          <Route path='/:id' render={() => (
-            <div className="App">
-               <TrashBinDetails
-        trashbin={this.state.selectedBin}
-        setBinSelected={this.setBinSelected}/>
-            </div>
-          )}/>
-        </div>
-      </BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
     );
   }
-
 }
 
 export default App;

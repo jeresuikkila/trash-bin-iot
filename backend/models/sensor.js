@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const trashbin = sequelize.define('trashbin', {
+  const sensor = sequelize.define('sensor', {
     
     
   }, {});
-  return trashbin;
+  return sensor;
 };
