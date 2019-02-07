@@ -1,8 +1,9 @@
+const url = process.env.REACT_APP_DATAURL;
 
 const GetSingleTrashbinData = async (id) => {
 
   try {
-    const response = await fetch('http://18.216.94.3:3001/trashbins/' + id);
+    const response = await fetch(url+'trashbins/' + id);
     if (!response.ok) {
       throw Error(response.status);
     }
