@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "locationId": 1,
+        "wasteType": "biowaste",
+        "size": "160 litres",
+        "collectionInterval": "Tuesday 1600 once a week"
+    }
+]

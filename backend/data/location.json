@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "address": "Otakaari 1, 02230 Espoo",
+        "lat": "62.000",
+        "lon": "25.234"
+    },
+    {
+        "id": 2,
+        "address": "Otakaari 5, 02230 Espoo",
+        "lat": "62.010",
+        "lon": "25.204"
+    }
+]

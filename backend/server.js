@@ -15,6 +15,16 @@ router.get('/', function(req, res) {
     res.json({ message: 'Hello World!' });
 });
 
+router.get('/location', (req, res) => {
+    res.sendFile(__dirname + '/data/location.json')
+});
+
+router.get('/trashbin', (req, res) => {
+    res.sendFile(__dirname + '/data/trashbin.json')
+});
+
 app.use('/', router)
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`)
+})
