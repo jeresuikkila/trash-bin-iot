@@ -54,7 +54,7 @@ const GoogleMaps = compose(
     lng: marker.lng 
     }}
     key = {
-      markerList.id
+      marker.id
     }
     onMouseOver={props.onToggleOpen}
     // onClick={avaa ikkuna jne}
