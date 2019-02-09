@@ -11,15 +11,22 @@ pipeline {
     }
 
     stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
-        }
         stage('Audit') {
             steps {
                 sh 'cd frontend && npm audit'
                 sh 'cd backend && npm audit'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'cd frontend && npm test'
+                sh 'cd backend && npm test'
+            }
+        }
+        stage('Install dependencies') { 
+            steps {
+                sh 'cd frontend && npm install'
+                sh 'cd backend && npm install'
             }
         }
     }
