@@ -17,16 +17,16 @@ pipeline {
                 sh 'cd backend && npm audit'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'cd frontend && npm test'
-                sh 'cd backend && npm test'
-            }
-        }
         stage('Install dependencies') { 
             steps {
                 sh 'cd frontend && npm install'
                 sh 'cd backend && npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'cd frontend && npm test'
+                sh 'cd backend && npm test'
             }
         }
     }
