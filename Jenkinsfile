@@ -23,6 +23,12 @@ pipeline {
                 sh 'cd backend && npm install'
             }
         }
+        stage('Lint') {
+            steps {
+                sh 'cd frontend && npm run lint'
+            }
+        }
+
         stage('Test') {
             steps {
                 sh 'cd frontend && npm test'
