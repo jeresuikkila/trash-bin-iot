@@ -26,7 +26,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'cd frontend && npm test'
-                sh 'cd backend && npm test'
+                // sh 'cd backend && npm test'
             }
         }
     }
