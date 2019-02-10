@@ -37,7 +37,7 @@
       "no-shadow": [ 1 ],
       "camelcase": [ 1 ],
       "no-underscore-dangle" : [0, "always"],
-      "react/prefer-stateless-function": 0
+      "react/prefer-stateless-function": 1
     }
   }
   
