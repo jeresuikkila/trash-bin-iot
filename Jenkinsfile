@@ -31,7 +31,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'cd frontend && npm test'
-                // sh 'cd backend && npm test'
+                sh 'cd backend && npm test'
             }
         }
     }
@@ -39,8 +39,11 @@ pipeline {
     post {
         always {
             script {
-                if (env.BRANCH_NAME == 'jenkins-slack-integration') {
+                def notifiedBranch = 'jenkins-slack-integration'
+                if (env.BRANCH_NAME == notifiedBranch && currentBuild.currentResult == 'SUCCESS') {
                     slackSend color: "good", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful. ${env.BUILD_URL}"
+                } else if (env.BRANCH_NAME == notifiedBranch && currentBuild.currentResult == 'FAILURE') {
+                    slackSend color: "danger", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful. ${env.BUILD_URL}"
                 }
 
             }
