@@ -1,0 +1,188 @@
+[
+    {
+        "id": 1,
+        "address": "BETONIMIEHENKUJA 5, 02150, Espoo",
+        "lat": 60.18097,
+        "lon": 24.83166
+    },
+    {
+        "id": 2,
+        "address": "KEMISTINTIE 1, 02150, Espoo",
+        "lat": 60.18364,
+        "lon": 24.82472
+    },
+    {
+        "id": 3,
+        "address": "KONEMIEHENTIE 1, 02150, Espoo",
+        "lat": 60.1873,
+        "lon": 24.82339
+    },
+    {
+        "id": 4,
+        "address": "KONEMIEHENTIE 2, 02150, Espoo",
+        "lat": 60.18742,
+        "lon": 24.82247
+    },
+    {
+        "id": 5,
+        "address": "KONEMIEHENTIE 4, 02150, Espoo",
+        "lat": 60.1879125,
+        "lon": 24.8230807
+    },
+    {
+        "id": 6,
+        "address": "LÄMPÖMIEHENKUJA 2, 02150, Espoo",
+        "lat": 60.18207,
+        "lon": 24.83225
+    },
+    {
+        "id": 7,
+        "address": "LÄMPÖMIEHENKUJA 3, 02150, Espoo",
+        "lat": 60.18163,
+        "lon": 24.83061
+    },
+    {
+        "id": 8,
+        "address": "MAARINTIE 6, 02150, Espoo",
+        "lat": 60.18711,
+        "lon": 24.81939
+    },
+    {
+        "id": 9,
+        "address": "MAARINTIE 8, 02150, Espoo",
+        "lat": 60.18711,
+        "lon": 24.81939
+    },
+    {
+        "id": 10,
+        "address": "METALLIMIEHENKUJA 10, 02150, Espoo",
+        "lat": 60.18253,
+        "lon": 24.83028
+    },
+    {
+        "id": 11,
+        "address": "METALLIMIEHENKUJA 4, 02150, Espoo",
+        "lat": 60.18343,
+        "lon": 24.82904
+    },
+    {
+        "id": 12,
+        "address": "METSÄHOVINTIE 114, 02540, Kirkkonummi",
+        "lat": 60.2189046,
+        "lon": 24.3934467
+    },
+    {
+        "id": 13,
+        "address": "OTAKAARI 1, 02150, Espoo",
+        "lat": 60.18609,
+        "lon": 24.82829
+    },
+    {
+        "id": 14,
+        "address": "OTAKAARI 24, 02150, Espoo",
+        "lat": 60.18521,
+        "lon": 24.83233
+    },
+    {
+        "id": 15,
+        "address": "OTAKAARI 3, 02150, Espoo",
+        "lat": 60.1883045,
+        "lon": 24.8292797
+    },
+    {
+        "id": 16,
+        "address": "OTAKAARI 4, 02150, Espoo",
+        "lat": 60.18719,
+        "lon": 24.82684
+    },
+    {
+        "id": 17,
+        "address": "OTAKAARI 5, 02150, Espoo",
+        "lat": 60.18903,
+        "lon": 24.83165
+    },
+    {
+        "id": 18,
+        "address": "OTAKAARI 7, 02150, Espoo",
+        "lat": 60.18902,
+        "lon": 24.83316
+    },
+    {
+        "id": 19,
+        "address": "OTAKAARI 8, 02150, Espoo",
+        "lat": 60.1885502,
+        "lon": 24.8290554
+    },
+    {
+        "id": 20,
+        "address": "OTANIEMENTIE 9, 02150, Espoo",
+        "lat": 60.1836131,
+        "lon": 24.8308962
+    },
+    {
+        "id": 21,
+        "address": "PUUMIEHENKUJA 2, 02150, Espoo",
+        "lat": 60.18696,
+        "lon": 24.82498
+    },
+    {
+        "id": 22,
+        "address": "PUUMIEHENKUJA 3, 02150, Espoo",
+        "lat": 60.18785,
+        "lon": 24.82533
+    },
+    {
+        "id": 23,
+        "address": "PUUMIEHENKUJA 5, 02150, Espoo",
+        "lat": 60.18842,
+        "lon": 24.8246
+    },
+    {
+        "id": 24,
+        "address": "RAKENTAJANAUKIO 4, 02150, Espoo",
+        "lat": 60.18738,
+        "lon": 24.83049
+    },
+    {
+        "id": 25,
+        "address": "RUNEBERGINKATU 14-16, 00100, Helsinki",
+        "lat": 60.17186,
+        "lon": 24.92289
+    },
+    {
+        "id": 26,
+        "address": "SÄHKÖMIEHENTIE 3, 02150, Espoo",
+        "lat": 60.18925,
+        "lon": 24.82621
+    },
+    {
+        "id": 27,
+        "address": "SÄHKÖMIEHENTIE 4, 02150, Espoo",
+        "lat": 60.18875,
+        "lon": 24.82571
+    },
+    {
+        "id": 28,
+        "address": "TEKNIIKANTIE 3, 02150, Espoo",
+        "lat": 60.18094,
+        "lon": 24.82537
+    },
+    {
+        "id": 29,
+        "address": "TIETOTIE 1, 02150, Espoo",
+        "lat": 60.18561,
+        "lon": 24.81956
+    },
+    {
+        "id": 30,
+        "address": "VUORIMIEHENTIE 1, 02150, Espoo",
+        "lat": 60.18167,
+        "lon": 24.82504
+    },
+    {
+        "id": 31,
+        "address": "VUORIMIEHENTIE 2, 02150, Espoo",
+        "lat": 60.18289,
+        "lon": 24.82484
+    }
+]
