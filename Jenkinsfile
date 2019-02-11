@@ -37,11 +37,9 @@ pipeline {
     }
 
     post {
-        success {
-            slackSend color: "good", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful"
-        }
-        failure {
-            slackSend color: "danger", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} FAILED"
+        always {
+            when { branch 'master' }
+            slackSend color: "good", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful"   
         }
     }
 }
