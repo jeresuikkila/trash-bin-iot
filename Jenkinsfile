@@ -31,7 +31,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'cd frontend && npm test'
-                sh 'cd backend && npm test'
+                // sh 'cd backend && npm test'
             }
         }
     }
@@ -43,7 +43,7 @@ pipeline {
                 if (env.BRANCH_NAME == notifiedBranch && currentBuild.currentResult == 'SUCCESS') {
                     slackSend color: "good", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful. ${env.BUILD_URL}"
                 } else if (env.BRANCH_NAME == notifiedBranch && currentBuild.currentResult == 'FAILURE') {
-                    slackSend color: "danger", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful. ${env.BUILD_URL}"
+                    slackSend color: "danger", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} FAILED. ${env.BUILD_URL}"
                 }
 
             }
