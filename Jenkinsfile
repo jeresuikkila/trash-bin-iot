@@ -38,8 +38,12 @@ pipeline {
 
     post {
         always {
-            when { branch 'master' }
-            slackSend color: "good", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful"   
+            script {
+                if (env.BRANCH_NAME == 'jenkins-slack-integration') {
+                    slackSend color: "good", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful. ${$BUILD_URL}"
+                }
+
+            }
         }
     }
 }
