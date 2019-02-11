@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Sidebar from 'react-sidebar'
+import HSYSidebar from './components/HSYSidebar'
 import GoogleMaps from './GoogleMaps'
 
 const styles = {
@@ -9,21 +9,12 @@ const styles = {
 }
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sidebarDocked: true,
-    };
-  }
+
 
   render() {
     return (
         <div className="fluid-container">
-            <Sidebar
-              sidebar={ <button type="button" className="btn btn-light">Clearly Bootstrap</button> }
-              docked={ this.state.sidebarDocked }
-              styles={ { sidebar: { background: 'white', width: '400px' } } }
-            />
+            <HSYSidebar/>
             <div style={ styles }>
                 <GoogleMaps />
             </div>
