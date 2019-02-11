@@ -39,7 +39,7 @@ pipeline {
     post {
         always {
             script {
-                def notifiedBranch = 'jenkins-slack-integration'
+                def notifiedBranch = 'master'
                 if (env.BRANCH_NAME == notifiedBranch && currentBuild.currentResult == 'SUCCESS') {
                     slackSend color: "good", message: "Job: ${env.JOB_NAME} with build number ${env.BUILD_NUMBER} was successful. ${env.BUILD_URL}"
                 } else if (env.BRANCH_NAME == notifiedBranch && currentBuild.currentResult == 'FAILURE') {
