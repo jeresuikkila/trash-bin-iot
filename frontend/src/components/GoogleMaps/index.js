@@ -1,17 +1,11 @@
 import React from 'react'
+import { compose, withProps, withStateHandlers } from 'recompose';
+import {
+  withScriptjs, withGoogleMap, GoogleMap, Marker,
+} from 'react-google-maps';
 
-const { compose, withProps, withStateHandlers } = require('recompose');
-const {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} = require('react-google-maps');
-
-const trashbin = require('./trashcan.png');
-
-// placeholder list to markers, should be made into call from API to get list from database or smth.
-const aaltoLocations = require('./api/aalto-geocoded-with-ids.json')
+const trashbin = require('../../static/trashbin.png')
+const aaltoLocations = require('../../api/aalto-geocoded-with-ids.json')
 
 const GoogleMaps = compose(
   withProps({
@@ -42,7 +36,7 @@ const GoogleMaps = compose(
             <Marker
               icon={ {
                 url: trashbin,
-                title: 'Roskakori',
+                title: 'trashbin',
                 scaledSize: new window.google.maps.Size(35, 40),
               } }
               position={ {

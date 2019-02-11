@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import Sidebar from 'react-sidebar'
-import GoogleMaps from './GoogleMaps'
-import CheckboxContainer from './CheckboxContainer'
+import GoogleMaps from '../GoogleMaps'
+import Filter from '../Filter'
+import './style.css';
 
 const styles = {
   width: '100%',
@@ -18,14 +18,16 @@ class App extends Component {
   }
 
   render() {
+    const { sidebarDocked } = this.state;
     return (
         <div className="fluid-container">
             <Sidebar
-              children={''}
-              sidebar={<CheckboxContainer/>}
-              docked={ this.state.sidebarDocked }
+              sidebar={ <Filter /> }
+              docked={ sidebarDocked }
               styles={ { sidebar: { background: 'white', width: '400px' } } }
-            />
+            >
+                <div />
+            </Sidebar>
             <div style={ styles }>
                 <GoogleMaps />
             </div>

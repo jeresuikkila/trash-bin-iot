@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Biowaste",
+    "key": "checkBox1",
+    "isChecked": false
+  },
+  {
+    "name": "Paper",
+    "key": "checkBox2",
+    "isChecked": false
+  },
+  {
+    "name": "Cardboard",
+    "key": "checkBox3",
+    "isChecked": false
+  },
+  {
+    "name": "Textiles",
+    "key": "checkBox4",
+    "isChecked": false
+  },
+  {
+    "name": "Batteries",
+    "key": "checkBox5",
+    "isChecked": false
+  },
+  {
+    "name": "Glass",
+    "key": "checkBox6",
+    "isChecked": false
+  },
+  {
+    "name": "General",
+    "key": "checkBox7",
+    "isChecked": false
+  },
+  {
+    "name": "Hazardous",
+    "key": "checkBox8",
+    "isChecked": false
+  }
+]
+  
