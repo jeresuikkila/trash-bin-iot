@@ -9,12 +9,10 @@ const styles = {
 }
 
 class App extends Component {
-
-
   render() {
     return (
         <div className="fluid-container">
-            <HSYSidebar/>
+            <HSYSidebar />
             <div style={ styles }>
                 <GoogleMaps />
             </div>
