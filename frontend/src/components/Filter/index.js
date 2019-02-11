@@ -30,6 +30,7 @@ class Filter extends React.Component {
                       <label key={ item.key } htmlFor={ item.key }>
                           {`${ item.name } `}
                           <Checkbox
+                            id={ item.key }
                             name={ item.name }
                             checked={ filters.get(item.name) }
                             onChange={ this.handleChange }
