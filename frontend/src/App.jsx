@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Sidebar from 'react-sidebar'
 import GoogleMaps from './GoogleMaps'
+import CheckboxContainer from './CheckboxContainer'
 
 const styles = {
   width: '100%',
@@ -20,7 +21,8 @@ class App extends Component {
     return (
         <div className="fluid-container">
             <Sidebar
-              sidebar={ <button type="button" className="btn btn-light">Clearly Bootstrap</button> }
+              children={''}
+              sidebar={<CheckboxContainer/>}
               docked={ this.state.sidebarDocked }
               styles={ { sidebar: { background: 'white', width: '400px' } } }
             />
