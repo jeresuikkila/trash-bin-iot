@@ -8,7 +8,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const port = 3000;
+var locationcontroller = require('./controllers/location');
+app.use('/test', locationcontroller);
+
+const port = 3001;
 
 // Routes
 router.get('/', function(req, res) {
@@ -24,6 +27,7 @@ router.get('/trashbin', (req, res) => {
 });
 
 app.use('/', router)
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)

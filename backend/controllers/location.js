@@ -1,13 +1,10 @@
-// Executes the the wanted database queries for frontend
-// Creates router as a module, loads middleware functions in it,
-// defines some routes, and mounts the router module on the paths
+// Backend api controller functions for location - table
 
 var express = require('express');
 var router = express.Router();
-const models = require('./models');
+const models = require('./../models');
 
-
-// Finds all the trashbins and augments them with the latest event data
+// Finds all the locations and sorts them in ascending order by id
 router.get('/', async (req, res) => {
 	try {
 		const locations = await models.location.findAll({
@@ -23,7 +20,8 @@ router.get('/', async (req, res) => {
 	}
 });
 
-router.get('/:id', async (req,res) => {
+// Finds one location according to the location id
+router.get('/:id', async (req, res) => {
 	try {
 		const location = await models.location.findOne({
 			attributes: ['id','address','lat','lng'],
@@ -38,7 +36,8 @@ router.get('/:id', async (req,res) => {
 	}
 });
 
-router.post('/', async (req,res) => {
+// Posts new location, what type is req?
+router.post('/', async (req, res) => {
 	try {
 		const location = models.location.create({
 			id: req.body.id,
@@ -51,3 +50,6 @@ router.post('/', async (req,res) => {
 		res.status(500).send(e);
 	}
 })
+
+
+module.exports = router;
