@@ -6,22 +6,18 @@ const checkboxes = require('../../api/checkboxes.json');
 class Filter extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      filters: new Map(),
-    }
-
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     const item = event.target.name;
     const isChecked = event.target.checked;
-    this.setState(prevState => ({ filters: prevState.filters.set(item, isChecked) }));
+    const { onFilterChange } = this.props
+    onFilterChange(item, isChecked)
   }
 
   render() {
-    const { filters } = this.state;
+    const { filters } = this.props;
     return (
         <React.Fragment>
             {

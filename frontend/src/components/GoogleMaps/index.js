@@ -5,7 +5,7 @@ import {
 } from 'react-google-maps';
 
 const trashbin = require('../../static/trashbin.png')
-const aaltoLocations = require('../../api/aalto-geocoded-with-ids.json')
+const aaltoLocations = require('../../api/aalto-with-trashbins')
 
 const GoogleMaps = compose(
   withProps({
