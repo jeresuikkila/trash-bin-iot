@@ -1,7 +1,7 @@
 import React from 'react';
 import Checkbox from './Checkbox';
 
-const checkboxes = require('../../api/checkboxes_fi.json');
+const checkboxes = require('../../api/checkboxes.json');
 
 class Filter extends React.Component {
   constructor(props) {
