@@ -5,7 +5,6 @@ import {
 } from 'react-google-maps';
 
 const trashbin = require('../../static/trashbin.png')
-const aaltoLocations = require('../../api/aalto-with-trashbins')
 
 const GoogleMaps = compose(
   withProps({
@@ -23,7 +22,7 @@ const GoogleMaps = compose(
   }),
   withScriptjs,
   withGoogleMap,
-)( () => (
+)( props => (
     <GoogleMap
       defaultZoom={ 14 }
       defaultCenter={ {
@@ -32,7 +31,7 @@ const GoogleMaps = compose(
       } }
     >
 
-        { aaltoLocations.map( marker => (
+        { props.locations.map( marker => (
             <Marker
               icon={ {
                 url: trashbin,
