@@ -38,6 +38,11 @@
     "name": "Hazardous",
     "key": "checkBox8",
     "isChecked": false
+  },
+  {
+    "name": "Plastic",
+    "key": "checkBox9",
+    "isChecked": false
   }
 ]
   

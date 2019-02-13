@@ -38,6 +38,11 @@
     "name": "Vaarallinen jäte",
     "key": "checkBox8",
     "isChecked": false
+  },
+  {
+    "name": "Muovi",
+    "key": "checkBox9",
+    "isChecked": false
   }
 ]
   
