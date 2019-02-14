@@ -1,0 +1,1340 @@
+[
+    {
+        "id": 1,
+        "address": "BETONIMIEHENKUJA 5, 02150, Espoo",
+        "lat": 60.18097,
+        "lon": 24.83166,
+        "trashbins": [
+            {
+                "id": 1,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 2,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 3,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "address": "KEMISTINTIE 1, 02150, Espoo",
+        "lat": 60.18364,
+        "lon": 24.82472,
+        "trashbins": [
+            {
+                "id": 4,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 5,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 5,
+                "collectionInterval": "soitosta tyhjennys soitosta",
+                "nextPickup": ""
+            },
+            {
+                "id": 6,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 5,
+                "collectionInterval": "soitosta tyhjennys soitosta",
+                "nextPickup": ""
+            },
+            {
+                "id": 7,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 8,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 9,
+                "wasteType": "General",
+                "size": "600 l",
+                "containerType": "astia pyörällinen",
+                "owner": "Kiinteistö",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "address": "KONEMIEHENTIE 1, 02150, Espoo",
+        "lat": 60.1873,
+        "lon": 24.82339,
+        "trashbins": [
+            {
+                "id": 10,
+                "wasteType": "General",
+                "size": "600 l",
+                "containerType": "astia pyörällinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "address": "KONEMIEHENTIE 2, 02150, Espoo",
+        "lat": 60.18742,
+        "lon": 24.82247,
+        "trashbins": [
+            {
+                "id": 11,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 12,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 8,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 13,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 8,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "address": "KONEMIEHENTIE 4, 02150, Espoo",
+        "lat": 60.1879125,
+        "lon": 24.8230807,
+        "trashbins": [
+            {
+                "id": 14,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "address": "LÄMPÖMIEHENKUJA 2, 02150, Espoo",
+        "lat": 60.18207,
+        "lon": 24.83225,
+        "trashbins": [
+            {
+                "id": 15,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 16,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 3,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "address": "LÄMPÖMIEHENKUJA 3, 02150, Espoo",
+        "lat": 60.18163,
+        "lon": 24.83061,
+        "trashbins": [
+            {
+                "id": 17,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 18,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 3,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 19,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 3,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "address": "MAARINTIE 6, 02150, Espoo",
+        "lat": 60.18711,
+        "lon": 24.81939,
+        "trashbins": [
+            {
+                "id": 20,
+                "wasteType": "General",
+                "size": "600 l",
+                "containerType": "astia pyörällinen",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ke",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 21,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 4,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 22,
+                "wasteType": "Biowaste",
+                "size": "140 l",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 4,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "address": "MAARINTIE 8, 02150, Espoo",
+        "lat": 60.18711,
+        "lon": 24.81939,
+        "trashbins": [
+            {
+                "id": 23,
+                "wasteType": "General",
+                "size": "240 l",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ke",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 24,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 25,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 26,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 5,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 27,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 5,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "address": "METALLIMIEHENKUJA 10, 02150, Espoo",
+        "lat": 60.18253,
+        "lon": 24.83028,
+        "trashbins": [
+            {
+                "id": 28,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "3 krt/viikko ma ke pe",
+                "nextPickup": "13.02.19"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "address": "METALLIMIEHENKUJA 4, 02150, Espoo",
+        "lat": 60.18343,
+        "lon": 24.82904,
+        "trashbins": [
+            {
+                "id": 29,
+                "wasteType": "General",
+                "size": "3 m3",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 30,
+                "wasteType": "General",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 31,
+                "wasteType": "Biowaste",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 2. viikko pe vko 2,4",
+                "nextPickup": "15.02.19"
+            },
+            {
+                "id": 32,
+                "wasteType": "Biowaste",
+                "size": "800 l",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 2,
+                "collectionInterval": "joka 2. viikko pe vko 2,4",
+                "nextPickup": "15.02.19"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "address": "METSÄHOVINTIE 114, 02540, Kirkkonummi",
+        "lat": 60.2189046,
+        "lon": 24.3934467,
+        "trashbins": [
+            {
+                "id": 33,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko ke vko 1,3",
+                "nextPickup": "20.02.19"
+            },
+            {
+                "id": 34,
+                "wasteType": "Cardboard",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "joka 4. viikko ti vko 3",
+                "nextPickup": "05.03.19"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "address": "OTAKAARI 1, 02150, Espoo",
+        "lat": 60.18609,
+        "lon": 24.82829,
+        "trashbins": [
+            {
+                "id": 35,
+                "wasteType": "General",
+                "size": "600 l",
+                "containerType": "astia pyörällinen",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "3 krt/viikko ma ke pe",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 36,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 10,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 37,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 10,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 38,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 39,
+                "wasteType": "Biowaste",
+                "size": "200 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 40,
+                "wasteType": "Biowaste",
+                "size": "240 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 41,
+                "wasteType": "Biowaste",
+                "size": "240 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 42,
+                "wasteType": "Biowaste",
+                "size": "200 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "address": "OTAKAARI 24, 02150, Espoo",
+        "lat": 60.18521,
+        "lon": 24.83233,
+        "trashbins": [
+            {
+                "id": 43,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia pienipyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 44,
+                "wasteType": "Biowaste",
+                "size": "140 l",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 3,
+                "collectionInterval": "astiavuokra",
+                "nextPickup": ""
+            },
+            {
+                "id": 45,
+                "wasteType": "Biowaste",
+                "size": "paino",
+                "containerType": "puristinsäiliö vaihtolava",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 2. viikko ke vko 2,4",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 46,
+                "wasteType": "Biowaste",
+                "size": "12 m3",
+                "containerType": "puristinsäiliö isokoukku",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko ke vko 2,4",
+                "nextPickup": "13.02.19"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "address": "OTAKAARI 3, 02150, Espoo",
+        "lat": 60.1883045,
+        "lon": 24.8292797,
+        "trashbins": [
+            {
+                "id": 47,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 12,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 48,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 12,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "address": "OTAKAARI 4, 02150, Espoo",
+        "lat": 60.18719,
+        "lon": 24.82684,
+        "trashbins": [
+            {
+                "id": 49,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko ke vko 1,3",
+                "nextPickup": "20.02.19"
+            },
+            {
+                "id": 50,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 3,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 51,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 3,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "address": "OTAKAARI 5, 02150, Espoo",
+        "lat": 60.18903,
+        "lon": 24.83165,
+        "trashbins": [
+            {
+                "id": 52,
+                "wasteType": "General",
+                "size": "",
+                "containerType": " ",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": " ti",
+                "nextPickup": ""
+            },
+            {
+                "id": 53,
+                "wasteType": "Biowaste",
+                "size": "",
+                "containerType": " ",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": " pe",
+                "nextPickup": ""
+            },
+            {
+                "id": 54,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 55,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 56,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 4,
+                "collectionInterval": "1 krt/viikko ke",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 57,
+                "wasteType": "Biowaste",
+                "size": "140 l",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 4,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 58,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 4,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "address": "OTAKAARI 7, 02150, Espoo",
+        "lat": 60.18902,
+        "lon": 24.83316,
+        "trashbins": [
+            {
+                "id": 59,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 60,
+                "wasteType": "Biowaste",
+                "size": "200 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 61,
+                "wasteType": "Biowaste",
+                "size": "240 l",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "address": "OTAKAARI 8, 02150, Espoo",
+        "lat": 60.1885502,
+        "lon": 24.8290554,
+        "trashbins": [
+            {
+                "id": 62,
+                "wasteType": "General",
+                "size": "6 m3",
+                "containerType": "etukontti umpisäiliö",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko ma vko 1,3",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 63,
+                "wasteType": "General",
+                "size": "paino",
+                "containerType": "punnittu etukontti",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 2. viikko ma vko 1,3",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "address": "OTANIEMENTIE 9, 02150, Espoo",
+        "lat": 60.1836131,
+        "lon": 24.8308962,
+        "trashbins": [
+            {
+                "id": 64,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Kiinteistö",
+                "count": 2,
+                "collectionInterval": "2 krt/viikko ma to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 65,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Kiinteistö",
+                "count": 3,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 66,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 3,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "address": "PUUMIEHENKUJA 2, 02150, Espoo",
+        "lat": 60.18696,
+        "lon": 24.82498,
+        "trashbins": [
+            {
+                "id": 67,
+                "wasteType": "General",
+                "size": "",
+                "containerType": " ",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ke",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 68,
+                "wasteType": "General",
+                "size": "2 m3",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 69,
+                "wasteType": "General",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 70,
+                "wasteType": "Biowaste",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 4. viikko pe vko 1",
+                "nextPickup": "22.02.19"
+            },
+            {
+                "id": 71,
+                "wasteType": "Biowaste",
+                "size": "800 l",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "joka 4. viikko pe vko 1",
+                "nextPickup": "22.02.19"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "address": "PUUMIEHENKUJA 3, 02150, Espoo",
+        "lat": 60.18785,
+        "lon": 24.82533,
+        "trashbins": [
+            {
+                "id": 72,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ke",
+                "nextPickup": "13.02.19"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "address": "PUUMIEHENKUJA 5, 02150, Espoo",
+        "lat": 60.18842,
+        "lon": 24.8246,
+        "trashbins": [
+            {
+                "id": 73,
+                "wasteType": "General",
+                "size": "",
+                "containerType": " ",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ke",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 74,
+                "wasteType": "General",
+                "size": "2 m3",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 75,
+                "wasteType": "General",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 76,
+                "wasteType": "Cardboard",
+                "size": "3 m3",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko ma vko 1,3",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 77,
+                "wasteType": "Cardboard",
+                "size": "paino",
+                "containerType": "punnittu Cardboard",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 2. viikko ma vko 1,3",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 78,
+                "wasteType": "Biowaste",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 4. viikko pe vko 1",
+                "nextPickup": "22.02.19"
+            },
+            {
+                "id": 79,
+                "wasteType": "Biowaste",
+                "size": "800 l",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "joka 4. viikko pe vko 1",
+                "nextPickup": "22.02.19"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "address": "RAKENTAJANAUKIO 4, 02150, Espoo",
+        "lat": 60.18738,
+        "lon": 24.83049,
+        "trashbins": [
+            {
+                "id": 80,
+                "wasteType": "Biowaste",
+                "size": "140 l",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 81,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "address": "RUNEBERGINKATU 14-16, 00100, Helsinki",
+        "lat": 60.17186,
+        "lon": 24.92289,
+        "trashbins": [
+            {
+                "id": 82,
+                "wasteType": "General",
+                "size": "paino",
+                "containerType": "puristinsäiliö vaihtolava",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 2. viikko ti vko 2,4",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 83,
+                "wasteType": "General",
+                "size": "12 m3",
+                "containerType": "puristinsäiliö pikkukoukku",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko ti vko 2,4",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 84,
+                "wasteType": "Biowaste",
+                "size": "140 l",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "astiavuokra",
+                "nextPickup": ""
+            },
+            {
+                "id": 85,
+                "wasteType": "Biowaste",
+                "size": "paino",
+                "containerType": "puristinsäiliö vaihtolava",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 86,
+                "wasteType": "Biowaste",
+                "size": "8 m3",
+                "containerType": "lava pikkukoukku",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "address": "SÄHKÖMIEHENTIE 3, 02150, Espoo",
+        "lat": 60.18925,
+        "lon": 24.82621,
+        "trashbins": [
+            {
+                "id": 87,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 88,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 2,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "address": "SÄHKÖMIEHENTIE 4, 02150, Espoo",
+        "lat": 60.18875,
+        "lon": 24.82571,
+        "trashbins": [
+            {
+                "id": 89,
+                "wasteType": "General",
+                "size": "",
+                "containerType": " ",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ke",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 90,
+                "wasteType": "General",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 91,
+                "wasteType": "General",
+                "size": "3 m3",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 92,
+                "wasteType": "Biowaste",
+                "size": "100 l",
+                "containerType": "säkki ",
+                "owner": "-",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            },
+            {
+                "id": 93,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "address": "TEKNIIKANTIE 3, 02150, Espoo",
+        "lat": 60.18094,
+        "lon": 24.82537,
+        "trashbins": [
+            {
+                "id": 94,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko to vko 1,3",
+                "nextPickup": "21.02.19"
+            },
+            {
+                "id": 95,
+                "wasteType": "Biowaste",
+                "size": "140 l laitosbio",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "address": "TIETOTIE 1, 02150, Espoo",
+        "lat": 60.18561,
+        "lon": 24.81956,
+        "trashbins": [
+            {
+                "id": 96,
+                "wasteType": "General",
+                "size": "",
+                "containerType": " ",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ke",
+                "nextPickup": "13.02.19"
+            },
+            {
+                "id": 97,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko to",
+                "nextPickup": "14.02.19"
+            },
+            {
+                "id": 98,
+                "wasteType": "Biowaste",
+                "size": "240 l",
+                "containerType": "astia ",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ma",
+                "nextPickup": "18.02.19"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "address": "VUORIMIEHENTIE 1, 02150, Espoo",
+        "lat": 60.18167,
+        "lon": 24.82504,
+        "trashbins": [
+            {
+                "id": 99,
+                "wasteType": "Plastic",
+                "size": "",
+                "containerType": " ",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 4. viikko ti vko 3",
+                "nextPickup": "05.03.19"
+            },
+            {
+                "id": 100,
+                "wasteType": "General",
+                "size": "660 l",
+                "containerType": "astia isopyöräinen",
+                "owner": "Vuokra",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko to vko 1,3",
+                "nextPickup": "21.02.19"
+            },
+            {
+                "id": 101,
+                "wasteType": "Plastic",
+                "size": "",
+                "containerType": " ",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 4. viikko ti vko 3",
+                "nextPickup": "05.03.19"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "address": "VUORIMIEHENTIE 2, 02150, Espoo",
+        "lat": 60.18289,
+        "lon": 24.82484,
+        "trashbins": [
+            {
+                "id": 102,
+                "wasteType": "General",
+                "size": "2 m3",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 103,
+                "wasteType": "General",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 104,
+                "wasteType": "Biowaste",
+                "size": "800 l",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko pe vko 2,4",
+                "nextPickup": "15.02.19"
+            },
+            {
+                "id": 105,
+                "wasteType": "Biowaste",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 2. viikko pe vko 2,4",
+                "nextPickup": "15.02.19"
+            },
+            {
+                "id": 106,
+                "wasteType": "General",
+                "size": "2 m3",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 107,
+                "wasteType": "General",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "1 krt/viikko ti",
+                "nextPickup": "12.02.19"
+            },
+            {
+                "id": 108,
+                "wasteType": "Biowaste",
+                "size": "paino",
+                "containerType": "punnittu syväsäiliö",
+                "owner": "-",
+                "count": 0,
+                "collectionInterval": "joka 2. viikko pe vko 2,4",
+                "nextPickup": "15.02.19"
+            },
+            {
+                "id": 109,
+                "wasteType": "Biowaste",
+                "size": "800 l",
+                "containerType": "syväsäiliö nosturikuormattava",
+                "owner": "Kiinteistö",
+                "count": 1,
+                "collectionInterval": "joka 2. viikko pe vko 2,4",
+                "nextPickup": "15.02.19"
+            }
+        ]
+    }
+]
