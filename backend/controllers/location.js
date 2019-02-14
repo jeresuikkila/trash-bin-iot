@@ -1,4 +1,5 @@
 // Backend api controller functions for location - table
+// PUT still missing...
 
 var express = require('express');
 var router = express.Router();
@@ -36,20 +37,38 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
-// Posts new location, what type is req?
+// Posts new location, hopefully
 router.post('/', async (req, res) => {
 	try {
-		const location = models.location.create({
+		const location = await models.location.create({
 			id: req.body.id,
 			address: req.body.address,
 			lat: req.body.lat,
 			lng: req.body.lng
 		});
+		console.log('Location with id ' + req.body.id + ' added');
+		res.status(200).send(location);
 	} catch(e) {
 		console.log(e);
 		res.status(500).send(e);
 	}
-})
+});
+
+// Deletes the wanted location according to the location id
+router.delete('/:id', async (req, res) => {
+	try {
+		const location = await models.location.destroy({
+			where: {
+				id: req.params.id
+			}
+		});
+		console.log('Location with id ' + req.params.id + 'deleted');
+		res.status(200).send(location);
+	} catch(e) {
+	console.log(e);
+	res.status(500).send(e);
+}
+});
 
 
-module.exports = router;
+module.exports = router;		// is this needed?
