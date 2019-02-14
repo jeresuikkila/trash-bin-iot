@@ -36,7 +36,7 @@ const GoogleMaps = compose(
               icon={ {
                 url: trashbin,
                 title: 'trashbin',
-                scaledSize: new window.google.maps.Size(15,15),
+                scaledSize: new window.google.maps.Size(15, 15),
               } }
               position={ {
                 lat: marker.lat,
