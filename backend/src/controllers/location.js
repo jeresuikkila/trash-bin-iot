@@ -8,9 +8,7 @@ const models = require('./../models');
 // Finds all the locations and sorts them in ascending order by id
 router.get('/', async (req, res) => {
     try {
-        const locations = await models.location.findAll({
-            attributes: ['id', 'address', 'lat', 'lng'],
-        });
+        const locations = await models.location.findAll();
         locations.sort(function (a, b) {
             return a.id - b.id;
         });
@@ -25,7 +23,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const location = await models.location.findOne({
-            attributes: ['id', 'address', 'lat', 'lng'],
             where: {
                 id: req.params.id
             }
@@ -56,7 +53,6 @@ router.get('/:id/trashbins', async (req,res) => {
 router.post('/', async (req, res) => {
     try {
         const location = await models.location.create(req.body);
-        console.log('Location with id ' + req.body.id + ' added');
         res.status(200).send(location);
     } catch (e) {
         console.log(e);
@@ -72,7 +68,6 @@ router.delete('/:id', async (req, res) => {
                 id: req.params.id
             }
         });
-        console.log('Location with id ' + req.params.id + 'deleted');
         res.status(200).send(location);
     } catch (e) {
         console.log(e);

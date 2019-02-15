@@ -8,12 +8,7 @@ const models = require('./../models');
 // Finds all the sensors and sorts them in ascending order by id
 router.get('/', async (req, res) => {
     try {
-        const sensors = await models.sensor.findAll({
-            attributes: ['id', 'default_pitch', 'default_roll', 'taglocation', 'battery', 'lat', 'lng'],
-        });
-        sensors.sort(function (a, b) {
-            return a.id - b.id;
-        });
+        const sensors = await models.sensor.findAll();
         res.status(200).send(sensors)
     } catch (e) {
         console.log(e);
@@ -25,7 +20,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const sensor = await models.sensor.findOne({
-            attributes: ['id', 'default_pitch', 'default_roll', 'taglocation', 'battery', 'lat', 'lng'],
             where: {
                 id: req.params.id
             }

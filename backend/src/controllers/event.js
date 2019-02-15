@@ -8,9 +8,7 @@ const models = require('./../models');
 // Finds all the events and sorts them in ascending order by event time
 router.get('/', async (req, res) => {
     try {
-        const events = await models.event.findAll({
-            attributes: ['id', 'event_type', 'event_time'],
-        });
+        const events = await models.event.findAll();
         events.sort(function (a, b) {
             return a.event_time - b.event_time;
         });
@@ -25,7 +23,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const event = await models.event.findOne({
-            attributes: ['id', 'event_type', 'event_time'],
             where: {
                 id: req.params.id
             }

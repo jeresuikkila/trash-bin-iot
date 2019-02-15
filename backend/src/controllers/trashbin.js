@@ -8,12 +8,7 @@ const models = require('./../models');
 // Finds all the trashbins and sorts them in ascending order by id
 router.get('/', async (req, res) => {
     try {
-        const trashbins = await models.trashbin.findAll({
-            attributes: ['id', 'bintype', 'owner', 'size', 'latestEmptied'],
-        });
-        trashbins.sort(function (a, b) {
-            return a.id - b.id;
-        });
+        const trashbins = await models.trashbin.findAll();
         res.status(200).send(trashbins)
     } catch (e) {
         console.log(e);
@@ -25,7 +20,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const trashbin = await models.trashbin.findOne({
-            attributes: ['id', 'bintype', 'owner', 'size', 'latestEmptied'],
             where: {
                 id: req.params.id
             }
@@ -80,7 +74,6 @@ router.delete('/:id', async (req, res) => {
                 id: req.params.id
             }
         });
-        console.log('Trashbin with id ' + req.params.id + ' deleted');
         res.status(200).send(trashbin);
     } catch (e) {
         console.log(e);
