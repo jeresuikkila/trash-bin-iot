@@ -13,13 +13,13 @@ pipeline {
         stage('Audit') {
             steps {
                 sh 'cd frontend && npm audit'
-                sh 'cd backend && npm audit'
+                sh 'cd backend/src && npm audit'
             }
         }
         stage('Install dependencies') { 
             steps {
                 sh 'cd frontend && npm install'
-                sh 'cd backend && npm install'
+                sh 'cd backend/src && npm install'
             }
         }
         stage('Lint') {
