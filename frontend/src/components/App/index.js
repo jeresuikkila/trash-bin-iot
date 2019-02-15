@@ -43,7 +43,6 @@ class App extends Component {
 
   render() {
     const { filters } = this.state;
-    console.log(this.getFilteredLocations(filters))
     return (
         <div className="fluid-container">
             <HSYSidebar
