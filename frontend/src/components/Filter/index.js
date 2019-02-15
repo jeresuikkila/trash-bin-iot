@@ -21,17 +21,18 @@ class Filter extends React.Component {
   render() {
     const { filters } = this.props;
     return (
-      <div>
-        <p className="filter-title">FILTER BY TYPE:</p>
-          <div className="teal-rectangle">
-              { checkboxes.map(item => (
-                 <FilterItem
-                    key={item.name}
-                    item={item}
-                    handleChange={this.handleChange}
-                    checked={filters.get(item.name)} />
+        <div>
+            <p className="filter-title">FILTER BY TYPE:</p>
+            <div className="teal-rectangle">
+                { checkboxes.map(item => (
+                    <FilterItem
+                      key={ item.name }
+                      item={ item }
+                      handleChange={ this.handleChange }
+                      checked={ filters.get(item.name) }
+                    />
                 )) }
-          </div>
+            </div>
         </div>
     );
   }
