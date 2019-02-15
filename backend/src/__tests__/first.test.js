@@ -16,7 +16,7 @@ describe('GET /location', () => {
     expect(response.statusCode).toBe(200)
     // console.log(response.body)
     expect(response.type).toBe('application/json')
-    const locations = JSON.parse(response.text)
+    const locations = response.body
     expect(locations.length).toEqual(2)
   })
 })
