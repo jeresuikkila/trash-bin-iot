@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Biojäte",
+    "key": "checkBox1",
+    "isChecked": false
+  },
+  {
+    "name": "Paperi",
+    "key": "checkBox2",
+    "isChecked": false
+  },
+  {
+    "name": "Kartonki",
+    "key": "checkBox3",
+    "isChecked": false
+  },
+  {
+    "name": "Tekstiilit",
+    "key": "checkBox4",
+    "isChecked": false
+  },
+  {
+    "name": "Paristot",
+    "key": "checkBox5",
+    "isChecked": false
+  },
+  {
+    "name": "Lasi",
+    "key": "checkBox6",
+    "isChecked": false
+  },
+  {
+    "name": "Sekajäte",
+    "key": "checkBox7",
+    "isChecked": false
+  },
+  {
+    "name": "Vaarallinen jäte",
+    "key": "checkBox8",
+    "isChecked": false
+  },
+  {
+    "name": "Muovi",
+    "key": "checkBox9",
+    "isChecked": false
+  }
+]
+  
