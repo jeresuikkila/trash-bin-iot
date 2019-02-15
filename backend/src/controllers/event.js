@@ -44,7 +44,15 @@ router.post('/', async (req, res) => {
 			id: req.body.id,
 			event_type: req.body.event_type,
 			event_time: req.body.event_time
-		});
+        });
+        await models.event.findOne({
+            where: {
+                id: req.body.id
+            },
+            include: [
+                { model: models.touchtag, attributes: ['sensorId'] },
+            ],
+        });
 		console.log('Event with id ' + req.body.id + ' added');
 		res.status(200).send(event)
 	} catch(e) {

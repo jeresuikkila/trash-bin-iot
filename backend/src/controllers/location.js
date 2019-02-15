@@ -45,7 +45,8 @@ router.post('/', async (req, res) => {
 			address: req.body.address,
 			lat: req.body.lat,
 			lng: req.body.lng
-		});
+        });
+        
 		console.log('Location with id ' + req.body.id + ' added');
 		res.status(200).send(location);
 	} catch(e) {
