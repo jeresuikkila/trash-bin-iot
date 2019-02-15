@@ -40,20 +40,15 @@ router.get('/:id', async (req, res) => {
 // Posts new event, hopefully 
 router.post('/', async (req, res) => {
 	try {
-		const event = await models.event.create({
-			id: req.body.id,
-			event_type: req.body.event_type,
-			event_time: req.body.event_time
-        });
+        const event = await models.event.create(req.body);
         await models.event.findOne({
             where: {
-                id: req.body.id
+                id: event.dataValues.id
             },
             include: [
                 { model: models.touchtag, attributes: ['sensorId'] },
             ],
         });
-		console.log('Event with id ' + req.body.id + ' added');
 		res.status(200).send(event)
 	} catch(e) {
 		console.log(e);
@@ -75,7 +70,23 @@ router.delete('/:id', async (req, res) => {
 	} catch(e) {
 	console.log(e);
 	res.status(500).send(e);
-}
+    }
+});
+
+//updates wanted location according to the location id
+router.put('/:id', async (req,res) => {
+    try {
+        const location = await models.location.findOne({
+			attributes: ['id'],
+			where: {
+				id: req.params.id
+			}
+        });
+        location.update(req.body);
+    } catch(e) {
+        console.log(e);
+        res.status(500).send(e);
+    }
 });
 
 

@@ -40,13 +40,7 @@ router.get('/:id', async (req, res) => {
 // Posts new location, hopefully
 router.post('/', async (req, res) => {
 	try {
-		const location = await models.location.create({
-			id: req.body.id,
-			address: req.body.address,
-			lat: req.body.lat,
-			lng: req.body.lng
-        });
-        
+		const location = await models.location.create(req.body);
 		console.log('Location with id ' + req.body.id + ' added');
 		res.status(200).send(location);
 	} catch(e) {
@@ -71,5 +65,21 @@ router.delete('/:id', async (req, res) => {
 }
 });
 
+//updates wanted location according to the location id
+router.put('/:id', async (req,res) => {
+    try {
+        const location = await models.location.findOne({
+			attributes: ['id'],
+			where: {
+				id: req.params.id
+			}
+        });
+        location.update(req.body);
+    } catch(e) {
+        console.log(e);
+        res.status(500).send(e);
+    }
+});
 
-module.exports = router;		// is this needed?
+
+module.exports = router;		// is this needed? yes very much
