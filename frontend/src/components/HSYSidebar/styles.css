@@ -1,0 +1,47 @@
+#sidebar {
+    position: absolute;
+    height: 96vh;
+    width: 325px;
+    left: 20px;
+    top: 2%;
+    z-index: 5000;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #19A2A9 -13.26%, #52BAC3 42.8%, #67C3CC 63.16%, #7ED4DC 122.35%);
+}
+
+.title {
+    position: absolute;
+    width: 244px;
+    height: 50px;
+    left: 40px;
+    top: 37px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
+.white-background {
+    position: absolute;
+    height: 70vh;
+    width: 325px;
+    left: 0px;
+    top: 15%;
+    background:#FFFFFF;
+}
+
+.filter-button {
+    margin: 20px;
+    height: 7vh;
+    width: 100px;
+    background-color: #19A2A9;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.filter-button:hover {
+    background-color: yellow;
+}
