@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			unique: true,
-			allowNull: false
+            allowNull: false,
+            autoIncrement: true
 		},
 		default_pitch: {
 			type: DataTypes.INTEGER,
