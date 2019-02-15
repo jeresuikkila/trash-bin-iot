@@ -37,6 +37,21 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+//finds all trashbins for one location
+router.get('/:id/trashbins', async (req,res) => {
+    try {
+        const trashbins = await models.trashbin.findAll({
+            where: {
+                locationId: req.params.id
+            }
+        });
+        res.status(200).send(trashbins);
+    } catch (e) {
+        console.log(e);
+        res.status(500).send(e);
+    }
+});
+
 // Posts new location, hopefully
 router.post('/', async (req, res) => {
     try {
