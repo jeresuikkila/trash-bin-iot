@@ -22,7 +22,11 @@ module.exports = (sequelize, DataTypes) => {
 		latestEmptied: {
 			type: DataTypes.DATE,
 			defaultValue: null
-		}
+        },
+        fillStatus: {
+            type: DataTypes.INTEGER,
+            defaultValue: null
+        }
 	}, {});
 	trashbin.associate = function(models) {
 		trashbin.belongsTo(models.location);

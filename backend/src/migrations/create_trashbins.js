@@ -6,7 +6,8 @@ module.exports = {
 				type: Sequelize.INTEGER,
 				primaryKey: true,
 				unique: true,
-				allowNull: false
+                allowNull: false,
+                autoIncrement: true
 			},
 			bintype: {
 				type: Sequelize.STRING,
@@ -23,7 +24,11 @@ module.exports = {
 			latestEmptied: {
 				type:Sequelize.DATE,
 				defaultValue: null
-			},
+            },
+            fillStatus: {
+                type: Sequelize.INTEGER,
+                defaultValue: null
+            },
 			createdAt: {
 				defaultValue: null,
 				type: Sequelize.DATE
