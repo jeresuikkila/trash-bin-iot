@@ -1,5 +1,5 @@
 .env
 node_modules/
 build/
-db/seeders/
-db/config/
+backend/src/config/
+backend/src/seeders/
