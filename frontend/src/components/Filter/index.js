@@ -1,5 +1,6 @@
 import React from 'react';
-import Checkbox from './Checkbox';
+import FilterItem from './FilterItem';
+import './styles.css';
 
 const checkboxes = require('../../api/checkboxes.json');
 
@@ -10,6 +11,7 @@ class Filter extends React.Component {
   }
 
   handleChange(event) {
+    console.log(event);
     const item = event.target.name;
     const isChecked = event.target.checked;
     const { onFilterChange } = this.props
@@ -19,23 +21,18 @@ class Filter extends React.Component {
   render() {
     const { filters } = this.props;
     return (
-        <React.Fragment>
-            {
-              checkboxes.map(item => (
-                  <p key={ item.key }>
-                      <label key={ item.key } htmlFor={ item.key }>
-                          {`${ item.name } `}
-                          <Checkbox
-                            id={ item.key }
-                            name={ item.name }
-                            checked={ filters.get(item.name) }
-                            onChange={ this.handleChange }
-                          />
-                      </label>
-                  </p>
-              ))
-            }
-        </React.Fragment>
+      <div>
+        <p className="filter-title">FILTER BY TYPE:</p>
+          <div className="teal-rectangle">
+              { checkboxes.map(item => (
+                 <FilterItem
+                    key={item.name}
+                    item={item}
+                    handleChange={this.handleChange}
+                    checked={filters.get(item.name)} />
+                )) }
+          </div>
+        </div>
     );
   }
 }

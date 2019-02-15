@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import './styles.css';
 import HSYSidebar from '../HSYSidebar'
 import GoogleMaps from '../GoogleMaps'
 

@@ -13,12 +13,13 @@
     position: absolute;
     width: 244px;
     height: 50px;
-    left: 40px;
-    top: 37px;
+    left: 20px;
+    top: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
     font-style: normal;
     font-weight: 900;
+    font-size: 27px;
     line-height: normal;
-    font-size: 22px;
     color: #FFFFFF;
 }
 
@@ -27,21 +28,6 @@
     height: 70vh;
     width: 325px;
     left: 0px;
-    top: 15%;
+    top: 10%;
     background:#FFFFFF;
-}
-
-.filter-button {
-    margin: 20px;
-    height: 7vh;
-    width: 100px;
-    background-color: #19A2A9;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 12px;
-}
-
-.filter-button:hover {
-    background-color: yellow;
 }

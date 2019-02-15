@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "trashbiniot",
+    "password": "futurice2",
+    "database": "trashbiniot",
+    "host": "trash-bin-iot-test.celdux0k7g1r.eu-central-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "trashbiniot",
+    "password": "futurice2",
+    "database": "trashbiniot",
+    "host": "trash-bin-iot-test.celdux0k7g1r.eu-central-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "trashbiniot",
+    "password": "futurice2",
+    "database": "trashbiniot",
+    "host": "trash-bin-iot-test.celdux0k7g1r.eu-central-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  }
+}

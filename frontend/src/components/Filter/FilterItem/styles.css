@@ -1,0 +1,23 @@
+.filter-item-title {
+    position: relative;
+    left: 30px;
+    top: 10px;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 11px;
+    color: #FFFFFF;
+}
+
+.filter-icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: 30px;
+}
+
+.filter-checkbox {
+    position: relative;
+    left: 30px;
+}
