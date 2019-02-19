@@ -1,48 +1,50 @@
 [
   {
+    "name": "General",
+    "key": "general",
+    "img": "general.png",
+    "isChecked": false
+  },
+  {
     "name": "Biowaste",
-    "key": "checkBox1",
+    "key": "biowaste",
+    "img": "biowaste.png",
     "isChecked": false
   },
   {
     "name": "Paper",
-    "key": "checkBox2",
+    "key": "paper",
+    "img": "paper.png",
     "isChecked": false
   },
   {
     "name": "Cardboard",
-    "key": "checkBox3",
-    "isChecked": false
-  },
-  {
-    "name": "Textiles",
-    "key": "checkBox4",
-    "isChecked": false
-  },
-  {
-    "name": "Batteries",
-    "key": "checkBox5",
-    "isChecked": false
-  },
-  {
-    "name": "Glass",
-    "key": "checkBox6",
-    "isChecked": false
-  },
-  {
-    "name": "General",
-    "key": "checkBox7",
-    "isChecked": false
-  },
-  {
-    "name": "Hazardous",
-    "key": "checkBox8",
+    "key": "cardboard",
+    "img": "carton.png",
     "isChecked": false
   },
   {
     "name": "Plastic",
-    "key": "checkBox9",
+    "key": "plastic",
+    "img": "general.png",
+    "isChecked": false
+  },
+  {
+    "name": "Glass",
+    "key": "glass",
+    "img": "glass.png",
+    "isChecked": false
+  },
+  {
+    "name": "Textiles",
+    "key": "textiles",
+    "img": "textiles.png",
+    "isChecked": false
+  },
+  {
+    "name": "Batteries",
+    "key": "battery",
+    "img": "battery.png",
     "isChecked": false
   }
 ]
-  
