@@ -26,7 +26,7 @@
 
 .white-background {
     position: absolute;
-    height: 500px;
+    height: 510px;
     width: 325px;
     left: 0px;
     top: 80px;
@@ -35,9 +35,10 @@
 
 .hsy-logo {
     position: absolute;
-    width: 130px;
-    left: 6%;
-    bottom:2%;
+    width: 121px;
+    height: 66px;
+    left: 20px;;
+    top: 820px;
 }
 
 .location-status-title {
@@ -45,7 +46,7 @@
     width: 224px;
     height: 23px;
     left: 20px;
-    top: 594px;
+    top: 604px;
     font-family: 'Source Sans Pro', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -60,7 +61,7 @@
     width: 325px;
     height: 56px;
     left: 0px;
-    top: 577px;
+    top: 587px;
     background: #67C3CC;
 }
 
@@ -69,6 +70,6 @@
     width: 325px;
     height: 160px;
     left: 0px;
-    top: 633px;
+    top: 643px;
     background: #19A2A9;
 }
