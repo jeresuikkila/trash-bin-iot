@@ -3,7 +3,6 @@ import Filter from '../Filter';
 import './styles.css';
 import hsylogo from '../../static/hsy-logo.png';
 
-
 class HSYSidebar extends Component {
   render() {
     const { onFilterChange, filters } = this.props;
@@ -16,10 +15,10 @@ class HSYSidebar extends Component {
                   filters={ filters }
                 />
             </div>
-            <div className="light-teal-rectangle"></div>
-            <div className="dark-teal-rectangle"></div>
+            <div className="light-teal-rectangle" />
+            <div className="dark-teal-rectangle" />
             <p className="location-status-title">LOCATION STATUS</p>
-            <img src={ hsylogo } className="hsy-logo"></img>
+            <img src={ hsylogo } className="hsy-logo" alt="logo" />
         </div>
     );
   }
