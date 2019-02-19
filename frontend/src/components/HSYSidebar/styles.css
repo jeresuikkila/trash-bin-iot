@@ -1,9 +1,9 @@
 #sidebar {
     position: absolute;
-    height: 96vh;
+    height: 900px;
     width: 325px;
     left: 20px;
-    top: 2%;
+    top: 15px;
     z-index: 5000;
     border-radius: 15px;
     background: linear-gradient(90deg, #19A2A9 -13.26%, #52BAC3 42.8%, #67C3CC 63.16%, #7ED4DC 122.35%);
@@ -25,9 +25,9 @@
 
 .white-background {
     position: absolute;
-    height: 70vh;
+    height: 550px;
     width: 325px;
     left: 0px;
-    top: 10%;
+    top: 90px;
     background:#FFFFFF;
 }

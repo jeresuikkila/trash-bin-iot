@@ -3,11 +3,6 @@ import './styles.css';
 import HSYSidebar from '../HSYSidebar'
 import GoogleMaps from '../GoogleMaps'
 
-const styles = {
-  width: '100%',
-  height: '100vh',
-}
-
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
 
 let locationWasteTypes = aaltoLocations.map(
@@ -50,7 +45,7 @@ class App extends Component {
               onFilterChange={ this.onFilterChange }
               filters={ filters }
             />
-            <div style={ styles }>
+            <div className="map">
                 <GoogleMaps
                   locations={ this.getFilteredLocations(filters) }
                 />
