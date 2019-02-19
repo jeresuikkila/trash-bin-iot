@@ -26,19 +26,19 @@ class App extends Component {
     const typesToRender = [ ...checkedFilters.keys() ];
     const locationIndices = [];
     locationWasteTypes.forEach((loc, i) => {
-      let counter = 0;
       loc.forEach((type) => {
-        if (typesToRender.includes(type)) counter += 1;
+        if ((typesToRender.includes(type) || typesToRender.length === 0) && !locationIndices.includes(i)) {
+          locationIndices.push(i);
+        }
       })
-      if (counter >= typesToRender.length) locationIndices.push(i)
     })
+    console.log(locationIndices)
     const locations = locationIndices.map(i => aaltoLocations[ i ]);
     return locations;
   }
 
   render() {
     const { filters } = this.state;
-    console.log(this.getFilteredLocations(filters))
     return (
         <div className="fluid-container">
             <HSYSidebar
