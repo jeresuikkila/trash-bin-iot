@@ -10,7 +10,7 @@
     background: linear-gradient(90deg, #19A2A9 -13.26%, #52BAC3 42.8%, #67C3CC 63.16%, #7ED4DC 122.35%);
 }
 
-.title {
+.sidebar-title {
     position: absolute;
     width: 244px;
     height: 50px;
@@ -26,9 +26,49 @@
 
 .white-background {
     position: absolute;
-    height: 610px;
+    height: 500px;
     width: 325px;
     left: 0px;
     top: 80px;
     background:#FFFFFF;
+}
+
+.hsy-logo {
+    position: absolute;
+    width: 130px;
+    left: 6%;
+    bottom:2%;
+}
+
+.location-status-title {
+    position: absolute;
+    width: 224px;
+    height: 23px;
+    left: 20px;
+    top: 594px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+.light-teal-rectangle {
+    position: absolute;
+    width: 325px;
+    height: 56px;
+    left: 0px;
+    top: 577px;
+    background: #67C3CC;
+}
+
+.dark-teal-rectangle {
+    position:absolute;
+    width: 325px;
+    height: 160px;
+    left: 0px;
+    top: 633px;
+    background: #19A2A9;
 }

@@ -3,7 +3,7 @@
     width: 224px;
     height: 23px;
     left: 20px;
-    top: 10px;
+    top: 17px;
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: bold;
@@ -16,9 +16,9 @@
 .teal-rectangle {
     position: absolute;
     width: 285px;
-    height: 540px;
+    height: 420px;
     left: 20px;
-    top: 45px;
+    top: 55px;
     background: linear-gradient(180deg, #19A2A9 0%, #67C3CC 100%);
     border-radius: 20px;
     display: grid;

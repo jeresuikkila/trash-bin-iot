@@ -34,17 +34,5 @@
     "key": "glass",
     "img": "glass.png",
     "isChecked": false
-  },
-  {
-    "name": "Textiles",
-    "key": "textiles",
-    "img": "textiles.png",
-    "isChecked": false
-  },
-  {
-    "name": "Batteries",
-    "key": "battery",
-    "img": "battery.png",
-    "isChecked": false
   }
 ]
