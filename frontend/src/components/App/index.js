@@ -3,12 +3,16 @@ import './styles.css';
 import HSYSidebar from '../HSYSidebar'
 import GoogleMaps from '../GoogleMaps'
 
+const styles = {
+  width: '100%',
+  height: '100vh',
+}
+
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
 
-let locationWasteTypes = aaltoLocations.map(
+const locationWasteTypes = aaltoLocations.map(
   loc => loc.trashbins,
 ).map(trashbin => trashbin.map(bin => bin.wasteType));
-locationWasteTypes = locationWasteTypes.map(loc => [ ...new Set(loc) ]);
 
 class App extends Component {
   constructor(props) {
@@ -24,15 +28,13 @@ class App extends Component {
   getFilteredLocations(filters) {
     const checkedFilters = new Map([ ...filters ].filter(([ , value ]) => value === true));
     const typesToRender = [ ...checkedFilters.keys() ];
-    const locationIndices = [];
+    const locations = [];
     locationWasteTypes.forEach((loc, i) => {
-      let counter = 0;
-      loc.forEach((type) => {
-        if (typesToRender.includes(type)) counter += 1;
-      })
-      if (counter >= typesToRender.length) locationIndices.push(i)
+      if (typesToRender.length === 0
+        || typesToRender.filter(value => loc.indexOf(value) !== -1).length > 0) {
+        locations.push(aaltoLocations[ i ])
+      }
     })
-    const locations = locationIndices.map(i => aaltoLocations[ i ]);
     return locations;
   }
 
@@ -45,7 +47,7 @@ class App extends Component {
               onFilterChange={ this.onFilterChange }
               filters={ filters }
             />
-            <div className="map">
+            <div style={ styles }>
                 <GoogleMaps
                   locations={ this.getFilteredLocations(filters) }
                 />
