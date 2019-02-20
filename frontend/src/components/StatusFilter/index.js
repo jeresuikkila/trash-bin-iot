@@ -21,16 +21,23 @@ class StatusFilter extends Component {
     const { statusFilters } = this.props;
 
     return (
-        <div className="status-filter">
-            { statusCheckboxes.map(item => (
-                <StatusFilterItem
-                  key={ item.key }
-                  item={ item }
-                  handleChange={ this.handleChange }
-                  checked={ statusFilters.get(item.name) }
-                />
-            ))
-                }
+        <div>
+            <div className="status-filter">
+                { statusCheckboxes.map(item => (
+                    <StatusFilterItem
+                      key={ item.key }
+                      item={ item }
+                      handleChange={ this.handleChange }
+                      checked={ statusFilters.get(item.name) }
+                    />
+                ))
+                  }
+            </div>
+            <div className="status-text-list">
+                <p className="status-text"> Trash overflows </p>
+                <p className="status-text"> Late pickups </p>
+                <p className="status-text"> No issues </p>
+            </div>
         </div>
     )
   }
