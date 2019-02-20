@@ -9,6 +9,16 @@ const StatusFilterItem = ({ item, handleChange, checked = false }) => (
           onChange={ handleChange }
           checked={ checked }
         />
+        <span />
+        {' '}
+        {' '}
+        {' '}
+        {' '}
+        {' '}
+        {' '}
+        {' '}
+        {' '}
+        {' '}
         {item.name}
     </div>
 )
