@@ -72,4 +72,6 @@
     left: 0px;
     top: 643px;
     background: #19A2A9;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }

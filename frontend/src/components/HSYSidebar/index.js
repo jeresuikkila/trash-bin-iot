@@ -18,7 +18,7 @@ class HSYSidebar extends Component {
             </div>
             <div className="light-teal-rectangle" />
             <div className="dark-teal-rectangle">
-              <StatusFilter/>
+                <StatusFilter />
             </div>
             <p className="location-status-title">LOCATION STATUS</p>
             <img src={ hsylogo } className="hsy-logo" alt="logo" />
