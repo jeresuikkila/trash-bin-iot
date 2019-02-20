@@ -43,7 +43,6 @@ class App extends Component {
 
   render() {
     const { filters, statusFilters } = this.state;
-    console.log(statusFilters);
 
     return (
         <div className="fluid-container">
