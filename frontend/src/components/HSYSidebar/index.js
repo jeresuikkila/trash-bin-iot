@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Filter from '../Filter';
 import './styles.css';
 import hsylogo from '../../static/hsy-logo.png';
+import StatusFilter from '../StatusFilter';
 
 class HSYSidebar extends Component {
   render() {
@@ -16,7 +17,9 @@ class HSYSidebar extends Component {
                 />
             </div>
             <div className="light-teal-rectangle" />
-            <div className="dark-teal-rectangle" />
+            <div className="dark-teal-rectangle">
+              <StatusFilter/>
+            </div>
             <p className="location-status-title">LOCATION STATUS</p>
             <img src={ hsylogo } className="hsy-logo" alt="logo" />
         </div>
