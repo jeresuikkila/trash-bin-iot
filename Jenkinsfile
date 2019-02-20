@@ -12,8 +12,8 @@ pipeline {
     stages {
         stage('Audit') {
             steps {
-                sh 'cd frontend && npm audit'
-                sh 'cd backend && npm audit || true'
+                sh 'cd frontend && npm audit || true'
+                sh 'cd backend && npm audit'
             }
         }
         stage('Install dependencies') { 
