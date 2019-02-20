@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Filter from '../Filter';
+import TypeFilter from '../TypeFilter';
 import './styles.css';
 import hsylogo from '../../static/hsy-logo.png';
 import StatusFilter from '../StatusFilter';
@@ -7,8 +7,8 @@ import StatusFilter from '../StatusFilter';
 class HSYSidebar extends Component {
   render() {
     const {
-      onFilterChange,
-      filters,
+      onTypeFilterChange,
+      typeFilters,
       onStatusFilterChange,
       statusFilters,
     } = this.props;
@@ -17,9 +17,9 @@ class HSYSidebar extends Component {
         <div id="sidebar">
             <p className="sidebar-title">HSY SMART WASTE</p>
             <div className="white-background">
-                <Filter
-                  onFilterChange={ onFilterChange }
-                  filters={ filters }
+                <TypeFilter
+                  onTypeFilterChange={ onTypeFilterChange }
+                  typeFilters={ typeFilters }
                 />
             </div>
             <div className="light-teal-rectangle" />
