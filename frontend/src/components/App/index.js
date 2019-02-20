@@ -12,12 +12,20 @@ const locationWasteTypes = aaltoLocations.map(
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { filters: new Map() };
+    this.state = {
+      filters: new Map(),
+      statusFilters: new Map(),
+    };
     this.onFilterChange = this.onFilterChange.bind(this);
+    this.onStatusFilterChange = thisStatusFilterChange.bind(this);
   }
 
   onFilterChange(item, isChecked) {
     this.setState(prevState => ({ filters: prevState.filters.set(item, isChecked) }));
+  }
+
+  onStatusFilterChange(item, isChecked) {
+    this.setState(prevState => ({ statusFilters: prevState.statusFilters.set(item, isChecked) }));
   }
 
   getFilteredLocations(filters) {
@@ -34,12 +42,15 @@ class App extends Component {
   }
 
   render() {
-    const { filters } = this.state;
+    const { filters, statusFilters } = this.state;
+
     return (
         <div className="fluid-container">
             <HSYSidebar
               onFilterChange={ this.onFilterChange }
               filters={ filters }
+              onStatusFilterChange={ this.onStatusFilterChange }
+              statusFilters={ statusFilters }
             />
             <div className="map">
                 <GoogleMaps

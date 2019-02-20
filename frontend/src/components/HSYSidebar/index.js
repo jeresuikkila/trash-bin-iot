@@ -6,7 +6,13 @@ import StatusFilter from '../StatusFilter';
 
 class HSYSidebar extends Component {
   render() {
-    const { onFilterChange, filters } = this.props;
+    const {
+      onFilterChange,
+      filters,
+      onStatusFilterChange,
+      statusFilters,
+    } = this.props;
+
     return (
         <div id="sidebar">
             <p className="sidebar-title">HSY SMART WASTE</p>
@@ -18,7 +24,10 @@ class HSYSidebar extends Component {
             </div>
             <div className="light-teal-rectangle" />
             <div className="dark-teal-rectangle">
-                <StatusFilter />
+                <StatusFilter
+                  onStatusFilterChange={ onStatusFilterChange }
+                  statusFilters={ statusFilters }
+                />
             </div>
             <p className="location-status-title">LOCATION STATUS</p>
             <img src={ hsylogo } className="hsy-logo" alt="logo" />
