@@ -2,12 +2,12 @@
     position:absolute;
     top: 10px;
     left: 20px;
-    display: grid;
-    grid-template-rows: 50% 50%;
     font-family: Source Sans Pro;
     font-style: normal;
     font-weight: normal;
     line-height: normal;
     font-size: 16px;
     color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
 }
