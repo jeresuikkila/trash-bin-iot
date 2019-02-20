@@ -13,7 +13,7 @@ pipeline {
         stage('Audit') {
             steps {
                 sh 'cd frontend && npm audit'
-                sh 'cd backend && npm audit || exit 0'
+                sh 'cd backend && npm audit || true'
             }
         }
         stage('Install dependencies') { 
