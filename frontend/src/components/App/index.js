@@ -17,7 +17,7 @@ class App extends Component {
       statusFilters: new Map(),
     };
     this.onFilterChange = this.onFilterChange.bind(this);
-    this.onStatusFilterChange = thisStatusFilterChange.bind(this);
+    this.onStatusFilterChange = this.onStatusFilterChange.bind(this);
   }
 
   onFilterChange(item, isChecked) {
@@ -43,6 +43,7 @@ class App extends Component {
 
   render() {
     const { filters, statusFilters } = this.state;
+    console.log(statusFilters);
 
     return (
         <div className="fluid-container">
