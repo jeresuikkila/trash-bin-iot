@@ -1,14 +1,12 @@
-
-.status-filter-item {
-    font-family: Source Sans Pro;
+.status-label {
+  font-family: Source Sans Pro;
     font-style: normal;
     font-weight: normal;
     line-height: normal;
     font-size: 16px;
-    color: #FFFFFF;
-    margin-bottom: 12px;
-}
+    color: #FFFFF;
 
+}
 
 input[type=checkbox] {
     display: none;

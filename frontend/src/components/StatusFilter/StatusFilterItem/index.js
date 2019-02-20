@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 
 const StatusFilterItem = ({ item, handleChange, checked = false }) => (
-    <div className="status-filter-item">
+    <div>
         <input
           id={ item.name }  
           name={ item.name }
@@ -10,7 +10,7 @@ const StatusFilterItem = ({ item, handleChange, checked = false }) => (
           onChange={ handleChange }
           checked={ checked }
         />
-        <label htmlFor= {item.name} >{item.name}</label>
+        <label className="status-label" htmlFor= {item.name}>{item.name}</label>
     </div>
 )
 
