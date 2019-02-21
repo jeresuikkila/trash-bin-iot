@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "test": "./node_modules/.bin/jest",
-    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore src/__tests__"
+    "lint": "./node_modules/.bin/eslint src/__tests__"
   },
   "author": "",
   "license": "MIT",

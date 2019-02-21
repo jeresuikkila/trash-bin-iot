@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  db:
+    image: postgres:11
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=trashbiniot
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
   backend:
     build: backend
     command: npm start
@@ -9,6 +20,8 @@ services:
       - ./backend/node_modules:/usr/app/node_modules
     ports:
       - "3001:3000"
+    depends_on:
+      - db
   
   frontend:
     build: frontend
