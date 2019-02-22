@@ -29,6 +29,7 @@ const TypeFilterItem = ({ item, handleChange, checked = false }) => (
             <img src={ imageMap[ item.img ] } className="filter-icon" alt="filter" />
             <br />
             <input
+              id={ item.key }
               name={ item.name }
               type="checkbox"
               onChange={ handleChange }
