@@ -6,7 +6,6 @@ import {
 
 const trashbin = require('../../static/location-ok.png') // default image until marker logic is implemented
 
-
 const GoogleMaps = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ process.env.REACT_APP_GOOGLE_API_KEY }`, // add google maps api key to the end of the line.
