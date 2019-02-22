@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Trash overflows",
+        "key": "1",
+        "isChecked": false
+    },
+    {
+        "name": "Late pickups",
+        "key": "2",
+        "isChecked": false
+    },
+    {
+        "name": "No issues",
+        "key": "3",
+        "isChecked": false
+    }
+]

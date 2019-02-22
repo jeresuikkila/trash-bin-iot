@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "test": "./node_modules/.bin/jest",
+    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore src/__tests__"
   },
   "author": "",
   "license": "MIT",
@@ -16,5 +18,13 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.2.2",
+    "jest": "^24.1.0",
+    "supertest": "^3.4.2"
   }
 }

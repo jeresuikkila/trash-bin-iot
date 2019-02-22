@@ -1,37 +1,34 @@
 'use strict';
 module.exports = {
 	up: (queryInterface, Sequelize) => {
-		return queryInterface.createTable('sensors', {
+		return queryInterface.createTable('trashbins', {
 			id: {
 				type: Sequelize.INTEGER,
 				primaryKey: true,
 				unique: true,
-				allowNull: false
+                allowNull: false,
+                autoIncrement: true
 			},
-			default_pitch: {
+			bintype: {
+				type: Sequelize.STRING,
+				defaultValue: null
+			},
+			owner: {
+				type: Sequelize.STRING,
+				defaultValue: null
+			},
+			size: {
 				type: Sequelize.INTEGER,
 				defaultValue: null
 			},
-			default_roll: {
-				type: Sequelize.INTEGER,
+			latestEmptied: {
+				type:Sequelize.DATE,
 				defaultValue: null
-			},
-			taglocation: {
-				type: Sequelize.STRING,
-				defaultValue: null
-			},
-			battery: {
-				type: Sequelize.FLOAT,
-				defaultValue: null
-			},
-			lat: {
-				type: Sequelize.STRING,
-				defaultvalue: null
-			},
-			lng: {
-				type: Sequelize.STRING,
-				defaultvalue: null
-			},
+            },
+            fillStatus: {
+                type: Sequelize.INTEGER,
+                defaultValue: null
+            },
 			createdAt: {
 				defaultValue: null,
 				type: Sequelize.DATE
@@ -43,6 +40,6 @@ module.exports = {
 		});
 	},
 	down: (queryInterface, Sequelize) => {
-		return queryInterface.dropTable('sensors');
+		return queryInterface.dropTable('trashbins');
 	}
 };
