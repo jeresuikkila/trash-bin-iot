@@ -1,0 +1,25 @@
+.filter-item-title {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 11px;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+    margin-top: 10px;
+}
+
+.filter-icon {
+    width: 60px;
+    height: 60px;
+}
+
+/*.checkbox-helper .checkboxx {
+    background-color: blue;
+    height: 15px;
+}
+
+.checkbox-helper .filter-checkbox:checked + .checkboxx {
+    background-color: yellow;
+    height: 15px;
+}*/
