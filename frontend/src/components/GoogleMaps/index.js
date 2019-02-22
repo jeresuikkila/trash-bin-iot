@@ -4,8 +4,8 @@ import {
   withScriptjs, withGoogleMap, GoogleMap, Marker,
 } from 'react-google-maps';
 
-const trashbin = require('../../static/trashbin.png')
-require('dotenv').config()
+const trashbin = require('../../static/location-ok.png') // default image until marker logic is implemented
+
 
 const GoogleMaps = compose(
   withProps({
