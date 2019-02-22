@@ -20,7 +20,7 @@ const imageMap = {
   'glass.png': glass,
 }
 
-const FilterItem = ({ item, handleChange, checked = false }) => (
+const TypeFilterItem = ({ item, handleChange, checked = false }) => (
     <div style={ { textAlign: 'center' } }>
         <label key={ item.key } htmlFor={ item.key }>
             <p className="filter-item-title" key={ item.key }>
@@ -38,4 +38,4 @@ const FilterItem = ({ item, handleChange, checked = false }) => (
     </div>
 )
 
-export default FilterItem;
+export default TypeFilterItem;

@@ -1,35 +1,34 @@
 import React from 'react';
-import FilterItem from './FilterItem';
+import TypeFilterItem from './TypeFilterItem';
 import './styles.css';
 
 const checkboxes = require('../../api/checkboxes.json');
 
-class Filter extends React.Component {
+class TypeFilter extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    console.log(event);
     const item = event.target.name;
     const isChecked = event.target.checked;
-    const { onFilterChange } = this.props
-    onFilterChange(item, isChecked)
+    const { onTypeFilterChange } = this.props
+    onTypeFilterChange(item, isChecked)
   }
 
   render() {
-    const { filters } = this.props;
+    const { typeFilters } = this.props;
     return (
         <div>
             <p className="filter-title">FILTER BY TYPE:</p>
             <div className="teal-rectangle">
                 { checkboxes.map(item => (
-                    <FilterItem
+                    <TypeFilterItem
                       key={ item.name }
                       item={ item }
                       handleChange={ this.handleChange }
-                      checked={ filters.get(item.name) }
+                      checked={ typeFilters.get(item.name) }
                     />
                 )) }
             </div>
@@ -38,4 +37,4 @@ class Filter extends React.Component {
   }
 }
 
-export default Filter;
+export default TypeFilter;
