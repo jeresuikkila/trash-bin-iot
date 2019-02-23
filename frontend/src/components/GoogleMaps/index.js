@@ -41,8 +41,13 @@ const GoogleMaps = compose(
                   {
                     url: binOk,
                   }
-                   (fillstatus === 100){
+                  if (fillstatus === 100)
+                  {
                     url: binFull,
+                  }
+                  else 
+                  {
+                    url: binOk,
                   } 
                 },
                 title: 'trashbin',
