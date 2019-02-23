@@ -3,12 +3,11 @@ import { compose, withProps, withStateHandlers } from 'recompose';
 import {
   withScriptjs, withGoogleMap, GoogleMap, Marker,
 } from 'react-google-maps';
-
-const trashbin = require('../../static/trashbin.png')
+const binOk = require('../../static/binOK.png')
+const binFull = require('../../static/binFull.png')
 const aaltoStatuses = require('../../api/aalto-with-trashbins.json')
-
 const trashbinStatuses = aaltoStatuses.map(
-  fillstatus => fillstatus.trashbins);
+  bin => bin.fillStatus);
 
 const GoogleMaps = compose(
   withProps({
@@ -34,17 +33,16 @@ const GoogleMaps = compose(
         lng: 24.82339,
       } }
     >
-
         { props.locations.map( marker => (
             <Marker
               icon= {
-                trashbinStatuses(marker.id) = {
-                  if (trashbinStatuses.fillstatus === 0)
+                trashbinStatuses.fillStatus(marker.id) = {
+                  if (trashbins.fillstatus === 0)
                   {
-                    url: url for empty //placeholder
+                    url: binOk,
                   }
-                  if (fillstatus === 100){
-                    url: url for full //placeholder
+                   (fillstatus === 100){
+                    url: binFull,
                   } 
                 },
                 title: 'trashbin',
