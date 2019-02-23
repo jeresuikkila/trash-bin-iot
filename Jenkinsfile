@@ -10,11 +10,6 @@ pipeline {
     }
 
     stages {
-        stage('Lint') {
-            steps {
-                sh 'cd frontend && npm run lint'
-            }
-        }
         stage('Audit') {
             steps {
                 sh 'cd frontend && npm audit || true'
@@ -25,6 +20,11 @@ pipeline {
             steps {
                 sh 'cd frontend && npm install'
                 sh 'cd backend && npm install'
+            }
+        }
+        stage('Lint') {
+            steps {
+                sh 'cd frontend && npm run lint'
             }
         }
         stage('Test') {
