@@ -5,10 +5,20 @@ import {
 } from 'react-google-maps';
 
 const trashbin = require('../../static/trashbin.png')
-const aaltoStatuses = require('../../api/aalto-with-trashbins.json')
+const locationFull = require('../../static/location-full.png')
+const locationOk = require('../../static/location-ok.png') 
 
-const trashbinStatuses = aaltoStatuses.map(
-  fillstatus => fillstatus.trashbins);
+const getMarkerUrl = (trashbins) => {
+  let maxFillStatusOnLocation = 0;
+
+  trashbins.forEach( bin => {
+    maxFillStatusOnLocation = (bin.fillStatus > maxFillStatusOnLocation) ? 
+    bin.fillStatus : maxFillStatusOnLocation   
+  })
+  
+  return (maxFillStatusOnLocation === 100) ? locationFull : locationOk;
+
+}
 
 const GoogleMaps = compose(
   withProps({
@@ -35,28 +45,21 @@ const GoogleMaps = compose(
       } }
     >
 
-        { props.locations.map( marker => (
+        { props.locations.map( location => (
+            // let markerUrl = getMarkerUrl(location.trashbins);
             <Marker
-              icon= {
-                trashbinStatuses(marker.id) = {
-                  if (trashbinStatuses.fillstatus === 0)
-                  {
-                    url: url for empty //placeholder
-                  }
-                  if (fillstatus === 100){
-                    url: url for full //placeholder
-                  } 
-                },
+              icon= { {
+                url = markerUrl,
                 title: 'trashbin',
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
               position={ {
-                lat: marker.lat,
-                lng: marker.lon,
+                lat: location.lat,
+                lng: location.lon,
               } }
-              key={ marker.id }
+              key={ location.id }
             />
-        ))}
+        )})}
 
     </GoogleMap>
 ));
