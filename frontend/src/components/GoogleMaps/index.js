@@ -5,6 +5,12 @@ import {
 } from 'react-google-maps';
 
 const trashbin = require('../../static/trashbin.png')
+const aaltoStatuses = require('../../api/aalto-with-trashbins.json')
+
+const trashbinStatuses = aaltoStatuses.map(
+  fillstatus => fillstatus.trashbins,
+).map(trashbins => trashbins.map(bin => bin.fillstatus));
+
 
 const GoogleMaps = compose(
   withProps({
@@ -34,9 +40,16 @@ const GoogleMaps = compose(
         { props.locations.map( marker => (
             <Marker
               icon={ {
-                url: trashbin,
+                trashbinStatuses(marker.id) = {
+                  if (fillstatus === 0){
+                    url: url for empty
+                  }
+                  if (fillstatus === 100){
+                    url: url for full
+                  } 
+                },
                 title: 'trashbin',
-                scaledSize: new window.google.maps.Size(35, 40),
+                scaledSize: new window.google.maps.Size(15, 15),
               } }
               position={ {
                 lat: marker.lat,

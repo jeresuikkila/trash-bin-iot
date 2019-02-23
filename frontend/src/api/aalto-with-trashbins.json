@@ -13,7 +13,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 2,
@@ -23,7 +24,8 @@
                 "owner": "-",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 3,
@@ -33,7 +35,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -51,7 +54,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 5,
@@ -61,7 +65,8 @@
                 "owner": "-",
                 "count": 5,
                 "collectionInterval": "soitosta tyhjennys soitosta",
-                "nextPickup": ""
+                "nextPickup": "",
+                "fillStatus": 0
             },
             {
                 "id": 6,
@@ -71,7 +76,8 @@
                 "owner": "Vuokra",
                 "count": 5,
                 "collectionInterval": "soitosta tyhjennys soitosta",
-                "nextPickup": ""
+                "nextPickup": "",
+                "fillStatus": 100
             },
             {
                 "id": 7,
@@ -81,7 +87,8 @@
                 "owner": "-",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 8,
@@ -91,7 +98,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 9,
@@ -101,7 +109,8 @@
                 "owner": "Kiinteistö",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -119,7 +128,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -137,7 +147,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 12,
@@ -147,7 +158,8 @@
                 "owner": "-",
                 "count": 8,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 13,
@@ -157,7 +169,8 @@
                 "owner": "Vuokra",
                 "count": 8,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -175,7 +188,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -193,7 +207,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 16,
@@ -203,7 +218,8 @@
                 "owner": "Vuokra",
                 "count": 3,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -221,7 +237,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 18,
@@ -231,7 +248,8 @@
                 "owner": "-",
                 "count": 3,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 19,
@@ -241,7 +259,8 @@
                 "owner": "Vuokra",
                 "count": 3,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -259,7 +278,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 21,
@@ -269,7 +289,8 @@
                 "owner": "-",
                 "count": 4,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 22,
@@ -279,7 +300,8 @@
                 "owner": "Vuokra",
                 "count": 4,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -297,7 +319,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 24,
@@ -307,7 +330,8 @@
                 "owner": "-",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 25,
@@ -317,7 +341,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 26,
@@ -327,7 +352,8 @@
                 "owner": "-",
                 "count": 5,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 27,
@@ -337,7 +363,8 @@
                 "owner": "Vuokra",
                 "count": 5,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -355,7 +382,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "3 krt/viikko ma ke pe",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -373,7 +401,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 30,
@@ -383,7 +412,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 31,
@@ -393,7 +423,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19"
+                "nextPickup": "15.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 32,
@@ -403,7 +434,8 @@
                 "owner": "Kiinteistö",
                 "count": 2,
                 "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19"
+                "nextPickup": "15.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -421,7 +453,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko ke vko 1,3",
-                "nextPickup": "20.02.19"
+                "nextPickup": "20.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 34,
@@ -431,7 +464,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "joka 4. viikko ti vko 3",
-                "nextPickup": "05.03.19"
+                "nextPickup": "05.03.19",
+                "fillStatus": 100
             }
         ]
     },
@@ -449,7 +483,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "3 krt/viikko ma ke pe",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 36,
@@ -459,7 +494,8 @@
                 "owner": "-",
                 "count": 10,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 37,
@@ -469,7 +505,8 @@
                 "owner": "Vuokra",
                 "count": 10,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 38,
@@ -479,7 +516,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 39,
@@ -489,7 +527,8 @@
                 "owner": "-",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 40,
@@ -499,7 +538,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 41,
@@ -509,7 +549,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 42,
@@ -519,7 +560,8 @@
                 "owner": "-",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -537,7 +579,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 44,
@@ -547,7 +590,8 @@
                 "owner": "Vuokra",
                 "count": 3,
                 "collectionInterval": "astiavuokra",
-                "nextPickup": ""
+                "nextPickup": "",
+                "fillStatus": 0
             },
             {
                 "id": 45,
@@ -557,7 +601,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 2. viikko ke vko 2,4",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 46,
@@ -567,7 +612,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko ke vko 2,4",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -585,7 +631,8 @@
                 "owner": "-",
                 "count": 12,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 48,
@@ -595,7 +642,8 @@
                 "owner": "Vuokra",
                 "count": 12,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -613,7 +661,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko ke vko 1,3",
-                "nextPickup": "20.02.19"
+                "nextPickup": "20.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 50,
@@ -623,7 +672,8 @@
                 "owner": "-",
                 "count": 3,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 51,
@@ -633,7 +683,8 @@
                 "owner": "Vuokra",
                 "count": 3,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -651,7 +702,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": " ti",
-                "nextPickup": ""
+                "nextPickup": "",
+                "fillStatus": 0
             },
             {
                 "id": 53,
@@ -661,7 +713,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": " pe",
-                "nextPickup": ""
+                "nextPickup": "",
+                "fillStatus": 0
             },
             {
                 "id": 54,
@@ -671,7 +724,8 @@
                 "owner": "-",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 55,
@@ -681,7 +735,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 56,
@@ -691,7 +746,8 @@
                 "owner": "Vuokra",
                 "count": 4,
                 "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 57,
@@ -701,7 +757,8 @@
                 "owner": "Vuokra",
                 "count": 4,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 58,
@@ -711,7 +768,8 @@
                 "owner": "Vuokra",
                 "count": 4,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 100
             }
         ]
     },
@@ -729,7 +787,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 60,
@@ -739,7 +798,8 @@
                 "owner": "-",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 61,
@@ -749,7 +809,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -767,7 +828,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko ma vko 1,3",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 63,
@@ -777,7 +839,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 2. viikko ma vko 1,3",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -795,7 +858,8 @@
                 "owner": "Kiinteistö",
                 "count": 2,
                 "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 65,
@@ -805,7 +869,8 @@
                 "owner": "Kiinteistö",
                 "count": 3,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 66,
@@ -815,7 +880,8 @@
                 "owner": "-",
                 "count": 3,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -833,7 +899,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 68,
@@ -843,7 +910,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 69,
@@ -853,7 +921,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 70,
@@ -863,7 +932,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 4. viikko pe vko 1",
-                "nextPickup": "22.02.19"
+                "nextPickup": "22.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 71,
@@ -873,7 +943,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "joka 4. viikko pe vko 1",
-                "nextPickup": "22.02.19"
+                "nextPickup": "22.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -891,7 +962,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -909,7 +981,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 74,
@@ -919,7 +992,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 75,
@@ -929,7 +1003,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 76,
@@ -939,7 +1014,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko ma vko 1,3",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 77,
@@ -949,7 +1025,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 2. viikko ma vko 1,3",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 78,
@@ -959,7 +1036,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 4. viikko pe vko 1",
-                "nextPickup": "22.02.19"
+                "nextPickup": "22.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 79,
@@ -969,7 +1047,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "joka 4. viikko pe vko 1",
-                "nextPickup": "22.02.19"
+                "nextPickup": "22.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -987,7 +1066,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 81,
@@ -997,7 +1077,8 @@
                 "owner": "-",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -1015,7 +1096,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 2. viikko ti vko 2,4",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 83,
@@ -1025,7 +1107,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko ti vko 2,4",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 84,
@@ -1035,7 +1118,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "astiavuokra",
-                "nextPickup": ""
+                "nextPickup": "",
+                "fillStatus": 0
             },
             {
                 "id": 85,
@@ -1045,7 +1129,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 86,
@@ -1055,7 +1140,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -1073,7 +1159,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 88,
@@ -1083,7 +1170,8 @@
                 "owner": "Vuokra",
                 "count": 2,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -1101,7 +1189,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 90,
@@ -1111,7 +1200,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 91,
@@ -1121,7 +1211,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 92,
@@ -1131,7 +1222,8 @@
                 "owner": "-",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 93,
@@ -1141,7 +1233,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -1159,7 +1252,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko to vko 1,3",
-                "nextPickup": "21.02.19"
+                "nextPickup": "21.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 95,
@@ -1169,7 +1263,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -1187,7 +1282,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19"
+                "nextPickup": "13.02.19",
+                "fillStatus": 100
             },
             {
                 "id": 97,
@@ -1197,7 +1293,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19"
+                "nextPickup": "14.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 98,
@@ -1207,7 +1304,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19"
+                "nextPickup": "18.02.19",
+                "fillStatus": 0
             }
         ]
     },
@@ -1225,7 +1323,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 4. viikko ti vko 3",
-                "nextPickup": "05.03.19"
+                "nextPickup": "05.03.19",
+                "fillStatus": 0
             },
             {
                 "id": 100,
@@ -1235,7 +1334,8 @@
                 "owner": "Vuokra",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko to vko 1,3",
-                "nextPickup": "21.02.19"
+                "nextPickup": "21.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 101,
@@ -1245,7 +1345,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 4. viikko ti vko 3",
-                "nextPickup": "05.03.19"
+                "nextPickup": "05.03.19",
+                "fillStatus": 100
             }
         ]
     },
@@ -1263,7 +1364,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 103,
@@ -1273,7 +1375,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 104,
@@ -1283,7 +1386,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19"
+                "nextPickup": "15.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 105,
@@ -1293,7 +1397,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19"
+                "nextPickup": "15.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 106,
@@ -1303,7 +1408,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 107,
@@ -1313,7 +1419,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19"
+                "nextPickup": "12.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 108,
@@ -1323,7 +1430,8 @@
                 "owner": "-",
                 "count": 0,
                 "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19"
+                "nextPickup": "15.02.19",
+                "fillStatus": 0
             },
             {
                 "id": 109,
@@ -1333,7 +1441,8 @@
                 "owner": "Kiinteistö",
                 "count": 1,
                 "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19"
+                "nextPickup": "15.02.19",
+                "fillStatus": 0
             }
         ]
     }
