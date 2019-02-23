@@ -4,7 +4,6 @@ import {
   withScriptjs, withGoogleMap, GoogleMap, Marker,
 } from 'react-google-maps';
 
-const trashbin = require('../../static/trashbin.png')
 const locationFull = require('../../static/location-full.png')
 const locationOk = require('../../static/location-ok.png') 
 
@@ -15,7 +14,6 @@ const getMarkerUrl = (trashbins) => {
     maxFillStatusOnLocation = (bin.fillStatus > maxFillStatusOnLocation) ? 
     bin.fillStatus : maxFillStatusOnLocation   
   })
-  
   return (maxFillStatusOnLocation === 100) ? locationFull : locationOk;
 
 }
@@ -46,10 +44,9 @@ const GoogleMaps = compose(
     >
 
         { props.locations.map( location => (
-            // let markerUrl = getMarkerUrl(location.trashbins);
             <Marker
               icon= { {
-                url = markerUrl,
+                url: getMarkerUrl(location.trashbins),
                 title: 'trashbin',
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
@@ -59,7 +56,7 @@ const GoogleMaps = compose(
               } }
               key={ location.id }
             />
-        )})}
+          ))}
 
     </GoogleMap>
 ));
