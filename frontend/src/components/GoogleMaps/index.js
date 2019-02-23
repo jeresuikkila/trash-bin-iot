@@ -8,9 +8,7 @@ const trashbin = require('../../static/trashbin.png')
 const aaltoStatuses = require('../../api/aalto-with-trashbins.json')
 
 const trashbinStatuses = aaltoStatuses.map(
-  fillstatus => fillstatus.trashbins,
-).map(trashbins => trashbins.map(bin => bin.fillstatus));
-
+  fillstatus => fillstatus.trashbins);
 
 const GoogleMaps = compose(
   withProps({
@@ -39,9 +37,9 @@ const GoogleMaps = compose(
 
         { props.locations.map( marker => (
             <Marker
-              icon={ {
+              icon= {
                 trashbinStatuses(marker.id) = {
-                  if (fillstatus === 0){
+                  if (trashbinStatuses.fillstatus === 0){
                     url: url for empty
                   }
                   if (fillstatus === 100){
