@@ -39,11 +39,12 @@ const GoogleMaps = compose(
             <Marker
               icon= {
                 trashbinStatuses(marker.id) = {
-                  if (trashbinStatuses.fillstatus === 0){
-                    url: url for empty
+                  if (trashbinStatuses.fillstatus === 0)
+                  {
+                    url: url for empty //placeholder
                   }
                   if (fillstatus === 100){
-                    url: url for full
+                    url: url for full //placeholder
                   } 
                 },
                 title: 'trashbin',
