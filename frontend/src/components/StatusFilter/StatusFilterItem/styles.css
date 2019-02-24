@@ -1,4 +1,4 @@
-.status-label {
+.status-filter-item {
     font-family: Source Sans Pro;
     font-style: normal;
     font-weight: normal;
@@ -6,6 +6,12 @@
     font-size: 16px;
     color: #FFFFFF;
     margin-left: 0px;
+
+}
+
+.status-filter-item-name {
+
+  margin-left: 10px;
 
 }
 
