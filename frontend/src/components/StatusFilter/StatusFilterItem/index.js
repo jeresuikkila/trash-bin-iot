@@ -2,16 +2,22 @@ import React from 'react';
 import './styles.css';
 
 const StatusFilterItem = ({ item, handleChange, checked = false }) => (
-    <div className="status-filter-item">
-        <label htmlFor={ item.key }>
+    <div>
+        <label className="status-filter-item" htmlFor={ item.name }>
             <input
-              id={ item.key }
+              id={ item.name }
               name={ item.name }
               type="checkbox"
               onChange={ handleChange }
               checked={ checked }
             />
-            {item.name}
+            <label htmlFor={ item.name }>
+                {/* fix eslint */}
+                <input type="hidden" />
+            </label>
+            <span className="status-filter-item-name">
+                { item.name }
+            </span>
         </label>
     </div>
 )

@@ -1,4 +1,3 @@
-
 .status-filter-item {
     font-family: Source Sans Pro;
     font-style: normal;
@@ -6,7 +5,12 @@
     line-height: normal;
     font-size: 16px;
     color: #FFFFFF;
-    margin-bottom: 12px;
+    margin-left: 0px;
 }
 
-
+.status-filter-item-name {
+  user-select: none;
+  position: relative;
+  bottom: 2px;
+  margin-left: 6px;
+}

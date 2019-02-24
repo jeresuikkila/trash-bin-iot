@@ -22,19 +22,22 @@ const imageMap = {
 
 const TypeFilterItem = ({ item, handleChange, checked = false }) => (
     <div style={ { textAlign: 'center' } }>
-        <label key={ item.key } htmlFor={ item.key }>
-            <p className="filter-item-title" key={ item.key }>
-                {`${ item.name.toUpperCase() } `}
-            </p>
+        <label className="filter-item-title" key={ item.key } htmlFor={ item.name }>
+            <span className="trash-type-title">{ item.name.toUpperCase() }</span>
+            <br />
             <img src={ imageMap[ item.img ] } className="filter-icon" alt="filter" />
             <br />
             <input
-              id={ item.key }
+              id={ item.name }
               name={ item.name }
               type="checkbox"
               onChange={ handleChange }
               checked={ checked }
             />
+            <label htmlFor={ item.name }>
+                {/* fix eslint */}
+                <input type="hidden" />
+            </label>
         </label>
     </div>
 )

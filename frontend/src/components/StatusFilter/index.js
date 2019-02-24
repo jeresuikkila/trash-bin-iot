@@ -19,17 +19,20 @@ class StatusFilter extends Component {
 
   render() {
     const { statusFilters } = this.props;
+
     return (
-        <div className="status-filter">
-            { statusCheckboxes.map(item => (
-                <StatusFilterItem
-                  key={ item.key }
-                  item={ item }
-                  handleChange={ this.handleChange }
-                  checked={ statusFilters.get(item.name) }
-                />
-            ))
-                }
+        <div>
+            <div className="status-filter">
+                { statusCheckboxes.map(item => (
+                    <StatusFilterItem
+                      key={ item.key }
+                      item={ item }
+                      handleChange={ this.handleChange }
+                      checked={ statusFilters.get(item.name) }
+                    />
+                ))
+                  }
+            </div>
         </div>
     )
   }
