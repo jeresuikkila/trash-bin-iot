@@ -11,6 +11,6 @@
 .status-filter-item-name {
   user-select: none;
   position: relative;
-  bottom: 1px;
+  bottom: 2px;
   margin-left: 6px;
 }
