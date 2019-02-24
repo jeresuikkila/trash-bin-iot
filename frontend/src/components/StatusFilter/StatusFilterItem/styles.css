@@ -10,7 +10,7 @@
 }
 
 .status-filter-item-name {
-
+  user-select: none;
   position: relative;
   top: -1px;
   margin-left: 6px;
