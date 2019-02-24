@@ -6,35 +6,11 @@
     font-size: 16px;
     color: #FFFFFF;
     margin-left: 0px;
-
 }
 
 .status-filter-item-name {
   user-select: none;
   position: relative;
-  top: -1px;
+  bottom: 1px;
   margin-left: 6px;
-
 }
-
-input[type=checkbox] {
-    display: none;
-  }
- 
-  input[type=checkbox] + label {
-    background: url('../../../static/checkbox-unchecked.png') left center;
-    height: 20px;
-    width: 20px;
-    background-size: 100%;
-    position: relative;
-  }
-  
-  input[type=checkbox]:checked + label {
-    background: url('../../../static/checkbox-checked.png') left center;
-    height: 20px;
-    width: 20px;
-    background-size: 100%;
-    position: relative;
-  }
-
-

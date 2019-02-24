@@ -23,7 +23,7 @@ const imageMap = {
 const TypeFilterItem = ({ item, handleChange, checked = false }) => (
     <div style={ { textAlign: 'center' } }>
         <label className="filter-item-title" key={ item.key } htmlFor={ item.name }>
-            {`${ item.name.toUpperCase() } `}
+            <span className="trash-type-title">{ item.name.toUpperCase() }</span>
             <br />
             <img src={ imageMap[ item.img ] } className="filter-icon" alt="filter" />
             <br />
@@ -35,9 +35,8 @@ const TypeFilterItem = ({ item, handleChange, checked = false }) => (
               checked={ checked }
             />
             <label htmlFor={ item.name }>
-                <input type="hidden" />
-                {' '}
                 {/* fix eslint */}
+                <input type="hidden" />
             </label>
         </label>
     </div>

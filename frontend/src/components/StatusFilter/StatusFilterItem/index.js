@@ -12,14 +12,11 @@ const StatusFilterItem = ({ item, handleChange, checked = false }) => (
               checked={ checked }
             />
             <label htmlFor={ item.name }>
-                <input type="hidden" />
-                {' '}
                 {/* fix eslint */}
+                <input type="hidden" />
             </label>
             <span className="status-filter-item-name">
-                {' '}
-                {`${ item.name }`}
-                {' '}
+                { item.name }
             </span>
         </label>
     </div>
