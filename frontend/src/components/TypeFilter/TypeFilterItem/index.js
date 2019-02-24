@@ -35,7 +35,7 @@ const TypeFilterItem = ({ item, handleChange, checked = false }) => (
               checked={ checked }
             />
             <label htmlFor={ item.name }>
-                <input type="hidden"></input> {/* hehe */}
+                <input type="hidden"></input> {/* fix eslint */}
             </label>
         </label>
     </div>

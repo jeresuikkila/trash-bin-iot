@@ -12,7 +12,7 @@ const StatusFilterItem = ({ item, handleChange, checked = false }) => (
             checked={ checked }
             />
             <label htmlFor = {item.name}>
-                <input type="hidden"></input>
+                <input type="hidden"></input> {/* fix eslint */}
             </label>
             <span className="status-filter-item-name" > {`${ item.name}`} </span>
         </label>
