@@ -33,11 +33,6 @@ class StatusFilter extends Component {
                 ))
                   }
             </div>
-            <div className="status-text-list">
-                <p className="status-text"> Trash overflows </p>
-                <p className="status-text"> Late pickups </p>
-                <p className="status-text"> No issues </p>
-            </div>
         </div>
     )
   }
