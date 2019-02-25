@@ -1,5 +1,4 @@
 // Backend api controller functions for event - table
-// PUT still missing...
 
 var express = require('express');
 var router = express.Router();
@@ -12,7 +11,8 @@ router.get('/', async (req, res) => {
         events.sort(function (a, b) {
             return a.event_time - b.event_time;
         });
-        res.status(200).send(events)
+        const lol = 'moi';
+        res.status(200).send(lol)
     } catch (e) {
         console.log(e);
         res.status(500).send(e);
@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// Posts new event, hopefully 
+// Posts new event, hopefully
 router.post('/', async (req, res) => {
     try {
         const event = await models.event.create(req.body);

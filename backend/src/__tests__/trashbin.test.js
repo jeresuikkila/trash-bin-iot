@@ -20,7 +20,7 @@ describe('GET /trashbins', () => {
 // test to get a trashbin endpoint by giving an existing trashbin
 describe('GET /trashbins:id', () => {
   test('It should return with json containing the requested trashbin', async () => {
-    const response = await request(app).get('/trashbins:id')
+    const response = await request(app).get('/trashbins:1')
     expect(response.statusCode).toBe(200)
     expect(response.type).toBe('application/json')
     const trashbin = JSON.parse(response.text)
@@ -43,4 +43,53 @@ describe('GET /trashbins/:id', () => {
         done();
     });
     });
+});
+
+// testing post trashbin endpoint
+describe('POST /trashbins', function () {
+  let trashbin = {
+      "id": 56,
+      "bintype": "biowaste",
+      "owner": "HSY",
+      "size": 80,
+      "latestEmptied": 2019-12-02,
+      "fillStatus": 45
+  }
+  it('respond with 201 created', function (done) {
+      request(app)
+          .post('/trashbins')
+          .send(trashbin)
+          .set('Accept', 'application/json')
+          .expect('Content-Type', /json/)
+          .expect(201)
+          .end((err) => {
+              if (err) return done(err);
+              done();
+          });
+  });
+});
+
+// testing post trashbin endpoint with invalid data
+describe('POST /trashbins', function () {
+  let trashbin = {
+      // id
+      "bintype": "biowaste",
+      "owner": "HSY",
+      "size": 80,
+      "latestEmptied": 2019-15-02,
+      "fillStatus": 45
+  }
+  it('respond with 400 not created', function (done) {
+      request(app)
+          .post('/trashbins')
+          .send(trashbin)
+          .set('Accept', 'application/json')
+          .expect('Content-Type', /json/)
+          .expect(400)
+          .expect('"trashbin not created"')
+          .end((err) => {
+              if (err) return done(err);
+              done();
+          });
+  });
 });
