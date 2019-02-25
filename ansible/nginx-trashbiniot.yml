@@ -1,0 +1,43 @@
+---
+- hosts: web
+  remote_user: root
+  tasks:
+          - name: ensure latest nginx is installed
+            apt: name=nginx state=latest
+            become: yes
+          - name: start nginx
+            service:
+                    name: nginx
+                    state: started
+            become: yes
+          - name: copy nginx config and restart
+            copy:
+                    src: trashbiniot.cfg
+                    dest: /etc/nginx/sites-available/trashbiniot.cfg
+            become: yes
+          - name: create symlink to sites-enabled
+            file:
+                    src: /etc/nginx/sites-available/trashbiniot.cfg
+                    dest: /etc/nginx/sites-enabled/default
+                    state: link
+            become: yes
+          - name: Creates www-data directory
+            file:
+                    path: /home/www-data
+                    state: directory
+                    owner: www-data
+                    group: www-data
+                    mode: 0775
+          - name: Clean artifact path
+            file:
+              state: absent
+              path: /home/www-data/trash-bin-iot
+          - name: copy website content
+            copy:
+                    src: ../frontend/build/
+                    dest: /home/www-data/trash-bin-iot
+          - name: restart nginx
+            service:
+                    name: nginx
+                    state: restarted
+            become: yes
