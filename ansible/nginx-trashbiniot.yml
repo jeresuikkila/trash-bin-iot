@@ -21,7 +21,6 @@
                     dest: /etc/nginx/sites-enabled/default
                     state: link
             become: yes
-
           - name: Creates www-data directory
             file:
                     path: /home/www-data
@@ -29,9 +28,13 @@
                     owner: www-data
                     group: www-data
                     mode: 0775
+          - name: Clean artifact path
+            file:
+              state: absent
+              path: /home/www-data/trash-bin-iot
           - name: copy website content
             copy:
-                    src: ../frontend/build
+                    src: ../frontend/build/
                     dest: /home/www-data/trash-bin-iot
           - name: restart nginx
             service:
