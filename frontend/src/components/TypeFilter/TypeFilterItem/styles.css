@@ -1,4 +1,5 @@
 .filter-item-title {
+    user-select: none;
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: bold;
@@ -6,7 +7,7 @@
     font-size: 11px;
     color: #FFFFFF;
     margin-bottom: 4px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .filter-icon {
@@ -14,12 +15,7 @@
     height: 60px;
 }
 
-/*.checkbox-helper .checkboxx {
-    background-color: blue;
-    height: 15px;
+.trash-type-title {
+    position: relative;
+    bottom: 4px;
 }
-
-.checkbox-helper .filter-checkbox:checked + .checkboxx {
-    background-color: yellow;
-    height: 15px;
-}*/

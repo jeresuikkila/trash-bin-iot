@@ -1,4 +1,5 @@
 .filter-title {
+    user-select: none;
     position: absolute;
     width: 224px;
     height: 23px;

@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Audit') {
             steps {
-                //sh 'cd frontend && npm audit'
+                sh 'cd frontend && npm audit || true'
                 sh 'cd backend && npm audit'
             }
         }
@@ -27,11 +27,15 @@ pipeline {
                 sh 'cd frontend && npm run lint'
             }
         }
-
         stage('Test') {
             steps {
                 sh 'cd frontend && npm test'
                 // sh 'cd backend && npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Not implemented yet"
             }
         }
     }

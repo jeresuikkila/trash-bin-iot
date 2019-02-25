@@ -3,15 +3,23 @@ import { compose, withProps, withStateHandlers } from 'recompose';
 import {
   withScriptjs, withGoogleMap, GoogleMap, Marker,
 } from 'react-google-maps';
-const binOk = require('../../static/binOK.png')
-const binFull = require('../../static/binFull.png')
-const aaltoStatuses = require('../../api/aalto-with-trashbins.json')
-const trashbinStatuses = aaltoStatuses.map(
-  bin => bin.fillStatus);
+
+const locationFull = require('../../static/location-full.png')
+const locationOk = require('../../static/location-ok.png')
+
+const getMarkerUrl = (trashbins) => {
+  let maxFillStatusOnLocation = 0;
+
+  trashbins.forEach( (bin) => {
+    maxFillStatusOnLocation = (bin.fillStatus > maxFillStatusOnLocation)
+      ? bin.fillStatus : maxFillStatusOnLocation
+  })
+  return (maxFillStatusOnLocation === 100) ? locationFull : locationOk;
+}
 
 const GoogleMaps = compose(
   withProps({
-    googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=', // add google maps api key to the end of the line.
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ process.env.REACT_APP_GOOGLE_API_KEY }`, // add google maps api key to the end of the line.
     loadingElement: <div style={ { height: '100%' } } />,
     containerElement: <div style={ { height: '100%' } } />,
     mapElement: <div style={ { height: '100%' } } />,
@@ -33,31 +41,19 @@ const GoogleMaps = compose(
         lng: 24.82339,
       } }
     >
-        { props.locations.map( marker => (
+
+        { props.locations.map( location => (
             <Marker
-              icon= {
-                trashbinStatuses.fillStatus(marker.id) = {
-                  if (trashbins.fillstatus === 0)
-                  {
-                    url: binOk,
-                  }
-                  if (fillstatus === 100)
-                  {
-                    url: binFull,
-                  }
-                  else 
-                  {
-                    url: binOk,
-                  } 
-                },
+              icon={ {
+                url: getMarkerUrl(location.trashbins),
                 title: 'trashbin',
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
               position={ {
-                lat: marker.lat,
-                lng: marker.lon,
+                lat: location.lat,
+                lng: location.lon,
               } }
-              key={ marker.id }
+              key={ location.id }
             />
         ))}
 
