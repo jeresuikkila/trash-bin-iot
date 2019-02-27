@@ -34,7 +34,8 @@ const GoogleMaps = compose(
         lat: 60.1873,
         lng: 24.82339,
       } }
-      defaultOptions ={{ styles: styledMap }} // load custom map style
+      defaultOptions ={{ styles: styledMap,
+        streetViewControl: false }} // load custom map style
     >
 
         { props.locations.map( location => ( // map list of locations and their statuses to create markers on the map
@@ -45,6 +46,7 @@ const GoogleMaps = compose(
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
               position={ {
+                
                 lat: location.lat,
                 lng: location.lon,
               } }
