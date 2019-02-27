@@ -1,9 +1,9 @@
 import React from 'react'
-import { compose, withProps, withStateHandlers } from 'recompose';
+import { compose, withProps, } from 'recompose';
 import {
   withScriptjs, withGoogleMap, GoogleMap, Marker,
 } from 'react-google-maps';
-
+const styledMap = require('../../components/GoogleMaps/styledMap.json')
 const locationFull = require('../../static/location-full.png')
 const locationOk = require('../../static/location-ok.png')
 
@@ -34,6 +34,7 @@ const GoogleMaps = compose(
         lat: 60.1873,
         lng: 24.82339,
       } }
+      defaultOptions ={{ style: styledMap }}
     >
 
         { props.locations.map( location => (
