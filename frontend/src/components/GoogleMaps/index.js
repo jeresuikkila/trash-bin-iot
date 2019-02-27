@@ -24,13 +24,7 @@ const GoogleMaps = compose(
     containerElement: <div style={ { height: '100%' } } />,
     mapElement: <div style={ { height: '100%' } } />,
   }),
-  withStateHandlers(() => ({
-    isOpen: false,
-  }), {
-    onToggleOpen: ({ isOpen }) => () => ({
-      isOpen: !isOpen,
-    }),
-  }),
+  
   withScriptjs,
   withGoogleMap,
 )( props => (
