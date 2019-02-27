@@ -34,10 +34,10 @@ const GoogleMaps = compose(
         lat: 60.1873,
         lng: 24.82339,
       } }
-      defaultOptions ={{ styles: styledMap }}
+      defaultOptions ={{ styles: styledMap }} // load custom map style
     >
 
-        { props.locations.map( location => (
+        { props.locations.map( location => ( // map list of locations and their statuses to create markers on the map
             <Marker
               icon={ {
                 url: getMarkerUrl(location.trashbins),
