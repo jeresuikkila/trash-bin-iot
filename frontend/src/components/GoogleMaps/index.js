@@ -1,9 +1,11 @@
 import React from 'react'
-import { compose, withProps, withStateHandlers } from 'recompose';
+import { compose, withProps } from 'recompose';
+
 import {
   withScriptjs, withGoogleMap, GoogleMap, Marker,
 } from 'react-google-maps';
 
+const styledMap = require('../../components/GoogleMaps/styledMap.json')
 const locationFull = require('../../static/location-full.png')
 const locationOk = require('../../static/location-ok.png')
 
@@ -24,13 +26,7 @@ const GoogleMaps = compose(
     containerElement: <div style={ { height: '100%' } } />,
     mapElement: <div style={ { height: '100%' } } />,
   }),
-  withStateHandlers(() => ({
-    isOpen: false,
-  }), {
-    onToggleOpen: ({ isOpen }) => () => ({
-      isOpen: !isOpen,
-    }),
-  }),
+
   withScriptjs,
   withGoogleMap,
 )( props => (
@@ -40,9 +36,12 @@ const GoogleMaps = compose(
         lat: 60.1873,
         lng: 24.82339,
       } }
+      defaultOptions={ {
+        styles: styledMap, streetViewControl: false, mapTypeControl: false,
+      } } // load custom map style and disable street view
     >
 
-        { props.locations.map( location => (
+        { props.locations.map( location => ( // map locations and statuses to create markers
             <Marker
               icon={ {
                 url: getMarkerUrl(location.trashbins),
@@ -50,6 +49,7 @@ const GoogleMaps = compose(
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
               position={ {
+
                 lat: location.lat,
                 lng: location.lon,
               } }
