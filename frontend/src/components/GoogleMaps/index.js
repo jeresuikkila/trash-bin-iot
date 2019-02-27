@@ -34,7 +34,7 @@ const GoogleMaps = compose(
         lat: 60.1873,
         lng: 24.82339,
       } }
-      defaultOptions ={{ style: styledMap }}
+      defaultOptions ={{ styles: styledMap }}
     >
 
         { props.locations.map( location => (
