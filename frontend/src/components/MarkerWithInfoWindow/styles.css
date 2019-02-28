@@ -1,7 +1,43 @@
-.google_map_infobox {
-    background-image: url('../../static/location-late-pickup.png');
-    padding: 1em;
-    text-align: center;
-    font-size: 1.1rem;
-    border: 1px solid #666;
-}
+.box {
+    width: 300px;
+    margin: 50px auto;
+    border: 4px solid #19A2A9;
+    padding: 20px;
+    color: #19A2A9;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 16px;
+    position: relative;
+    border-radius: 10px;
+
+  }
+
+.sb7:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid #19A2A9;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #19A2A9;
+    border-bottom: 10px solid transparent;
+    left: 20px;
+    bottom: -23px;
+  }
+  
+  .sb7:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid transparent;
+    left: 24px;
+    bottom: -13px;
+  }
+  
+  /* https://codingislove.com/css-speech-bubbles/ */
