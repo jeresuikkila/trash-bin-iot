@@ -1,5 +1,5 @@
 .google_map_infobox {
-    background: #fff;
+    background-image: url('../../static/location-late-pickup.png');
     padding: 1em;
     text-align: center;
     font-size: 1.1rem;
