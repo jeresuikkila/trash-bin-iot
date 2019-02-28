@@ -31,7 +31,7 @@ const GoogleMaps = compose(
   withGoogleMap,
 )( props => (
     <GoogleMap
-      defaultZoom={ 14 }
+      defaultZoom={ 18 }
       defaultCenter={ {
         lat: 60.1873,
         lng: 24.82339,

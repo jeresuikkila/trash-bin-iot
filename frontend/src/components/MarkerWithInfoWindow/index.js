@@ -1,5 +1,7 @@
 import React from 'react';
-import { Marker, InfoWindow } from 'react-google-maps';
+import { Marker } from 'react-google-maps';
+import './styles.css'
+const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
 
 class MarkerWithInfoWindow extends React.Component {
   constructor() {
@@ -27,7 +29,17 @@ class MarkerWithInfoWindow extends React.Component {
           onMouseOut={ this.onToggleOpen }
           icon={ icon }
         >
-            { isOpen && <InfoWindow><h5>test</h5></InfoWindow> }
+            { isOpen && <InfoBox
+              defaultPosition={new window.google.maps.LatLng(position.lat, position.lng)}
+              options={{
+                  pixelOffset: new window.google.maps.Size(10,-80),
+                  closeBoxURL : ""
+              }}
+          >
+              <div className="google_map_infobox">
+                  Insert stuff here
+              </div>
+          </InfoBox>}
         </Marker>
     )
   }
