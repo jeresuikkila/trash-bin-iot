@@ -1,9 +1,9 @@
 import React from 'react'
 import { compose, withProps } from 'recompose';
-
 import {
-  withScriptjs, withGoogleMap, GoogleMap, Marker,
+  withScriptjs, withGoogleMap, GoogleMap,
 } from 'react-google-maps';
+import MarkerWithInfoWindow from '../MarkerWithInfoWindow'
 
 const styledMap = require('../../components/GoogleMaps/styledMap.json')
 const locationFull = require('../../static/location-full.png')
@@ -42,14 +42,13 @@ const GoogleMaps = compose(
     >
 
         { props.locations.map( location => ( // map locations and statuses to create markers
-            <Marker
+            <MarkerWithInfoWindow
               icon={ {
                 url: getMarkerUrl(location.trashbins),
                 title: 'trashbin',
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
               position={ {
-
                 lat: location.lat,
                 lng: location.lon,
               } }
