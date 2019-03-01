@@ -40,7 +40,7 @@ class MarkerWithInfoWindow extends React.Component {
                 closeBoxURL: '',
               } }
             >
-                <div className="box tri">
+                <div className="box triangle">
                   Insert stuff here
                 </div>
             </InfoBox>
