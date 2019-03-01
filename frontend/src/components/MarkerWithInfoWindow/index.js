@@ -26,7 +26,7 @@ class MarkerWithInfoWindow extends React.Component {
         <Marker
           position={ position }
           onMouseOver={ this.onToggleOpen }
-          onMouseOut={ this.onToggleOpen }
+          //onMouseOut={ this.onToggleOpen }
           icon={ icon }
         >
             { isOpen && <InfoBox
