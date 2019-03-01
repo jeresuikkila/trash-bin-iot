@@ -36,7 +36,7 @@ class MarkerWithInfoWindow extends React.Component {
                   closeBoxURL : ""
               }}
           >
-              <div className="box sb7">
+              <div className="box tri">
                   Insert stuff here
               </div>
           </InfoBox>}
