@@ -34,7 +34,6 @@ pipeline {
             }
         }
         stage('Build') {
-            when { env.BRANCH_NAME == 'master' }
             steps {
                 sh 'cd frontend && npm build'
             }
