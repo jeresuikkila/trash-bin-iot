@@ -32,7 +32,7 @@ class MarkerWithInfoWindow extends React.Component {
             { isOpen && <InfoBox
               defaultPosition={new window.google.maps.LatLng(position.lat, position.lng)}
               options={{
-                  pixelOffset: new window.google.maps.Size(-20,-180),
+                  pixelOffset: new window.google.maps.Size(-10,-240),
                   closeBoxURL : ""
               }}
           >
