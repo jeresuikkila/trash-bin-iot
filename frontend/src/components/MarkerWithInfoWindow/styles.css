@@ -1,6 +1,6 @@
 .box {
-    width: 280px;
-    height: 150px;
+    width: 400px;
+    height: 214px;
     margin: 16px auto;
     border: 1.3px solid #19A2A9;
     padding: 20px;
@@ -40,5 +40,16 @@
     left: 14px;
     bottom: -14px;
   }
+  .dark-teal-infobox {
+    position:absolute;
+    width: 399px;
+    height: 48px;
+    left: -1px;
+    top: -1px;
+    background: #19A2A9;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
   
   /* https://codingislove.com/css-speech-bubbles/ */

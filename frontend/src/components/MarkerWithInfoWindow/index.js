@@ -36,12 +36,12 @@ class MarkerWithInfoWindow extends React.Component {
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, -200),
+                pixelOffset: new window.google.maps.Size(-9, -262),
                 closeBoxURL: '',
               } }
             >
                 <div className="box tri">
-                  Insert stuff here
+                    <div className="dark-teal-infobox"><div>Address: Blaah</div></div>
                 </div>
             </InfoBox>
             )}
