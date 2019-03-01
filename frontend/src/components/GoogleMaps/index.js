@@ -1,9 +1,11 @@
 import React from 'react'
-import { compose, withProps, withStateHandlers } from 'recompose';
+import { compose, withProps } from 'recompose';
 import {
-  withScriptjs, withGoogleMap, GoogleMap, Marker,
+  withScriptjs, withGoogleMap, GoogleMap,
 } from 'react-google-maps';
+import MarkerWithInfoWindow from '../MarkerWithInfoWindow'
 
+const styledMap = require('../../components/GoogleMaps/styledMap.json')
 const locationFull = require('../../static/location-full.png')
 const locationOk = require('../../static/location-ok.png')
 
@@ -24,26 +26,23 @@ const GoogleMaps = compose(
     containerElement: <div style={ { height: '100%' } } />,
     mapElement: <div style={ { height: '100%' } } />,
   }),
-  withStateHandlers(() => ({
-    isOpen: false,
-  }), {
-    onToggleOpen: ({ isOpen }) => () => ({
-      isOpen: !isOpen,
-    }),
-  }),
+
   withScriptjs,
   withGoogleMap,
 )( props => (
     <GoogleMap
-      defaultZoom={ 14 }
+      defaultZoom={ 18 }
       defaultCenter={ {
         lat: 60.1873,
         lng: 24.82339,
       } }
+      defaultOptions={ {
+        styles: styledMap, streetViewControl: false, mapTypeControl: false,
+      } } // load custom map style and disable street view
     >
 
-        { props.locations.map( location => (
-            <Marker
+        { props.locations.map( location => ( // map locations and statuses to create markers
+            <MarkerWithInfoWindow
               icon={ {
                 url: getMarkerUrl(location.trashbins),
                 title: 'trashbin',
