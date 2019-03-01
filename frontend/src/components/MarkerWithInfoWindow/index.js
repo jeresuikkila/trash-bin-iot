@@ -1,8 +1,11 @@
 import React from 'react';
 import { Marker } from 'react-google-maps';
 import './styles.css'
+import LocationSummaryItem from './LocationSummaryItem';
 
 const { InfoBox } = require('react-google-maps/lib/components/addons/InfoBox');
+
+
 
 class MarkerWithInfoWindow extends React.Component {
   constructor() {
@@ -21,8 +24,9 @@ class MarkerWithInfoWindow extends React.Component {
   }
 
   render() {
-    const { position, icon } = this.props
+    const { position, icon, trashBins} = this.props
     const { isOpen } = this.state
+    console.log(trashBins)
     return (
         <Marker
           position={ position }
@@ -41,7 +45,15 @@ class MarkerWithInfoWindow extends React.Component {
               } }
             >
                 <div className="box triangle">
-                  Insert stuff here
+                {
+                  trashBins.map(bin => (
+                    <LocationSummaryItem
+                    type={bin.type}
+                    fillStatus={bin.fillStatus}
+                  />
+                  ))
+                }
+                  
                 </div>
             </InfoBox>
             )}

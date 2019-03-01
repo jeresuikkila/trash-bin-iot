@@ -19,6 +19,10 @@ const getMarkerUrl = (trashbins) => {
   return (maxFillStatusOnLocation === 100) ? locationFull : locationOk;
 }
 
+const getTrashBins = (trashbins) => {
+  return trashbins.map(bin => new Object({type: bin.wasteType, fillStatus: bin.fillStatus}))
+}
+
 const GoogleMaps = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ process.env.REACT_APP_GOOGLE_API_KEY }`, // add google maps api key to the end of the line.
@@ -52,6 +56,7 @@ const GoogleMaps = compose(
                 lat: location.lat,
                 lng: location.lon,
               } }
+              trashBins={getTrashBins(location.trashbins)}
               key={ location.id }
             />
         ))}
