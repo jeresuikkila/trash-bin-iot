@@ -33,9 +33,14 @@ pipeline {
                 // sh 'cd backend && npm test'
             }
         }
-        stage('Deploy') {
+        stage('Build') {
             steps {
-                echo "Not implemented yet"
+                if (env.BRANCH_NAME == notifiedBranch) {
+                    sh 'cd frontend && npm build'
+                } else {
+                    echo 'Skipping build on non-master branch'
+                }
+                
             }
         }
     }
