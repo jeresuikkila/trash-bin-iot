@@ -1,7 +1,7 @@
 .box {
     width: 280px;
     height: 150px;
-    margin: 50px auto;
+    margin: 16px auto;
     border: 1.3px solid #19A2A9;
     padding: 20px;
     color: #19A2A9;
@@ -13,7 +13,6 @@
     position: relative;
     border-radius: 10px;
     background: #fff;
-
   }
 
 .tri:before {

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Marker } from 'react-google-maps';
 import './styles.css'
-const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
+
+const { InfoBox } = require('react-google-maps/lib/components/addons/InfoBox');
 
 class MarkerWithInfoWindow extends React.Component {
   constructor() {
@@ -26,20 +27,24 @@ class MarkerWithInfoWindow extends React.Component {
         <Marker
           position={ position }
           onMouseOver={ this.onToggleOpen }
-          //onMouseOut={ this.onToggleOpen }
+          onMouseOut={ this.onToggleOpen }
+          onFocus={ this.onToggleOpen }
+          onBlur={ this.onToggleOpen }
           icon={ icon }
         >
-            { isOpen && <InfoBox
-              defaultPosition={new window.google.maps.LatLng(position.lat, position.lng)}
-              options={{
-                  pixelOffset: new window.google.maps.Size(-10,-240),
-                  closeBoxURL : ""
-              }}
-          >
-              <div className="box tri">
+            { isOpen && (
+            <InfoBox
+              defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
+              options={ {
+                pixelOffset: new window.google.maps.Size(-10, -200),
+                closeBoxURL: '',
+              } }
+            >
+                <div className="box tri">
                   Insert stuff here
-              </div>
-          </InfoBox>}
+                </div>
+            </InfoBox>
+            )}
         </Marker>
     )
   }
