@@ -43,7 +43,7 @@
   .dark-teal-infobox {
     position:absolute;
     width: 399px;
-    height: 48px;
+    height: 44px;
     left: -1px;
     top: -1px;
     background: #19A2A9;
@@ -58,7 +58,7 @@
     line-height: normal;
     font-size: 26px;
     left: 10px;
-    top: 6px;
+    top: 5px;
     color: #FFFFFF;
   }
   

@@ -41,7 +41,7 @@ class MarkerWithInfoWindow extends React.Component {
               } }
             >
                 <div className="box tri">
-                    <div className="dark-teal-infobox"><p className="address-text">Address: Blaah</p></div>
+                    <div className="dark-teal-infobox"><p className="address-text">Address placeholder</p></div>
                 </div>
             </InfoBox>
             )}
