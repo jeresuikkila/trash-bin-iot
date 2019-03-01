@@ -21,7 +21,7 @@ class MarkerWithInfoWindow extends React.Component {
   }
 
   render() {
-    const { position, icon } = this.props
+    const { position, icon, address } = this.props
     const { isOpen } = this.state
     return (
         <Marker
@@ -41,7 +41,7 @@ class MarkerWithInfoWindow extends React.Component {
               } }
             >
                 <div className="box tri">
-                    <div className="dark-teal-infobox"><p className="address-text">Address placeholder</p></div>
+                    <div className="dark-teal-infobox"><p className="address-text">{address}</p></div>
                 </div>
             </InfoBox>
             )}

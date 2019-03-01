@@ -53,6 +53,7 @@ const GoogleMaps = compose(
                 lng: location.lon,
               } }
               key={ location.id }
+              address={ location.address }
             />
         ))}
 
