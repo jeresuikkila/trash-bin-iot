@@ -1,6 +1,6 @@
 .box {
-    width: 280px;
-    height: 150px;
+    width: 400px;
+    height: 214px;
     margin: 16px auto;
     border: 1.3px solid #19A2A9;
     padding: 20px;
@@ -39,6 +39,27 @@
     border-bottom: 8px solid transparent;
     left: 14px;
     bottom: -14px;
+  }
+  .dark-teal-infobox {
+    position:absolute;
+    width: 399px;
+    height: 44px;
+    left: -1px;
+    top: -1px;
+    background: #19A2A9;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .address-text {
+    position: absolute;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 26px;
+    left: 10px;
+    top: 5px;
+    color: #FFFFFF;
   }
   
   /* https://codingislove.com/css-speech-bubbles/ */

@@ -58,6 +58,7 @@ const GoogleMaps = compose(
               } }
               trashBins={getTrashBins(location.trashbins)}
               key={ location.id }
+              address={ location.address }
             />
         ))}
 

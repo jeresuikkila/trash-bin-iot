@@ -24,7 +24,7 @@ class MarkerWithInfoWindow extends React.Component {
   }
 
   render() {
-    const { position, icon, trashBins} = this.props
+    const { position, icon, address, trashBins } = this.props
     const { isOpen } = this.state
     console.log(trashBins)
     return (
@@ -40,20 +40,20 @@ class MarkerWithInfoWindow extends React.Component {
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, -200),
-                closeBoxURL: '',
+                pixelOffset: new window.google.maps.Size(-13, -262),
+                closeBoxURL: '', // set to "null" as it's closed on hover
               } }
             >
                 <div className="box triangle">
-                {
-                  trashBins.map(bin => (
-                    <LocationSummaryItem
-                    type={bin.type}
-                    fillStatus={bin.fillStatus}
-                  />
-                  ))
-                }
-                  
+                  <div className="dark-teal-infobox"><p className="address-text">{address}</p></div>
+                  {
+                    trashBins.map(bin => (
+                      <LocationSummaryItem
+                      type={bin.type}
+                      fillStatus={bin.fillStatus}
+                    />
+                    ))
+                  }
                 </div>
             </InfoBox>
             )}
