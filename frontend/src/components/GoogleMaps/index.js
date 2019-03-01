@@ -19,9 +19,7 @@ const getMarkerUrl = (trashbins) => {
   return (maxFillStatusOnLocation === 100) ? locationFull : locationOk;
 }
 
-const getTrashBins = (trashbins) => {
-  return trashbins.map(bin => new Object({type: bin.wasteType, fillStatus: bin.fillStatus}))
-}
+const getTrashBins = bins => bins.map(bin => ({ type: bin.wasteType, fillStatus: bin.fillStatus }))
 
 const GoogleMaps = compose(
   withProps({
@@ -56,7 +54,7 @@ const GoogleMaps = compose(
                 lat: location.lat,
                 lng: location.lon,
               } }
-              trashBins={getTrashBins(location.trashbins)}
+              trashBins={ getTrashBins(location.trashbins) }
               key={ location.id }
               address={ location.address }
             />

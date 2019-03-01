@@ -5,8 +5,6 @@ import LocationSummaryItem from './LocationSummaryItem';
 
 const { InfoBox } = require('react-google-maps/lib/components/addons/InfoBox');
 
-
-
 class MarkerWithInfoWindow extends React.Component {
   constructor() {
     super();
@@ -24,14 +22,15 @@ class MarkerWithInfoWindow extends React.Component {
   }
 
   render() {
-    const { position, icon, address, trashBins } = this.props
+    const {
+      position, icon, address, trashBins,
+    } = this.props
     const { isOpen } = this.state
-    console.log(trashBins)
     return (
         <Marker
           position={ position }
           onMouseOver={ this.onToggleOpen }
-          //onMouseOut={ this.onToggleOpen }
+          onMouseOut={ this.onToggleOpen }
           onFocus={ this.onToggleOpen }
           onBlur={ this.onToggleOpen }
           icon={ icon }
@@ -45,19 +44,20 @@ class MarkerWithInfoWindow extends React.Component {
               } }
             >
                 <div className="box triangle">
-                  <div className="dark-teal-infobox">
-                    <p className="address-text">{address}</p>
-                  </div>
-                  <div className="type-icon-container">
-                    {
-                      trashBins.map(bin => (
-                        <LocationSummaryItem
-                        type={bin.type}
-                        fillStatus={bin.fillStatus}
-                      />
+                    <div className="dark-teal-infobox">
+                        <p className="address-text">{address}</p>
+                    </div>
+                    <div className="type-icon-container">
+                        {
+                      trashBins.map((bin, i) => (
+                          <LocationSummaryItem
+                            type={ bin.type }
+                            fillStatus={ bin.fillStatus }
+                            key={ i }
+                          />
                       ))
                     }
-                  </div>
+                    </div>
                 </div>
             </InfoBox>
             )}
