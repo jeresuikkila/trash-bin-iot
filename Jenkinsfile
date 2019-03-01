@@ -34,13 +34,9 @@ pipeline {
             }
         }
         stage('Build') {
+            when { env.BRANCH_NAME == 'master' }
             steps {
-                if (env.BRANCH_NAME == notifiedBranch) {
-                    sh 'cd frontend && npm build'
-                } else {
-                    echo 'Skipping build on non-master branch'
-                }
-                
+                sh 'cd frontend && npm build'
             }
         }
     }
