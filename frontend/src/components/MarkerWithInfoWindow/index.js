@@ -39,13 +39,13 @@ class MarkerWithInfoWindow extends React.Component {
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, -230),
+                pixelOffset: new window.google.maps.Size(-10, -220),
                 closeBoxURL: '', // set to "null" as it's closed on hover
               } }
             >
                 <div className="box triangle">
                     <div className="dark-teal-infobox">
-                        <p className="address-text">{address}</p>
+                        <p className="address-text">{address.split(',')[ 0 ]}</p>
                     </div>
                     <div className="type-icon-container">
                         {
