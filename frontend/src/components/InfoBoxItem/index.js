@@ -15,9 +15,11 @@ const imageMap = {
   Plastic: GeneralIcon,
 }
 
-const InfoBoxItem = ({ type /* fillStatus */ }) => (
+const getIconBackground = (type, fillStatus) => ((fillStatus === 100) ? (`${ type.toLowerCase() }-full`) : 'bin-ok')
+
+const InfoBoxItem = ({ type, fillStatus }) => (
     <div>
-        <img src={ imageMap[ type ] } className="type-icon" alt="test" />
+        <img src={ imageMap[ type ] } className={ getIconBackground(type, fillStatus) } alt="test" />
     </div>
 )
 export default InfoBoxItem;
