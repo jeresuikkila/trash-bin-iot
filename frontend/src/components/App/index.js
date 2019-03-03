@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
-import Filter from '../Filter'
+import FilterContainer from '../FilterContainer'
 import GoogleMaps from '../GoogleMaps'
 
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
@@ -45,7 +45,7 @@ class App extends Component {
     const { typeFilters, statusFilters } = this.state;
     return (
         <div className="fluid-container">
-            <Filter
+            <FilterContainer
               onTypeFilterChange={ this.onTypeFilterChange }
               typeFilters={ typeFilters }
               onStatusFilterChange={ this.onStatusFilterChange }

@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TypeFilter from '../TypeFilter';
 import './styles.css';
 import hsylogo from '../../static/hsy-logo.png';
 import StatusFilter from '../StatusFilter';
 
-class Filter extends Component {
-  render() {
+const FilterContainer = (props) => {
     const {
       onTypeFilterChange,
       typeFilters,
       onStatusFilterChange,
       statusFilters,
-    } = this.props;
+    } = props;
 
     return (
         <div id="sidebar">
@@ -33,7 +32,6 @@ class Filter extends Component {
             <img src={ hsylogo } className="hsy-logo" alt="logo" />
         </div>
     );
-  }
 }
 
-export default Filter;
+export default FilterContainer;
