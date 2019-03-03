@@ -30,7 +30,7 @@ class MarkerWithInfoWindow extends React.Component {
         <Marker
           position={ position }
           onMouseOver={ this.onToggleOpen }
-          onMouseOut={ this.onToggleOpen }
+          //onMouseOut={ this.onToggleOpen }
           onFocus={ this.onToggleOpen }
           onBlur={ this.onToggleOpen }
           icon={ icon }
@@ -39,7 +39,7 @@ class MarkerWithInfoWindow extends React.Component {
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, -220),
+                pixelOffset: new window.google.maps.Size(-10, -240),
                 closeBoxURL: '', // set to "null" as it's closed on hover
               } }
             >
