@@ -1,0 +1,31 @@
+.status-filter {
+    position:absolute;
+    top: 10px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-text-list {
+    position: absolute;
+    top: 19px;
+    left: 50px;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 16px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-text {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+}
