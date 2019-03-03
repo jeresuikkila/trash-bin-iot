@@ -1,7 +1,7 @@
 import React from 'react';
 import { Marker } from 'react-google-maps';
 import './styles.css'
-import InfoBoxItem from './InfoBoxItem';
+import InfoBoxItem from '../InfoBoxItem';
 
 const { InfoBox } = require('react-google-maps/lib/components/addons/InfoBox');
 

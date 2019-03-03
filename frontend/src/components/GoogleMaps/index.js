@@ -3,7 +3,7 @@ import { compose, withProps } from 'recompose';
 import {
   withScriptjs, withGoogleMap, GoogleMap,
 } from 'react-google-maps';
-import MarkerWithInfoBox from './MarkerWithInfoBox'
+import MarkerWithInfoBox from '../MarkerWithInfoBox'
 
 const styledMap = require('./styledMap.json')
 const locationFull = require('../../static/location-full.png')

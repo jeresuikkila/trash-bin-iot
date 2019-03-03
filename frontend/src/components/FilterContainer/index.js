@@ -1,8 +1,8 @@
 import React from 'react';
-import TypeFilter from './TypeFilter';
+import TypeFilter from '../TypeFilter';
+import StatusFilter from '../StatusFilter';
 import './styles.css';
 import hsylogo from '../../static/hsy-logo.png';
-import StatusFilter from './StatusFilter';
 
 const FilterContainer = (props) => {
   const {

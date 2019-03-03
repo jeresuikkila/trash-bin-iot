@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles.css'
-import biowaste from '../../../../static/biowaste.png';
-import carton from '../../../../static/carton.png';
-import paper from '../../../../static/paper.png';
-import general from '../../../../static/general.png';
-import hazardous from '../../../../static/hazardous.png';
-import textiles from '../../../../static/textiles.png';
-import battery from '../../../../static/battery.png';
-import glass from '../../../../static/glass.png';
+import biowaste from '../../static/biowaste.png';
+import carton from '../../static/carton.png';
+import paper from '../../static/paper.png';
+import general from '../../static/general.png';
+import hazardous from '../../static/hazardous.png';
+import textiles from '../../static/textiles.png';
+import battery from '../../static/battery.png';
+import glass from '../../static/glass.png';
 
 const imageMap = {
   'biowaste.png': biowaste,

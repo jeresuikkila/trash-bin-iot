@@ -1,8 +1,8 @@
 import React from 'react';
-import TypeFilterItem from './TypeFilterItem';
+import TypeFilterItem from '../TypeFilterItem';
 import './styles.css';
 
-const checkboxes = require('../../../api/type-checkboxes.json');
+const checkboxes = require('../../api/type-checkboxes.json');
 
 class TypeFilter extends React.Component {
   constructor(props) {
