@@ -4,7 +4,7 @@ import './styles.css';
 import hsylogo from '../../static/hsy-logo.png';
 import StatusFilter from '../StatusFilter';
 
-class HSYSidebar extends Component {
+class Filter extends Component {
   render() {
     const {
       onTypeFilterChange,
@@ -36,4 +36,4 @@ class HSYSidebar extends Component {
   }
 }
 
-export default HSYSidebar;
+export default Filter;
