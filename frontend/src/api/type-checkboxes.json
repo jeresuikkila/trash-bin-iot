@@ -6,15 +6,15 @@
     "isChecked": false
   },
   {
-    "name": "Paper",
-    "key": "paper",
-    "img": "paper.png",
+    "name": "Metal",
+    "key": "metal",
+    "img": "metal.png",
     "isChecked": false
   },
   {
     "name": "Plastic",
     "key": "plastic",
-    "img": "general.png",
+    "img": "plastic.png",
     "isChecked": false
   },
   {

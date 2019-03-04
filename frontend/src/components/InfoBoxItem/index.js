@@ -5,6 +5,7 @@ import CardBoardIcon from '../../static/carton.png';
 import PaperIcon from '../../static/paper.png';
 import GeneralIcon from '../../static/general.png';
 import GlassIcon from '../../static/glass.png';
+import PlasticIcon from '../../static/plastic.png'
 
 const imageMap = {
   Biowaste: BioWasteIcon,
@@ -12,7 +13,7 @@ const imageMap = {
   Paper: PaperIcon,
   General: GeneralIcon,
   Glass: GlassIcon,
-  Plastic: GeneralIcon,
+  Plastic: PlasticIcon,
 }
 
 const getIconBackground = (type, fillStatus) => ((fillStatus === 100) ? (`${ type.toLowerCase() }-full`) : 'bin-ok')
