@@ -8,6 +8,7 @@ const aaltoLocations = require('../../api/aalto-with-trashbins.json')
 const locationTrashBins = aaltoLocations.map(
   loc => loc.trashbins,
 ).map(trashbin => trashbin.map(bin => ({ type: bin.wasteType, fillStatus: bin.fillStatus, pickupOverdue: bin.pickupOverdue })));
+console.log(locationTrashBins)
 
 class App extends Component {
   constructor(props) {
@@ -46,7 +47,6 @@ class App extends Component {
 
 
   render() {
-    console.log(locationTrashBins)
     const { typeFilters, statusFilters } = this.state;
     return (
         <div className="fluid-container">
