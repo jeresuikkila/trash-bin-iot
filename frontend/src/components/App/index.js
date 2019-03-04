@@ -7,8 +7,8 @@ const aaltoLocations = require('../../api/aalto-with-trashbins.json')
 
 const locationTrashBins = aaltoLocations.map(
   loc => loc.trashbins,
-).map(trashbin => trashbin.map(bin => ({ type: bin.wasteType, fillStatus: bin.fillStatus, pickupOverdue: bin.pickupOverdue })));
-console.log(locationTrashBins)
+).map(trashbin => trashbin.map(bin => ( bin.wasteType)));
+
 
 class App extends Component {
   constructor(props) {
@@ -30,18 +30,27 @@ class App extends Component {
   }
 
   getFilteredLocations(typeFilters, statusFilters) {
+	  console.log(typeFilters);
     const checkedTypeFilters = new Map([ ...typeFilters ].filter(([ , value ]) => value === true));
     const checkedStatusFilters = new Map([ ...statusFilters ].filter(([ , value ]) => value === true));
     const toRender = [ ...checkedTypeFilters.keys(), ...checkedStatusFilters.keys() ];
+	console.log(this.state.statusFilters.get("Late pickups"))
     const locations = [];
-    console.log(toRender)
+
     locationTrashBins.forEach((loc, i) => {
       if (toRender.length === 0
         || toRender.filter(value => loc.indexOf(value) !== -1).length > 0) {
         locations.push(aaltoLocations[ i ])
       }
     })
-    return locations;
+
+    return this.getOverdueLocations(locations);
+  }
+  
+  getOverdueLocations(locations) {
+	var ret = locations.filter(a => a.trashbins.filter(c => c.pickupOverdue === true).length !== 0 );
+	
+    return ret;
   }
 
 
