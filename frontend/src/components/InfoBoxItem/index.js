@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css'
 import BioWasteIcon from '../../static/biowaste.png';
 import CardBoardIcon from '../../static/carton.png';
-import PaperIcon from '../../static/paper.png';
+import MetalIcon from '../../static/metal.png';
 import GeneralIcon from '../../static/general.png';
 import GlassIcon from '../../static/glass.png';
 import PlasticIcon from '../../static/plastic.png'
@@ -10,7 +10,7 @@ import PlasticIcon from '../../static/plastic.png'
 const imageMap = {
   Biowaste: BioWasteIcon,
   Cardboard: CardBoardIcon,
-  Paper: PaperIcon,
+  Metal: MetalIcon,
   General: GeneralIcon,
   Glass: GlassIcon,
   Plastic: PlasticIcon,

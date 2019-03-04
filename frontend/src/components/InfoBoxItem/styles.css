@@ -30,14 +30,6 @@
   margin: 5px;
 }
 
-.paper-full {
-  width: 53px;
-  height: 53px;
-  background: #666666;
-  border-radius: 5px;
-  margin: 5px;
-}
-
 .glass-full {
   width: 53px;
   height: 53px;
@@ -49,7 +41,15 @@
 .plastic-full {
   width: 53px;
   height: 53px;
-  background: #666666;
+  background: #d8d53e;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.metal-full {
+  width: 53px;
+  height: 53px;
+  background: #505050;
   border-radius: 5px;
   margin: 5px;
 }
