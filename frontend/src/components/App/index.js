@@ -5,9 +5,10 @@ import GoogleMaps from '../GoogleMaps'
 
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
 
-const locationWasteTypes = aaltoLocations.map(
+const locationTrashBins = aaltoLocations.map(
   loc => loc.trashbins,
-).map(trashbin => trashbin.map(bin => bin.wasteType));
+).map(trashbin => trashbin.map(bin => ( bin.wasteType)));
+
 
 class App extends Component {
   constructor(props) {
@@ -28,27 +29,30 @@ class App extends Component {
     this.setState(prevState => ({ statusFilters: prevState.statusFilters.set(item, isChecked) }));
   }
 
-  getFilteredLocations(filters) {
-    const checkedFilters = new Map([ ...filters ].filter(([ , value ]) => value === true));
-    const typesToRender = [ ...checkedFilters.keys() ];
+  getFilteredLocations(typeFilters, statusFilters) {
+	  console.log(typeFilters);
+    const checkedTypeFilters = new Map([ ...typeFilters ].filter(([ , value ]) => value === true));
+    const checkedStatusFilters = new Map([ ...statusFilters ].filter(([ , value ]) => value === true));
+    const toRender = [ ...checkedTypeFilters.keys(), ...checkedStatusFilters.keys() ];
+	console.log(this.state.statusFilters.get("Late pickups"))
     const locations = [];
-    locationWasteTypes.forEach((loc, i) => {
-      if (typesToRender.length === 0
-        || typesToRender.filter(value => loc.indexOf(value) !== -1).length > 0) {
+
+    locationTrashBins.forEach((loc, i) => {
+      if (toRender.length === 0
+        || toRender.filter(value => loc.indexOf(value) !== -1).length > 0) {
         locations.push(aaltoLocations[ i ])
       }
     })
+    
     if(this.state.statusFilters.get("Late pickups")) {
-		return this.getOverdueLocations(locations);
-	} else return locations;
-  }
-  
-  getOverdueLocations(locations) {
-	var ret = locations.filter(a => a.trashbins.filter(c => c.pickupOverdue === true).length !== 0 );
-	
-    return ret;
+      return this.getOverdueLocations(locations);
+    } else return locations;
   }
 
+  getOverdueLocations(locations) {
+    return locations.filter(a => a.trashbins.filter(c => c.pickupOverdue === true).length !== 0 );
+  }
+  
   render() {
     const { typeFilters, statusFilters } = this.state;
     return (
@@ -61,7 +65,7 @@ class App extends Component {
             />
             <div className="map">
                 <GoogleMaps
-                  locations={ this.getFilteredLocations(typeFilters) }
+                  locations={ this.getFilteredLocations(typeFilters, statusFilters) }
                 />
             </div>
         </div>
