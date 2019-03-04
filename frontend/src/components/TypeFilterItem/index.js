@@ -13,7 +13,7 @@ const imageMap = {
   'metal.png': metal,
   'general.png': general,
   'glass.png': glass,
-  'plastic.png': plastic
+  'plastic.png': plastic,
 }
 
 const TypeFilterItem = ({ item, handleChange, checked = false }) => (
