@@ -22,10 +22,11 @@ class MarkerWithInfoBox extends React.Component {
   }
 
   render() {
-    const {
-      position, icon, address, trashBins,
-    } = this.props
-    const { isOpen } = this.state
+    const { isOpen } = this.state;
+    const { position, icon, trashBins } = this.props;
+    let {address} = this.props;
+    address = address.split(',')[ 0 ].toLowerCase()
+    address = address.charAt(0).toUpperCase() + address.slice(1)
     return (
         <Marker
           position={ position }
@@ -45,7 +46,7 @@ class MarkerWithInfoBox extends React.Component {
             >
                 <div className="box triangle">
                     <div className="dark-teal-infobox">
-                        <p className="address-text">{address.split(',')[ 0 ]}</p>
+                        <p className="address-text">{address}</p>
                     </div>
                     <div className="type-icon-container">
                         {
