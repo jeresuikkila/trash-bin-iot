@@ -6,24 +6,6 @@
     "isChecked": false
   },
   {
-    "name": "Metal",
-    "key": "metal",
-    "img": "metal.png",
-    "isChecked": false
-  },
-  {
-    "name": "Plastic",
-    "key": "plastic",
-    "img": "plastic.png",
-    "isChecked": false
-  },
-  {
-    "name": "Biowaste",
-    "key": "biowaste",
-    "img": "biowaste.png",
-    "isChecked": false
-  },
-  {
     "name": "Cardboard",
     "key": "cardboard",
     "img": "carton.png",
@@ -33,6 +15,24 @@
     "name": "Glass",
     "key": "glass",
     "img": "glass.png",
+    "isChecked": false
+  },
+  {
+    "name": "Biowaste",
+    "key": "biowaste",
+    "img": "biowaste.png",
+    "isChecked": false
+  },
+  {
+    "name": "Plastic",
+    "key": "plastic",
+    "img": "plastic.png",
+    "isChecked": false
+  },
+  {
+    "name": "Metal",
+    "key": "metal",
+    "img": "metal.png",
     "isChecked": false
   }
 ]
