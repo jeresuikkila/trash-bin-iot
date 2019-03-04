@@ -1,23 +1,19 @@
 import React from 'react';
 import './styles.css'
-import biowaste from '../../../static/biowaste.png';
-import carton from '../../../static/carton.png';
-import paper from '../../../static/paper.png';
-import general from '../../../static/general.png';
-import hazardous from '../../../static/hazardous.png';
-import textiles from '../../../static/textiles.png';
-import battery from '../../../static/battery.png';
-import glass from '../../../static/glass.png';
+import biowaste from '../../static/biowaste.png';
+import carton from '../../static/carton.png';
+import metal from '../../static/metal.png';
+import general from '../../static/general.png';
+import glass from '../../static/glass.png';
+import plastic from '../../static/plastic.png'
 
 const imageMap = {
   'biowaste.png': biowaste,
   'carton.png': carton,
-  'paper.png': paper,
+  'metal.png': metal,
   'general.png': general,
-  'hazardous.png': hazardous,
-  'textiles.png': textiles,
-  'battery.png': battery,
   'glass.png': glass,
+  'plastic.png': plastic,
 }
 
 const TypeFilterItem = ({ item, handleChange, checked = false }) => (

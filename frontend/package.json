@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "dotenv": "^6.2.0",
+    "eslint": "^5.14.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-google-maps": "^9.4.5",

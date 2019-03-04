@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import statusCheckboxes from '../../api/status-checkboxes.json'
-import StatusFilterItem from './StatusFilterItem'
+import StatusFilterItem from '../StatusFilterItem'
 import './styles.css'
 
 class StatusFilter extends Component {

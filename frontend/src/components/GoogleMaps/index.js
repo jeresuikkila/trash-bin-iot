@@ -3,11 +3,13 @@ import { compose, withProps } from 'recompose';
 import {
   withScriptjs, withGoogleMap, GoogleMap,
 } from 'react-google-maps';
-import MarkerWithInfoWindow from '../MarkerWithInfoWindow'
+import MarkerWithInfoBox from '../MarkerWithInfoBox'
 
-const styledMap = require('../../components/GoogleMaps/styledMap.json')
+const styledMap = require('./styledMap.json')
 const locationFull = require('../../static/location-full.png')
 const locationOk = require('../../static/location-ok.png')
+
+const key = process.env.REACT_APP_GOOGLE_API_KEY != null ? process.env.REACT_APP_GOOGLE_API_KEY : '';
 
 const getMarkerUrl = (trashbins) => {
   let maxFillStatusOnLocation = 0;
@@ -19,9 +21,11 @@ const getMarkerUrl = (trashbins) => {
   return (maxFillStatusOnLocation === 100) ? locationFull : locationOk;
 }
 
+const getTrashBins = bins => bins.map(bin => ({ type: bin.wasteType, fillStatus: bin.fillStatus }))
+
 const GoogleMaps = compose(
   withProps({
-    googleMapURL: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ process.env.REACT_APP_GOOGLE_API_KEY }`, // add google maps api key to the end of the line.
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ key }`, // add google maps api key to the end of the line.
     loadingElement: <div style={ { height: '100%' } } />,
     containerElement: <div style={ { height: '100%' } } />,
     mapElement: <div style={ { height: '100%' } } />,
@@ -42,7 +46,7 @@ const GoogleMaps = compose(
     >
 
         { props.locations.map( location => ( // map locations and statuses to create markers
-            <MarkerWithInfoWindow
+            <MarkerWithInfoBox
               icon={ {
                 url: getMarkerUrl(location.trashbins),
                 title: 'trashbin',
@@ -52,7 +56,9 @@ const GoogleMaps = compose(
                 lat: location.lat,
                 lng: location.lon,
               } }
+              trashBins={ getTrashBins(location.trashbins) }
               key={ location.id }
+              address={ location.address }
             />
         ))}
 

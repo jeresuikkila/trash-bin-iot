@@ -1,5 +1,5 @@
 import React from 'react';
-import TypeFilterItem from './TypeFilterItem';
+import TypeFilterItem from '../TypeFilterItem';
 import './styles.css';
 
 const checkboxes = require('../../api/type-checkboxes.json');
