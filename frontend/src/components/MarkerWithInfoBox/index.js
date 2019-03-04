@@ -21,6 +21,10 @@ class MarkerWithInfoBox extends React.Component {
     });
   }
 
+  trashbinRowCounter() {
+    return (Math.ceil(this.props.trashBins.length / 4))
+  }
+
   render() {
     const { isOpen } = this.state;
     const { position, icon, trashBins } = this.props;
@@ -40,7 +44,7 @@ class MarkerWithInfoBox extends React.Component {
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, -240),
+                pixelOffset: new window.google.maps.Size(-10, (-100 - (this.trashbinRowCounter()*65))),
                 closeBoxURL: '', // set to "null" as it's closed on hover
               } }
             >

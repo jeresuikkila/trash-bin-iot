@@ -41,7 +41,7 @@
 }
 .dark-teal-infobox {
   position: relative;
-  width: 265px;
+  width: 266px;
   height: 35px;
   left: -1px;
   top: -1px;
@@ -67,9 +67,11 @@
   position: relative;
   width: 265px;
   height: auto;
-  padding-left: 5px;
+  padding-left: 8px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 /* https://codingislove.com/css-speech-bubbles/ */
