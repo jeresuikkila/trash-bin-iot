@@ -30,3 +30,8 @@
   border: none;
   outline: none;
 }
+
+.back-button-round:hover {
+  cursor: pointer;
+  background: #59a9b1;
+}

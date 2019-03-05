@@ -66,7 +66,7 @@ class App extends Component {
       (
           <LocationView
             toggleLocationView={this.toggleLocationView}
-            locationId = {currentLocationId}
+            location = {aaltoLocations.filter(loc => loc.id === currentLocationId)[0]}
           />   
       ) :
       (
