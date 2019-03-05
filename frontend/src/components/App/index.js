@@ -32,13 +32,19 @@ class App extends Component {
     this.setState(prevState => ({ statusFilters: prevState.statusFilters.set(item, isChecked) }));
   }
 
+  /*When marker is clicked, location view is shown. When same marker is clicked again
+    location view is closed.
+    When location view is shown and another marker is clicked, location view remains visible.
+    If this another marker is clicked again, location view is closed
+  */
   toggleLocationView(id) {
     const {showLocationView, currentLocationId} = this.state;
     if (!showLocationView || currentLocationId === id) {
       this.setState({showLocationView: !showLocationView, currentLocationId: id})
     }
-    console.log("Clicked location:", id)
-    console.log("showLocationView:", this.state.showLocationView)
+    if (showLocationView && currentLocationId !== id) {
+      this.setState({currentLocationId: id})
+    }
   }
 
   getFilteredLocations(filters) {
