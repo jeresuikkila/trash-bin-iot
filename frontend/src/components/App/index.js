@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import FilterContainer from '../FilterContainer'
+import LocationView from '../LocationView'
 import GoogleMaps from '../GoogleMaps'
 
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
@@ -57,10 +58,9 @@ class App extends Component {
     const {showLocationView, typeFilters, statusFilters} = this.state
     return showLocationView ? 
       (
-        // replace this block
         <div>
-          <h1>LOCATION VIEW</h1>
-          <button className="btn btn-dark" onClick={() => this.setState({showLocationView: !this.state.showLocationView})}></button>
+          <LocationView/>   
+          <button className="back-button-round" onClick={() => this.setState({showLocationView: !this.state.showLocationView})}></button>    
         </div>
       ) :
       (

@@ -1,0 +1,16 @@
+.location-white-background {
+    position: absolute;
+    height: 755px;
+    width: 325px;
+    top: 50px;
+    background: #FFFFFF;
+}
+
+.back-text {
+    position: absolute;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    color: #FFFFFF;
+    left: 40px;
+    top: 12px;
+}
