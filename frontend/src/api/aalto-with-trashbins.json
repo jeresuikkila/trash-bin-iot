@@ -41,7 +41,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 2,
@@ -121,7 +122,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 3,
@@ -141,7 +143,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 4,
@@ -185,7 +188,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 5,
@@ -205,7 +209,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 6,
@@ -237,7 +242,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 7,
@@ -281,7 +287,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 8,
@@ -325,7 +332,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": true
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 9,
@@ -393,7 +401,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 10,
@@ -413,7 +422,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 11,
@@ -469,7 +479,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 12,
@@ -501,7 +512,8 @@
                 "fillStatus": 100,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 13,
@@ -605,7 +617,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 14,
@@ -661,7 +674,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": true
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 15,
@@ -693,7 +707,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 16,
@@ -737,7 +752,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 17,
@@ -829,7 +845,8 @@
                 "fillStatus": 100,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 18,
@@ -873,7 +890,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 19,
@@ -905,7 +923,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 20,
@@ -949,7 +968,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 21,
@@ -1017,7 +1037,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 22,
@@ -1037,7 +1058,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 23,
@@ -1129,7 +1151,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 24,
@@ -1161,7 +1184,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 25,
@@ -1229,7 +1253,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 26,
@@ -1261,7 +1286,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 27,
@@ -1329,7 +1355,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 28,
@@ -1361,7 +1388,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 29,
@@ -1405,7 +1433,8 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 30,
@@ -1449,7 +1478,8 @@
                 "fillStatus": 100,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     },
     {
         "id": 31,
@@ -1553,6 +1583,7 @@
                 "fillStatus": 0,
                 "pickupOverdue": false
             }
-        ]
+        ],
+        "customer": "Aalto University"
     }
 ]
