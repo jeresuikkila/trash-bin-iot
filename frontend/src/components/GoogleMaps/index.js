@@ -35,7 +35,7 @@ const GoogleMaps = compose(
   withGoogleMap,
 )( props => (
     <GoogleMap
-      defaultZoom={ 18 }
+      defaultZoom={ 16 }
       defaultCenter={ {
         lat: 60.1873,
         lng: 24.82339,
@@ -58,7 +58,9 @@ const GoogleMaps = compose(
               } }
               trashBins={ getTrashBins(location.trashbins) }
               key={ location.id }
+              locationId = {location.id}
               address={ location.address }
+              toggleLocationView = {props.toggleLocationView}
             />
         ))}
 

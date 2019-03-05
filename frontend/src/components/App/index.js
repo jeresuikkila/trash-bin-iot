@@ -15,9 +15,12 @@ class App extends Component {
     this.state = {
       typeFilters: new Map(),
       statusFilters: new Map(),
+      showLocationView: false,
+      currentLocationId: null
     };
     this.onTypeFilterChange = this.onTypeFilterChange.bind(this);
     this.onStatusFilterChange = this.onStatusFilterChange.bind(this);
+    this.toggleLocationView = this.toggleLocationView.bind(this);
   }
 
   onTypeFilterChange(item, isChecked) {
@@ -26,6 +29,15 @@ class App extends Component {
 
   onStatusFilterChange(item, isChecked) {
     this.setState(prevState => ({ statusFilters: prevState.statusFilters.set(item, isChecked) }));
+  }
+
+  toggleLocationView(id) {
+    const {showLocationView, currentLocationId} = this.state;
+    if (!showLocationView || currentLocationId === id) {
+      this.setState({showLocationView: !showLocationView, currentLocationId: id})
+    }
+    console.log("Clicked location:", id)
+    console.log("showLocationView:", this.state.showLocationView)
   }
 
   getFilteredLocations(filters) {
@@ -41,19 +53,37 @@ class App extends Component {
     return locations;
   }
 
-  render() {
-    const { typeFilters, statusFilters } = this.state;
-    return (
-        <div className="fluid-container">
-            <FilterContainer
+  getSidebarView() {
+    const {showLocationView, typeFilters, statusFilters} = this.state
+    if (!showLocationView) {
+      return (
+        <FilterContainer
               onTypeFilterChange={ this.onTypeFilterChange }
               typeFilters={ typeFilters }
               onStatusFilterChange={ this.onStatusFilterChange }
               statusFilters={ statusFilters }
             />
+      )
+    }
+    else {
+      return(
+        <div>
+          <h1>LOCATION VIEW</h1>
+          <button className="btn btn-black" onClick={() => this.setState({showLocationView: !this.state.showLocationView})}></button>
+        </div>
+      )
+    }
+  }
+
+  render() {
+    const { typeFilters } = this.state;
+    return (
+        <div className="fluid-container">
+            {this.getSidebarView()}
             <div className="map">
                 <GoogleMaps
                   locations={ this.getFilteredLocations(typeFilters) }
+                  toggleLocationView={this.toggleLocationView}
                 />
             </div>
         </div>
