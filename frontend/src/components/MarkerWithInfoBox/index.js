@@ -25,10 +25,11 @@ class MarkerWithInfoBox extends React.Component {
     return (-100 - (Math.ceil(trashBins.length / 4)) * 65)
   }
 
- 
   render() {
     const { isOpen } = this.state;
-    const { position, icon, trashBins, toggleLocationView, locationId } = this.props;
+    const {
+      position, icon, trashBins, toggleLocationView, locationId,
+    } = this.props;
     let { address } = this.props;
     address = address.split(',')[ 0 ].toLowerCase()
     address = address.charAt(0).toUpperCase() + address.slice(1)
@@ -40,7 +41,7 @@ class MarkerWithInfoBox extends React.Component {
           onFocus={ this.onToggleOpen }
           onBlur={ this.onToggleOpen }
           icon={ icon }
-          onClick={() => toggleLocationView(locationId)}
+          onClick={ () => toggleLocationView(locationId) }
         >
             { isOpen && (
             <InfoBox

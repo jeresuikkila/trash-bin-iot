@@ -58,9 +58,9 @@ const GoogleMaps = compose(
               } }
               trashBins={ getTrashBins(location.trashbins) }
               key={ location.id }
-              locationId = {location.id}
+              locationId={ location.id }
               address={ location.address }
-              toggleLocationView = {props.toggleLocationView}
+              toggleLocationView={ props.toggleLocationView }
             />
         ))}
 
