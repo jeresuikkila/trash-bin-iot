@@ -1,16 +1,32 @@
 .location-white-background {
-    position: absolute;
-    height: 755px;
-    width: 325px;
-    top: 50px;
-    background: #FFFFFF;
+  position: absolute;
+  height: 755px;
+  width: 325px;
+  top: 50px;
+  background: #ffffff;
 }
 
 .back-text {
-    position: absolute;
-    font-family: Source Sans Pro;
-    font-size: 18px;
-    color: #FFFFFF;
-    left: 40px;
-    top: 12px;
+  position: absolute;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  color: #ffffff;
+  left: 40px;
+  top: 12px;
+}
+
+.back-button-round {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  top: -10px;
+  left: -10px;
+  border-radius: 50%;
+  background: #67c3cc;
+  border: none;
+}
+
+.back-button-round:focus {
+  border: none;
+  outline: none;
 }

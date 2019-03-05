@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import hsylogo from '../../static/hsy-logo.png';
 import './styles.css'
 
-class LocationView extends Component {
-
-    render() {
-
-        return (
-            <div id="sidebar">
-                <p className="back-text">Back</p>
-                <div className="location-white-background" />
-                <img src={ hsylogo } className="hsy-logo" alt="logo" />
-            </div>
-        )
-    }
+const LocationView = (props) => {
+    const {toggleLocationView, locationId} = props;
+    return (
+        <div id="sidebar">
+            <button className="back-button-round" onClick = {() => toggleLocationView(locationId)}></button>
+            <p className="back-text">Back</p>
+            <div className="location-white-background" />
+            <img src={ hsylogo } className="hsy-logo" alt="logo" />
+        </div>
+    )
 }
+
 
 export default LocationView;

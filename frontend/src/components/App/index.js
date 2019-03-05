@@ -55,13 +55,13 @@ class App extends Component {
   }
 
   getSidebarView() {
-    const {showLocationView, typeFilters, statusFilters} = this.state
+    const {showLocationView, typeFilters, statusFilters, currentLocationId} = this.state
     return showLocationView ? 
       (
-        <div>
-          <LocationView/>   
-          <button className="back-button-round" onClick={() => this.setState({showLocationView: !this.state.showLocationView})}></button>    
-        </div>
+          <LocationView
+            toggleLocationView={this.toggleLocationView}
+            locationId = {currentLocationId}
+          />   
       ) :
       (
         <FilterContainer
@@ -69,7 +69,7 @@ class App extends Component {
               typeFilters={ typeFilters }
               onStatusFilterChange={ this.onStatusFilterChange }
               statusFilters={ statusFilters }
-            />
+        />
       )
       
   }
