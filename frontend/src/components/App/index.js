@@ -55,8 +55,15 @@ class App extends Component {
 
   getSidebarView() {
     const {showLocationView, typeFilters, statusFilters} = this.state
-    if (!showLocationView) {
-      return (
+    return showLocationView ? 
+      (
+        // replace this block
+        <div>
+          <h1>LOCATION VIEW</h1>
+          <button className="btn btn-dark" onClick={() => this.setState({showLocationView: !this.state.showLocationView})}></button>
+        </div>
+      ) :
+      (
         <FilterContainer
               onTypeFilterChange={ this.onTypeFilterChange }
               typeFilters={ typeFilters }
@@ -64,15 +71,7 @@ class App extends Component {
               statusFilters={ statusFilters }
             />
       )
-    }
-    else {
-      return(
-        <div>
-          <h1>LOCATION VIEW</h1>
-          <button className="btn btn-black" onClick={() => this.setState({showLocationView: !this.state.showLocationView})}></button>
-        </div>
-      )
-    }
+      
   }
 
   render() {
