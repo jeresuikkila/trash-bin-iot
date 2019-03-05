@@ -11,8 +11,8 @@
   font-family: Source Sans Pro;
   font-size: 18px;
   color: #ffffff;
-  left: 40px;
-  top: 12px;
+  left: 50px;
+  top: 20px;
 }
 
 .back-button-round {
@@ -34,4 +34,32 @@
 .back-button-round:hover {
   cursor: pointer;
   background: #59a9b1;
+}
+
+.back-arrow {
+    position: relative;
+    height: 20px;
+    width: 25px;
+    top: -2px;
+}
+
+.address {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    color: #19A2A9;
+}
+
+.owner-text {
+    position: absolute;
+    left: 20px;
+    top: 32px;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+    color: #19A2A9;
 }
