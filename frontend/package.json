@@ -113,8 +113,8 @@
       "node"
     ],
     "watchPlugins": [
-      "/home/jere/workspace/aalto/trash-bin-iot/frontend/node_modules/jest-watch-typeahead/filename.js",
-      "/home/jere/workspace/aalto/trash-bin-iot/frontend/node_modules/jest-watch-typeahead/testname.js"
+      "jest-watch-typeahead/filename.js",
+      "jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {
