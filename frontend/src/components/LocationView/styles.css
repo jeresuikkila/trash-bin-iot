@@ -34,6 +34,8 @@
 .back-button-round:hover {
   cursor: pointer;
   background: #59a9b1;
+  border-radius: 50%;
+
 }
 
 .back-arrow {

@@ -8,8 +8,8 @@ const LocationView = (props) => {
   return (
       <div id="sidebar">
           <button type="button" className="back-button-round" onClick={ () => toggleLocationView(location.id) }>
-          <img src={ backarrow } className="back-arrow" alt="arrow" />
-          <p className="back-text">Back</p>
+              <img src={ backarrow } className="back-arrow" alt="arrow" />
+              <p className="back-text">Back</p>
           </button>
           <div className="location-white-background">
               <p className="address">{location.address.split(',')[ 0 ]}</p>
