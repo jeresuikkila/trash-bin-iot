@@ -46,7 +46,6 @@ class App extends Component {
   }
 
   getOverdueLocations(locations) {
-	  console.log(locations.map(a=> a.id));
     return locations.filter(a => a.trashbins.filter(c => c.pickupOverdue === true).length !== 0 );
   }
   
