@@ -67,25 +67,26 @@ class App extends Component {
       let binCounter = 0;
       let fullCounter = 0;
 
-      trashbins.forEach(bin => {
-      if (currentWasteType !== bin.wasteType  || bin === trashbins[trashbins.length -1]) {
-        
-        if (binCounter === fullCounter) {
-          overflowLocations.push(aaltoLocations[ i ])
-          console.log(currentWasteType)
+      trashbins.forEach((bin, j) => {
+
+        if (currentWasteType !== bin.wasteType) {
+          if (binCounter === fullCounter) {
+            overflowLocations.push(aaltoLocations[ i ])
+            console.log(currentWasteType)
+         }
+          binCounter = 0;
+          fullCounter = 0;
         }
 
-        binCounter = 0;
-        fullCounter = 0;
-      }
+        currentWasteType = bin.wasteType
+        if (bin.fillStatus === 100) fullCounter += 1;
+        binCounter += 1;
 
-      currentWasteType = bin.wasteType
-      if (bin.fillStatus === 100) fullCounter += 1;
-      binCounter += 1;
-
-      });
-        
-      
+        if (j === trashbins.length-1 && binCounter === fullCounter){
+          overflowLocations.push(aaltoLocations[ i ])
+        }
+      }); 
+           
     })
     console.log('overflowLocations:')
     console.log(overflowLocations);
