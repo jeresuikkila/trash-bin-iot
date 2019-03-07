@@ -173,7 +173,7 @@ class App extends Component {
 
     for (let i = 0; i < overflowLoc.length; i++) {
       let types = this.getOverflowTypes(overflowLoc[i])
-      console.log('overflowing waste types in address '+ overflowLoc[i].address + ' are: '  + types)
+      console.log('overflowing waste types at address '+ overflowLoc[i].address + ' are: '  + types)
     }
 
     return (
