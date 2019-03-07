@@ -518,7 +518,7 @@
                 "count": 2,
                 "collectionInterval": "3 krt/viikko ma ke pe",
                 "nextPickup": "13.02.19",
-                "fillStatus": 0,
+                "fillStatus": 100,
                 "pickupOverdue": false
             },
             {
@@ -590,7 +590,7 @@
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ma",
                 "nextPickup": "18.02.19",
-                "fillStatus": 0,
+                "fillStatus": 100,
                 "pickupOverdue": true
             },
             {
@@ -978,7 +978,7 @@
                 "count": 1,
                 "collectionInterval": "1 krt/viikko ti",
                 "nextPickup": "12.02.19",
-                "fillStatus": 0,
+                "fillStatus": 100,
                 "pickupOverdue": false
             },
             {
@@ -990,7 +990,7 @@
                 "count": 0,
                 "collectionInterval": "1 krt/viikko ti",
                 "nextPickup": "12.02.19",
-                "fillStatus": 0,
+                "fillStatus": 100,
                 "pickupOverdue": false
             },
             {

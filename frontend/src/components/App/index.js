@@ -9,6 +9,7 @@ const locationWasteTypes = aaltoLocations.map(
   loc => loc.trashbins,
 ).map(trashbin => trashbin.map(bin => bin.wasteType));
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +29,7 @@ class App extends Component {
     this.setState(prevState => ({ statusFilters: prevState.statusFilters.set(item, isChecked) }));
   }
 
-  getFilteredLocations(filters) {
+  getTypeFilteredLocations(filters) {
     const checkedFilters = new Map([ ...filters ].filter(([ , value ]) => value === true));
     const typesToRender = [ ...checkedFilters.keys() ];
     const locations = [];
@@ -40,6 +41,45 @@ class App extends Component {
     })
     return locations;
   }
+
+
+  getOverflowLocations() {
+    const overflowLocations = [];
+
+    aaltoLocations.forEach((loc, i) => {
+
+      let trashbins = loc.trashbins;
+
+      trashbins.sort(function(a,b){
+        if(a.wasteType < b.wasteType) { return -1; }
+        if(a.wasteType > b.wasteType) { return 1; }
+        return 0;
+      })
+
+      let currentWasteType = ' ';
+      let binCounter = 0;
+      let fullCounter = 0;
+
+      trashbins.forEach(bin => {
+      if (currentWasteType !== bin.wasteType) {
+        binCounter = 0;
+        fullCounter = 0;
+      }
+      currentWasteType = bin.wasteType
+      if (bin.fillStatus === 100) fullCounter += 1;
+      binCounter += 1;
+      });
+        
+      if (binCounter === fullCounter) {
+        overflowLocations.push(aaltoLocations[ i ])
+      }
+    })
+    console.log('overflowLocations:')
+    console.log(overflowLocations);
+    return overflowLocations;
+  }
+
+
 
   render() {
     const { typeFilters, statusFilters } = this.state;
@@ -53,7 +93,8 @@ class App extends Component {
             />
             <div className="map">
                 <GoogleMaps
-                  locations={ this.getFilteredLocations(typeFilters) }
+                  locations={ this.getTypeFilteredLocations(typeFilters) }
+                  overflowLocations = { this.getOverflowLocations() }
                 />
             </div>
         </div>
