@@ -38,53 +38,56 @@ class App extends Component {
         locations.push(aaltoLocations[ i ])
       }
     })
-    if(this.state.statusFilters.get("Late pickups")) {
+    if (this.state.statusFilters.get('Late pickups')) {
       return this.getOverdueLocations(locations);
-    } else if(this.state.statusFilters.get("No issues")){
+    } if (this.state.statusFilters.get('No issues')) {
       return this.getNoIssueLocations(locations);
-    } else return locations;
+    } return locations;
   }
 
   getOverdueLocations(locations) {
     return locations.filter(a => a.trashbins.filter(c => c.pickupOverdue === true).length !== 0 );
   }
-  
+
   getOverflowLocations(locations) {
     return this.getOverdueLocations(locations);
   }
-  
-  getNoIssueLocations(locations) {
-    const orig_locations = locations;
-    const overdue_locations = this.getOverdueLocations(locations);
-    const ovrtflow_locations = this.getOverflowLocations(locations);
-    const m_all = orig_locations.map(a => a.id);
-    const m_overdue = overdue_locations.map(a => a.id);
-    const m_overflow = ovrtflow_locations.map(a => a.id);
 
+  // Operate arrays using Set theory, https://en.wikipedia.org/wiki/Set_theory
+  getNoIssueLocations(locations) {
+    const origLocations = locations;
+    const overdueLocations = this.getOverdueLocations(locations);
+    const overflowLocations = this.getOverflowLocations(locations);
+    const mapAll = origLocations.map(a => a.id);
+    const mapOverdue = overdueLocations.map(a => a.id);
+    const mapOverflow = overflowLocations.map(a => a.id);
+
+    // i.e [1,2,3]-[1,2]=[3]
     function aMinusB(a, b) {
-      return a.filter( 
-        function(c) {
-          return b.indexOf(c) < 0;
-        }
+      return a.filter(
+        c => b.indexOf(c) < 0,
       );
     }
 
+    // i.e [1,2,3]u[2,3,5] = [1,2,3,5]
     function arrUnion(a, b) {
-      var obj = {};
-      for (var i = a.length-1; i >= 0; -- i)
-        obj[a[i]] = a[i];
-      for (var j = b.length-1; j >= 0; -- j)
-        obj[b[j]] = b[j];
-      var res = []
-      for (var c in obj) {
-        if (obj.hasOwnProperty(c))
-          res.push(obj[c]);
+      const obj = {};
+      for (let i = a.length - 1; i >= 0; --i) { obj[ a[ i ] ] = a[ i ]; }
+      for (let j = b.length - 1; j >= 0; --j) { obj[ b[ j ] ] = b[ j ]; }
+      const res = []
+      for (const k in obj) {
+        if (obj.hasOwnProperty(k)) { res.push(obj[ k ]); }
       }
       return res;
     }
-    
-    const noIssueIds = aMinusB(m_all,(arrUnion(m_overdue,m_overflow)));
-    
+
+    /*
+    We assume that no issue locations should be locations that have no overdue nor overflow status,
+    thus we remove the union of overflow and overdue ids from the list of all ids to get the ids with no issues.
+      All-([Overdue]u[Overflow]) <-> [1,2,3,4,5]-([1,2]u[2,3]) = [4,5]
+    */
+    const noIssueIds = aMinusB(mapAll, (arrUnion(mapOverdue, mapOverflow)));
+
     return locations.filter(a => noIssueIds.includes(a.id));
   }
 
