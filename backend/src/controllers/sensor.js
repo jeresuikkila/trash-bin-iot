@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
         const sensor = await models.sensor.create(req.body);
         await models.sensor.findOne({
             where: {
-                id: sensor.dataValues.id
+                id: sensor.id
             },
             include: [
                 { model: models.trashbin, attributes: ['id'] },

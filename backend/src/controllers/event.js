@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
         const event = await models.event.create(req.body);
         await models.event.findOne({
             where: {
-                id: event.dataValues.id
+                id: event.id
             },
             include: [
                 { model: models.sensor, attributes: ['id'] },
