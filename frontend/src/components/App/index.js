@@ -88,6 +88,48 @@ class App extends Component {
   }
 
 
+  
+  getOverflowTypes(location) {
+
+    let overflowTypes = [];
+    let trashbins = location.trashbins;
+
+    trashbins.sort(function(a,b){
+      if(a.wasteType < b.wasteType) { return -1; }
+      if(a.wasteType > b.wasteType) { return 1; }
+      return 0;
+    })
+
+    let currentWasteType = trashbins[0].wasteType;
+    let binCounter = 0;
+    let fullCounter = 0;
+
+    trashbins.forEach((bin, j) => {
+
+      if (currentWasteType !== bin.wasteType) {
+        if (binCounter === fullCounter) {
+          overflowTypes.push(currentWasteType)
+        }
+        binCounter = 0;
+        fullCounter = 0;
+      }
+
+      currentWasteType = bin.wasteType
+      if (bin.fillStatus === 100) fullCounter += 1;
+      binCounter += 1;
+
+      if (j === trashbins.length-1 && binCounter === fullCounter){
+        overflowTypes.push(currentWasteType)
+      }
+    });
+
+    return overflowTypes;
+  }
+
+ 
+
+
+
   getSidebarView() {
     const {
       showLocationView, typeFilters, statusFilters, currentLocationId,
@@ -126,6 +168,14 @@ class App extends Component {
 
   render() {
     const { typeFilters } = this.state;
+
+    const overflowLoc = this.getOverflowLocations();
+
+    for (let i = 0; i < overflowLoc.length; i++) {
+      let types = this.getOverflowTypes(overflowLoc[i])
+      console.log('overflowing waste types in address '+ overflowLoc[i].address + ' are: '  + types)
+    }
+
     return (
         <div className="fluid-container">
             {this.getSidebarView()}
