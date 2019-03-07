@@ -22,7 +22,7 @@ class MarkerWithInfoBox extends React.Component {
   }
 
   offsetCounter(trashBins) {
-    return (-100 - (Math.ceil(trashBins.length / 4)) * 65)
+    return (-100 - (Math.ceil(trashBins.length / 4)) * 70)
   }
 
   render() {
