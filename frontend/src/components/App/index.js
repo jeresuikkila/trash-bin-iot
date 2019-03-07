@@ -76,9 +76,11 @@ class App extends Component {
       for (let i = a.length - 1; i >= 0; i -= 1) { obj[ a[ i ] ] = a[ i ]; }
       for (let j = b.length - 1; j >= 0; j -= 1) { obj[ b[ j ] ] = b[ j ]; }
       const res = []
-      for (const k in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, k)) { res.push(obj[ k ]); }
-      }
+      // for (const k in obj) {
+      Object.keys(obj).forEach((key) => {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) { res.push(obj[ key ]); }
+      })
+
       return res;
     }
 
