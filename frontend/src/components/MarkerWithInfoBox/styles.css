@@ -1,9 +1,8 @@
 .box {
-  width: 276px;
-  height: 170px;
+  width: 266px;
+  height: auto;
   margin: 16px auto;
-  border: 1.3px solid #19a2a9;
-  padding: 20px;
+  border: 1px solid #19a2a9;
   color: #19a2a9;
   font-family: Source Sans Pro;
   font-style: normal;
@@ -41,8 +40,8 @@
   bottom: -14px;
 }
 .dark-teal-infobox {
-  position: absolute;
-  width: 275px;
+  position: relative;
+  width: 266px;
   height: 35px;
   left: -1px;
   top: -1px;
@@ -57,22 +56,22 @@
   font-weight: 500;
   line-height: normal;
   font-size: 16px;
-  left: 10px;
-  top: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
   color: #ffffff;
   border-bottom: 1px solid #fff;
   padding-bottom: 1px;
 }
 
 .type-icon-container {
-  position: absolute;
-  width: 275px;
-  height: 130px;
-  left: -1px;
-  top: 36px;
-  padding-left: 5px;
+  position: relative;
+  width: 265px;
+  height: auto;
+  padding-left: 6px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 /* https://codingislove.com/css-speech-bubbles/ */

@@ -21,11 +21,18 @@ class MarkerWithInfoBox extends React.Component {
     });
   }
 
+  offsetCounter(trashBins) {
+    return (-100 - (Math.ceil(trashBins.length / 4)) * 65)
+  }
+
   render() {
+    const { isOpen } = this.state;
     const {
-      position, icon, address, trashBins,
-    } = this.props
-    const { isOpen } = this.state
+      position, icon, trashBins, toggleLocationView, locationId,
+    } = this.props;
+    let { address } = this.props;
+    address = address.split(',')[ 0 ].toLowerCase()
+    address = address.charAt(0).toUpperCase() + address.slice(1)
     return (
         <Marker
           position={ position }
@@ -34,18 +41,19 @@ class MarkerWithInfoBox extends React.Component {
           onFocus={ this.onToggleOpen }
           onBlur={ this.onToggleOpen }
           icon={ icon }
+          onClick={ () => toggleLocationView(locationId) }
         >
             { isOpen && (
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, -240),
+                pixelOffset: new window.google.maps.Size(-10, this.offsetCounter(trashBins)),
                 closeBoxURL: '', // set to "null" as it's closed on hover
               } }
             >
                 <div className="box triangle">
                     <div className="dark-teal-infobox">
-                        <p className="address-text">{address.split(',')[ 0 ]}</p>
+                        <p className="address-text">{address}</p>
                     </div>
                     <div className="type-icon-container">
                         {
