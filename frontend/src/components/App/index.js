@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import FilterContainer from '../FilterContainer'
+import LocationView from '../LocationView'
 import GoogleMaps from '../GoogleMaps'
 
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
@@ -15,9 +16,12 @@ class App extends Component {
     this.state = {
       typeFilters: new Map(),
       statusFilters: new Map(),
+      showLocationView: false,
+      currentLocationId: null,
     };
     this.onTypeFilterChange = this.onTypeFilterChange.bind(this);
     this.onStatusFilterChange = this.onStatusFilterChange.bind(this);
+    this.toggleLocationView = this.toggleLocationView.bind(this);
   }
 
   onTypeFilterChange(item, isChecked) {
@@ -48,10 +52,6 @@ class App extends Component {
 
   getOverdueLocations(locations) {
     return locations.filter(a => a.trashbins.filter(c => c.pickupOverdue === true).length !== 0 );
-  }
-
-  getOverflowLocations(locations) {
-    return this.getOverdueLocations(locations);
   }
 
   // Operate arrays using Set theory, https://en.wikipedia.org/wiki/Set_theory
@@ -95,19 +95,134 @@ class App extends Component {
     return locations.filter(a => noIssueIds.includes(a.id));
   }
 
+  getOverflowLocations(locations) {
+    const overflowLocations = [];
+
+    locations.forEach((loc, i) => {
+      // const trashbins = loc.trashbins
+      const { trashbins } = loc;
+
+      trashbins.sort((a, b) => {
+        if (a.wasteType < b.wasteType) { return -1; }
+        if (a.wasteType > b.wasteType) { return 1; }
+        return 0;
+      })
+
+      let currentWasteType = trashbins[ 0 ].wasteType;
+      let binCounter = 0;
+      let fullCounter = 0;
+
+      trashbins.forEach((bin, j) => {
+        if (currentWasteType !== bin.wasteType) {
+          if (binCounter === fullCounter) {
+            overflowLocations.push(locations[ i ])
+          }
+          binCounter = 0;
+          fullCounter = 0;
+        }
+
+        currentWasteType = bin.wasteType
+        if (bin.fillStatus === 100) fullCounter += 1;
+        binCounter += 1;
+
+        if (j === trashbins.length - 1 && binCounter === fullCounter) {
+          overflowLocations.push(locations[ i ])
+        }
+      });
+    })
+    return overflowLocations;
+  }
+
+  getOverflowTypes(location) {
+    const overflowTypes = [];
+    // const trasbins = location.trashbins
+    const { trashbins } = location;
+
+    trashbins.sort((a, b) => {
+      if (a.wasteType < b.wasteType) { return -1; }
+      if (a.wasteType > b.wasteType) { return 1; }
+      return 0;
+    })
+
+    let currentWasteType = trashbins[ 0 ].wasteType;
+    let binCounter = 0;
+    let fullCounter = 0;
+
+    trashbins.forEach((bin, j) => {
+      if (currentWasteType !== bin.wasteType) {
+        if (binCounter === fullCounter) {
+          overflowTypes.push(currentWasteType)
+        }
+        binCounter = 0;
+        fullCounter = 0;
+      }
+
+      currentWasteType = bin.wasteType
+      if (bin.fillStatus === 100) fullCounter += 1;
+      binCounter += 1;
+
+      if (j === trashbins.length - 1 && binCounter === fullCounter) {
+        overflowTypes.push(currentWasteType)
+      }
+    });
+
+    return overflowTypes;
+  }
+
+  getSidebarView() {
+    const {
+      showLocationView, typeFilters, statusFilters, currentLocationId,
+    } = this.state
+    return showLocationView
+      ? (
+          <LocationView
+            toggleLocationView={ this.toggleLocationView }
+            location={ aaltoLocations.filter(loc => loc.id === currentLocationId)[ 0 ] }
+          />
+      )
+      : (
+          <FilterContainer
+            onTypeFilterChange={ this.onTypeFilterChange }
+            typeFilters={ typeFilters }
+            onStatusFilterChange={ this.onStatusFilterChange }
+            statusFilters={ statusFilters }
+          />
+      )
+  }
+
+  /* When marker is clicked, location view is shown. When same marker is clicked again
+    location view is closed.
+    When location view is shown and another marker is clicked, location view remains visible.
+    If this another marker is clicked again, location view is closed
+  */
+  toggleLocationView(id) {
+    const { showLocationView, currentLocationId } = this.state;
+    if (!showLocationView || currentLocationId === id) {
+      this.setState({ showLocationView: !showLocationView, currentLocationId: id })
+    }
+    if (showLocationView && currentLocationId !== id) {
+      this.setState({ currentLocationId: id })
+    }
+  }
+
   render() {
-    const { typeFilters, statusFilters } = this.state;
+    const { typeFilters } = this.state;
+
+    const overflowLoc = this.getOverflowLocations(aaltoLocations);
+
+    for (let i = 0; i < overflowLoc.length; i += 1) {
+      const types = this.getOverflowTypes(overflowLoc[ i ])
+      console.log(`overflowing waste types at address ${ overflowLoc[ i ].address } are: ${ types }`)
+    }
+
     return (
         <div className="fluid-container">
-            <FilterContainer
-              onTypeFilterChange={ this.onTypeFilterChange }
-              typeFilters={ typeFilters }
-              onStatusFilterChange={ this.onStatusFilterChange }
-              statusFilters={ statusFilters }
-            />
+            {this.getSidebarView()}
             <div className="map">
                 <GoogleMaps
                   locations={ this.getFilteredLocations(typeFilters) }
+                  overflowLocations={ this.getOverflowLocations(aaltoLocations) }
+                  toggleLocationView={ this.toggleLocationView }
                 />
             </div>
         </div>
