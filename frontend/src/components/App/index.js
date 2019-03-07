@@ -141,7 +141,9 @@ class App extends Component {
         }
       });
     })
-    return overflowLocations;
+
+    let uniqueOverflowLocations = [...new Set(overflowLocations)];
+    return uniqueOverflowLocations;
   }
 
   getOverflowTypes(location) {
