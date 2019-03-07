@@ -43,29 +43,29 @@ class App extends Component {
         locations.push(aaltoLocations[ i ])
       }
     })
-	
-	const overflowLocations = this.getOverflowLocations(locations);
-	const overdueLocations = this.getOverdueLocations(locations);
-	const noIssueLocations = this.getNoIssueLocations(locations);
-	const oveflowMap = overflowLocations.map(a => a.id);
-	const overdueMap = overdueLocations.map(a => a.id);
-	const issueMap = noIssueLocations.map(a => a.id);
-    
+
+    const overflowLocations = this.getOverflowLocations(locations);
+    const overdueLocations = this.getOverdueLocations(locations);
+    const noIssueLocations = this.getNoIssueLocations(locations);
+    const oveflowMap = overflowLocations.map(a => a.id);
+    const overdueMap = overdueLocations.map(a => a.id);
+    const issueMap = noIssueLocations.map(a => a.id);
+
     if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
       return locations;
-	}
-	if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups')) {
-      return locations.filter(a => this.arrUnion(oveflowMap,overdueMap).includes(a.id));
-	}
-	if (statusFilters.get('Trash overflows') && statusFilters.get('No issues')) {
-      return locations.filter(a => this.arrUnion(oveflowMap,issueMap).includes(a.id));
-	}
-	if (statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
-      return locations.filter(a => this.arrUnion(issueMap,overdueMap).includes(a.id));
-	}
+    }
+    if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups')) {
+      return locations.filter(a => this.arrUnion(oveflowMap, overdueMap).includes(a.id));
+    }
+    if (statusFilters.get('Trash overflows') && statusFilters.get('No issues')) {
+      return locations.filter(a => this.arrUnion(oveflowMap, issueMap).includes(a.id));
+    }
+    if (statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
+      return locations.filter(a => this.arrUnion(issueMap, overdueMap).includes(a.id));
+    }
     if (statusFilters.get('Trash overflows')) {
       return overflowLocations;
-	}
+    }
     if (statusFilters.get('Late pickups')) {
       return overdueLocations;
     }
@@ -104,19 +104,6 @@ class App extends Component {
     const noIssueIds = aMinusB(mapAll, (this.arrUnion(mapOverdue, mapOverflow)));
 
     return locations.filter(a => noIssueIds.includes(a.id));
-  }
-  
-  // i.e [1,2,3]u[2,3,5] = [1,2,3,5]
-  arrUnion(a, b) {
-    const obj = {};
-    for (let i = a.length - 1; i >= 0; i -= 1) { obj[ a[ i ] ] = a[ i ]; }
-    for (let j = b.length - 1; j >= 0; j -= 1) { obj[ b[ j ] ] = b[ j ]; }
-    const res = []
-    // for (const k in obj) {
-    Object.keys(obj).forEach((key) => {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) { res.push(obj[ key ]); }
-    })
-    return res;
   }
 
   getOverflowLocations(locations) {
@@ -214,6 +201,22 @@ class App extends Component {
       )
   }
 
+  /*
+  Helpervfunction to create unions of arrays using Set theory
+  i.e [1,2,3]u[2,3,5] = [1,2,3,5]
+  */
+  arrUnion(a, b) {
+    const obj = {};
+    for (let i = a.length - 1; i >= 0; i -= 1) { obj[ a[ i ] ] = a[ i ]; }
+    for (let j = b.length - 1; j >= 0; j -= 1) { obj[ b[ j ] ] = b[ j ]; }
+    const res = []
+    // for (const k in obj) {
+    Object.keys(obj).forEach((key) => {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) { res.push(obj[ key ]); }
+    })
+    return res;
+  }
+
   /* When marker is clicked, location view is shown. When same marker is clicked again
     location view is closed.
     When location view is shown and another marker is clicked, location view remains visible.
@@ -231,13 +234,6 @@ class App extends Component {
 
   render() {
     const { typeFilters } = this.state;
-
-    const overflowLoc = this.getOverflowLocations(aaltoLocations);
-
-    for (let i = 0; i < overflowLoc.length; i += 1) {
-      const types = this.getOverflowTypes(overflowLoc[ i ])
-      console.log(`overflowing waste types at address ${ overflowLoc[ i ].address } are: ${ types }`)
-    }
 
     return (
         <div className="fluid-container">
