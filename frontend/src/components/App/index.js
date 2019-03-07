@@ -40,11 +40,53 @@ class App extends Component {
     })
     if(this.state.statusFilters.get("Late pickups")) {
       return this.getOverdueLocations(locations);
+    } else if(this.state.statusFilters.get("No issues")){
+      return this.getNoIssueLocations(locations);
     } else return locations;
   }
 
   getOverdueLocations(locations) {
+	  console.log(locations.map(a=> a.id));
     return locations.filter(a => a.trashbins.filter(c => c.pickupOverdue === true).length !== 0 );
+  }
+  
+  getOverflowLocations(locations) {
+    return this.getOverdueLocations(locations);
+  }
+  
+  getNoIssueLocations(locations) {
+    const orig_locations = locations;
+    const overdue_locations = this.getOverdueLocations(locations);
+    const ovrtflow_locations = this.getOverflowLocations(locations);
+    const m_all = orig_locations.map(a => a.id);
+    const m_overdue = overdue_locations.map(a => a.id);
+    const m_overflow = ovrtflow_locations.map(a => a.id);
+
+    function aMinusB(a, b) {
+      return a.filter( 
+        function(c) {
+          return b.indexOf(c) < 0;
+        }
+      );
+    }
+
+    function arrUnion(a, b) {
+      var obj = {};
+      for (var i = a.length-1; i >= 0; -- i)
+        obj[a[i]] = a[i];
+      for (var j = b.length-1; j >= 0; -- j)
+        obj[b[j]] = b[j];
+      var res = []
+      for (var c in obj) {
+        if (obj.hasOwnProperty(c))
+          res.push(obj[c]);
+      }
+      return res;
+    }
+    
+    const noIssueIds = aMinusB(m_all,(arrUnion(m_overdue,m_overflow)));
+    
+    return locations.filter(a => noIssueIds.includes(a.id));
   }
 
   render() {
