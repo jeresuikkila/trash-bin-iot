@@ -44,7 +44,7 @@ class App extends Component {
 
 
   getOverflowLocations() {
-    const overflowLocations = [];
+    let overflowLocations = [];
 
     aaltoLocations.forEach((loc, i) => {
 
@@ -56,23 +56,32 @@ class App extends Component {
         return 0;
       })
 
-      let currentWasteType = ' ';
+      console.log(loc.id);
+      console.log(trashbins)
+
+      let currentWasteType = trashbins[0].wasteType;
       let binCounter = 0;
       let fullCounter = 0;
 
       trashbins.forEach(bin => {
       if (currentWasteType !== bin.wasteType) {
+        
+        if (binCounter === fullCounter) {
+          overflowLocations.push(aaltoLocations[ i ])
+          console.log(currentWasteType)
+        }
+
         binCounter = 0;
         fullCounter = 0;
       }
+
       currentWasteType = bin.wasteType
       if (bin.fillStatus === 100) fullCounter += 1;
       binCounter += 1;
+
       });
         
-      if (binCounter === fullCounter) {
-        overflowLocations.push(aaltoLocations[ i ])
-      }
+      
     })
     console.log('overflowLocations:')
     console.log(overflowLocations);

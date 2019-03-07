@@ -378,7 +378,7 @@
                 "count": 5,
                 "collectionInterval": "2 krt/viikko ma to",
                 "nextPickup": "14.02.19",
-                "fillStatus": 0,
+                "fillStatus": 100,
                 "pickupOverdue": false
             },
             {
@@ -390,7 +390,7 @@
                 "count": 5,
                 "collectionInterval": "2 krt/viikko ma to",
                 "nextPickup": "14.02.19",
-                "fillStatus": 0,
+                "fillStatus": 100,
                 "pickupOverdue": false
             }
         ]
