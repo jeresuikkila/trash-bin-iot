@@ -68,7 +68,7 @@ class App extends Component {
       let fullCounter = 0;
 
       trashbins.forEach(bin => {
-      if (currentWasteType !== bin.wasteType) {
+      if (currentWasteType !== bin.wasteType  || bin === trashbins[trashbins.length -1]) {
         
         if (binCounter === fullCounter) {
           overflowLocations.push(aaltoLocations[ i ])
