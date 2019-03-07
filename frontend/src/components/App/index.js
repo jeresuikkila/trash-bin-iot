@@ -47,10 +47,10 @@ class App extends Component {
   }
 
 
-  getOverflowLocations() {
+  getOverflowLocations(locations) {
     let overflowLocations = [];
 
-    aaltoLocations.forEach((loc, i) => {
+    locations.forEach((loc, i) => {
 
       let trashbins = loc.trashbins;
 
@@ -68,7 +68,7 @@ class App extends Component {
 
         if (currentWasteType !== bin.wasteType) {
           if (binCounter === fullCounter) {
-            overflowLocations.push(aaltoLocations[ i ])
+            overflowLocations.push(locations[ i ])
          }
           binCounter = 0;
           fullCounter = 0;
@@ -79,7 +79,7 @@ class App extends Component {
         binCounter += 1;
 
         if (j === trashbins.length-1 && binCounter === fullCounter){
-          overflowLocations.push(aaltoLocations[ i ])
+          overflowLocations.push(locations[ i ])
         }
       }); 
            
@@ -169,7 +169,7 @@ class App extends Component {
   render() {
     const { typeFilters } = this.state;
 
-    const overflowLoc = this.getOverflowLocations();
+    const overflowLoc = this.getOverflowLocations(aaltoLocations);
 
     for (let i = 0; i < overflowLoc.length; i++) {
       let types = this.getOverflowTypes(overflowLoc[i])
@@ -182,7 +182,7 @@ class App extends Component {
             <div className="map">
                 <GoogleMaps
                   locations={ this.getTypeFilteredLocations(typeFilters) }
-                  overflowLocations = { this.getOverflowLocations() }
+                  overflowLocations = { this.getOverflowLocations(aaltoLocations) }
                   toggleLocationView={ this.toggleLocationView }
                 />
             </div>
