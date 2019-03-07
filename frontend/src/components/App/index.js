@@ -60,9 +60,6 @@ class App extends Component {
         return 0;
       })
 
-      console.log(loc.id);
-      console.log(trashbins)
-
       let currentWasteType = trashbins[0].wasteType;
       let binCounter = 0;
       let fullCounter = 0;
@@ -72,7 +69,6 @@ class App extends Component {
         if (currentWasteType !== bin.wasteType) {
           if (binCounter === fullCounter) {
             overflowLocations.push(aaltoLocations[ i ])
-            console.log(currentWasteType)
          }
           binCounter = 0;
           fullCounter = 0;
@@ -88,8 +84,6 @@ class App extends Component {
       }); 
            
     })
-    console.log('overflowLocations:')
-    console.log(overflowLocations);
     return overflowLocations;
   }
 
