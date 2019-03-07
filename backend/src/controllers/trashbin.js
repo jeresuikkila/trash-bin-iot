@@ -31,19 +31,19 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// Posts new event, hopefully 
+// Posts new trashbin, hopefully 
 router.post('/', async (req, res) => {
     try {
         const trashbin = await models.trashbin.create(req.body);
-        await models.event.findOne({
+        await models.trashbin.findOne({
             where: {
-                id: trashbin.dataValues.id
+                id: trashbin.id
             },
             include: [
-                { model: models.location, attributes: ['locationId'] },
+                { model: models.location, attributes: ['id'] },
             ],
         });
-        res.status(200).send(event)
+        res.status(200).send(trashbin)
     } catch (e) {
         console.log(e);
         res.status(500).send(e);

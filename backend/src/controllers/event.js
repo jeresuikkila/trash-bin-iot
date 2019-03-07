@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
                 id: event.dataValues.id
             },
             include: [
-                { model: models.sensor, attributes: ['sensorId'] },
+                { model: models.sensor, attributes: ['id'] },
             ],
         });
         res.status(200).send(event)

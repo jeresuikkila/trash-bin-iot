@@ -31,19 +31,19 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// Posts new event, hopefully 
+// Posts new sensor, hopefully 
 router.post('/', async (req, res) => {
     try {
         const sensor = await models.sensor.create(req.body);
-        await models.event.findOne({
+        await models.sensor.findOne({
             where: {
                 id: sensor.dataValues.id
             },
             include: [
-                { model: models.trashbin, attributes: ['trashbinId'] },
+                { model: models.trashbin, attributes: ['id'] },
             ],
         });
-        res.status(200).send(event)
+        res.status(200).send(sensor)
     } catch (e) {
         console.log(e);
         res.status(500).send(e);
@@ -74,7 +74,6 @@ router.delete('/:id', async (req, res) => {
                 id: req.params.id
             }
         });
-        console.log('Sensor with id ' + req.params.id + 'deleted');
         res.status(200).send(sensor);
     } catch (e) {
         console.log(e);

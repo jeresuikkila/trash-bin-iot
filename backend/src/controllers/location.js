@@ -19,6 +19,29 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/vandata', async (req, res) => {
+    try {
+        const locations = await models.location.findAll();
+        locations.sort(function (a, b) {
+            return a.id - b.id;
+        });
+        await Promise.all(locations.map(async (location) => {
+            const trashbins = await models.trashbin.findAll({
+                where: {
+                    locationId: location.id
+                }
+            });
+            location.dataValues.trashbins = trashbins
+            location.dataValues.customer = trashbins[0].dataValues.owner
+        }));
+        console.log(locations[0].dataValues)
+        res.status(200).send(locations)
+    } catch (e) {
+        console.log(e);
+        res.status(500).send(e);
+    }
+});
+
 // Finds one location according to the location id
 router.get('/:id', async (req, res) => {
     try {

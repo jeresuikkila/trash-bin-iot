@@ -5,9 +5,10 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			unique: true,
-			allowNull: false
+            allowNull: false,
+            autoIncrement: true
 		},
-		bintype: {
+		wasteType: {
 			type: DataTypes.STRING,
 			defaultValue: null
 		},
@@ -26,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
         fillStatus: {
             type: DataTypes.INTEGER,
             defaultValue: null
+        },
+        pickupOverdue: {
+            type: DataTypes.BOOLEAN,
+            defaultvalue: false
         }
 	}, {});
 	trashbin.associate = function(models) {

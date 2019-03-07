@@ -8,19 +8,15 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const location  = require('./controllers/location.js')
+const trashbin = require('./controllers/trashbin.js')
+const sensor = require('./controllers/sensor.js')
+const event = require('./controllers/event.js')
+
 // Routes
-router.get('/', function(req, res) {
-    res.json({ message: 'Hello World!' });
-});
-
-router.get('/location', (req, res) => {
-    res.sendFile(__dirname + '/data/location.json')
-});
-
-router.get('/trashbin', (req, res) => {
-    res.sendFile(__dirname + '/data/trashbin.json')
-});
-
-app.use('/', router)
+app.use('/location', location)
+app.use('/trashbin', trashbin)
+app.use('/sensor', sensor)
+app.use('/event', event)
 
 module.exports = app;

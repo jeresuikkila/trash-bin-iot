@@ -9,7 +9,7 @@ module.exports = {
                 allowNull: false,
                 autoIncrement: true
 			},
-			bintype: {
+			wasteType: {
 				type: Sequelize.STRING,
 				defaultValue: null
 			},
@@ -28,6 +28,10 @@ module.exports = {
             fillStatus: {
                 type: Sequelize.INTEGER,
                 defaultValue: null
+            },
+            pickupOverdue: {
+                type: Sequelize.BOOLEAN,
+                defaultvalue: false
             },
 			createdAt: {
 				defaultValue: null,
