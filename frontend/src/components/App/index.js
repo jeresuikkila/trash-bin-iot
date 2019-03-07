@@ -43,11 +43,36 @@ class App extends Component {
         locations.push(aaltoLocations[ i ])
       }
     })
+	
+	const overflowLocations = this.getOverflowLocations(locations);
+	const overdueLocations = this.getOverdueLocations(locations);
+	const noIssueLocations = this.getNoIssueLocations(locations);
+	const oveflowMap = overflowLocations.map(a => a.id);
+	const overdueMap = overdueLocations.map(a => a.id);
+	const issueMap = noIssueLocations.map(a => a.id);
+    
+    if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
+      return locations;
+	}
+	if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups')) {
+      return locations.filter(a => this.arrUnion(oveflowMap,overdueMap).includes(a.id));
+	}
+	if (statusFilters.get('Trash overflows') && statusFilters.get('No issues')) {
+      return locations.filter(a => this.arrUnion(oveflowMap,issueMap).includes(a.id));
+	}
+	if (statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
+      return locations.filter(a => this.arrUnion(issueMap,overdueMap).includes(a.id));
+	}
+    if (statusFilters.get('Trash overflows')) {
+      return overflowLocations;
+	}
     if (statusFilters.get('Late pickups')) {
-      return this.getOverdueLocations(locations);
-    } if (statusFilters.get('No issues')) {
-      return this.getNoIssueLocations(locations);
-    } return locations;
+      return overdueLocations;
+    }
+    if (statusFilters.get('No issues')) {
+      return noIssueLocations;
+    }
+    return locations;
   }
 
   getOverdueLocations(locations) {
@@ -70,29 +95,28 @@ class App extends Component {
       );
     }
 
-    // i.e [1,2,3]u[2,3,5] = [1,2,3,5]
-    function arrUnion(a, b) {
-      const obj = {};
-      for (let i = a.length - 1; i >= 0; i -= 1) { obj[ a[ i ] ] = a[ i ]; }
-      for (let j = b.length - 1; j >= 0; j -= 1) { obj[ b[ j ] ] = b[ j ]; }
-      const res = []
-      // for (const k in obj) {
-      Object.keys(obj).forEach((key) => {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) { res.push(obj[ key ]); }
-      })
-
-      return res;
-    }
-
     /*
     We assume that no issue locations should be locations that have no overdue nor overflow status,
     thus we remove the union of overflow and overdue ids from the list of all ids
     to get the ids with no issues.
       All-([Overdue]u[Overflow]) <-> [1,2,3,4,5]-([1,2]u[2,3]) = [4,5]
     */
-    const noIssueIds = aMinusB(mapAll, (arrUnion(mapOverdue, mapOverflow)));
+    const noIssueIds = aMinusB(mapAll, (this.arrUnion(mapOverdue, mapOverflow)));
 
     return locations.filter(a => noIssueIds.includes(a.id));
+  }
+  
+  // i.e [1,2,3]u[2,3,5] = [1,2,3,5]
+  arrUnion(a, b) {
+    const obj = {};
+    for (let i = a.length - 1; i >= 0; i -= 1) { obj[ a[ i ] ] = a[ i ]; }
+    for (let j = b.length - 1; j >= 0; j -= 1) { obj[ b[ j ] ] = b[ j ]; }
+    const res = []
+    // for (const k in obj) {
+    Object.keys(obj).forEach((key) => {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) { res.push(obj[ key ]); }
+    })
+    return res;
   }
 
   getOverflowLocations(locations) {
