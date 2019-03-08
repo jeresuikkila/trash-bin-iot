@@ -142,7 +142,7 @@ class App extends Component {
       });
     })
 
-    let uniqueOverflowLocations = [...new Set(overflowLocations)];
+    const uniqueOverflowLocations = [ ...new Set(overflowLocations) ];
     return uniqueOverflowLocations;
   }
 
