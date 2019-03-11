@@ -3,6 +3,7 @@ import './styles.css';
 import FilterContainer from '../FilterContainer'
 import LocationView from '../LocationView'
 import GoogleMaps from '../GoogleMaps'
+import * as utils from '../../utils'
 
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
 
@@ -30,19 +31,6 @@ class App extends Component {
 
   onStatusFilterChange(item, isChecked) {
     this.setState(prevState => ({ statusFilters: prevState.statusFilters.set(item, isChecked) }));
-  }
-
-  getFilteredLocations(filters) {
-    const checkedFilters = new Map([ ...filters ].filter(([ , value ]) => value === true));
-    const typesToRender = [ ...checkedFilters.keys() ];
-    const locations = [];
-    locationWasteTypes.forEach((loc, i) => {
-      if (typesToRender.length === 0
-        || typesToRender.filter(value => loc.indexOf(value) !== -1).length > 0) {
-        locations.push(aaltoLocations[ i ])
-      }
-    })
-    return locations;
   }
 
   getSidebarView() {
@@ -82,14 +70,17 @@ class App extends Component {
   }
 
   render() {
-    const { typeFilters } = this.state;
+    const { typeFilters, statusFilters } = this.state;
+
     return (
         <div className="fluid-container">
             {this.getSidebarView()}
             <div className="map">
                 <GoogleMaps
-                  locations={ this.getFilteredLocations(typeFilters) }
+                  overflowLocations={ utils.getOverflowLocations(aaltoLocations) }
                   toggleLocationView={ this.toggleLocationView }
+                  locations={ utils.getFilteredLocations(typeFilters, statusFilters,
+                    locationWasteTypes, aaltoLocations) }
                 />
             </div>
         </div>
