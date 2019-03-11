@@ -53,3 +53,20 @@
   border-radius: 5px;
   margin: 5px;
 }
+
+.alerticon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  left: 45px;
+  top: -65px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.infoboxitem {
+  width: 63px;
+  height: 63px;
+  margin-right: 5px;
+  margin-top: 5px;
+}

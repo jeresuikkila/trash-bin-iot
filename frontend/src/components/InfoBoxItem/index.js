@@ -5,7 +5,8 @@ import CardBoardIcon from '../../static/carton.png';
 import MetalIcon from '../../static/metal.png';
 import GeneralIcon from '../../static/general.png';
 import GlassIcon from '../../static/glass.png';
-import PlasticIcon from '../../static/plastic.png'
+import PlasticIcon from '../../static/plastic.png';
+import alert from '../../static/alert.png';
 
 const imageMap = {
   Biowaste: BioWasteIcon,
@@ -18,9 +19,12 @@ const imageMap = {
 
 const getIconBackground = (type, fillStatus) => ((fillStatus === 100) ? (`${ type.toLowerCase() }-full`) : 'bin-ok')
 
-const InfoBoxItem = ({ type, fillStatus }) => (
-    <div>
+const InfoBoxItem = ({ type, fillStatus, overflowStatus }) => (
+    <div className="infoboxitem">
         <img src={ imageMap[ type ] } className={ getIconBackground(type, fillStatus) } alt="test" />
+        {overflowStatus ? (
+            <img src={ alert } className="alerticon" alt="alert" />
+        ) : null}
     </div>
 )
 export default InfoBoxItem;

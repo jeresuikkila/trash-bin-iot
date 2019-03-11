@@ -4,6 +4,7 @@ import {
   withScriptjs, withGoogleMap, GoogleMap,
 } from 'react-google-maps';
 import MarkerWithInfoBox from '../MarkerWithInfoBox'
+import * as utils from '../../utils'
 
 const styledMap = require('./styledMap.json')
 const locationFull = require('../../static/location-full.png')
@@ -61,6 +62,7 @@ const GoogleMaps = compose(
               locationId={ location.id }
               address={ location.address }
               toggleLocationView={ props.toggleLocationView }
+              overflowTypes={ utils.getOverflowTypes(location) }
             />
         ))}
 
