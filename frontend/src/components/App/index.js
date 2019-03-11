@@ -3,13 +3,13 @@ import './styles.css';
 import FilterContainer from '../FilterContainer'
 import LocationView from '../LocationView'
 import GoogleMaps from '../GoogleMaps'
+import * as utils from '../../utils'
 
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
 
 const locationWasteTypes = aaltoLocations.map(
   loc => loc.trashbins,
 ).map(trashbin => trashbin.map(bin => bin.wasteType));
-
 
 class App extends Component {
   constructor(props) {
@@ -32,103 +32,6 @@ class App extends Component {
   onStatusFilterChange(item, isChecked) {
     this.setState(prevState => ({ statusFilters: prevState.statusFilters.set(item, isChecked) }));
   }
-
-  getTypeFilteredLocations(filters) {
-    const checkedFilters = new Map([ ...filters ].filter(([ , value ]) => value === true));
-    const typesToRender = [ ...checkedFilters.keys() ];
-    const locations = [];
-    locationWasteTypes.forEach((loc, i) => {
-      if (typesToRender.length === 0
-        || typesToRender.filter(value => loc.indexOf(value) !== -1).length > 0) {
-        locations.push(aaltoLocations[ i ])
-      }
-    })
-    return locations;
-  }
-
-
-  getOverflowLocations(locations) {
-    let overflowLocations = [];
-
-    locations.forEach((loc, i) => {
-
-      let trashbins = loc.trashbins;
-
-      trashbins.sort(function(a,b){
-        if(a.wasteType < b.wasteType) { return -1; }
-        if(a.wasteType > b.wasteType) { return 1; }
-        return 0;
-      })
-
-      let currentWasteType = trashbins[0].wasteType;
-      let binCounter = 0;
-      let fullCounter = 0;
-
-      trashbins.forEach((bin, j) => {
-
-        if (currentWasteType !== bin.wasteType) {
-          if (binCounter === fullCounter) {
-            overflowLocations.push(locations[ i ])
-         }
-          binCounter = 0;
-          fullCounter = 0;
-        }
-
-        currentWasteType = bin.wasteType
-        if (bin.fillStatus === 100) fullCounter += 1;
-        binCounter += 1;
-
-        if (j === trashbins.length-1 && binCounter === fullCounter){
-          overflowLocations.push(locations[ i ])
-        }
-      }); 
-           
-    })
-    return overflowLocations;
-  }
-
-
-  
-  getOverflowTypes(location) {
-
-    let overflowTypes = [];
-    let trashbins = location.trashbins;
-
-    trashbins.sort(function(a,b){
-      if(a.wasteType < b.wasteType) { return -1; }
-      if(a.wasteType > b.wasteType) { return 1; }
-      return 0;
-    })
-
-    let currentWasteType = trashbins[0].wasteType;
-    let binCounter = 0;
-    let fullCounter = 0;
-
-    trashbins.forEach((bin, j) => {
-
-      if (currentWasteType !== bin.wasteType) {
-        if (binCounter === fullCounter) {
-          overflowTypes.push(currentWasteType)
-        }
-        binCounter = 0;
-        fullCounter = 0;
-      }
-
-      currentWasteType = bin.wasteType
-      if (bin.fillStatus === 100) fullCounter += 1;
-      binCounter += 1;
-
-      if (j === trashbins.length-1 && binCounter === fullCounter){
-        overflowTypes.push(currentWasteType)
-      }
-    });
-
-    return overflowTypes;
-  }
-
- 
-
-
 
   getSidebarView() {
     const {
@@ -167,24 +70,17 @@ class App extends Component {
   }
 
   render() {
-    const { typeFilters } = this.state;
-
-    const overflowLoc = this.getOverflowLocations(aaltoLocations);
-
-    for (let i = 0; i < overflowLoc.length; i++) {
-      let types = this.getOverflowTypes(overflowLoc[i])
-      console.log('overflowing waste types at address '+ overflowLoc[i].address + ' are: '  + types)
-    }
+    const { typeFilters, statusFilters } = this.state;
 
     return (
         <div className="fluid-container">
             {this.getSidebarView()}
             <div className="map">
                 <GoogleMaps
-                  locations={ this.getTypeFilteredLocations(typeFilters) }
-                  overflowLocations = { this.getOverflowLocations(aaltoLocations) }
+                  overflowLocations={ utils.getOverflowLocations(aaltoLocations) }
                   toggleLocationView={ this.toggleLocationView }
-                  //overFlowTypes= { this.getOverflowTypes() }
+                  locations={ utils.getFilteredLocations(typeFilters, statusFilters,
+                    locationWasteTypes, aaltoLocations) }
                 />
             </div>
         </div>

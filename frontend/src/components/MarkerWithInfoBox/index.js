@@ -28,20 +28,13 @@ class MarkerWithInfoBox extends React.Component {
   render() {
     const { isOpen } = this.state;
     const {
-      position, icon, trashBins, toggleLocationView, locationId, overflowTypes
+      position, icon, trashBins, toggleLocationView, locationId, overflowTypes,
     } = this.props;
     let { address } = this.props;
-    console.log(overflowTypes)
     address = address.split(',')[ 0 ].toLowerCase()
     address = address.charAt(0).toUpperCase() + address.slice(1)
 
-    trashBins.forEach(bin => {
-      if (overflowTypes.includes(bin.type)) {
-        console.log(`${bin.type} is overflowed`)
-      }
-    })
-
-    const trashBinsWithOverflow = trashBins.map( bin => {
+    const trashBinsWithOverflow = trashBins.map( (bin) => {
       if (overflowTypes.includes(bin.type)) {
         bin.overflowStatus = true
       } else {

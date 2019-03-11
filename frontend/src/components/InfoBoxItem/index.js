@@ -23,8 +23,8 @@ const InfoBoxItem = ({ type, fillStatus, overflowStatus }) => (
     <div className="infoboxitem">
         <img src={ imageMap[ type ] } className={ getIconBackground(type, fillStatus) } alt="test" />
         {overflowStatus ? (
-                <img src={ alert } className="alerticon" alt="alert" />
-            ) : null}
+            <img src={ alert } className="alerticon" alt="alert" />
+        ) : null}
     </div>
 )
 export default InfoBoxItem;
