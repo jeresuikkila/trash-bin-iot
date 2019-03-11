@@ -58,11 +58,15 @@
   position: relative;
   width: 20px;
   height: 20px;
-  top: -25px;
-  right: 15px;
+  left: 45px;
+  top: -65px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .infoboxitem {
-  margin-right: -15px;
+  width: 63px;
+  height: 63px;
+  margin-right: 5px;
   margin-top: 5px;
 }

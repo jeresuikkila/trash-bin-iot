@@ -184,6 +184,7 @@ class App extends Component {
                   locations={ this.getTypeFilteredLocations(typeFilters) }
                   overflowLocations = { this.getOverflowLocations(aaltoLocations) }
                   toggleLocationView={ this.toggleLocationView }
+                  //overFlowTypes= { this.getOverflowTypes() }
                 />
             </div>
         </div>

@@ -19,10 +19,12 @@ const imageMap = {
 
 const getIconBackground = (type, fillStatus) => ((fillStatus === 100) ? (`${ type.toLowerCase() }-full`) : 'bin-ok')
 
-const InfoBoxItem = ({ type, fillStatus }) => (
+const InfoBoxItem = ({ type, fillStatus, overflowStatus }) => (
     <div className="infoboxitem">
         <img src={ imageMap[ type ] } className={ getIconBackground(type, fillStatus) } alt="test" />
-        <img src={ alert } className="alerticon" alt="alert" />
+        {overflowStatus ? (
+                <img src={ alert } className="alerticon" alt="alert" />
+            ) : null}
     </div>
 )
 export default InfoBoxItem;
