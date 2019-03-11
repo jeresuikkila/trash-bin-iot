@@ -161,3 +161,13 @@ export function getFilteredLocations(typeFilters, statusFilters, locWasteTypes, 
   }
   return locations;
 }
+
+export function getMarkerUrl(trashbins, locationOverflow, locationOk) {
+  let maxFillStatusOnLocation = 0;
+
+  trashbins.forEach( (bin) => {
+    maxFillStatusOnLocation = (bin.fillStatus > maxFillStatusOnLocation)
+      ? bin.fillStatus : maxFillStatusOnLocation
+  })
+  return (maxFillStatusOnLocation === 100) ? locationOverflow : locationOk;
+}

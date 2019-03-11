@@ -77,7 +77,6 @@ class App extends Component {
             {this.getSidebarView()}
             <div className="map">
                 <GoogleMaps
-                  overflowLocations={ utils.getOverflowLocations(aaltoLocations) }
                   toggleLocationView={ this.toggleLocationView }
                   locations={ utils.getFilteredLocations(typeFilters, statusFilters,
                     locationWasteTypes, aaltoLocations) }

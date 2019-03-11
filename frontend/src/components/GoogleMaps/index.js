@@ -4,22 +4,13 @@ import {
   withScriptjs, withGoogleMap, GoogleMap,
 } from 'react-google-maps';
 import MarkerWithInfoBox from '../MarkerWithInfoBox'
+import {getMarkerUrl} from '../../utils'
 
 const styledMap = require('./styledMap.json')
-const locationFull = require('../../static/location-full.png')
+const locationOverflow = require('../../static/location-full.png')
 const locationOk = require('../../static/location-ok.png')
 
 const key = process.env.REACT_APP_GOOGLE_API_KEY != null ? process.env.REACT_APP_GOOGLE_API_KEY : '';
-
-const getMarkerUrl = (trashbins) => {
-  let maxFillStatusOnLocation = 0;
-
-  trashbins.forEach( (bin) => {
-    maxFillStatusOnLocation = (bin.fillStatus > maxFillStatusOnLocation)
-      ? bin.fillStatus : maxFillStatusOnLocation
-  })
-  return (maxFillStatusOnLocation === 100) ? locationFull : locationOk;
-}
 
 const getTrashBins = bins => bins.map(bin => ({ type: bin.wasteType, fillStatus: bin.fillStatus }))
 
@@ -48,7 +39,7 @@ const GoogleMaps = compose(
         { props.locations.map( location => ( // map locations and statuses to create markers
             <MarkerWithInfoBox
               icon={ {
-                url: getMarkerUrl(location.trashbins),
+                url: getMarkerUrl(location.trashbins, locationOverflow, locationOk),
                 title: 'trashbin',
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
