@@ -18,9 +18,9 @@ export function getNoIssueLocations(locations) {
   const origLocations = locations;
   const overdueLocations = this.getOverdueLocations(locations);
   const overflowLocations = this.getOverflowLocations(locations);
-  const mapAll = origLocations.map(a => a.id);
-  const mapOverdue = overdueLocations.map(a => a.id);
-  const mapOverflow = overflowLocations.map(a => a.id);
+  const allLocationIDs = origLocations.map(loc => loc.id);
+  const overdueLocIDs = overdueLocations.map(loc => loc.id);
+  const overflowLocIDs = overflowLocations.map(loc => loc.id);
 
   // i.e [1,2,3]-[1,2]=[3]
   function aMinusB(a, b) {
@@ -35,14 +35,14 @@ export function getNoIssueLocations(locations) {
     to get the ids with no issues.
       All-([Overdue]u[Overflow]) <-> [1,2,3,4,5]-([1,2]u[2,3]) = [4,5]
     */
-  const noIssueIds = aMinusB(mapAll, (this.arrUnion(mapOverdue, mapOverflow)));
+  const noIssueIds = aMinusB(allLocationIDs, this.arrUnion(overdueLocIDs, overflowLocIDs));
 
-  return locations.filter(a => noIssueIds.includes(a.id));
+  return locations.filter(loc => noIssueIds.includes(loc.id));
 }
 
 // finds locations which are flagged overduw in database
-export function getOverdueLocations(locations) {
-  return locations.filter(a => a.trashbins.filter(c => c.pickupOverdue === true).length !== 0 );
+export function getOverdueLocations(loc) {
+  return loc.filter(loc => loc.trashbins.filter(bin => bin.pickupOverdue === true).length !== 0);
 }
 
 export function getOverflowTypes(location) {
@@ -117,4 +117,47 @@ export function getOverflowLocations(locations) {
 
   const uniqueOverflowLocations = [ ...new Set(overflowLocations) ];
   return uniqueOverflowLocations;
+}
+
+export function getFilteredLocations(typeFilters, statusFilters, locWasteTypes, aaltoLocations) {
+  const checkedFilters = new Map([ ...typeFilters ].filter(([ , value ]) => value === true));
+  const typesToRender = [ ...checkedFilters.keys() ];
+  const locations = [];
+  locWasteTypes.forEach((loc, i) => {
+    if (typesToRender.length === 0
+      || typesToRender.filter(value => loc.indexOf(value) !== -1).length > 0) {
+      locations.push(aaltoLocations[ i ])
+    }
+  })
+
+  // filter additive functionality
+  const overflowLocations = this.getOverflowLocations(locations);
+  const overdueLocations = this.getOverdueLocations(locations);
+  const noIssueLocations = this.getNoIssueLocations(locations);
+  const overflowLocIDs = overflowLocations.map(loc => loc.id);
+  const overdueLocIDs = overdueLocations.map(loc => loc.id);
+  const noIssueLocIDs = noIssueLocations.map(loc => loc.id);
+
+  if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
+    return locations;
+  }
+  if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups')) {
+    return locations.filter(loc => this.arrUnion(overflowLocIDs, overdueLocIDs).includes(loc.id));
+  }
+  if (statusFilters.get('Trash overflows') && statusFilters.get('No issues')) {
+    return locations.filter(loc => this.arrUnion(overflowLocIDs, noIssueLocIDs).includes(loc.id));
+  }
+  if (statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
+    return locations.filter(loc => this.arrUnion(noIssueLocIDs, overdueLocIDs).includes(loc.id));
+  }
+  if (statusFilters.get('Trash overflows')) {
+    return overflowLocations;
+  }
+  if (statusFilters.get('Late pickups')) {
+    return overdueLocations;
+  }
+  if (statusFilters.get('No issues')) {
+    return noIssueLocations;
+  }
+  return locations;
 }

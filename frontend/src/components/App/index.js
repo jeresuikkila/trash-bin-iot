@@ -3,7 +3,7 @@ import './styles.css';
 import FilterContainer from '../FilterContainer'
 import LocationView from '../LocationView'
 import GoogleMaps from '../GoogleMaps'
-import * as statusLogic from '../StatusFilterLogic'
+import * as utils from '../../utils'
 
 const aaltoLocations = require('../../api/aalto-with-trashbins.json')
 
@@ -31,50 +31,6 @@ class App extends Component {
 
   onStatusFilterChange(item, isChecked) {
     this.setState(prevState => ({ statusFilters: prevState.statusFilters.set(item, isChecked) }));
-  }
-
-  getFilteredLocations(filters) {
-    const { statusFilters } = this.state;
-    const checkedFilters = new Map([ ...filters ].filter(([ , value ]) => value === true));
-    const typesToRender = [ ...checkedFilters.keys() ];
-    const locations = [];
-    locationWasteTypes.forEach((loc, i) => {
-      if (typesToRender.length === 0
-        || typesToRender.filter(value => loc.indexOf(value) !== -1).length > 0) {
-        locations.push(aaltoLocations[ i ])
-      }
-    })
-
-    // filter additive functionality
-    const overflowLocations = statusLogic.getOverflowLocations(locations);
-    const overdueLocations = statusLogic.getOverdueLocations(locations);
-    const noIssueLocations = statusLogic.getNoIssueLocations(locations);
-    const oveflowMap = overflowLocations.map(a => a.id);
-    const overdueMap = overdueLocations.map(a => a.id);
-    const issueMap = noIssueLocations.map(a => a.id);
-
-    if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
-      return locations;
-    }
-    if (statusFilters.get('Trash overflows') && statusFilters.get('Late pickups')) {
-      return locations.filter(a => statusLogic.arrUnion(oveflowMap, overdueMap).includes(a.id));
-    }
-    if (statusFilters.get('Trash overflows') && statusFilters.get('No issues')) {
-      return locations.filter(a => statusLogic.arrUnion(oveflowMap, issueMap).includes(a.id));
-    }
-    if (statusFilters.get('Late pickups') && statusFilters.get('No issues')) {
-      return locations.filter(a => statusLogic.arrUnion(issueMap, overdueMap).includes(a.id));
-    }
-    if (statusFilters.get('Trash overflows')) {
-      return overflowLocations;
-    }
-    if (statusFilters.get('Late pickups')) {
-      return overdueLocations;
-    }
-    if (statusFilters.get('No issues')) {
-      return noIssueLocations;
-    }
-    return locations;
   }
 
   getSidebarView() {
@@ -114,16 +70,17 @@ class App extends Component {
   }
 
   render() {
-    const { typeFilters } = this.state;
+    const { typeFilters, statusFilters } = this.state;
 
     return (
         <div className="fluid-container">
             {this.getSidebarView()}
             <div className="map">
                 <GoogleMaps
-                  locations={ this.getFilteredLocations(typeFilters) }
-                  overflowLocations={ statusLogic.getOverflowLocations(aaltoLocations) }
+                  overflowLocations={ utils.getOverflowLocations(aaltoLocations) }
                   toggleLocationView={ this.toggleLocationView }
+                  locations={ utils.getFilteredLocations(typeFilters, statusFilters,
+                    locationWasteTypes, aaltoLocations) }
                 />
             </div>
         </div>
