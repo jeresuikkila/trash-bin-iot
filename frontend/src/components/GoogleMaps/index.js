@@ -40,7 +40,7 @@ const GoogleMaps = compose(
         { props.locations.map( location => ( // map locations and statuses to create markers
             <MarkerWithInfoBox
               icon={ {
-                url: getMarkerUrl(location.trashbins, locationOverflow, locationOk, locationOverflowAndLate),
+                url: getMarkerUrl(location, locationOk, locationOverflow, locationOverflowAndLate),
                 title: 'trashbin',
                 scaledSize: new window.google.maps.Size(15, 15),
               } }

@@ -162,12 +162,12 @@ export function getFilteredLocations(typeFilters, statusFilters, locWasteTypes, 
   return locations;
 }
 
-export function getMarkerUrl(trashbins, locationOverflow, locationOk, locationOverflowAndLate) {
-  let maxFillStatusOnLocation = 0;
+export function getMarkerUrl(location, locationOk, locationOverflow, locationOverflowAndLate) {
+  const overflowLocations = getOverflowLocations(locations);
+  const overdueLocations = getOverdueLocations(locations);
 
-  trashbins.forEach( (bin) => {
-    maxFillStatusOnLocation = (bin.fillStatus > maxFillStatusOnLocation)
-      ? bin.fillStatus : maxFillStatusOnLocation
-  })
-  return (maxFillStatusOnLocation === 100) ? locationOverflow : locationOk;
+  if(overflowLocations.includes(location) && overdueLocations.includes(location)){
+    return 
+  }
+
 }
