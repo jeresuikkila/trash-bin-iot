@@ -175,3 +175,19 @@ export function getMarkerUrl(location, locationOk, locationOverflow, locationOve
   }
   else return locationOk;
 }
+
+export function getScaledSize(location) {
+
+  const overflowLocations = getOverflowLocations(new Array(location));
+  const overdueLocations = getOverdueLocations(new Array(location));
+
+  if(overflowLocations.includes(location) && overdueLocations.includes(location)){
+    return new window.google.maps.Size(21, 21);
+  }
+  else if(overflowLocations.includes(location) && !(overdueLocations.includes(location))){
+    return new window.google.maps.Size(15, 15);
+  }
+  else return new window.google.maps.Size(15, 15);
+}
+
+
