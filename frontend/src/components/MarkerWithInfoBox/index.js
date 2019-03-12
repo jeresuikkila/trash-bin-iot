@@ -28,11 +28,21 @@ class MarkerWithInfoBox extends React.Component {
   render() {
     const { isOpen } = this.state;
     const {
-      position, icon, trashBins, toggleLocationView, locationId,
+      position, icon, trashBins, toggleLocationView, locationId, overflowTypes,
     } = this.props;
     let { address } = this.props;
     address = address.split(',')[ 0 ].toLowerCase()
     address = address.charAt(0).toUpperCase() + address.slice(1)
+
+    const trashBinsWithOverflow = trashBins.map( (bin) => {
+      if (overflowTypes.includes(bin.type)) {
+        bin.overflowStatus = true
+      } else {
+        bin.overflowStatus = false
+      }
+      return bin
+    })
+
     return (
         <Marker
           position={ position }
@@ -58,10 +68,11 @@ class MarkerWithInfoBox extends React.Component {
                     </div>
                     <div className="type-icon-container">
                         {
-                      trashBins.map((bin, i) => (
+                      trashBinsWithOverflow.map((bin, i) => (
                           <InfoBoxItem
                             type={ bin.type }
                             fillStatus={ bin.fillStatus }
+                            overflowStatus={ bin.overflowStatus }
                             key={ i }
                           />
                       ))
