@@ -41,7 +41,7 @@ const GoogleMaps = compose(
               icon={ {
                 url: getMarkerUrl(location, locationOk, locationOverflow, locationOverflowAndLate),
                 title: '',
-                scaledSize: getScaledSize(location), // new window.google.maps.Size(15, 15),
+                scaledSize: getScaledSize(location)
               } }
               position={ {
                 lat: location.lat,
