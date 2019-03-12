@@ -9,6 +9,7 @@ import {getMarkerUrl} from '../../utils'
 const styledMap = require('./styledMap.json')
 const locationOverflow = require('../../static/location-full.png')
 const locationOk = require('../../static/location-ok.png')
+const locationOverflowAndLate = require('../../static/location-late-pickup.png')
 
 const key = process.env.REACT_APP_GOOGLE_API_KEY != null ? process.env.REACT_APP_GOOGLE_API_KEY : '';
 
@@ -39,7 +40,7 @@ const GoogleMaps = compose(
         { props.locations.map( location => ( // map locations and statuses to create markers
             <MarkerWithInfoBox
               icon={ {
-                url: getMarkerUrl(location.trashbins, locationOverflow, locationOk),
+                url: getMarkerUrl(location.trashbins, locationOverflow, locationOk, locationOverflowAndLate),
                 title: 'trashbin',
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
