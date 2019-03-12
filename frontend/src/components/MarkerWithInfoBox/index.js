@@ -21,15 +21,13 @@ class MarkerWithInfoBox extends React.Component {
     });
   }
 
-  offsetCounter(trashBins) {
-    return (-100 - (Math.ceil(trashBins.length / 4)) * 65)
+  offsetCounter(trashBins, markerSize) {
+    return (-100 - (Math.ceil(trashBins.length / 4)) * 65 - markerSize.height + 15)
   }
 
   render() {
     const { isOpen } = this.state;
-    const {
-      position, icon, trashBins, toggleLocationView, locationId,
-    } = this.props;
+    const {position, icon, trashBins, toggleLocationView, locationId} = this.props;
     let { address } = this.props;
     address = address.split(',')[ 0 ].toLowerCase()
     address = address.charAt(0).toUpperCase() + address.slice(1)
@@ -47,7 +45,7 @@ class MarkerWithInfoBox extends React.Component {
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, this.offsetCounter(trashBins)),
+                pixelOffset: new window.google.maps.Size(-10, this.offsetCounter(trashBins, icon.scaledSize)),
                 closeBoxURL: '', // set to "null" as it's closed on hover
               } }
             >
