@@ -36,12 +36,11 @@ const GoogleMaps = compose(
         styles: styledMap, streetViewControl: false, mapTypeControl: false,
       } } // load custom map style and disable street view
     >
-
         { props.locations.map( location => ( // map locations and statuses to create markers
             <MarkerWithInfoBox
               icon={ {
                 url: getMarkerUrl(location, locationOk, locationOverflow, locationOverflowAndLate),
-                title: 'trashbin',
+                title: '',
                 scaledSize: new window.google.maps.Size(15, 15),
               } }
               position={ {

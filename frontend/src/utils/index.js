@@ -163,11 +163,15 @@ export function getFilteredLocations(typeFilters, statusFilters, locWasteTypes, 
 }
 
 export function getMarkerUrl(location, locationOk, locationOverflow, locationOverflowAndLate) {
-  const overflowLocations = getOverflowLocations(locations);
-  const overdueLocations = getOverdueLocations(locations);
+
+  const overflowLocations = getOverflowLocations(new Array(location));
+  const overdueLocations = getOverdueLocations(new Array(location));
 
   if(overflowLocations.includes(location) && overdueLocations.includes(location)){
-    return 
+    return locationOverflowAndLate;
   }
-
+  else if(overflowLocations.includes(location) && !(overdueLocations.includes(location))){
+    return locationOverflow;
+  }
+  else return locationOk;
 }
