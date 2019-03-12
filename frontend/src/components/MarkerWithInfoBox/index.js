@@ -21,8 +21,8 @@ class MarkerWithInfoBox extends React.Component {
     });
   }
 
-  offsetCounter(trashBins) {
-    return (-100 - (Math.ceil(trashBins.length / 4)) * 70)
+  offsetCounter(trashBins, markerSize) {
+    return (-100 - (Math.ceil(trashBins.length / 4)) * 70 - markerSize.height + 18)
   }
 
   render() {
@@ -57,7 +57,8 @@ class MarkerWithInfoBox extends React.Component {
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, this.offsetCounter(trashBins)),
+                pixelOffset:
+                  new window.google.maps.Size(-10, this.offsetCounter(trashBins, icon.scaledSize)),
                 closeBoxURL: '', // set to "null" as it's closed on hover
               } }
             >

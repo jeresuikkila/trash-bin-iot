@@ -161,3 +161,30 @@ export function getFilteredLocations(typeFilters, statusFilters, locWasteTypes, 
   }
   return locations;
 }
+
+export function getMarkerUrl(location, locationOk, locationOverflow, locationOverflowAndLate) {
+  const overflowLocations = getOverflowLocations(new Array(location));
+  const overdueLocations = getOverdueLocations(new Array(location));
+
+  if (overflowLocations.includes(location) && overdueLocations.includes(location)) {
+    return locationOverflowAndLate;
+  }
+  if (overflowLocations.includes(location) && !(overdueLocations.includes(location))) {
+    return locationOverflow;
+  }
+  return locationOk;
+}
+
+export function getScaledMarkerSize(location) {
+  const overflowLocations = getOverflowLocations(new Array(location));
+  const overdueLocations = getOverdueLocations(new Array(location));
+
+  if (overflowLocations.includes(location) && overdueLocations.includes(location)) {
+    return new window.google.maps.Size(21, 21);
+  }
+  if (overflowLocations.includes(location) && !(overdueLocations.includes(location))) {
+    return new window.google.maps.Size(15, 15);
+  }
+  return new window.google.maps.Size(15, 15);
+}
+

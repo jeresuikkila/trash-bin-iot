@@ -4,23 +4,14 @@ import {
   withScriptjs, withGoogleMap, GoogleMap,
 } from 'react-google-maps';
 import MarkerWithInfoBox from '../MarkerWithInfoBox'
-import * as utils from '../../utils'
+import { getMarkerUrl, getScaledMarkerSize, getOverflowTypes } from '../../utils'
 
 const styledMap = require('./styledMap.json')
-const locationFull = require('../../static/location-full.png')
+const locationOverflow = require('../../static/location-full.png')
 const locationOk = require('../../static/location-ok.png')
+const locationOverflowAndLate = require('../../static/location-late-pickup.png')
 
 const key = process.env.REACT_APP_GOOGLE_API_KEY != null ? process.env.REACT_APP_GOOGLE_API_KEY : '';
-
-const getMarkerUrl = (trashbins) => {
-  let maxFillStatusOnLocation = 0;
-
-  trashbins.forEach( (bin) => {
-    maxFillStatusOnLocation = (bin.fillStatus > maxFillStatusOnLocation)
-      ? bin.fillStatus : maxFillStatusOnLocation
-  })
-  return (maxFillStatusOnLocation === 100) ? locationFull : locationOk;
-}
 
 const getTrashBins = bins => bins.map(bin => ({ type: bin.wasteType, fillStatus: bin.fillStatus }))
 
@@ -45,13 +36,12 @@ const GoogleMaps = compose(
         styles: styledMap, streetViewControl: false, mapTypeControl: false,
       } } // load custom map style and disable street view
     >
-
         { props.locations.map( location => ( // map locations and statuses to create markers
             <MarkerWithInfoBox
               icon={ {
-                url: getMarkerUrl(location.trashbins),
-                title: 'trashbin',
-                scaledSize: new window.google.maps.Size(15, 15),
+                url: getMarkerUrl(location, locationOk, locationOverflow, locationOverflowAndLate),
+                title: '',
+                scaledSize: getScaledMarkerSize(location),
               } }
               position={ {
                 lat: location.lat,
@@ -62,7 +52,7 @@ const GoogleMaps = compose(
               locationId={ location.id }
               address={ location.address }
               toggleLocationView={ props.toggleLocationView }
-              overflowTypes={ utils.getOverflowTypes(location) }
+              overflowTypes={ getOverflowTypes(location) }
             />
         ))}
 
