@@ -293,8 +293,8 @@
     {
         "id": 8,
         "address": "MAARINTIE 6, 02150, Espoo",
-        "lat": 60.18711,
-        "lon": 24.81939,
+        "lat": 60.18718,
+        "lon": 24.81933,
         "trashbins": [
             {
                 "id": 20,
@@ -338,8 +338,8 @@
     {
         "id": 9,
         "address": "MAARINTIE 8, 02150, Espoo",
-        "lat": 60.18711,
-        "lon": 24.81939,
+        "lat": 60.18706,
+        "lon": 24.81946,
         "trashbins": [
             {
                 "id": 23,
@@ -987,7 +987,7 @@
                 "collectionInterval": "1 krt/viikko ke",
                 "nextPickup": "13.02.19",
                 "fillStatus": 100,
-                "pickupOverdue": false
+                "pickupOverdue": true
             },
             {
                 "id": 68,
@@ -999,7 +999,7 @@
                 "collectionInterval": "1 krt/viikko ti",
                 "nextPickup": "12.02.19",
                 "fillStatus": 100,
-                "pickupOverdue": false
+                "pickupOverdue": true
             },
             {
                 "id": 69,
@@ -1011,7 +1011,7 @@
                 "collectionInterval": "1 krt/viikko ti",
                 "nextPickup": "12.02.19",
                 "fillStatus": 100,
-                "pickupOverdue": false
+                "pickupOverdue": true
             },
             {
                 "id": 70,
