@@ -27,7 +27,9 @@ class MarkerWithInfoBox extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const {position, icon, trashBins, toggleLocationView, locationId} = this.props;
+    const {
+      position, icon, trashBins, toggleLocationView, locationId,
+    } = this.props;
     let { address } = this.props;
     address = address.split(',')[ 0 ].toLowerCase()
     address = address.charAt(0).toUpperCase() + address.slice(1)
@@ -45,7 +47,8 @@ class MarkerWithInfoBox extends React.Component {
             <InfoBox
               defaultPosition={ new window.google.maps.LatLng(position.lat, position.lng) }
               options={ {
-                pixelOffset: new window.google.maps.Size(-10, this.offsetCounter(trashBins, icon.scaledSize)),
+                pixelOffset:
+                  new window.google.maps.Size(-10, this.offsetCounter(trashBins, icon.scaledSize)),
                 closeBoxURL: '', // set to "null" as it's closed on hover
               } }
             >
