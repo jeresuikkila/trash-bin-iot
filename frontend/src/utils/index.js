@@ -175,7 +175,7 @@ export function getMarkerUrl(location, locationOk, locationOverflow, locationOve
   return locationOk;
 }
 
-export function getScaledSize(location) {
+export function getScaledMarkerSize(location) {
   const overflowLocations = getOverflowLocations(new Array(location));
   const overdueLocations = getOverdueLocations(new Array(location));
 

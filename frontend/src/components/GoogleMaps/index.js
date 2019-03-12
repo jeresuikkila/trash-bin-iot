@@ -4,7 +4,7 @@ import {
   withScriptjs, withGoogleMap, GoogleMap,
 } from 'react-google-maps';
 import MarkerWithInfoBox from '../MarkerWithInfoBox'
-import { getMarkerUrl, getScaledSize, getOverflowTypes } from '../../utils'
+import { getMarkerUrl, getScaledMarkerSize, getOverflowTypes } from '../../utils'
 
 const styledMap = require('./styledMap.json')
 const locationOverflow = require('../../static/location-full.png')
@@ -41,7 +41,7 @@ const GoogleMaps = compose(
               icon={ {
                 url: getMarkerUrl(location, locationOk, locationOverflow, locationOverflowAndLate),
                 title: '',
-                scaledSize: getScaledSize(location),
+                scaledSize: getScaledMarkerSize(location),
               } }
               position={ {
                 lat: location.lat,
