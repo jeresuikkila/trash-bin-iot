@@ -1,23 +1,19 @@
-.infobox-item {
+.infobox-img {
   width: 53px;
   height: 53px;
-  border-radius: 5px;
-  margin: 5px;
+  margin: 4px;
 }
 
-.alerticon {
+.alert-icon {
   position: relative;
   width: 20px;
   height: 20px;
-  left: 40px;
-  top: -65px;
-  padding: 0px;
-  margin: 0px;
+  left: 38px;
+  top: -64px;
 }
 
-.infoboxitem {
+.infobox-item {
   width: 63px;
   height: 63px;
-  margin-right: 5px;
-  margin-top: 5px;
+  margin-top: 4px;
 }

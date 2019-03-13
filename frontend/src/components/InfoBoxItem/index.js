@@ -33,14 +33,14 @@ const iconsFull = {
 }
 
 const InfoBoxItem = ({ type, fillStatus, overflowStatus }) => (
-    <div className="infoboxitem">
+    <div className="infobox-item">
         {fillStatus === 100 ? (
-            <img src={ iconsFull[ type ] } className="infobox-item" alt="test" />
+            <img src={ iconsFull[ type ] } className="infobox-img" alt="test" />
         ) : (
-            <img src={ iconsOK[ type ] } className="infobox-item" alt="test" />
+            <img src={ iconsOK[ type ] } className="infobox-img" alt="test" />
         )}
         {overflowStatus ? (
-            <img src={ alert } className="alerticon" alt="alert" />
+            <img src={ alert } className="alert-icon" alt="alert" />
         ) : (
           null
         )}
