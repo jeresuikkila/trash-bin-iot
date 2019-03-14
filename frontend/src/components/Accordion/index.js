@@ -4,7 +4,7 @@ import React from 'react';
 
 const Accordion = ({location}) => {
     
-    let wasteTypes = location.trashbins.map( bin => bin.wasteType);
+    let wasteTypes = location.trashbins.map(bin => bin.wasteType);
     wasteTypes = [...new Set(wasteTypes)];
 
     let trashbinsByType = new Map();
