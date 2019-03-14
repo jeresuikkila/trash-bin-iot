@@ -17,9 +17,9 @@ const LocationView = (props) => {
               <p className="owner-text">{location.customer}</p>
           </div>
           <div>
-              <Accordion>
-
-              </Accordion>
+              <Accordion
+                location={location}
+              />
           </div>
           <img src={ hsylogo } className="hsy-logo" alt="logo" />
       </div>

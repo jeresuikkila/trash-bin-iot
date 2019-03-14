@@ -1,5 +1,6 @@
 
 import React from 'react';
+import AccordionTitle from '../AccordionTitle';
 
 
 const Accordion = ({location}) => {

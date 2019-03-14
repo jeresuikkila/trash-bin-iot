@@ -3,6 +3,7 @@ import React from 'react';
 const AccordionTitle = ({trashbins, type}) => {
 
     return(
+        <div>
             <div className="card-header" id={type+'-heading'} data-toggle="collapse" data-target={type} aria-expanded="false" aria-controls="collapseOne">
                 <p>{type}</p>
             </div>
@@ -11,5 +12,8 @@ const AccordionTitle = ({trashbins, type}) => {
                     ad squid. 3 wolf moon officia aute
                 </div>
             </div>
+        </div>    
     )
 }
+
+export default AccordionTitle;
