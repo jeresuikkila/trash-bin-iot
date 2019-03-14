@@ -16,7 +16,7 @@ const LocationView = (props) => {
               <p className="address">{location.address.split(',')[ 0 ]}</p>
               <p className="owner-text">{location.customer}</p>
           </div>
-          <div>
+          <div className="type-accordion">
               <Accordion
                 location={location}
               />

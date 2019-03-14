@@ -16,6 +16,7 @@ const Accordion = ({location}) => {
         trashbinsByType.set(type, trashbins)        
     });
 
+
     return (
     <div className="accordion" id="accordionExample">
         {
