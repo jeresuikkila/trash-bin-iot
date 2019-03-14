@@ -2,6 +2,7 @@ import React from 'react';
 import hsylogo from '../../static/hsy-logo.png';
 import backarrow from '../../static/back-arrow.png';
 import './styles.css'
+import Accordion from '../Accordion'
 
 const LocationView = (props) => {
   const { toggleLocationView, location } = props;
@@ -14,6 +15,11 @@ const LocationView = (props) => {
           <div className="location-white-background">
               <p className="address">{location.address.split(',')[ 0 ]}</p>
               <p className="owner-text">{location.customer}</p>
+          </div>
+          <div>
+              <Accordion>
+
+              </Accordion>
           </div>
           <img src={ hsylogo } className="hsy-logo" alt="logo" />
       </div>
