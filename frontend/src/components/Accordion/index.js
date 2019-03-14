@@ -20,12 +20,10 @@ const Accordion = ({location}) => {
     <div className="accordion" id="accordionExample">
         {
             wasteTypes.map( type =>(
-                <div className="card">
-                    <AccordionTitle 
-                        type={type}
-                        trashbins={trashbinsByType.get({type})}
-                    />
-                </div>
+                <AccordionTitle 
+                    type={type}
+                    trashbins={trashbinsByType.get(type)}
+                />
             ))
         }
     </div>
