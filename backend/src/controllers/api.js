@@ -25,12 +25,26 @@ router.post('*', async (req,res) => {
             ],
         });
         res.status(200).send(event);
-        console.log("event: ",event)
         const sensor = await models.sensor.findOne({
             where: {
-                id: event.dataValues.locationId
+                id: event.dataValues.sensorId
             }
         });
+        const trashbin = await models.trashbin.findOne({
+            where:  {
+                id: sensor.dataValues.trashbinId
+            }
+        });
+        if(trashbin.dataValues.fillStatus != null && event.dataValues.event_type == "opened") {
+            trashbin.update({
+                fillStatus:  Math.min(100, trashbin.dataValues.fillStatus + 1)
+            });
+        }
+        else {
+            trashbin.update({
+                fillStatus: 0
+            });
+        }
     } catch (e) {
         console.log(e);
         res.status(500).send(e);
