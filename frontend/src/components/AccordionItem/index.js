@@ -1,6 +1,6 @@
 import React from 'react';
 import AccordionBin from '../AccordionBin';
-
+import './styles.css'
 
 const AccordionItem = ({trashbins, type, locationId}) => {
     
