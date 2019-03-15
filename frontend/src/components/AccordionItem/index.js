@@ -26,7 +26,7 @@ const AccordionItem = ({ trashbins, type, locationId }) => (
                 {type.toUpperCase()}
                 <img src={ accordionArrow } className="arrow" alt="arrow" />
             </p>
-            
+
         </div>
         <div id={ type + locationId } className="collapse" aria-labelledby={ `${ type + locationId }-heading` } data-parent={ `#accordion${ locationId }` }>
             <div className="card-body">
