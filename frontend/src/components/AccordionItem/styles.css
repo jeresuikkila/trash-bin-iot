@@ -1,61 +1,67 @@
-
 .card {
-    border: 0px;
-    border-radius: 0px;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    font-size: 18px;
-    color: #FFFFFF;
+  border: 0px;
+  border-radius: 0px;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  font-size: 18px;
+  color: #ffffff;
 }
 
 .card-body {
-    padding: 0px;
+  padding: 0px;
 }
 
 .type-icon {
-    position: relative;
-    margin-left: 35px;
-    margin-top: 15px;
-    float: left;
-    width: 40px;
-    height: 40px;
+  position: relative;
+  margin-left: 35px;
+  margin-top: 15px;
+  float: left;
+  width: 40px;
+  height: 40px;
 }
 
 .header-title {
-    position: relative; 
-    margin-left: 85px;
-    margin-top : 22px;
+  position: relative;
+  margin-left: 85px;
+  margin-top: 22px;
 }
 
-
-.card-header-general{
-    background:#C4C4C4;
-    height: 70px;
- }
-
-.card-header-cardboard{
-    background:#2A6AA2;
-    height: 70px;
+.arrow {
+  position: absolute;
+  width: 11px;
+  height: 9px;
+  left: 210px;
+  top: 7px;
 }
 
-.card-header-plastic{
-    background:#E87620;
-    height: 70px;
+.card-header-general {
+  background: #c4c4c4;
+  height: 70px;
 }
 
-.card-header-glass{
-    background:#2A6AA2;
-    height: 70px;
+.card-header-cardboard {
+  background: #2a6aa2;
+  height: 70px;
 }
 
-.card-header-metal{
-    background:#2A6AA2;
-    height: 70px;
+.card-header-plastic {
+  background: #e87620;
+  height: 70px;
 }
 
-.card-header-biowaste{
-    background:#715E55;
-    height: 70px;
+.card-header-glass {
+  background: #2a6aa2;
+  height: 70px;
+}
+
+.card-header-metal {
+  background: #2a6aa2;
+  height: 70px;
+}
+
+.card-header-biowaste {
+  background: #715e55;
+  height: 70px;
 }
