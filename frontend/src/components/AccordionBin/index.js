@@ -9,13 +9,17 @@ import trashbinFullOnOff from '../../static/trashbin-open-green-red.png';
 import trashbinFullOffOn from '../../static/trashbin-open-red-green.png';
 import trashbinFullOffOff from '../../static/trashbin-open-red-red.png';
 
+const getBinImage = (bin) => {
+    return trashbinFullOffOff
+}
+
 const AccordionBin = ({ trashbin, idx }) => {
   const background = (idx % 2 === 0) ? 'bin-section-dark' : 'bin-section-light'
 
   return (
       <div className={ background }>
             <p className='bin-title'>{`${ trashbin.wasteType } ${ idx }`}</p>
-            <img src={trashbinFullOffOff} className='trashbin-image'></img>
+            <img src={getBinImage(trashbin)} className='trashbin-image'></img>
       </div>
   )
 }
