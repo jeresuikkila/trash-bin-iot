@@ -1,5 +1,6 @@
 
 .bin-section-light{ 
+    position: relative;
     background:#F1F1F1;
     width: 325px;
     height: 135px;
@@ -7,6 +8,7 @@
 }
 
 .bin-section-dark{ 
+    position: relative;
     background:#E5E5E5;
     width: 325px;
     height: 135px;
@@ -14,15 +16,15 @@
 }
 
 .trashbin-image {
-    position: relative;
+    position: absolute;
+    top: 20px;
     left: 61px;
-    bottom: 80px;
     width: 80px;
     height: 88px;
 }
 
 .bin-title {
-    position: relative;
+    position: absolute;
     top: 20px;
     left: 160px;
     font-family: Source Sans Pro;
@@ -34,8 +36,8 @@
 }
 
 .sensor-info {
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 40px;
     left: 160px;
     font-family: Source Sans Pro;
     font-style: normal;
@@ -43,11 +45,12 @@
     line-height: normal;
     font-size: 11px;
     color:  #666666;
+    overflow-x: hidden;
 }
 
 .pickup-info {
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 60px;
     left: 160px;
     font-family: Source Sans Pro;
     font-style: normal;
@@ -55,4 +58,5 @@
     line-height: normal;
     font-size: 11px;
     color:  #666666;
+    overflow-x: hidden;
 }
