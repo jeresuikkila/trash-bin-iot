@@ -11,8 +11,12 @@ const AccordionItem = ({trashbins, type, locationId}) => {
             <div id={type+locationId} className="collapse" aria-labelledby={type+locationId+'-heading'} data-parent={"#accordion"+locationId}>
                 <div className="card-body">
                     {
-                        trashbins.map( bin => (
-                            <p key={bin.id}> {bin.wasteType}</p>
+                        trashbins.map( (bin, i) => (
+                            <AccordionBin
+                            trashbin={bin}
+                            idx={i+1}
+                            key={bin.id}
+                            />
                         ))
                     }
                 </div>
