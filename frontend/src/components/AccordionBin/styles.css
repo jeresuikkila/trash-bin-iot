@@ -18,7 +18,7 @@
 .trashbin-image {
     position: absolute;
     top: 20px;
-    left: 61px;
+    left: 35px;
     width: 80px;
     height: 88px;
 }
@@ -26,10 +26,10 @@
 .bin-title {
     position: absolute;
     top: 20px;
-    left: 160px;
+    left: 130px;
     font-family: Source Sans Pro;
     font-style: normal;
-    font-weight: 800;
+    font-weight: bold;
     line-height: normal;
     font-size: 11px;
     color: #666666;
@@ -38,10 +38,10 @@
 .sensor-info {
     position: absolute;
     top: 40px;
-    left: 160px;
+    left: 130px;
     font-family: Source Sans Pro;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 500;
     line-height: normal;
     font-size: 11px;
     color:  #666666;
@@ -50,13 +50,27 @@
 
 .pickup-info {
     position: absolute;
-    top: 60px;
-    left: 160px;
+    top: 80px;
+    left: 130px;
     font-family: Source Sans Pro;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 500;
     line-height: normal;
     font-size: 11px;
     color:  #666666;
     overflow-x: hidden;
+}
+
+.working {
+    display: inline;
+}
+
+.alert-text {
+    color: #E87620;
+    display: inline;
+}
+
+.alert-text-bold {
+    color: #E87620;
+    font-weight: bold;
 }
