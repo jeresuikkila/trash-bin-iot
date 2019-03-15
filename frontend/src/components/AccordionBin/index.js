@@ -1,5 +1,8 @@
 import React from 'react';
 import './styles.css';
+import trashbinClosedOK from '../../static/trash-can-closed-green-green.png';
+
+
 
 
 const AccordionBin = ({ trashbin, idx }) => {
