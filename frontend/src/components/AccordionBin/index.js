@@ -14,7 +14,7 @@ const AccordionBin = ({ trashbin, idx }) => {
 
   return (
       <div className={ background }>
-          <p>{`${ trashbin.wasteType } ${ idx }`}</p>
+          <p className='bin-title'>{`${ trashbin.wasteType } ${ idx }`}</p>
           <p>
               <img src={trashbinFullOffOff} className='trashbin-image'></img>
           </p>

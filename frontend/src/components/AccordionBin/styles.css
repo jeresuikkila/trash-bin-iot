@@ -12,3 +12,13 @@
     height: 80px;
     padding: 0px;
 }
+
+.trashbin-image {
+    position: relative;
+    width: 45px;
+    height: 45px;
+}
+
+.bin-title {
+    left: 60px;
+}
