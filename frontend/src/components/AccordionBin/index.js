@@ -18,7 +18,9 @@ const AccordionBin = ({ trashbin, idx }) => {
 
   return (
       <div className={ background }>
-            <p className='bin-title'>{`${ trashbin.wasteType } ${ idx }`}</p>
+            <p className='bin-title'>{`${ trashbin.wasteType.toUpperCase() } ${ idx }`}</p>
+            <p className='sensor-info'>{`${ 'sensor info' } ${ idx }`}</p>
+            <p className='pickup-info'>{`${ 'pickup info' } ${ idx }`}</p>
             <img src={getBinImage(trashbin)} className='trashbin-image'></img>
       </div>
   )
