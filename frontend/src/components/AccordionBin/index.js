@@ -10,7 +10,7 @@ import trashbinFullOffOn from '../../static/trashbin-open-red-green.png';
 import trashbinFullOffOff from '../../static/trashbin-open-red-red.png';
 
 const getBinImage = (bin) => {
-    return trashbinFullOffOff
+    return trashbinFullOnOn
 }
 
 const AccordionBin = ({ trashbin, idx }) => {
