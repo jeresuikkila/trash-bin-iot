@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AccordionTitle = ({trashbins, type, locationId}) => {
+const AccordionItem = ({trashbins, type, locationId}) => {
     
     return(
         <div className="card">
@@ -20,4 +20,4 @@ const AccordionTitle = ({trashbins, type, locationId}) => {
     )
 }
 
-export default AccordionTitle;
+export default AccordionItem;
