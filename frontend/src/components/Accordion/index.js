@@ -17,12 +17,14 @@ const Accordion = ({location}) => {
     });
 
     return (
-    <div className="accordion" id="accordionExample">
+    <div className="accordion" id={"accordion"+location.id}>
         {
             wasteTypes.map( type =>(
                 <AccordionTitle 
                     type={type}
                     trashbins={trashbinsByType.get(type)}
+                    locationId={location.id}
+                    key={trashbinsByType.get(type)[0].id}
                 />
             ))
         }
