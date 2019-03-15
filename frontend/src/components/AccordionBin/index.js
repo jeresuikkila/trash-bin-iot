@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import trashbinClosedOK from '../../static/trash-can-closed-green-green.png';
+import trashbinClosedOK from '../../static/trashbin-closed-green-green.png';
 
 
 
