@@ -1,5 +1,6 @@
 import React from 'react';
 import AccordionItem from '../AccordionItem';
+import './styles.css';
 
 const Accordion = ({ location }) => {
   let wasteTypes = location.trashbins.map(bin => bin.wasteType);
