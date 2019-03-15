@@ -1,9 +1,13 @@
 import React from 'react';
 import './styles.css';
-import trashbinClosedOK from '../../static/trashbin-closed-green-green.png';
-
-
-
+import trashbinOkOnOn from '../../static/trashbin-closed-green-green.png';
+import trashbinOkOnOff from '../../static/trashbin-closed-green-red.png';
+import trashbinOkOffOn from '../../static/trashbin-closed-red-green.png';
+import trashbinOkOffOff from '../../static/trashbin-closed-red-red.png';
+import trashbinFullOnOn from '../../static/trashbin-open-green-green.png';
+import trashbinFullOnOff from '../../static/trashbin-open-green-red.png';
+import trashbinFullOffOn from '../../static/trashbin-open-red-green.png';
+import trashbinFullOffOff from '../../static/trashbin-open-red-red.png';
 
 const AccordionBin = ({ trashbin, idx }) => {
   const background = (idx % 2 === 0) ? 'bin-section-dark' : 'bin-section-light'
@@ -11,6 +15,9 @@ const AccordionBin = ({ trashbin, idx }) => {
   return (
       <div className={ background }>
           <p>{`${ trashbin.wasteType } ${ idx }`}</p>
+          <p>
+              <img src={trashbinFullOffOff} className='trashbin-image'></img>
+          </p>
       </div>
   )
 }
