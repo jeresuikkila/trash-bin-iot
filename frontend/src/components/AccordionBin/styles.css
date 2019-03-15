@@ -1,18 +1,14 @@
 
 .bin-section-light{ 
     background:#F1F1F1;
-    width: 323px;
+    width: 325px;
     height: 80px;
- 
-
-
+    padding: 0px; 
 }
 
 .bin-section-dark{ 
     background:#E5E5E5;
-    width: 323px;
+    width: 325px;
     height: 80px;
-
-
-
+    padding: 0px;
 }

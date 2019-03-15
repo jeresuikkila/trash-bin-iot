@@ -18,7 +18,7 @@ const LocationView = (props) => {
           </div>
           <div className="type-accordion">
               <Accordion
-                location={location}
+                location={ location }
               />
           </div>
           <img src={ hsylogo } className="hsy-logo" alt="logo" />

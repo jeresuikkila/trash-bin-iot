@@ -1,27 +1,61 @@
+
+.card {
+    border: 0px;
+    border-radius: 0px;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
 .card-body {
     padding: 0px;
 }
 
-.card-header-general{
-background:#C4C4C4;
+.type-icon {
+    position: relative;
+    margin-left: 35px;
+    margin-top: 15px;
+    float: left;
+    width: 40px;
+    height: 40px;
 }
 
+.header-title {
+    position: relative; 
+    margin-left: 85px;
+    margin-top : 22px;
+}
+
+
+.card-header-general{
+    background:#C4C4C4;
+    height: 70px;
+ }
+
 .card-header-cardboard{
-    background:rgb(38, 139, 255);
+    background:#2A6AA2;
+    height: 70px;
 }
 
 .card-header-plastic{
-    background:rgb(245, 248, 38);
+    background:#E87620;
+    height: 70px;
 }
 
 .card-header-glass{
     background:#2A6AA2;
+    height: 70px;
 }
 
 .card-header-metal{
-    background:rgba(11, 37, 153, 0.692);
+    background:#2A6AA2;
+    height: 70px;
 }
 
 .card-header-biowaste{
     background:#715E55;
+    height: 70px;
 }
