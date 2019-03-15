@@ -8,6 +8,9 @@ import general from '../../static/general.png';
 import glass from '../../static/glass.png';
 import plastic from '../../static/plastic.png';
 import accordionArrow from '../../static/accordion-arrow.png'
+import trashbinWhite from '../../static/trash-can-white.png';
+import trashbinOrange from '../../static/trash-can-orange.png';
+
 
 const icons = {
   Biowaste: biowaste,
