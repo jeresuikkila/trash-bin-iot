@@ -1,5 +1,5 @@
 .box {
-  width: 301px;
+  width: 286px;
   height: auto;
   margin: 16px auto;
   border: 1px solid #19a2a9;
@@ -41,7 +41,7 @@
 }
 .dark-teal-infobox {
   position: relative;
-  width: 301px;
+  width: 286px;
   height: 35px;
   left: -1px;
   top: -1px;
@@ -65,7 +65,7 @@
 
 .type-icon-container {
   position: relative;
-  width: 300px;
+  width: 285px;
   height: auto;
   padding-left: 10px;
   display: flex;
