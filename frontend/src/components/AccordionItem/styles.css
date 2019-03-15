@@ -1,3 +1,27 @@
 .card-body {
     padding: 0px;
 }
+
+.card-header-general{
+background:#C4C4C4;
+}
+
+.card-header-cardboard{
+    background:rgb(38, 139, 255);
+}
+
+.card-header-plastic{
+    background:rgb(245, 248, 38);
+}
+
+.card-header-glass{
+    background:#2A6AA2;
+}
+
+.card-header-metal{
+    background:rgba(11, 37, 153, 0.692);
+}
+
+.card-header-biowaste{
+    background:#715E55;
+}
