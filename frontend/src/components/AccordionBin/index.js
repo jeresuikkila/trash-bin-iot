@@ -1,8 +1,9 @@
 import React from 'react';
+import './styles.css';
 
 const AccordionBin = ({trashbin, idx}) => {
 
-    const background = (idx % 2 === 0) ? "bin-section-light" : "bin-section-dark"
+    const background = (idx % 2 === 0) ? "bin-section-dark" : "bin-section-light"
 
     return(
         <div className={background}>
