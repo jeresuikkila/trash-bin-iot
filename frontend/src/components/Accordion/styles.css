@@ -1,4 +1,6 @@
 
 .accordion {
-    overflow: hidden;
+  max-height: 680px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
