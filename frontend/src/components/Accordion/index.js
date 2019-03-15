@@ -1,6 +1,6 @@
 
 import React from 'react';
-import AccordionTitle from '../AccordionTitle';
+import AccordionItem from '../AccordionItem';
 
 
 const Accordion = ({location}) => {
@@ -20,7 +20,7 @@ const Accordion = ({location}) => {
     <div className="accordion" id={"accordion"+location.id}>
         {
             wasteTypes.map( type =>(
-                <AccordionTitle 
+                <AccordionItem 
                     type={type}
                     trashbins={trashbinsByType.get(type)}
                     locationId={location.id}
