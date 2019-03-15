@@ -2,23 +2,33 @@
 .bin-section-light{ 
     background:#F1F1F1;
     width: 325px;
-    height: 80px;
+    height: 150px;
     padding: 0px; 
 }
 
 .bin-section-dark{ 
     background:#E5E5E5;
     width: 325px;
-    height: 80px;
+    height: 150px;
     padding: 0px;
 }
 
 .trashbin-image {
     position: relative;
-    width: 45px;
-    height: 45px;
+    left: 35px;
+    bottom: 10px;
+    width: 100px;
+    height: 100px;
 }
 
 .bin-title {
-    left: 60px;
+    position: relative;
+    top: 20px;
+    left: 160px;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 18px;
+    color: #616161;
 }
