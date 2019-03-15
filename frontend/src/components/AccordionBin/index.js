@@ -10,7 +10,23 @@ import trashbinFullOffOn from '../../static/trashbin-open-red-green.png';
 import trashbinFullOffOff from '../../static/trashbin-open-red-red.png';
 
 const getBinImage = (bin) => {
-    return trashbinFullOnOn
+
+    const topSensorOk = bin.sensors[0].state;
+    const bottomSensorOk = bin.sensors[1].state;
+    const fillStatus = bin.fillStatus;
+
+    if(fillStatus === 100) {
+        if(topSensorOk && bottomSensorOk) return trashbinFullOnOn;
+        if(topSensorOk && !bottomSensorOk) return trashbinFullOnOff;
+        if(!topSensorOk && bottomSensorOk) return trashbinFullOffOn;
+        if(!topSensorOk && !bottomSensorOk) return trashbinFullOffOff;
+    }
+    else{
+        if(topSensorOk && bottomSensorOk) return trashbinOkOnOn;
+        if(topSensorOk && !bottomSensorOk) return trashbinOkOnOff;
+        if(!topSensorOk && bottomSensorOk) return trashbinOkOffOn;
+        if(!topSensorOk && !bottomSensorOk) return trashbinOkOffOff;
+    }
 }
 
 const AccordionBin = ({ trashbin, idx }) => {
