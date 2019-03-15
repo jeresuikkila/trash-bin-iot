@@ -1,0 +1,10 @@
+
+.bin-section-light{ 
+    position: absolute;
+    background:#F1F1F1;
+}
+
+.bin-section-dark{ 
+    position: absolute;
+    background:rgb(148, 27, 27);
+}
