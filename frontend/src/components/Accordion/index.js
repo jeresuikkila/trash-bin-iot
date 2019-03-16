@@ -11,13 +11,10 @@ const Accordion = ({ location }) => {
 
   wasteTypes.forEach((type) => {
     const trashbins = location.trashbins.filter(bin => bin.wasteType === type)
-    console.log(trashbins)
     trashbinsByType.set(type, trashbins)
   });
 
   const overflowTypes = getOverflowTypes(location);
-  console.log('amount of types overflowing: '+overflowTypes.length)
-  console.log('overflowing types: '+overflowTypes)
 
   return (
       <div className="accordion" id={ `accordion${ location.id }` }>
