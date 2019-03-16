@@ -39,37 +39,34 @@ const AccordionBin = ({
           <p className="bin-title">{`${ trashbin.wasteType.toUpperCase() } ${ idx }`}</p>
           <div className="sensor-info">
               {
-                    trashbin.sensors[ 0 ].state === 1
-                      ? (
-                          <p className="d-inline">
-                              <span className="font-weight-bold">Sensor 1: </span>
-                        Working
-                          </p>
-                      )
-                      : (
-                          <p className="alert-text">
-                              <span className="alert-text-bold">Sensor 1: </span>
-Not working
-                          </p>
-                      )
-                }
+            (trashbin.sensors[ 0 ].state === 1) ? (
+                <p className="d-inline">
+                    <span className="font-weight-bold">Sensor 1: </span>
+                Working
+                </p>
+            ) : (
+                <p className="alert-text">
+                    <span className="alert-text-bold">Sensor 1: </span>
+                  Not working
+                </p>
+            )
+          }
               <br />
               {
-                    trashbin.sensors[ 1 ].state === 1
-                      ? (
-                          <p className="d-inline">
-                              <span className="font-weight-bold">Sensor 2: </span>
-                        Working
-                          </p>
-                      )
-                      : (
-                          <p className="alert-text">
-                              <span className="alert-text-bold">Sensor 1: </span>
-Not working
-                          </p>
-                      )
-                }
+            (trashbin.sensors[ 1 ].state === 1) ? (
+                <p className="d-inline">
+                    <span className="font-weight-bold">Sensor 2: </span>
+                  Working
+                </p>
+            ) : (
+                <p className="alert-text">
+                    <span className="alert-text-bold">Sensor 1: </span>
+                Not working
+                </p>
+            )
+            }
           </div>
+
           <div className="pickup-info">
               <p className="d-inline">
                   <span className="font-weight-bold">Last pickup date: </span>
@@ -77,20 +74,18 @@ Not working
               </p>
               <br />
               {
-                    !trashbin.pickupOverdue
-                      ? (
-                          <p className="d-inline">
-                              <span className="font-weight-bold">Due pickup date: </span>
-                              {trashbin.nextPickup}
-                          </p>
-                      )
-                      : (
-                          <p className="alert-text">
-                              <span className="alert-text-bold">Due pickup date: </span>
-                              {trashbin.nextPickup}
-                          </p>
-                      )
-                }
+              (!trashbin.pickupOverdue) ? (
+                  <p className="d-inline">
+                      <span className="font-weight-bold">Due pickup date: </span>
+                      {trashbin.nextPickup}
+                  </p>
+              ) : (
+                  <p className="alert-text">
+                      <span className="alert-text-bold">Due pickup date: </span>
+                      {trashbin.nextPickup}
+                  </p>
+              )
+              }
           </div>
           <img src={ getBinImage(trashbin) } className="trashbin-image" alt="bin" />
           {overflowTypes.includes(type) && <img src={ alert } className="bin-alert" alt="alert" />}
