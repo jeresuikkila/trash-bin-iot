@@ -26,6 +26,7 @@ const getBinImage = (bin) => {
     if (!topSensorOk && bottomSensorOk) return trashbinOkOffOn;
     if (!topSensorOk && !bottomSensorOk) return trashbinOkOffOff;
   }
+  return 0; // eslint
 }
 
 const AccordionBin = ({
