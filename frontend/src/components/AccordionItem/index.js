@@ -8,8 +8,8 @@ import general from '../../static/general.png';
 import glass from '../../static/glass.png';
 import plastic from '../../static/plastic.png';
 import accordionArrow from '../../static/accordion-arrow.png'
-//import trashbinOk from '../../static/trashbin-white.png';
-//import trashbinFull from '../../static/trashbin-orange.png';
+// import trashbinOk from '../../static/trashbin-white.png';
+// import trashbinFull from '../../static/trashbin-orange.png';
 import alert from '../../static/alert.png';
 
 const icons = {
@@ -21,7 +21,9 @@ const icons = {
   Plastic: plastic,
 }
 
-const AccordionItem = ({ trashbins, type, locationId, overflowTypes }) => (
+const AccordionItem = ({
+  trashbins, type, locationId, overflowTypes,
+}) => (
     <div className="card">
         <div className={ `card-header-${ type.toLowerCase() }` } id={ `${ type + locationId }-heading` } data-toggle="collapse" data-target={ `#${ type }${ locationId }` } aria-expanded="false" aria-controls={ type + locationId }>
             <img src={ icons[ type ] } className="type-icon" alt="type" />
@@ -38,8 +40,8 @@ const AccordionItem = ({ trashbins, type, locationId, overflowTypes }) => (
                             <AccordionBin
                               trashbin={ bin }
                               idx={ i + 1 }
-                              overflowTypes={overflowTypes}
-                              type={type}
+                              overflowTypes={ overflowTypes }
+                              type={ type }
                               key={ bin.id }
                             />
                         ))
