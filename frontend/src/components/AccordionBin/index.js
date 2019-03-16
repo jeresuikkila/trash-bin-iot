@@ -60,7 +60,7 @@ const AccordionBin = ({
                 </p>
             ) : (
                 <p className="alert-text">
-                    <span className="alert-text-bold">Sensor 1: </span>
+                    <span className="alert-text-bold">Sensor 2: </span>
                 Not working
                 </p>
             )
