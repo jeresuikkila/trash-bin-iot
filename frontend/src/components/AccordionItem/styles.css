@@ -36,6 +36,14 @@
   top: 7px;
 }
 
+.alert {
+position: absolute; 
+width: 60px;
+height: 45px;
+right: 277px;
+top: 13px;
+}
+
 .card-header-general {
   background: #c4c4c4;
   height: 70px;

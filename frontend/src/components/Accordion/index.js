@@ -1,6 +1,7 @@
 import React from 'react';
 import AccordionItem from '../AccordionItem';
 import './styles.css';
+import { getOverflowTypes } from '../../utils'
 
 const Accordion = ({ location }) => {
   let wasteTypes = location.trashbins.map(bin => bin.wasteType);
@@ -14,6 +15,10 @@ const Accordion = ({ location }) => {
     trashbinsByType.set(type, trashbins)
   });
 
+  const overflowTypes = getOverflowTypes(location);
+  console.log('amount of types overflowing: '+overflowTypes.length)
+  console.log('overflowing types: '+overflowTypes)
+
   return (
       <div className="accordion" id={ `accordion${ location.id }` }>
           {
@@ -22,6 +27,7 @@ const Accordion = ({ location }) => {
                   type={ type }
                   trashbins={ trashbinsByType.get(type) }
                   locationId={ location.id }
+                  overflowTypes={ overflowTypes }
                   key={ trashbinsByType.get(type)[ 0 ].id }
                 />
             ))
