@@ -8,8 +8,8 @@ import general from '../../static/general.png';
 import glass from '../../static/glass.png';
 import plastic from '../../static/plastic.png';
 import accordionArrow from '../../static/accordion-arrow.png'
-import trashbinOk from '../../static/trashbin-white.png';
-import trashbinFull from '../../static/trashbin-orange.png';
+//import trashbinOk from '../../static/trashbin-white.png';
+//import trashbinFull from '../../static/trashbin-orange.png';
 import alert from '../../static/alert.png';
 
 const icons = {

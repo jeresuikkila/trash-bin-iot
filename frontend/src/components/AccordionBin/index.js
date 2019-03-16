@@ -36,7 +36,6 @@ const AccordionBin = ({ trashbin, idx, overflowTypes, type }) => {
   return (
       <div className={ background }>
             <p className='bin-title'>{`${ trashbin.wasteType.toUpperCase() } ${ idx }`}</p>
-            
             <div className='sensor-info'>
                 {
                     trashbin.sensors[0].state === 1 ? 
@@ -54,10 +53,8 @@ const AccordionBin = ({ trashbin, idx, overflowTypes, type }) => {
                         Working
                     </p> : 
                     <p className="alert-text"><span className="alert-text-bold">Sensor 1: </span>Not working</p> 
-                }
-                
+                }  
             </div>
-
             <div className='pickup-info'>
                 <p className="d-inline">
                     <span className="font-weight-bold">Last pickup date: </span>
@@ -76,7 +73,7 @@ const AccordionBin = ({ trashbin, idx, overflowTypes, type }) => {
                     </p> 
                 }
             </div>
-            <img src={getBinImage(trashbin)} className='trashbin-image'></img>
+            <img src={getBinImage(trashbin)} className='trashbin-image' alt="bin" />
             {overflowTypes.includes(type) && <img src={ alert } className="bin-alert" alt="alert" />}
       </div>
   )
