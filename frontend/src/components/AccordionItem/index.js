@@ -38,6 +38,8 @@ const AccordionItem = ({ trashbins, type, locationId, overflowTypes }) => (
                             <AccordionBin
                               trashbin={ bin }
                               idx={ i + 1 }
+                              overflowTypes={overflowTypes}
+                              type={type}
                               key={ bin.id }
                             />
                         ))

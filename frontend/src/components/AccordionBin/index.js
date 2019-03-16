@@ -8,6 +8,7 @@ import trashbinFullOnOn from '../../static/trashbin-open-green-green.png';
 import trashbinFullOnOff from '../../static/trashbin-open-green-red.png';
 import trashbinFullOffOn from '../../static/trashbin-open-red-green.png';
 import trashbinFullOffOff from '../../static/trashbin-open-red-red.png';
+import alert from '../../static/alert.png';
 
 const getBinImage = (bin) => {
 
@@ -29,7 +30,7 @@ const getBinImage = (bin) => {
     }
 }
 
-const AccordionBin = ({ trashbin, idx }) => {
+const AccordionBin = ({ trashbin, idx, overflowTypes, type }) => {
   const background = (idx % 2 === 0) ? 'bin-section-dark' : 'bin-section-light'
 
   return (
@@ -54,6 +55,7 @@ const AccordionBin = ({ trashbin, idx }) => {
                     </p> : 
                     <p className="alert-text"><span className="alert-text-bold">Sensor 1: </span>Not working</p> 
                 }
+                
             </div>
 
             <div className='pickup-info'>
@@ -75,6 +77,7 @@ const AccordionBin = ({ trashbin, idx }) => {
                 }
             </div>
             <img src={getBinImage(trashbin)} className='trashbin-image'></img>
+            {overflowTypes.includes(type) && <img src={ alert } className="bin-alert" alt="alert" />}
       </div>
   )
 }

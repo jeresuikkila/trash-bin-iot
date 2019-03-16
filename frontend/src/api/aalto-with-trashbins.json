@@ -2126,7 +2126,7 @@
         "count": 0,
         "collectionInterval": "joka 4. viikko pe vko 1",
         "nextPickup": "19.03.19",
-        "fillStatus": 0,
+        "fillStatus": 100,
         "pickupOverdue": false,
         "sensors": [
           {
@@ -2154,7 +2154,7 @@
         "count": 1,
         "collectionInterval": "joka 4. viikko pe vko 1",
         "nextPickup": "20.03.19",
-        "fillStatus": 0,
+        "fillStatus": 100,
         "pickupOverdue": false,
         "sensors": [
           {

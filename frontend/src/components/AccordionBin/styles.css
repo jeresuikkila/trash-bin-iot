@@ -74,3 +74,11 @@
     color: #E87620;
     font-weight: bold;
 }
+
+.bin-alert {
+    position: absolute; 
+    width: 15px;
+    height: 15px;
+    right: 299px;
+    top: 65px;
+}
