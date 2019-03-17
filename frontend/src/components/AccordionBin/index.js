@@ -1,4 +1,6 @@
 import React from 'react';
+import SensorInfo from '../SensorInfo';
+import PickupInfo from '../PickupInfo';
 import './styles.css';
 import trashbinOkOnOn from '../../static/trashbin-closed-green-green.png';
 import trashbinOkOnOff from '../../static/trashbin-closed-green-red.png';
@@ -32,61 +34,21 @@ const getBinImage = (bin) => {
 const AccordionBin = ({
   trashbin, idx, overflowTypes, type,
 }) => {
-  const background = (idx % 2 === 0) ? 'bin-section-dark' : 'bin-section-light'
+  const background = (idx % 2 === 0) ? 'bin-section dark' : 'bin-section light'
 
   return (
-      <div className={ background }>
-          <p className="bin-title">{`${ trashbin.wasteType.toUpperCase() } ${ idx }`}</p>
+      <div className={ `${ background } accordion-bin-text-style` }>
+          <p className="bin-title bold">{`${ trashbin.wasteType.toUpperCase() } ${ idx }`}</p>
           <div className="sensor-info">
-              {
-            (trashbin.sensors[ 0 ].state === 1) ? (
-                <p className="d-inline">
-                    <span className="font-weight-bold">Sensor 1: </span>
-                Working
-                </p>
-            ) : (
-                <p className="alert-text">
-                    <span className="alert-text-bold">Sensor 1: </span>
-                  Not working
-                </p>
-            )
-          }
-              <br />
-              {
-            (trashbin.sensors[ 1 ].state === 1) ? (
-                <p className="d-inline">
-                    <span className="font-weight-bold">Sensor 2: </span>
-                  Working
-                </p>
-            ) : (
-                <p className="alert-text">
-                    <span className="alert-text-bold">Sensor 2: </span>
-                Not working
-                </p>
-            )
-            }
+              {trashbin.sensors.map((sensor, idx) => (
+                  <SensorInfo
+                    sensor={ sensor }
+                    idx={ idx + 1 }
+                    key={ sensor.id }
+                  />
+              ))}
           </div>
-
-          <div className="pickup-info">
-              <p className="d-inline">
-                  <span className="font-weight-bold">Last pickup date: </span>
-                  {trashbin.sensors[ 1 ].lastEvent}
-              </p>
-              <br />
-              {
-              (!trashbin.pickupOverdue) ? (
-                  <p className="d-inline">
-                      <span className="font-weight-bold">Due pickup date: </span>
-                      {trashbin.nextPickup}
-                  </p>
-              ) : (
-                  <p className="alert-text">
-                      <span className="alert-text-bold">Due pickup date: </span>
-                      {trashbin.nextPickup}
-                  </p>
-              )
-              }
-          </div>
+          <PickupInfo trashbin={ trashbin } />
           <img src={ getBinImage(trashbin) } className="trashbin-image" alt="bin" />
           {overflowTypes.includes(type) && <img src={ alert } className="bin-alert" alt="alert" />}
       </div>
