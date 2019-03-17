@@ -1,5 +1,14 @@
 
-.bin-section-light{ 
+.accordion-bin-text-style {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 11px;
+    color: #666666;
+}
+
+.bin-section{ 
     position: relative;
     background:#F1F1F1;
     width: 325px;
@@ -7,12 +16,12 @@
     padding: 0px; 
 }
 
-.bin-section-dark{ 
-    position: relative;
+.light {
+    background:#F1F1F1;
+}
+
+.dark {
     background:#E5E5E5;
-    width: 325px;
-    height: 135px;
-    padding: 0px;
 }
 
 .trashbin-image {
@@ -27,42 +36,18 @@
     position: absolute;
     top: 20px;
     left: 130px;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: bold;
-    line-height: normal;
-    font-size: 11px;
-    color: #666666;
 }
 
 .sensor-info {
     position: absolute;
     top: 40px;
     left: 130px;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    font-size: 11px;
-    color:  #666666;
-    overflow-x: hidden;
 }
 
 .pickup-info {
     position: absolute;
     top: 80px;
     left: 130px;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    font-size: 11px;
-    color:  #666666;
-    overflow-x: hidden;
-}
-
-.working {
-    display: inline;
 }
 
 .alert-text {
@@ -70,8 +55,7 @@
     display: inline;
 }
 
-.alert-text-bold {
-    color: #E87620;
+.bold {
     font-weight: bold;
 }
 
