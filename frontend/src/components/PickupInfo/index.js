@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles.css'
 
 const PickupInfo = ({ trashbin }) => (
     <div className="pickup-info">
