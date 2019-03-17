@@ -1,72 +1,19 @@
-.bin-ok {
+.infobox-img {
   width: 53px;
   height: 53px;
-  background: #c4c4c4;
-  border-radius: 5px;
-  margin: 5px;
+  margin: 4px;
 }
 
-.biowaste-full {
-  width: 53px;
-  height: 53px;
-  background: #715e55;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.general-full {
-  width: 53px;
-  height: 53px;
-  background: #666666;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.cardboard-full {
-  width: 53px;
-  height: 53px;
-  background: #c59065;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.glass-full {
-  width: 53px;
-  height: 53px;
-  background: #2a6aa2;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.plastic-full {
-  width: 53px;
-  height: 53px;
-  background: #d8d53e;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.metal-full {
-  width: 53px;
-  height: 53px;
-  background: #505050;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.alerticon {
+.alert-icon {
   position: relative;
   width: 20px;
   height: 20px;
-  left: 45px;
-  top: -65px;
-  padding: 0px;
-  margin: 0px;
+  left: 38px;
+  top: -64px;
 }
 
-.infoboxitem {
+.infobox-item {
   width: 63px;
   height: 63px;
-  margin-right: 5px;
-  margin-top: 5px;
+  margin-top: 4px;
 }

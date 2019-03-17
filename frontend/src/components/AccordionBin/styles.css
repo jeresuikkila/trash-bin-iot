@@ -1,0 +1,84 @@
+
+.bin-section-light{ 
+    position: relative;
+    background:#F1F1F1;
+    width: 325px;
+    height: 135px;
+    padding: 0px; 
+}
+
+.bin-section-dark{ 
+    position: relative;
+    background:#E5E5E5;
+    width: 325px;
+    height: 135px;
+    padding: 0px;
+}
+
+.trashbin-image {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    width: 80px;
+    height: 88px;
+}
+
+.bin-title {
+    position: absolute;
+    top: 20px;
+    left: 130px;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 11px;
+    color: #666666;
+}
+
+.sensor-info {
+    position: absolute;
+    top: 40px;
+    left: 130px;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 11px;
+    color:  #666666;
+    overflow-x: hidden;
+}
+
+.pickup-info {
+    position: absolute;
+    top: 80px;
+    left: 130px;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 11px;
+    color:  #666666;
+    overflow-x: hidden;
+}
+
+.working {
+    display: inline;
+}
+
+.alert-text {
+    color: #E87620;
+    display: inline;
+}
+
+.alert-text-bold {
+    color: #E87620;
+    font-weight: bold;
+}
+
+.bin-alert {
+    position: absolute; 
+    width: 15px;
+    height: 15px;
+    right: 299px;
+    top: 65px;
+}

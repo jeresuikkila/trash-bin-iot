@@ -1,1589 +1,3333 @@
 [
-    {
+  {
+    "id": 1,
+    "address": "BETONIMIEHENKUJA 5, 02150, Espoo",
+    "lat": 60.18097,
+    "lon": 24.83166,
+    "trashbins": [
+      {
         "id": 1,
-        "address": "BETONIMIEHENKUJA 5, 02150, Espoo",
-        "lat": 60.18097,
-        "lon": 24.83166,
-        "trashbins": [
-            {
-                "id": 1,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 2,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 3,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 1,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 17:37"
+          },
+          {
+            "id": 2,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 4:41"
+          }
+        ]
+      },
+      {
         "id": 2,
-        "address": "KEMISTINTIE 1, 02150, Espoo",
-        "lat": 60.18364,
-        "lon": 24.82472,
-        "trashbins": [
-            {
-                "id": 4,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            },
-            {
-                "id": 5,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 5,
-                "collectionInterval": "soitosta tyhjennys soitosta",
-                "nextPickup": "",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 6,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 5,
-                "collectionInterval": "soitosta tyhjennys soitosta",
-                "nextPickup": "",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 7,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 8,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 9,
-                "wasteType": "General",
-                "size": "600 l",
-                "containerType": "astia pyörällinen",
-                "owner": "Kiinteistö",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 3,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 5:20"
+          },
+          {
+            "id": 4,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 6:26"
+          }
+        ]
+      },
+      {
         "id": 3,
-        "address": "KONEMIEHENTIE 1, 02150, Espoo",
-        "lat": 60.1873,
-        "lon": 24.82339,
-        "trashbins": [
-            {
-                "id": 10,
-                "wasteType": "General",
-                "size": "600 l",
-                "containerType": "astia pyörällinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 5,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:52"
+          },
+          {
+            "id": 6,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 17:23"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 2,
+    "address": "KEMISTINTIE 1, 02150, Espoo",
+    "lat": 60.18364,
+    "lon": 24.82472,
+    "trashbins": [
+      {
         "id": 4,
-        "address": "KONEMIEHENTIE 2, 02150, Espoo",
-        "lat": 60.18742,
-        "lon": 24.82247,
-        "trashbins": [
-            {
-                "id": 11,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": true
-            },
-            {
-                "id": 12,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 8,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 13,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 8,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 7,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 16:49"
+          },
+          {
+            "id": 8,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 13:23"
+          }
+        ]
+      },
+      {
         "id": 5,
-        "address": "KONEMIEHENTIE 4, 02150, Espoo",
-        "lat": 60.1879125,
-        "lon": 24.8230807,
-        "trashbins": [
-            {
-                "id": 14,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 5,
+        "collectionInterval": "soitosta tyhjennys soitosta",
+        "nextPickup": "",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 9,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 13:23"
+          },
+          {
+            "id": 10,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 18:57"
+          }
+        ]
+      },
+      {
         "id": 6,
-        "address": "LÄMPÖMIEHENKUJA 2, 02150, Espoo",
-        "lat": 60.18207,
-        "lon": 24.83225,
-        "trashbins": [
-            {
-                "id": 15,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            },
-            {
-                "id": 16,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 3,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 5,
+        "collectionInterval": "soitosta tyhjennys soitosta",
+        "nextPickup": "",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 11,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 14:13"
+          },
+          {
+            "id": 12,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 4:54"
+          }
+        ]
+      },
+      {
         "id": 7,
-        "address": "LÄMPÖMIEHENKUJA 3, 02150, Espoo",
-        "lat": 60.18163,
-        "lon": 24.83061,
-        "trashbins": [
-            {
-                "id": 17,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 18,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 3,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 19,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 3,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 13,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:53"
+          },
+          {
+            "id": 14,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 11:41"
+          }
+        ]
+      },
+      {
         "id": 8,
-        "address": "MAARINTIE 6, 02150, Espoo",
-        "lat": 60.18718,
-        "lon": 24.81933,
-        "trashbins": [
-            {
-                "id": 20,
-                "wasteType": "General",
-                "size": "600 l",
-                "containerType": "astia pyörällinen",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 21,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 4,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            },
-            {
-                "id": 22,
-                "wasteType": "Biowaste",
-                "size": "140 l",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 4,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 15,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 15:10"
+          },
+          {
+            "id": 16,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 5:46"
+          }
+        ]
+      },
+      {
         "id": 9,
-        "address": "MAARINTIE 8, 02150, Espoo",
-        "lat": 60.18706,
-        "lon": 24.81946,
-        "trashbins": [
-            {
-                "id": 23,
-                "wasteType": "General",
-                "size": "240 l",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 24,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 25,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": true
-            },
-            {
-                "id": 26,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 5,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 27,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 5,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "600 l",
+        "containerType": "astia pyörällinen",
+        "owner": "Kiinteistö",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 17,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 8:42"
+          },
+          {
+            "id": 18,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 14:18"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 3,
+    "address": "KONEMIEHENTIE 1, 02150, Espoo",
+    "lat": 60.1873,
+    "lon": 24.82339,
+    "trashbins": [
+      {
         "id": 10,
-        "address": "METALLIMIEHENKUJA 10, 02150, Espoo",
-        "lat": 60.18253,
-        "lon": 24.83028,
-        "trashbins": [
-            {
-                "id": 28,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "3 krt/viikko ma ke pe",
-                "nextPickup": "13.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "600 l",
+        "containerType": "astia pyörällinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 19,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 9:16"
+          },
+          {
+            "id": 20,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 17:51"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 4,
+    "address": "KONEMIEHENTIE 2, 02150, Espoo",
+    "lat": 60.18742,
+    "lon": 24.82247,
+    "trashbins": [
+      {
         "id": 11,
-        "address": "METALLIMIEHENKUJA 4, 02150, Espoo",
-        "lat": 60.18343,
-        "lon": 24.82904,
-        "trashbins": [
-            {
-                "id": 29,
-                "wasteType": "General",
-                "size": "3 m3",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 30,
-                "wasteType": "General",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 31,
-                "wasteType": "Biowaste",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 32,
-                "wasteType": "Biowaste",
-                "size": "800 l",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 2,
-                "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 21,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 5:44"
+          },
+          {
+            "id": 22,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 7:24"
+          }
+        ]
+      },
+      {
         "id": 12,
-        "address": "METSÄHOVINTIE 114, 02540, Kirkkonummi",
-        "lat": 60.2189046,
-        "lon": 24.3934467,
-        "trashbins": [
-            {
-                "id": 33,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko ke vko 1,3",
-                "nextPickup": "20.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 34,
-                "wasteType": "Cardboard",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "joka 4. viikko ti vko 3",
-                "nextPickup": "05.03.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 8,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 23,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 17:40"
+          },
+          {
+            "id": 24,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 10:05"
+          }
+        ]
+      },
+      {
         "id": 13,
-        "address": "OTAKAARI 1, 02150, Espoo",
-        "lat": 60.18609,
-        "lon": 24.82829,
-        "trashbins": [
-            {
-                "id": 35,
-                "wasteType": "General",
-                "size": "600 l",
-                "containerType": "astia pyörällinen",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "3 krt/viikko ma ke pe",
-                "nextPickup": "13.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 36,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 10,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 37,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 10,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 38,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            },
-            {
-                "id": 39,
-                "wasteType": "Biowaste",
-                "size": "200 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 40,
-                "wasteType": "Biowaste",
-                "size": "240 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 41,
-                "wasteType": "Biowaste",
-                "size": "240 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": true
-            },
-            {
-                "id": 42,
-                "wasteType": "Biowaste",
-                "size": "200 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 8,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 25,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 11:17"
+          },
+          {
+            "id": 26,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 9:08"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 5,
+    "address": "KONEMIEHENTIE 4, 02150, Espoo",
+    "lat": 60.1879125,
+    "lon": 24.8230807,
+    "trashbins": [
+      {
         "id": 14,
-        "address": "OTAKAARI 24, 02150, Espoo",
-        "lat": 60.18521,
-        "lon": 24.83233,
-        "trashbins": [
-            {
-                "id": 43,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia pienipyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 44,
-                "wasteType": "Biowaste",
-                "size": "140 l",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 3,
-                "collectionInterval": "astiavuokra",
-                "nextPickup": "",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            },
-            {
-                "id": 45,
-                "wasteType": "Biowaste",
-                "size": "paino",
-                "containerType": "puristinsäiliö vaihtolava",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 2. viikko ke vko 2,4",
-                "nextPickup": "13.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 46,
-                "wasteType": "Biowaste",
-                "size": "12 m3",
-                "containerType": "puristinsäiliö isokoukku",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko ke vko 2,4",
-                "nextPickup": "13.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 27,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 5:53"
+          },
+          {
+            "id": 28,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 14:55"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 6,
+    "address": "LÄMPÖMIEHENKUJA 2, 02150, Espoo",
+    "lat": 60.18207,
+    "lon": 24.83225,
+    "trashbins": [
+      {
         "id": 15,
-        "address": "OTAKAARI 3, 02150, Espoo",
-        "lat": 60.1883045,
-        "lon": 24.8292797,
-        "trashbins": [
-            {
-                "id": 47,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 12,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 48,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 12,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 29,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 5:34"
+          },
+          {
+            "id": 30,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 14:51"
+          }
+        ]
+      },
+      {
         "id": 16,
-        "address": "OTAKAARI 4, 02150, Espoo",
-        "lat": 60.18719,
-        "lon": 24.82684,
-        "trashbins": [
-            {
-                "id": 49,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko ke vko 1,3",
-                "nextPickup": "20.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 50,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 3,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 51,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 3,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 3,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 31,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:32"
+          },
+          {
+            "id": 32,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 12:54"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 7,
+    "address": "LÄMPÖMIEHENKUJA 3, 02150, Espoo",
+    "lat": 60.18163,
+    "lon": 24.83061,
+    "trashbins": [
+      {
         "id": 17,
-        "address": "OTAKAARI 5, 02150, Espoo",
-        "lat": 60.18903,
-        "lon": 24.83165,
-        "trashbins": [
-            {
-                "id": 52,
-                "wasteType": "General",
-                "size": "",
-                "containerType": " ",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": " ti",
-                "nextPickup": "",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 53,
-                "wasteType": "Biowaste",
-                "size": "",
-                "containerType": " ",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": " pe",
-                "nextPickup": "",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 54,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 55,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 56,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 4,
-                "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 57,
-                "wasteType": "Biowaste",
-                "size": "140 l",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 4,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 58,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 4,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 33,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 12:50"
+          },
+          {
+            "id": 34,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 14:08"
+          }
+        ]
+      },
+      {
         "id": 18,
-        "address": "OTAKAARI 7, 02150, Espoo",
-        "lat": 60.18902,
-        "lon": 24.83316,
-        "trashbins": [
-            {
-                "id": 59,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 60,
-                "wasteType": "Biowaste",
-                "size": "200 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 61,
-                "wasteType": "Biowaste",
-                "size": "240 l",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 3,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 35,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 6:37"
+          },
+          {
+            "id": 36,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 11:30"
+          }
+        ]
+      },
+      {
         "id": 19,
-        "address": "OTAKAARI 8, 02150, Espoo",
-        "lat": 60.1885502,
-        "lon": 24.8290554,
-        "trashbins": [
-            {
-                "id": 62,
-                "wasteType": "General",
-                "size": "6 m3",
-                "containerType": "etukontti umpisäiliö",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko ma vko 1,3",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 63,
-                "wasteType": "General",
-                "size": "paino",
-                "containerType": "punnittu etukontti",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 2. viikko ma vko 1,3",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 3,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "21.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 37,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 11:12"
+          },
+          {
+            "id": 38,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 14:54"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 8,
+    "address": "MAARINTIE 6, 02150, Espoo",
+    "lat": 60.18711,
+    "lon": 24.81939,
+    "trashbins": [
+      {
         "id": 20,
-        "address": "OTANIEMENTIE 9, 02150, Espoo",
-        "lat": 60.1836131,
-        "lon": 24.8308962,
-        "trashbins": [
-            {
-                "id": 64,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Kiinteistö",
-                "count": 2,
-                "collectionInterval": "2 krt/viikko ma to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 65,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Kiinteistö",
-                "count": 3,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 66,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 3,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "600 l",
+        "containerType": "astia pyörällinen",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ke",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 39,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 14:07"
+          },
+          {
+            "id": 40,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 4:45"
+          }
+        ]
+      },
+      {
         "id": 21,
-        "address": "PUUMIEHENKUJA 2, 02150, Espoo",
-        "lat": 60.18696,
-        "lon": 24.82498,
-        "trashbins": [
-            {
-                "id": 67,
-                "wasteType": "General",
-                "size": "",
-                "containerType": " ",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": true
-            },
-            {
-                "id": 68,
-                "wasteType": "General",
-                "size": "2 m3",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": true
-            },
-            {
-                "id": 69,
-                "wasteType": "General",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": true
-            },
-            {
-                "id": 70,
-                "wasteType": "Biowaste",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 4. viikko pe vko 1",
-                "nextPickup": "22.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 71,
-                "wasteType": "Biowaste",
-                "size": "800 l",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "joka 4. viikko pe vko 1",
-                "nextPickup": "22.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 4,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 41,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 8:52"
+          },
+          {
+            "id": 42,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 10:49"
+          }
+        ]
+      },
+      {
         "id": 22,
-        "address": "PUUMIEHENKUJA 3, 02150, Espoo",
-        "lat": 60.18785,
-        "lon": 24.82533,
-        "trashbins": [
-            {
-                "id": 72,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 4,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 43,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 5:40"
+          },
+          {
+            "id": 44,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 11:50"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 9,
+    "address": "MAARINTIE 8, 02150, Espoo",
+    "lat": 60.18711,
+    "lon": 24.81939,
+    "trashbins": [
+      {
         "id": 23,
-        "address": "PUUMIEHENKUJA 5, 02150, Espoo",
-        "lat": 60.18842,
-        "lon": 24.8246,
-        "trashbins": [
-            {
-                "id": 73,
-                "wasteType": "General",
-                "size": "",
-                "containerType": " ",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 74,
-                "wasteType": "General",
-                "size": "2 m3",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 75,
-                "wasteType": "General",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 76,
-                "wasteType": "Cardboard",
-                "size": "3 m3",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko ma vko 1,3",
-                "nextPickup": "18.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 77,
-                "wasteType": "Cardboard",
-                "size": "paino",
-                "containerType": "punnittu Cardboard",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 2. viikko ma vko 1,3",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 78,
-                "wasteType": "Biowaste",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 4. viikko pe vko 1",
-                "nextPickup": "22.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 79,
-                "wasteType": "Biowaste",
-                "size": "800 l",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "joka 4. viikko pe vko 1",
-                "nextPickup": "22.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "240 l",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ke",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 45,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 10:26"
+          },
+          {
+            "id": 46,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 11:44"
+          }
+        ]
+      },
+      {
         "id": 24,
-        "address": "RAKENTAJANAUKIO 4, 02150, Espoo",
-        "lat": 60.18738,
-        "lon": 24.83049,
-        "trashbins": [
-            {
-                "id": 80,
-                "wasteType": "Biowaste",
-                "size": "140 l",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 81,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "20.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 47,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 8:59"
+          },
+          {
+            "id": 48,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 8:35"
+          }
+        ]
+      },
+      {
         "id": 25,
-        "address": "RUNEBERGINKATU 14-16, 00100, Helsinki",
-        "lat": 60.17186,
-        "lon": 24.92289,
-        "trashbins": [
-            {
-                "id": 82,
-                "wasteType": "General",
-                "size": "paino",
-                "containerType": "puristinsäiliö vaihtolava",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 2. viikko ti vko 2,4",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 83,
-                "wasteType": "General",
-                "size": "12 m3",
-                "containerType": "puristinsäiliö pikkukoukku",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko ti vko 2,4",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 84,
-                "wasteType": "Biowaste",
-                "size": "140 l",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "astiavuokra",
-                "nextPickup": "",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            },
-            {
-                "id": 85,
-                "wasteType": "Biowaste",
-                "size": "paino",
-                "containerType": "puristinsäiliö vaihtolava",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 86,
-                "wasteType": "Biowaste",
-                "size": "8 m3",
-                "containerType": "lava pikkukoukku",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "15.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 49,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 10:50"
+          },
+          {
+            "id": 50,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 11:24"
+          }
+        ]
+      },
+      {
         "id": 26,
-        "address": "SÄHKÖMIEHENTIE 3, 02150, Espoo",
-        "lat": 60.18925,
-        "lon": 24.82621,
-        "trashbins": [
-            {
-                "id": 87,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 88,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 2,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 5,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 51,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 10:27"
+          },
+          {
+            "id": 52,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 16:52"
+          }
+        ]
+      },
+      {
         "id": 27,
-        "address": "SÄHKÖMIEHENTIE 4, 02150, Espoo",
-        "lat": 60.18875,
-        "lon": 24.82571,
-        "trashbins": [
-            {
-                "id": 89,
-                "wasteType": "General",
-                "size": "",
-                "containerType": " ",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 90,
-                "wasteType": "General",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 91,
-                "wasteType": "General",
-                "size": "3 m3",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 92,
-                "wasteType": "Biowaste",
-                "size": "100 l",
-                "containerType": "säkki ",
-                "owner": "-",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 93,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 5,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 53,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 09:36"
+          },
+          {
+            "id": 54,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 4:49"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 10,
+    "address": "METALLIMIEHENKUJA 10, 02150, Espoo",
+    "lat": 60.18253,
+    "lon": 24.83028,
+    "trashbins": [
+      {
         "id": 28,
-        "address": "TEKNIIKANTIE 3, 02150, Espoo",
-        "lat": 60.18094,
-        "lon": 24.82537,
-        "trashbins": [
-            {
-                "id": 94,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko to vko 1,3",
-                "nextPickup": "21.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 95,
-                "wasteType": "Biowaste",
-                "size": "140 l laitosbio",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "3 krt/viikko ma ke pe",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 55,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:41"
+          },
+          {
+            "id": 56,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 18:31"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 11,
+    "address": "METALLIMIEHENKUJA 4, 02150, Espoo",
+    "lat": 60.18343,
+    "lon": 24.82904,
+    "trashbins": [
+      {
         "id": 29,
-        "address": "TIETOTIE 1, 02150, Espoo",
-        "lat": 60.18561,
-        "lon": 24.81956,
-        "trashbins": [
-            {
-                "id": 96,
-                "wasteType": "General",
-                "size": "",
-                "containerType": " ",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ke",
-                "nextPickup": "13.02.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            },
-            {
-                "id": 97,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko to",
-                "nextPickup": "14.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 98,
-                "wasteType": "Biowaste",
-                "size": "240 l",
-                "containerType": "astia ",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ma",
-                "nextPickup": "18.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "3 m3",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 57,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:06"
+          },
+          {
+            "id": 58,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 5:30"
+          }
+        ]
+      },
+      {
         "id": 30,
-        "address": "VUORIMIEHENTIE 1, 02150, Espoo",
-        "lat": 60.18167,
-        "lon": 24.82504,
-        "trashbins": [
-            {
-                "id": 99,
-                "wasteType": "Plastic",
-                "size": "",
-                "containerType": " ",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 4. viikko ti vko 3",
-                "nextPickup": "05.03.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 100,
-                "wasteType": "General",
-                "size": "660 l",
-                "containerType": "astia isopyöräinen",
-                "owner": "Vuokra",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko to vko 1,3",
-                "nextPickup": "21.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 101,
-                "wasteType": "Plastic",
-                "size": "",
-                "containerType": " ",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 4. viikko ti vko 3",
-                "nextPickup": "05.03.19",
-                "fillStatus": 100,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    },
-    {
+        "wasteType": "General",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 59,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 17:29"
+          },
+          {
+            "id": 60,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 9:25"
+          }
+        ]
+      },
+      {
         "id": 31,
-        "address": "VUORIMIEHENTIE 2, 02150, Espoo",
-        "lat": 60.18289,
-        "lon": 24.82484,
-        "trashbins": [
-            {
-                "id": 102,
-                "wasteType": "General",
-                "size": "2 m3",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": true
-            },
-            {
-                "id": 103,
-                "wasteType": "General",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 104,
-                "wasteType": "Biowaste",
-                "size": "800 l",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 105,
-                "wasteType": "Biowaste",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 106,
-                "wasteType": "General",
-                "size": "2 m3",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 107,
-                "wasteType": "General",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "1 krt/viikko ti",
-                "nextPickup": "12.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 108,
-                "wasteType": "Biowaste",
-                "size": "paino",
-                "containerType": "punnittu syväsäiliö",
-                "owner": "-",
-                "count": 0,
-                "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            },
-            {
-                "id": 109,
-                "wasteType": "Biowaste",
-                "size": "800 l",
-                "containerType": "syväsäiliö nosturikuormattava",
-                "owner": "Kiinteistö",
-                "count": 1,
-                "collectionInterval": "joka 2. viikko pe vko 2,4",
-                "nextPickup": "15.02.19",
-                "fillStatus": 0,
-                "pickupOverdue": false
-            }
-        ],
-        "customer": "Aalto University"
-    }
+        "wasteType": "Biowaste",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 2. viikko pe vko 2,4",
+        "nextPickup": "21.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 61,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 15:46"
+          },
+          {
+            "id": 62,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 16:29"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "wasteType": "Biowaste",
+        "size": "800 l",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 2,
+        "collectionInterval": "joka 2. viikko pe vko 2,4",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 63,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 18:45"
+          },
+          {
+            "id": 64,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 4:09"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 12,
+    "address": "METSÄHOVINTIE 114, 02540, Kirkkonummi",
+    "lat": 60.2189046,
+    "lon": 24.3934467,
+    "trashbins": [
+      {
+        "id": 33,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko ke vko 1,3",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 65,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 11:48"
+          },
+          {
+            "id": 66,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 7:51"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "wasteType": "Cardboard",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "joka 4. viikko ti vko 3",
+        "nextPickup": "20.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 67,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:47"
+          },
+          {
+            "id": 68,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 15:17"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 13,
+    "address": "OTAKAARI 1, 02150, Espoo",
+    "lat": 60.18609,
+    "lon": 24.82829,
+    "trashbins": [
+      {
+        "id": 35,
+        "wasteType": "General",
+        "size": "600 l",
+        "containerType": "astia pyörällinen",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "3 krt/viikko ma ke pe",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 69,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 18:44"
+          },
+          {
+            "id": 70,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 9:40"
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 10,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 71,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 14:44"
+          },
+          {
+            "id": 72,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 14:46"
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 10,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 73,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 12:55"
+          },
+          {
+            "id": 74,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 6:11"
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 75,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:57"
+          },
+          {
+            "id": 76,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 11:42"
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "wasteType": "Biowaste",
+        "size": "200 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 77,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 18:29"
+          },
+          {
+            "id": 78,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 11:36"
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "wasteType": "Biowaste",
+        "size": "240 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 79,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:25"
+          },
+          {
+            "id": 80,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 15:49"
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "wasteType": "Biowaste",
+        "size": "240 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 81,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 5:38"
+          },
+          {
+            "id": 82,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 16:35"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "wasteType": "Biowaste",
+        "size": "200 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 83,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 10:39"
+          },
+          {
+            "id": 84,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 18:19"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 14,
+    "address": "OTAKAARI 24, 02150, Espoo",
+    "lat": 60.18521,
+    "lon": 24.83233,
+    "trashbins": [
+      {
+        "id": 43,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia pienipyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 85,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 8:34"
+          },
+          {
+            "id": 86,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 12:49"
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "wasteType": "Biowaste",
+        "size": "140 l",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 3,
+        "collectionInterval": "astiavuokra",
+        "nextPickup": "",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 87,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 16:16"
+          },
+          {
+            "id": 88,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 17:12"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "wasteType": "Biowaste",
+        "size": "paino",
+        "containerType": "puristinsäiliö vaihtolava",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 2. viikko ke vko 2,4",
+        "nextPickup": "20.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 89,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 16:43"
+          },
+          {
+            "id": 90,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 9:38"
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "wasteType": "Biowaste",
+        "size": "12 m3",
+        "containerType": "puristinsäiliö isokoukku",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko ke vko 2,4",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 91,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 12:17"
+          },
+          {
+            "id": 92,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 18:48"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 15,
+    "address": "OTAKAARI 3, 02150, Espoo",
+    "lat": 60.1883045,
+    "lon": 24.8292797,
+    "trashbins": [
+      {
+        "id": 47,
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 12,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 93,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:41"
+          },
+          {
+            "id": 94,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 14:10"
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 12,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 95,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:26"
+          },
+          {
+            "id": 96,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 16:57"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 16,
+    "address": "OTAKAARI 4, 02150, Espoo",
+    "lat": 60.18719,
+    "lon": 24.82684,
+    "trashbins": [
+      {
+        "id": 49,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko ke vko 1,3",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 97,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 12:45"
+          },
+          {
+            "id": 98,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 5:03"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 3,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "19.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 99,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:42"
+          },
+          {
+            "id": 100,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 14:10"
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 3,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 101,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 14:17"
+          },
+          {
+            "id": 102,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 11:48"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 17,
+    "address": "OTAKAARI 5, 02150, Espoo",
+    "lat": 60.18903,
+    "lon": 24.83165,
+    "trashbins": [
+      {
+        "id": 52,
+        "wasteType": "General",
+        "size": "",
+        "containerType": " ",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": " ti",
+        "nextPickup": "",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 103,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 16:28"
+          },
+          {
+            "id": 104,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 9:28"
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "wasteType": "Biowaste",
+        "size": "",
+        "containerType": " ",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": " pe",
+        "nextPickup": "",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 105,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 6:14"
+          },
+          {
+            "id": 106,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 14:58"
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 107,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 10:58"
+          },
+          {
+            "id": 108,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 11:31"
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "18.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 109,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 15:29"
+          },
+          {
+            "id": 110,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 6:23"
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 4,
+        "collectionInterval": "1 krt/viikko ke",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 111,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 14:47"
+          },
+          {
+            "id": 112,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 8:40"
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "wasteType": "Biowaste",
+        "size": "140 l",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 4,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 113,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 12:52"
+          },
+          {
+            "id": 114,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 13:09"
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 4,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "21.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 115,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:17"
+          },
+          {
+            "id": 116,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 16:49"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 18,
+    "address": "OTAKAARI 7, 02150, Espoo",
+    "lat": 60.18902,
+    "lon": 24.83316,
+    "trashbins": [
+      {
+        "id": 59,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "15.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 117,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 10:31"
+          },
+          {
+            "id": 118,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 7:04"
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "wasteType": "Biowaste",
+        "size": "200 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 119,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 10:25"
+          },
+          {
+            "id": 120,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 5:27"
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "wasteType": "Biowaste",
+        "size": "240 l",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 121,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 15:05"
+          },
+          {
+            "id": 122,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 14:13"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 19,
+    "address": "OTAKAARI 8, 02150, Espoo",
+    "lat": 60.1885502,
+    "lon": 24.8290554,
+    "trashbins": [
+      {
+        "id": 62,
+        "wasteType": "General",
+        "size": "6 m3",
+        "containerType": "etukontti umpisäiliö",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko ma vko 1,3",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 123,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 16:19"
+          },
+          {
+            "id": 124,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 9:10"
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "wasteType": "General",
+        "size": "paino",
+        "containerType": "punnittu etukontti",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 2. viikko ma vko 1,3",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 125,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 15:50"
+          },
+          {
+            "id": 126,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 7:19"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 20,
+    "address": "OTANIEMENTIE 9, 02150, Espoo",
+    "lat": 60.1836131,
+    "lon": 24.8308962,
+    "trashbins": [
+      {
+        "id": 64,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Kiinteistö",
+        "count": 2,
+        "collectionInterval": "2 krt/viikko ma to",
+        "nextPickup": "20.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 127,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:58"
+          },
+          {
+            "id": 128,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 4:22"
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Kiinteistö",
+        "count": 3,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "21.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 129,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 09:48"
+          },
+          {
+            "id": 130,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 10:16"
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 3,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 131,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 12:36"
+          },
+          {
+            "id": 132,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 15:42"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 21,
+    "address": "PUUMIEHENKUJA 2, 02150, Espoo",
+    "lat": 60.18696,
+    "lon": 24.82498,
+    "trashbins": [
+      {
+        "id": 67,
+        "wasteType": "General",
+        "size": "",
+        "containerType": " ",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ke",
+        "nextPickup": "15.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 133,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 4:05"
+          },
+          {
+            "id": 134,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 18:06"
+          }
+        ]
+      },
+      {
+        "id": 68,
+        "wasteType": "General",
+        "size": "2 m3",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "21.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 135,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 6:21"
+          },
+          {
+            "id": 136,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 6:03"
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "wasteType": "General",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "21.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 137,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 15:51"
+          },
+          {
+            "id": 138,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 5:18"
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "wasteType": "Biowaste",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 4. viikko pe vko 1",
+        "nextPickup": "19.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 139,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 4:04"
+          },
+          {
+            "id": 140,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 18:34"
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "wasteType": "Biowaste",
+        "size": "800 l",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "joka 4. viikko pe vko 1",
+        "nextPickup": "20.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 141,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 09:32"
+          },
+          {
+            "id": 142,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 6:35"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 22,
+    "address": "PUUMIEHENKUJA 3, 02150, Espoo",
+    "lat": 60.18785,
+    "lon": 24.82533,
+    "trashbins": [
+      {
+        "id": 72,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ke",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 143,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 12:20"
+          },
+          {
+            "id": 144,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 16:10"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 23,
+    "address": "PUUMIEHENKUJA 5, 02150, Espoo",
+    "lat": 60.18842,
+    "lon": 24.8246,
+    "trashbins": [
+      {
+        "id": 73,
+        "wasteType": "General",
+        "size": "",
+        "containerType": " ",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ke",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 145,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 16:14"
+          },
+          {
+            "id": 146,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 10:35"
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "wasteType": "General",
+        "size": "2 m3",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 147,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 8:37"
+          },
+          {
+            "id": 148,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 15:25"
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "wasteType": "General",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 149,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 4:59"
+          },
+          {
+            "id": 150,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 17:49"
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "wasteType": "Cardboard",
+        "size": "3 m3",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko ma vko 1,3",
+        "nextPickup": "19.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 151,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 15:01"
+          },
+          {
+            "id": 152,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 9:05"
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "wasteType": "Cardboard",
+        "size": "paino",
+        "containerType": "punnittu Cardboard",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 2. viikko ma vko 1,3",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 153,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 14:07"
+          },
+          {
+            "id": 154,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 15:32"
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "wasteType": "Biowaste",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 4. viikko pe vko 1",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 155,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 18:35"
+          },
+          {
+            "id": 156,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 6:45"
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "wasteType": "Biowaste",
+        "size": "800 l",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "joka 4. viikko pe vko 1",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 157,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 9:19"
+          },
+          {
+            "id": 158,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 9:26"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 24,
+    "address": "RAKENTAJANAUKIO 4, 02150, Espoo",
+    "lat": 60.18738,
+    "lon": 24.83049,
+    "trashbins": [
+      {
+        "id": 80,
+        "wasteType": "Biowaste",
+        "size": "140 l",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "21.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 159,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 7:16"
+          },
+          {
+            "id": 160,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 6:24"
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 161,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:47"
+          },
+          {
+            "id": 162,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 9:42"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 25,
+    "address": "RUNEBERGINKATU 14-16, 00100, Helsinki",
+    "lat": 60.17186,
+    "lon": 24.92289,
+    "trashbins": [
+      {
+        "id": 82,
+        "wasteType": "General",
+        "size": "paino",
+        "containerType": "puristinsäiliö vaihtolava",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 2. viikko ti vko 2,4",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 163,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 4:06"
+          },
+          {
+            "id": 164,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 12:16"
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "wasteType": "General",
+        "size": "12 m3",
+        "containerType": "puristinsäiliö pikkukoukku",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko ti vko 2,4",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 165,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:29"
+          },
+          {
+            "id": 166,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 13:13"
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "wasteType": "Biowaste",
+        "size": "140 l",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "astiavuokra",
+        "nextPickup": "",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 167,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 11:06"
+          },
+          {
+            "id": 168,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 4:44"
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "wasteType": "Biowaste",
+        "size": "paino",
+        "containerType": "puristinsäiliö vaihtolava",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 169,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 15:28"
+          },
+          {
+            "id": 170,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 17:50"
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "wasteType": "Biowaste",
+        "size": "8 m3",
+        "containerType": "lava pikkukoukku",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 171,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 14:38"
+          },
+          {
+            "id": 172,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 12:14"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 26,
+    "address": "SÄHKÖMIEHENTIE 3, 02150, Espoo",
+    "lat": 60.18925,
+    "lon": 24.82621,
+    "trashbins": [
+      {
+        "id": 87,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 173,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 13:31"
+          },
+          {
+            "id": 174,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 8:51"
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 2,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 175,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 4:00"
+          },
+          {
+            "id": 176,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 11:32"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 27,
+    "address": "SÄHKÖMIEHENTIE 4, 02150, Espoo",
+    "lat": 60.18875,
+    "lon": 24.82571,
+    "trashbins": [
+      {
+        "id": 89,
+        "wasteType": "General",
+        "size": "",
+        "containerType": " ",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ke",
+        "nextPickup": "21.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 177,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:09"
+          },
+          {
+            "id": 178,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 10:05"
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "wasteType": "General",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "19.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 179,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 10:47"
+          },
+          {
+            "id": 180,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 7:30"
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "wasteType": "General",
+        "size": "3 m3",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 181,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 14:30"
+          },
+          {
+            "id": 182,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 13:50"
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "wasteType": "Biowaste",
+        "size": "100 l",
+        "containerType": "säkki ",
+        "owner": "-",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 183,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 16:58"
+          },
+          {
+            "id": 184,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 4:57"
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 185,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 10:42"
+          },
+          {
+            "id": 186,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 4:13"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 28,
+    "address": "TEKNIIKANTIE 3, 02150, Espoo",
+    "lat": 60.18094,
+    "lon": 24.82537,
+    "trashbins": [
+      {
+        "id": 94,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko to vko 1,3",
+        "nextPickup": "21.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 187,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:52"
+          },
+          {
+            "id": 188,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Thu 14.03. 18:11"
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "wasteType": "Biowaste",
+        "size": "140 l laitosbio",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 189,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 10:37"
+          },
+          {
+            "id": 190,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 17:48"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 29,
+    "address": "TIETOTIE 1, 02150, Espoo",
+    "lat": 60.18561,
+    "lon": 24.81956,
+    "trashbins": [
+      {
+        "id": 96,
+        "wasteType": "General",
+        "size": "",
+        "containerType": " ",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ke",
+        "nextPickup": "20.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 191,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 15:55"
+          },
+          {
+            "id": 192,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 5:55"
+          }
+        ]
+      },
+      {
+        "id": 97,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko to",
+        "nextPickup": "18.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 193,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 12:12"
+          },
+          {
+            "id": 194,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Mon 11.03. 8:43"
+          }
+        ]
+      },
+      {
+        "id": 98,
+        "wasteType": "Biowaste",
+        "size": "240 l",
+        "containerType": "astia ",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ma",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 195,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:37"
+          },
+          {
+            "id": 196,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 6:07"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 30,
+    "address": "VUORIMIEHENTIE 1, 02150, Espoo",
+    "lat": 60.18167,
+    "lon": 24.82504,
+    "trashbins": [
+      {
+        "id": 99,
+        "wasteType": "Plastic",
+        "size": "",
+        "containerType": " ",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 4. viikko ti vko 3",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 197,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 17:21"
+          },
+          {
+            "id": 198,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 18:43"
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "wasteType": "General",
+        "size": "660 l",
+        "containerType": "astia isopyöräinen",
+        "owner": "Vuokra",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko to vko 1,3",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 199,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 10:14"
+          },
+          {
+            "id": 200,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 17:31"
+          }
+        ]
+      },
+      {
+        "id": 101,
+        "wasteType": "Plastic",
+        "size": "",
+        "containerType": " ",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 4. viikko ti vko 3",
+        "nextPickup": "15.03.19",
+        "fillStatus": 100,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 201,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 13:10"
+          },
+          {
+            "id": 202,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 4:19"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  },
+  {
+    "id": 31,
+    "address": "VUORIMIEHENTIE 2, 02150, Espoo",
+    "lat": 60.18289,
+    "lon": 24.82484,
+    "trashbins": [
+      {
+        "id": 102,
+        "wasteType": "General",
+        "size": "2 m3",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": true,
+        "sensors": [
+          {
+            "id": 203,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 12:48"
+          },
+          {
+            "id": 204,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 15:23"
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "wasteType": "General",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 205,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 10:25"
+          },
+          {
+            "id": 206,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 17:49"
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "wasteType": "Biowaste",
+        "size": "800 l",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko pe vko 2,4",
+        "nextPickup": "19.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 207,
+            "position": "top",
+            "state": 0,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 13:17"
+          },
+          {
+            "id": 208,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Tue 12.03. 16:47"
+          }
+        ]
+      },
+      {
+        "id": 105,
+        "wasteType": "Biowaste",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 2. viikko pe vko 2,4",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 209,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 7:52"
+          },
+          {
+            "id": 210,
+            "position": "bottom",
+            "state": 0,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 4:32"
+          }
+        ]
+      },
+      {
+        "id": 106,
+        "wasteType": "General",
+        "size": "2 m3",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 211,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Thu 14.03. 8:17"
+          },
+          {
+            "id": 212,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 16:52"
+          }
+        ]
+      },
+      {
+        "id": 107,
+        "wasteType": "General",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "1 krt/viikko ti",
+        "nextPickup": "15.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 213,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:26"
+          },
+          {
+            "id": 214,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Fri 08.03. 7:26"
+          }
+        ]
+      },
+      {
+        "id": 108,
+        "wasteType": "Biowaste",
+        "size": "paino",
+        "containerType": "punnittu syväsäiliö",
+        "owner": "-",
+        "count": 0,
+        "collectionInterval": "joka 2. viikko pe vko 2,4",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 215,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Fri 15.03. 11:48"
+          },
+          {
+            "id": 216,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 15:28"
+          }
+        ]
+      },
+      {
+        "id": 109,
+        "wasteType": "Biowaste",
+        "size": "800 l",
+        "containerType": "syväsäiliö nosturikuormattava",
+        "owner": "Kiinteistö",
+        "count": 1,
+        "collectionInterval": "joka 2. viikko pe vko 2,4",
+        "nextPickup": "20.03.19",
+        "fillStatus": 0,
+        "pickupOverdue": false,
+        "sensors": [
+          {
+            "id": 217,
+            "position": "top",
+            "state": 1,
+            "type": "opened",
+            "lastEvent": "Wed 13.03. 8:58"
+          },
+          {
+            "id": 218,
+            "position": "bottom",
+            "state": 1,
+            "type": "emptied",
+            "lastEvent": "Wed 13.03. 11:40"
+          }
+        ]
+      }
+    ],
+    "customer": "Aalto University"
+  }
 ]

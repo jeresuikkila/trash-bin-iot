@@ -35,33 +35,37 @@
   cursor: pointer;
   background: #59a9b1;
   border-radius: 50%;
-
 }
 
 .back-arrow {
-    position: relative;
-    height: 20px;
-    width: 25px;
-    top: -2px;
+  position: relative;
+  height: 20px;
+  width: 25px;
+  top: -2px;
 }
 
 .address {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    font-family: Source Sans Pro;
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: 0.03em;
-    color: #19A2A9;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  color: #19a2a9;
 }
 
 .owner-text {
-    position: absolute;
-    left: 20px;
-    top: 32px;
-    font-family: Source Sans Pro;
-    font-size: 18px;
-    letter-spacing: 0.03em;
-    color: #19A2A9;
+  position: absolute;
+  left: 20px;
+  top: 32px;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: #19a2a9;
+}
+
+.type-accordion {
+  position: relative;
+  top: 80px;
 }
