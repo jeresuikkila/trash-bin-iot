@@ -8,6 +8,7 @@
     border-radius: 15px;
     margin-bottom: 15px;
     background: linear-gradient(90deg, #19A2A9 -13.26%, #52BAC3 42.8%, #67C3CC 63.16%, #7ED4DC 122.35%);
+    user-select: none;
 }
 
 .sidebar-title {

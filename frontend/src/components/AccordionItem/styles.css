@@ -7,6 +7,7 @@
   line-height: normal;
   font-size: 18px;
   color: #ffffff;
+  user-select: none;
 }
 
 .card-body {
@@ -33,7 +34,7 @@
   width: 11px;
   height: 9px;
   top: 30px;
-  left: 295px;
+  left: 300px;
 }
 
 .alert {
@@ -44,78 +45,31 @@ right: 277px;
 top: 13px;
 }
 
-.card-header-general {
+.card-header {
+  height: 70px;
+  padding: 0px;
+}
+
+.general {
   background: #c4c4c4;
-  height: 70px;
 }
 
-.card-header-cardboard {
+.cardboard {
   background: #2a6aa2;
-  height: 70px;
 }
 
-.card-header-plastic {
+.plastic {
   background: #e87620;
-  height: 70px;
 }
 
-.card-header-glass {
+.glass {
   background: #2a6aa2;
-  height: 70px;
 }
 
-.card-header-metal {
+.metal {
   background: #2a6aa2;
-  height: 70px;
 }
 
-.card-header-biowaste {
+.biowaste {
   background: #715e55;
-  height: 70px;
-}
-
-.trashbin-icon {
-  position: relative;
-  width: 20px;
-  height: 18.5px;
-  top: 21px;
-}
-
-.bin-full {
-  position: relative;
-  left: 70px;
-}
-
-.bin-ok {
-  position: relative;
-  left: 95px;
-}
-
-.number-text {
-  font-family: Source Sans Pro;
-  font-size: 13px;
-  position:absolute;
-  text-align:center;
-  width: 20px;
-  height: 20px;
-  top: 25px;
-}
-
-.number-full {
-  color: #FFFFFF;
-  left: 70px;
-  
-}
-
-.number-ok {
-  color: #8f8e8e;
-  left: 95px;
-}
-
-.number-container {
-  position: absolute;
-  height: 70px;
-  width: 150px;
-  left: 175px;
-  top: 0px;
 }
