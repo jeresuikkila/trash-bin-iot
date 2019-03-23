@@ -32,13 +32,14 @@ const AccordionItem = ({
           <div className={ `card-header-${ type.toLowerCase() }` } id={ `${ type + locationId }-heading` } data-toggle="collapse" data-target={ `#${ type }${ locationId }` } aria-expanded="false" aria-controls={ type + locationId }>
               <img src={ icons[ type ] } className="type-icon" alt="type" />
               <p className="header-title">{type.toUpperCase()}</p>
+              <img src={ accordionArrow } className="arrow" alt="arrow" />
               <div className="number-container">
-                <img src={ trashbinFull } className="trashbin-icon bin-full" alt="full-trash-icon" />
-                <div className="number-text number-full">{fullTrashbins}</div>
+                  <img src={ trashbinFull } className="trashbin-icon bin-full" alt="full-trash-icon" />
+                  <div className="number-text number-full">{fullTrashbins}</div>
               </div>
               <div className="number-container">
-                <img src={ trashbinOk } className="trashbin-icon bin-ok" alt="ok-trash-icon" />
-                <div className="number-text number-ok">{okTrashbins}</div>
+                  <img src={ trashbinOk } className="trashbin-icon bin-ok" alt="ok-trash-icon" />
+                  <div className="number-text number-ok">{okTrashbins}</div>
               </div>
               {overflowTypes.includes(type) && <img src={ alert } className="alert" alt="alert" />}
           </div>

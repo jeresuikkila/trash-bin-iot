@@ -32,8 +32,8 @@
   position: absolute;
   width: 11px;
   height: 9px;
-  left: 210px;
-  top: 7px;
+  top: 30px;
+  left: 295px;
 }
 
 .alert {
@@ -78,17 +78,17 @@ top: 13px;
   position: relative;
   width: 20px;
   height: 18.5px;
-  top: 20px;
+  top: 21px;
 }
 
 .bin-full {
   position: relative;
-  left: 80px;
+  left: 70px;
 }
 
 .bin-ok {
   position: relative;
-  left: 105px;
+  left: 95px;
 }
 
 .number-text {
@@ -103,13 +103,13 @@ top: 13px;
 
 .number-full {
   color: #FFFFFF;
-  left: 80px;
+  left: 70px;
   
 }
 
 .number-ok {
   color: #8f8e8e;
-  left: 105px;
+  left: 95px;
 }
 
 .number-container {
