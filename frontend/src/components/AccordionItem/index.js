@@ -1,5 +1,6 @@
 import React from 'react';
 import AccordionBin from '../AccordionBin';
+import TrashbinIcon from '../TrashBinIcon';
 import './styles.css'
 import biowaste from '../../static/biowaste.png';
 import cardboard from '../../static/carton.png';
@@ -8,8 +9,6 @@ import general from '../../static/general.png';
 import glass from '../../static/glass.png';
 import plastic from '../../static/plastic.png';
 import accordionArrow from '../../static/accordion-arrow.png'
-// import trashbinOk from '../../static/trashbin-white.png';
-// import trashbinFull from '../../static/trashbin-orange.png';
 import alert from '../../static/alert.png';
 
 const icons = {
@@ -25,12 +24,18 @@ const AccordionItem = ({
   trashbins, type, locationId, overflowTypes,
 }) => (
     <div className="card">
-        <div className={ `card-header-${ type.toLowerCase() }` } id={ `${ type + locationId }-heading` } data-toggle="collapse" data-target={ `#${ type }${ locationId }` } aria-expanded="false" aria-controls={ type + locationId }>
+        <div className={ `card-header ${ type.toLowerCase() }` } id={ `${ type + locationId }-heading` } data-toggle="collapse" data-target={ `#${ type }${ locationId }` } aria-expanded="false" aria-controls={ type + locationId }>
             <img src={ icons[ type ] } className="type-icon" alt="type" />
-            <p className="header-title">
-                {type.toUpperCase()}
-                <img src={ accordionArrow } className="arrow" alt="arrow" />
-            </p>
+            <p className="header-title">{type.toUpperCase()}</p>
+            <img src={ accordionArrow } className="arrow" alt="arrow" />
+            <TrashbinIcon
+              trashbins={ trashbins }
+              status="full"
+            />
+            <TrashbinIcon
+              trashbins={ trashbins }
+              status="ok"
+            />
             {overflowTypes.includes(type) && <img src={ alert } className="alert" alt="alert" />}
         </div>
         <div id={ type + locationId } className="collapse" aria-labelledby={ `${ type + locationId }-heading` } data-parent={ `#accordion${ locationId }` }>

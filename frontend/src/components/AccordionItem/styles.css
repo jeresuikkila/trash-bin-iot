@@ -7,6 +7,7 @@
   line-height: normal;
   font-size: 18px;
   color: #ffffff;
+  user-select: none;
 }
 
 .card-body {
@@ -32,8 +33,8 @@
   position: absolute;
   width: 11px;
   height: 9px;
-  left: 210px;
-  top: 7px;
+  top: 30px;
+  left: 300px;
 }
 
 .alert {
@@ -44,32 +45,31 @@ right: 277px;
 top: 13px;
 }
 
-.card-header-general {
+.card-header {
+  height: 70px;
+  padding: 0px;
+}
+
+.general {
   background: #c4c4c4;
-  height: 70px;
 }
 
-.card-header-cardboard {
+.cardboard {
   background: #2a6aa2;
-  height: 70px;
 }
 
-.card-header-plastic {
+.plastic {
   background: #e87620;
-  height: 70px;
 }
 
-.card-header-glass {
+.glass {
   background: #2a6aa2;
-  height: 70px;
 }
 
-.card-header-metal {
+.metal {
   background: #2a6aa2;
-  height: 70px;
 }
 
-.card-header-biowaste {
+.biowaste {
   background: #715e55;
-  height: 70px;
 }
