@@ -34,7 +34,6 @@ class MarkerWithInfoBox extends React.Component {
     address = address.split(',')[ 0 ].toLowerCase()
     address = address.charAt(0).toUpperCase() + address.slice(1)
 
-    // loc.filter(loc => loc.trashbins.filter(bin => bin.pickupOverdue === true).length !== 0);
     const trashBinsWithOverflow = trashBins.map( (bin) => {
       if (overflowTypes.includes(bin.type)) {
         bin.overflowStatus = true
