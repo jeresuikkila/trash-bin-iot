@@ -1,5 +1,9 @@
 /*
-  Helper function to create unions of arrays using Set theory
+  Functions below are mainly helper functions that are used to
+  create functionality to Location Status checkboxes on the Map sidebar
+
+  arrUnion is a helper function to create unions of arrays using Set theory
+  https://en.wikipedia.org/wiki/Set_theory
   i.e [1,2,3]u[2,3,5] = [1,2,3,5]
   */
 export function arrUnion(a, b) {
@@ -13,7 +17,7 @@ export function arrUnion(a, b) {
   return res;
 }
 
-// Operate arrays using Set theory, https://en.wikipedia.org/wiki/Set_theory
+// Operate arrays using Set theory
 export function getNoIssueLocations(locations) {
   const origLocations = locations;
   const overdueLocations = getOverdueLocations(locations);
@@ -40,7 +44,7 @@ export function getNoIssueLocations(locations) {
   return locations.filter(loc => noIssueIds.includes(loc.id));
 }
 
-// finds locations which are flagged overduw in database
+// finds locations which are flagged overdue in database
 export function getOverdueLocations(loc) {
   return loc.filter(loc => loc.trashbins.filter(bin => bin.pickupOverdue === true).length !== 0);
 }

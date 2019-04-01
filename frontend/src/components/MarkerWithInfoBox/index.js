@@ -34,6 +34,7 @@ class MarkerWithInfoBox extends React.Component {
     address = address.split(',')[ 0 ].toLowerCase()
     address = address.charAt(0).toUpperCase() + address.slice(1)
 
+    // loc.filter(loc => loc.trashbins.filter(bin => bin.pickupOverdue === true).length !== 0);
     const trashBinsWithOverflow = trashBins.map( (bin) => {
       if (overflowTypes.includes(bin.type)) {
         bin.overflowStatus = true
@@ -68,7 +69,17 @@ class MarkerWithInfoBox extends React.Component {
                     </div>
                     <div className="type-icon-container">
                         {
-                      trashBinsWithOverflow.map((bin, i) => (
+                      trashBinsWithOverflow.filter(bin => bin.fillStatus === 100).map((bin, i) => (
+                          <InfoBoxItem
+                            type={ bin.type }
+                            fillStatus={ bin.fillStatus }
+                            overflowStatus={ bin.overflowStatus }
+                            key={ i }
+                          />
+                      ))
+                    }
+                        {
+                      trashBinsWithOverflow.filter(bin => bin.fillStatus !== 100).map((bin, i) => (
                           <InfoBoxItem
                             type={ bin.type }
                             fillStatus={ bin.fillStatus }
