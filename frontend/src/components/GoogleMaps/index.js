@@ -33,7 +33,10 @@ const GoogleMaps = compose(
         lng: 24.82339,
       } }
       defaultOptions={ {
-        styles: styledMap, streetViewControl: false, mapTypeControl: false,
+        styles: styledMap,
+        streetViewControl: false,
+        mapTypeControl: false,
+        fullscreenControl: false,
       } } // load custom map style and disable street view
     >
         { props.locations.map( location => ( // map locations and statuses to create markers
