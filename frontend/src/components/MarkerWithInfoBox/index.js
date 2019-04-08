@@ -10,6 +10,7 @@ class MarkerWithInfoBox extends React.Component {
     super();
     this.state = {
       isOpen: false,
+	  wasteTypes: ['General', 'Biowaste', 'Cardboard', 'Plastic', 'Glass', 'Metal']
     }
     this.onToggleOpen = this.onToggleOpen.bind(this);
   }
@@ -21,6 +22,16 @@ class MarkerWithInfoBox extends React.Component {
     });
   }
 
+  getAllIcons(trashBinsWithOverflow) {
+    var i = 1;
+	var starter = this.getIcons(trashBinsWithOverflow, this.state.wasteTypes[0])
+	for(i; i<6; i++) {
+		starter.push(this.getIcons(trashBinsWithOverflow, this.state.wasteTypes[i]))
+	}
+	console.log(starter);
+	return starter;
+  }
+
   getIcons(trashBinsWithOverflow, trashtype) {
     const a1 = this.iconsFull(trashBinsWithOverflow, trashtype);
     const a2 = this.iconsNotFull(trashBinsWithOverflow, trashtype);
@@ -29,8 +40,8 @@ class MarkerWithInfoBox extends React.Component {
   }
 
   iconsFull(trashBinsWithOverflow, trashtype) {
-    return trashBinsWithOverflow.filter(bin => bin.fillStatus === 100
-                                               && bin.type === trashtype).map((bin, i) => (
+    return trashBinsWithOverflow.filter(bin => bin.fillStatus === 100 &&
+                                               bin.type === trashtype).map((bin, i) => (
                                                    <InfoBoxItem
                                                      type={ bin.type }
                                                      fillStatus={ bin.fillStatus }
@@ -41,8 +52,8 @@ class MarkerWithInfoBox extends React.Component {
   }
 
   iconsNotFull(trashBinsWithOverflow, trashtype) {
-    return trashBinsWithOverflow.filter(bin => bin.fillStatus !== 100
-                                               && bin.type === trashtype).map((bin, i) => (
+    return trashBinsWithOverflow.filter(bin => bin.fillStatus !== 100 &&
+                                               bin.type === trashtype).map((bin, i) => (
                                                    <InfoBoxItem
                                                      type={ bin.type }
                                                      fillStatus={ bin.fillStatus }
@@ -98,12 +109,7 @@ class MarkerWithInfoBox extends React.Component {
                         <p className="address-text">{address}</p>
                     </div>
                     <div className="type-icon-container">
-                        {this.getIcons(trashBinsWithOverflow, 'General' )}
-                        {this.getIcons(trashBinsWithOverflow, 'Biowaste' )}
-                        {this.getIcons(trashBinsWithOverflow, 'Cardboard')}
-                        {this.getIcons(trashBinsWithOverflow, 'Plastic' )}
-                        {this.getIcons(trashBinsWithOverflow, 'Glass' )}
-                        {this.getIcons(trashBinsWithOverflow, 'Metal' )}
+                        {this.getAllIcons(trashBinsWithOverflow)}
                     </div>
                 </div>
             </InfoBox>
