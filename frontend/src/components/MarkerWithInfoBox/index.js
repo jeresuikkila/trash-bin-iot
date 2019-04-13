@@ -22,34 +22,26 @@ class MarkerWithInfoBox extends React.Component {
   }
 
   getIcons(trashBinsWithOverflow, trashtype) {
-    const a1 = this.iconsFull(trashBinsWithOverflow, trashtype);
-    const a2 = this.iconsNotFull(trashBinsWithOverflow, trashtype);
+    const a1 = trashBinsWithOverflow.filter(bin => bin.fillStatus === 100
+                                               && bin.type === trashtype).map((bin, i) => (
+                                                   <InfoBoxItem
+                                                     type={ bin.type }
+                                                     fillStatus={ bin.fillStatus }
+                                                     overflowStatus={ bin.overflowStatus }
+                                                     key={ i }
+                                                   />
+    ));
+    const a2 = trashBinsWithOverflow.filter(bin => bin.fillStatus !== 100
+                                               && bin.type === trashtype).map((bin, i) => (
+                                                   <InfoBoxItem
+                                                     type={ bin.type }
+                                                     fillStatus={ bin.fillStatus }
+                                                     overflowStatus={ bin.overflowStatus }
+                                                     key={ i }
+                                                   />
+    ));
     a1.push(a2);
     return (a1 );
-  }
-
-  iconsFull(trashBinsWithOverflow, trashtype) {
-    return trashBinsWithOverflow.filter(bin => bin.fillStatus === 100
-                                               && bin.type === trashtype).map((bin, i) => (
-                                                   <InfoBoxItem
-                                                     type={ bin.type }
-                                                     fillStatus={ bin.fillStatus }
-                                                     overflowStatus={ bin.overflowStatus }
-                                                     key={ i }
-                                                   />
-    ));
-  }
-
-  iconsNotFull(trashBinsWithOverflow, trashtype) {
-    return trashBinsWithOverflow.filter(bin => bin.fillStatus !== 100
-                                               && bin.type === trashtype).map((bin, i) => (
-                                                   <InfoBoxItem
-                                                     type={ bin.type }
-                                                     fillStatus={ bin.fillStatus }
-                                                     overflowStatus={ bin.overflowStatus }
-                                                     key={ i }
-                                                   />
-    ));
   }
 
   offsetCounter(trashBins, markerSize) {
