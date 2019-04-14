@@ -21,6 +21,29 @@ class MarkerWithInfoBox extends React.Component {
     });
   }
 
+  getIcons(trashBinsWithOverflow, trashtype) {
+    const a1 = trashBinsWithOverflow.filter(bin => bin.fillStatus === 100
+                                               && bin.type === trashtype).map((bin, i) => (
+                                                   <InfoBoxItem
+                                                     type={ bin.type }
+                                                     fillStatus={ bin.fillStatus }
+                                                     overflowStatus={ bin.overflowStatus }
+                                                     key={ i }
+                                                   />
+    ));
+    const a2 = trashBinsWithOverflow.filter(bin => bin.fillStatus !== 100
+                                               && bin.type === trashtype).map((bin, i) => (
+                                                   <InfoBoxItem
+                                                     type={ bin.type }
+                                                     fillStatus={ bin.fillStatus }
+                                                     overflowStatus={ bin.overflowStatus }
+                                                     key={ i }
+                                                   />
+    ));
+    a1.push(a2);
+    return (a1 );
+  }
+
   offsetCounter(trashBins, markerSize) {
     return (-100 - (Math.ceil(trashBins.length / 4)) * 70 - markerSize.height + 18)
   }
@@ -67,16 +90,12 @@ class MarkerWithInfoBox extends React.Component {
                         <p className="address-text">{address}</p>
                     </div>
                     <div className="type-icon-container">
-                        {
-                      trashBinsWithOverflow.map((bin, i) => (
-                          <InfoBoxItem
-                            type={ bin.type }
-                            fillStatus={ bin.fillStatus }
-                            overflowStatus={ bin.overflowStatus }
-                            key={ i }
-                          />
-                      ))
-                    }
+                        {this.getIcons(trashBinsWithOverflow, 'General' )}
+                        {this.getIcons(trashBinsWithOverflow, 'Biowaste' )}
+                        {this.getIcons(trashBinsWithOverflow, 'Cardboard')}
+                        {this.getIcons(trashBinsWithOverflow, 'Plastic' )}
+                        {this.getIcons(trashBinsWithOverflow, 'Glass' )}
+                        {this.getIcons(trashBinsWithOverflow, 'Metal' )}
                     </div>
                 </div>
             </InfoBox>

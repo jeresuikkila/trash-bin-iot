@@ -41,7 +41,18 @@ const AccordionItem = ({
         <div id={ type + locationId } className="collapse" aria-labelledby={ `${ type + locationId }-heading` } data-parent={ `#accordion${ locationId }` }>
             <div className="card-body">
                 {
-                        trashbins.map( (bin, i) => (
+                        trashbins.filter(bin => bin.fillStatus === 100).map( (bin, i) => (
+                            <AccordionBin
+                              trashbin={ bin }
+                              idx={ i + 1 }
+                              overflowTypes={ overflowTypes }
+                              type={ type }
+                              key={ bin.id }
+                            />
+                        ))
+                    }
+                {
+                        trashbins.filter(bin => bin.fillStatus !== 100).map( (bin, i) => (
                             <AccordionBin
                               trashbin={ bin }
                               idx={ i + 1 }
