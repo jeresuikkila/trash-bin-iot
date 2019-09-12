@@ -25,3 +25,6 @@ More about using dotenv package at https://www.npmjs.com/package/dotenv
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Run the app in Docker
+
+`docker run --rm -p 3000:3000 jeresuikkila/trash-bin-iot-frontend`
